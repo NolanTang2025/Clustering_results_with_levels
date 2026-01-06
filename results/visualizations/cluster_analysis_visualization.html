@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop 57 聚类分析 - 运营Insights可视化</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-bottom: 100px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #1a1a1a;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 32px;
+        }
+
+        .card, .stat-card, .cluster-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .cluster-card:hover {
+            border-color: #1a1a1a;
+            border-left-width: 4px;
+            padding-left: 36px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+        }
+
+        table th, table td {
+            color: #333;
+            font-weight: 300;
+            padding: 20px 24px;
+        }
+        
+        table tr:hover td {
+            background: #fafafa;
+        }
+
+        table th {
+            font-weight: 600;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            background: #fafafa;
+            padding: 20px 24px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #1a1a1a;
+            background: transparent;
+            font-size: 0.875rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: #1a1a1a;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            color: #ffffff;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            opacity: 0.6;
+            border-bottom-color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+        }
+        </style>
+    <link rel="stylesheet" href="minimal_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Shop 57 聚类分析报告</h1>
+            <p class="subtitle">基于Gemini Embedding + K-Means的用户行为聚类与运营Insights</p>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+            <!-- 动态生成统计卡片 -->
+        </div>
+
+        <div class="tabs" id="tabs">
+            <!-- 动态生成标签页 -->
+        </div>
+
+        <div id="content">
+            <!-- 动态生成内容区域 -->
+        </div>
+    </div>
+
+    <script>
+        let reportData = null;
+
+        // 加载JSON数据（已嵌入）
+        function loadData() {
+            try {
+                reportData = {"summary": {"title": "Shop 57 聚类分析报告 - 运营Insights", "time_ranges_analyzed": ["0-5s", "10-30s", "1m-3m", "30-60s", "5-10s"], "total_time_ranges": 5}, "statistics": {"0-5s": {"total_records": 499, "n_clusters": 5, "avg_cluster_size": 99.8}, "10-30s": {"total_records": 587, "n_clusters": 5, "avg_cluster_size": 117.4}, "1m-3m": {"total_records": 889, "n_clusters": 5, "avg_cluster_size": 177.8}, "30-60s": {"total_records": 631, "n_clusters": 5, "avg_cluster_size": 126.2}, "5-10s": {"total_records": 260, "n_clusters": 5, "avg_cluster_size": 52.0}}, "insights_by_time_range": {"0-5s": [{"cluster": "cluster_2", "time_range": "0-5s", "size": 122, "percentage": 24.4, "user_profile": "关注Karaoke Machine, Wireless Microphones, Product Features的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "Professional Wireless Microphone", "Long-Lasting Battery"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "Wireless Microphones", "Product Features"], "concerns": ["Warranty and Returns", "None explicitly identified, but user is exploring FAQ sections.", "After-Sale Service"], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_0", "time_range": "0-5s", "size": 116, "percentage": 23.2, "user_profile": "关注Wireless Microphones, Karaoke Machines, Karaoke Machine的用户，处于comparing (对比)阶段", "key_features": ["Wireless Microphones", "High-Fidelity Sound", "Sound Quality"], "purchase_stage": "comparing (对比)", "main_interests": ["Wireless Microphones", "Karaoke Machines", "Karaoke Machine"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比表格，突出差异化优势", "展示专业评测和用户对比视频", "提供相似产品推荐，帮助用户找到最适合的产品", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_1", "time_range": "0-5s", "size": 107, "percentage": 21.4, "user_profile": "关注Ikarao Break X1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Karaoke Systems的用户，处于browsing (浏览)阶段", "key_features": ["Versatile Connectivity", "High-Fidelity Sound", "10.1\" HD Touchscreen"], "purchase_stage": "browsing (浏览)", "main_interests": ["Ikarao Break X1 Karaoke Machine", "Ikarao Break X2 Karaoke Machine", "Karaoke Systems"], "concerns": ["None explicitly identified, but engagement with FAQ suggests seeking detailed information."], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_4", "time_range": "0-5s", "size": 104, "percentage": 20.8, "user_profile": "关注Wireless Microphones, Karaoke Machine, Karaoke Machines的用户，处于browsing (浏览)阶段", "key_features": ["High-Fidelity Sound", "Versatile Connectivity", "Extended Battery Life"], "purchase_stage": "browsing (浏览)", "main_interests": ["Wireless Microphones", "Karaoke Machine", "Karaoke Machines"], "concerns": ["Shipping times"], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "明确配送时间和免费配送政策", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_3", "time_range": "0-5s", "size": 50, "percentage": 10.0, "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones的用户，处于deciding (决策)阶段", "key_features": ["High-Fidelity Sound", "10.1\" HD Touchscreen", "Versatile Connectivity"], "purchase_stage": "deciding (决策)", "main_interests": ["Karaoke Machine", "High-Fidelity Sound", "Wireless Microphones"], "concerns": ["product quality"], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供限时优惠或免费配送，促进转化", "展示库存紧张信息，创造紧迫感", "提供立即购买按钮和快速结账流程", "强调产品质量保证、保修政策和用户评价", "突出性价比，提供优惠码和捆绑销售"]}], "10-30s": [{"cluster": "cluster_3", "time_range": "10-30s", "size": 171, "percentage": 29.1, "user_profile": "关注wireless microphones, Karaoke Machine, Wireless Microphone的用户，处于browsing (浏览)阶段", "key_features": ["Extended Battery Life", "wireless microphones", "Wireless Microphone"], "purchase_stage": "browsing (浏览)", "main_interests": ["wireless microphones", "Karaoke Machine", "Wireless Microphone"], "concerns": ["None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research."], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_1", "time_range": "10-30s", "size": 135, "percentage": 23.0, "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones的用户，处于browsing (浏览)阶段", "key_features": ["High-Fidelity Sound", "Versatile Connectivity", "10.1\" HD Touchscreen"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "High-Fidelity Sound", "Wireless Microphones"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_0", "time_range": "10-30s", "size": 116, "percentage": 19.8, "user_profile": "关注Karaoke Machines, Wireless Microphones, Karaoke Machine的用户，处于comparing (对比)阶段", "key_features": ["Wireless Microphones", "High-Fidelity Sound", "10.1\" HD Touchscreen"], "purchase_stage": "comparing (对比)", "main_interests": ["Karaoke Machines", "Wireless Microphones", "Karaoke Machine"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比表格，突出差异化优势", "展示专业评测和用户对比视频", "提供相似产品推荐，帮助用户找到最适合的产品", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_2", "time_range": "10-30s", "size": 107, "percentage": 18.2, "user_profile": "关注Ikarao Shell S1 Karaoke Machine, Wireless Microphone, Karaoke machines的用户，处于browsing (浏览)阶段", "key_features": ["High-Fidelity Sound", "Versatile Connectivity", "10.1\" HD Touchscreen"], "purchase_stage": "browsing (浏览)", "main_interests": ["Ikarao Shell S1 Karaoke Machine", "Wireless Microphone", "Karaoke machines"], "concerns": ["Karafun activation and product differentiation (Break X1 vs X2)"], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_4", "time_range": "10-30s", "size": 58, "percentage": 9.9, "user_profile": "关注Wireless Microphones, Karaoke Machines, Touchscreen Displays的用户，处于deciding (决策)阶段", "key_features": ["10.1\" HD Touchscreen", "High-Fidelity Sound", "Wireless Microphones"], "purchase_stage": "deciding (决策)", "main_interests": ["Wireless Microphones", "Karaoke Machines", "Touchscreen Displays"], "concerns": ["User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision."], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供限时优惠或免费配送，促进转化", "展示库存紧张信息，创造紧迫感", "提供立即购买按钮和快速结账流程", "突出性价比，提供优惠码和捆绑销售"]}], "1m-3m": [{"cluster": "cluster_4", "time_range": "1m-3m", "size": 272, "percentage": 30.6, "user_profile": "关注Karaoke Machine, Karaoke Machines, High-Fidelity Sound的用户，处于browsing (浏览)阶段", "key_features": ["portable", "wireless mics", "Extended Battery Life"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "Karaoke Machines", "High-Fidelity Sound"], "concerns": ["product usage, features, and app integration", "product usage, charging, shipping, and potential issues like damage or incorrect items", "Product specifications and functionality"], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_1", "time_range": "1m-3m", "size": 227, "percentage": 25.5, "user_profile": "关注Wireless Microphones, Karaoke machine, Wireless microphone的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "High-Fidelity Sound", "Professional Wireless Microphone"], "purchase_stage": "browsing (浏览)", "main_interests": ["Wireless Microphones", "Karaoke machine", "Wireless microphone"], "concerns": ["product functionality and support"], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_3", "time_range": "1m-3m", "size": 149, "percentage": 16.8, "user_profile": "关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound的用户，处于deciding (决策)阶段", "key_features": ["10.1\" HD Touchscreen", "High-Fidelity Sound", "Versatile Connectivity"], "purchase_stage": "deciding (决策)", "main_interests": ["Karaoke Machine", "Wireless Microphones", "High-Fidelity Sound"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供限时优惠或免费配送，促进转化", "展示库存紧张信息，创造紧迫感", "提供立即购买按钮和快速结账流程", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_2", "time_range": "1m-3m", "size": 139, "percentage": 15.6, "user_profile": "关注Ikarao Shell S2 Karaoke Machine, Wireless Microphones, portable karaoke machine的用户，处于browsing (浏览)阶段", "key_features": ["Wireless Microphones", "Bluetooth Connectivity", "High-Fidelity Sound"], "purchase_stage": "browsing (浏览)", "main_interests": ["Ikarao Shell S2 Karaoke Machine", "Wireless Microphones", "portable karaoke machine"], "concerns": ["Warranty information and product registration"], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_0", "time_range": "1m-3m", "size": 102, "percentage": 11.5, "user_profile": "关注Karaoke Machines, Wireless Microphones, Portable Karaoke Systems的用户，处于comparing (对比)阶段", "key_features": ["Wireless Microphones", "10.1\" HD Touchscreen", "Sound Quality"], "purchase_stage": "comparing (对比)", "main_interests": ["Karaoke Machines", "Wireless Microphones", "Portable Karaoke Systems"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比表格，突出差异化优势", "展示专业评测和用户对比视频", "提供相似产品推荐，帮助用户找到最适合的产品", "突出性价比，提供优惠码和捆绑销售"]}], "30-60s": [{"cluster": "cluster_1", "time_range": "30-60s", "size": 183, "percentage": 29.0, "user_profile": "关注Wireless Microphones, Karaoke Machines, Touchscreen Displays的用户，处于browsing (浏览)阶段", "key_features": ["Versatile Connectivity", "13.3-inch HD Touchscreen", "High-Fidelity Sound"], "purchase_stage": "browsing (浏览)", "main_interests": ["Wireless Microphones", "Karaoke Machines", "Touchscreen Displays"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_4", "time_range": "30-60s", "size": 181, "percentage": 28.7, "user_profile": "关注Karaoke Machine, Wireless Microphones, Touchscreen Display的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "Professional Wireless Microphone", "High-Fidelity Sound"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "Wireless Microphones", "Touchscreen Display"], "concerns": ["Warranty extension process"], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_3", "time_range": "30-60s", "size": 107, "percentage": 17.0, "user_profile": "关注Karaoke Machine, Ikarao Break X1 Karaoke Machine, Karaoke Systems的用户，处于browsing (浏览)阶段", "key_features": ["Versatile Connectivity", "10.1\" HD Touchscreen", "High-Fidelity Sound"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "Ikarao Break X1 Karaoke Machine", "Karaoke Systems"], "concerns": ["None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one."], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比和促销信息，提供分期付款选项", "强调高端功能和品牌价值，提供VIP服务"]}, {"cluster": "cluster_0", "time_range": "30-60s", "size": 80, "percentage": 12.7, "user_profile": "关注Karaoke Machines, Wireless Microphones, Wireless microphones的用户，处于comparing (对比)阶段", "key_features": ["Wireless microphones", "High-Fidelity Sound", "Extended Battery Life"], "purchase_stage": "comparing (对比)", "main_interests": ["Karaoke Machines", "Wireless Microphones", "Wireless microphones"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比表格，突出差异化优势", "展示专业评测和用户对比视频", "提供相似产品推荐，帮助用户找到最适合的产品", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_2", "time_range": "30-60s", "size": 80, "percentage": 12.7, "user_profile": "关注Karaoke Machine, Wireless Microphones, Wireless Microphone的用户，处于deciding (决策)阶段", "key_features": ["10.1\" HD Touchscreen", "High-Fidelity Sound", "Professional-Grade Wireless Microphone"], "purchase_stage": "deciding (决策)", "main_interests": ["Karaoke Machine", "Wireless Microphones", "Wireless Microphone"], "concerns": [], "use_cases": [], "price_sensitivity": "premium", "recommendations": ["提供限时优惠或免费配送，促进转化", "展示库存紧张信息，创造紧迫感", "提供立即购买按钮和快速结账流程", "强调高端功能和品牌价值，提供VIP服务"]}], "5-10s": [{"cluster": "cluster_1", "time_range": "5-10s", "size": 82, "percentage": 31.5, "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Touchscreen Display的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "Versatile Connectivity", "High-Fidelity Sound"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "High-Fidelity Sound", "Touchscreen Display"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_2", "time_range": "5-10s", "size": 62, "percentage": 23.8, "user_profile": "关注Karaoke Machines, Wireless Microphones, High-Fidelity Sound的用户，处于comparing (对比)阶段", "key_features": ["Battery Life", "High-Fidelity Sound", "Sound Quality"], "purchase_stage": "comparing (对比)", "main_interests": ["Karaoke Machines", "Wireless Microphones", "High-Fidelity Sound"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比表格，突出差异化优势", "展示专业评测和用户对比视频", "提供相似产品推荐，帮助用户找到最适合的产品", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_0", "time_range": "5-10s", "size": 61, "percentage": 23.5, "user_profile": "关注Ikarao Shell S1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Ikarao Break X1 Karaoke Machine的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "Wireless Microphone", "Versatile Connectivity"], "purchase_stage": "browsing (浏览)", "main_interests": ["Ikarao Shell S1 Karaoke Machine", "Ikarao Break X2 Karaoke Machine", "Ikarao Break X1 Karaoke Machine"], "concerns": ["Purchase platform (Amazon vs. Ikarao Store)"], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_4", "time_range": "5-10s", "size": 34, "percentage": 13.1, "user_profile": "关注Karaoke Machine, Karaoke System, Wireless Microphones的用户，处于browsing (浏览)阶段", "key_features": ["10.1\" HD Touchscreen", "High-Fidelity Sound", "Versatile Connectivity"], "purchase_stage": "browsing (浏览)", "main_interests": ["Karaoke Machine", "Karaoke System", "Wireless Microphones"], "concerns": ["Shipping cost (indicated by entering shipping details)", "Product warranty and registration process", "Product functionality and usage details"], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供产品对比工具和详细规格说明，帮助用户做决策", "展示用户评价和视频演示，增强信任度", "优化产品页面加载速度，减少跳出率", "突出性价比和促销信息，提供分期付款选项", "突出性价比，提供优惠码和捆绑销售"]}, {"cluster": "cluster_3", "time_range": "5-10s", "size": 21, "percentage": 8.1, "user_profile": "关注Wireless Microphones, Karaoke Machines, Wireless microphones的用户，处于deciding (决策)阶段", "key_features": ["Versatile Connectivity", "Professional Wireless Microphone", "High-Fidelity Sound"], "purchase_stage": "deciding (决策)", "main_interests": ["Wireless Microphones", "Karaoke Machines", "Wireless microphones"], "concerns": [], "use_cases": [], "price_sensitivity": "mid-range", "recommendations": ["提供限时优惠或免费配送，促进转化", "展示库存紧张信息，创造紧迫感", "提供立即购买按钮和快速结账流程", "突出性价比，提供优惠码和捆绑销售"]}]}, "cross_range_insights": {"stage_distribution": {"browsing (浏览)": 15, "comparing (对比)": 5, "deciding (决策)": 5}, "key_findings": ["不同时间范围的用户购买阶段分布存在差异", "短时间访问(0-5s, 5-10s)的用户多为浏览阶段", "长时间访问(1m-3m, 3m+)的用户更可能处于决策阶段"]}};
+                renderPage();
+            } catch (error) {
+                document.body.innerHTML = `
+                    <div class="container">
+                        <div class="header">
+                            <h1>❌ 数据加载失败</h1>
+                            <p style="color: red; margin-top: 10px;">${error.message}</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function renderPage() {
+            renderStats();
+            renderTabs();
+            renderContent();
+        }
+
+        function renderStats() {
+            const stats = reportData.statistics;
+            const totalRecords = Object.values(stats).reduce((sum, s) => sum + s.total_records, 0);
+            const totalClusters = Object.values(stats).reduce((sum, s) => sum + s.n_clusters, 0);
+            const timeRanges = Object.keys(stats).length;
+
+            const statsGrid = document.getElementById('statsGrid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="value">${timeRanges}</div>
+                    <div class="label">时间范围</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${totalRecords.toLocaleString()}</div>
+                    <div class="label">总记录数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${totalClusters}</div>
+                    <div class="label">总聚类数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${Math.round(totalRecords / totalClusters)}</div>
+                    <div class="label">平均聚类大小</div>
+                </div>
+            `;
+        }
+
+        function renderTabs() {
+            const tabs = document.getElementById('tabs');
+            const timeRanges = Object.keys(reportData.insights_by_time_range);
+            
+            tabs.innerHTML = timeRanges.map((tr, index) => `
+                <button class="tab ${index === 0 ? 'active' : ''}" onclick="switchTab('${tr}')">
+                    ${tr}
+                </button>
+            `).join('') + `
+                <button class="tab" onclick="switchTab('summary')">
+                    跨范围洞察
+                </button>
+            `;
+        }
+
+        function renderContent() {
+            const content = document.getElementById('content');
+            const timeRanges = Object.keys(reportData.insights_by_time_range);
+            const stats = reportData.statistics;
+
+            let html = '';
+
+            // 渲染各时间范围的内容
+            timeRanges.forEach((tr, index) => {
+                const insights = reportData.insights_by_time_range[tr];
+                const stat = stats[tr];
+                
+                html += `
+                    <div class="content-section ${index === 0 ? 'active' : ''}" id="section-${tr}">
+                        <div class="time-range-header">
+                            <h2>${tr} 时间范围</h2>
+                            <div class="time-range-stats">
+                                <span>总记录: ${stat.total_records.toLocaleString()}</span>
+                                <span>聚类数: ${stat.n_clusters}</span>
+                                <span>平均大小: ${stat.avg_cluster_size}</span>
+                            </div>
+                        </div>
+                        <div class="clusters-grid">
+                            ${insights.map(insight => renderClusterCard(insight)).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            // 渲染跨范围洞察
+            html += `
+                <div class="content-section" id="section-summary">
+                    <h2 style="color: #1a1a1a; margin-bottom: 20px;">跨时间范围洞察</h2>
+                    
+                    <div class="chart-container">
+                        <h3 style="margin-bottom: 15px;">购买阶段分布</h3>
+                        <canvas id="stageChart"></canvas>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 style="margin-bottom: 15px;">各时间范围记录数分布</h3>
+                        <canvas id="recordsChart"></canvas>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 15px; color: #1a1a1a;">关键发现</h3>
+                        <ul class="insights-list">
+                            ${reportData.cross_range_insights.key_findings.map(finding => `
+                                <li>${finding}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            content.innerHTML = html;
+
+            // 渲染图表
+            if (document.getElementById('section-summary')) {
+                renderCharts();
+            }
+        }
+
+        function renderClusterCard(insight) {
+            const stageClass = {
+                'browsing (浏览)': 'stage-browsing',
+                'comparing (对比)': 'stage-comparing',
+                'deciding (决策)': 'stage-deciding'
+            }[insight.purchase_stage] || '';
+
+            return `
+                <div class="cluster-card">
+                    <div class="cluster-header">
+                        <span class="cluster-id">${insight.cluster}</span>
+                        <span class="cluster-size">${insight.size} 条 (${insight.percentage}%)</span>
+                    </div>
+                    
+                    <div class="cluster-info">
+                        <div class="info-item">
+                            <span class="info-label">用户画像:</span>
+                            <span class="info-value">${insight.user_profile}</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">购买阶段:</span>
+                            <span class="info-value">
+                                ${insight.purchase_stage}
+                                <span class="stage-badge ${stageClass}">${insight.purchase_stage.split(' ')[0]}</span>
+                            </span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">价格敏感度:</span>
+                            <span class="info-value">${insight.price_sensitivity}</span>
+                        </div>
+                        
+                        ${insight.main_interests.length > 0 ? `
+                            <div class="info-item">
+                                <span class="info-label">主要兴趣:</span>
+                                <div class="tags">
+                                    ${insight.main_interests.map(interest => `
+                                        <span class="tag">${interest}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${insight.key_features.length > 0 ? `
+                            <div class="info-item">
+                                <span class="info-label">关键特征:</span>
+                                <div class="tags">
+                                    ${insight.key_features.map(feature => `
+                                        <span class="tag">${feature}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${insight.concerns && insight.concerns.length > 0 ? `
+                            <div class="info-item">
+                                <span class="info-label">关注点:</span>
+                                <span class="info-value">${insight.concerns.join(', ')}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    <div class="recommendations">
+                        <h4>💡 运营建议</h4>
+                        <ul>
+                            ${insight.recommendations.map(rec => `
+                                <li>${rec}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCharts() {
+            // 购买阶段分布图表
+            const stageData = reportData.cross_range_insights.stage_distribution;
+            const stageCtx = document.getElementById('stageChart').getContext('2d');
+            new Chart(stageCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(stageData),
+                    datasets: [{
+                        data: Object.values(stageData),
+                        backgroundColor: [
+                            '#1a1a1a',
+                            '#f093fb',
+                            '#4facfe',
+                            '#00f2fe'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 各时间范围记录数分布
+            const stats = reportData.statistics;
+            const recordsCtx = document.getElementById('recordsChart').getContext('2d');
+            new Chart(recordsCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(stats),
+                    datasets: [{
+                        label: '记录数',
+                        data: Object.values(stats).map(s => s.total_records),
+                        backgroundColor: '#1a1a1a'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function switchTab(tabName) {
+            // 更新标签页状态
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 更新内容区域
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(`section-${tabName}`).classList.add('active');
+        }
+
+        // 页面加载时加载数据
+        loadData();
+    </script>
+</body>
+</html>
+

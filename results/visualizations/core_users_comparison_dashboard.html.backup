@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-60s核心用户聚类分析与对比 Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .container { max-width: 1600px; margin: 0 auto; }
+        .header { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .header h1 { color: #667eea; font-size: 2.5em; margin-bottom: 10px; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .section h2 { color: #667eea; font-size: 1.8em; margin-bottom: 20px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .cluster-card { background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%); border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 5px solid #667eea; }
+        .cluster-card h3 { color: #667eea; margin-bottom: 10px; }
+        .cluster-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; }
+        .cluster-info-item { background: white; padding: 10px; border-radius: 8px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        .stat-card .value { font-size: 2.5em; font-weight: bold; color: #667eea; margin-bottom: 5px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .comparison-table th, .comparison-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        .comparison-table th { background: #f5f7fa; font-weight: bold; color: #667eea; }
+        .diff-positive { color: #4caf50; font-weight: bold; }
+        .diff-negative { color: #f44336; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 10-60s核心用户聚类分析与对比 Dashboard</h1>
+            <p class="subtitle">核心用户特征深度分析 - 识别高价值用户群体</p>
+        </div>
+        <div id="content">加载中...</div>
+    </div>
+    <script id="data-script" type="application/json">{"summary": {"title": "10-60s核心用户聚类分析与对比报告", "core_users_total": 1218, "other_users_total": 3727, "core_time_ranges": ["10-30s", "30-60s"], "other_time_ranges": ["0-5s", "5-10s", "1m-3m", "3m+"]}, "core_user_features": {"top_interests": {"Karaoke Machine": 554, "Wireless Microphones": 438, "High-Fidelity Sound": 341, "Karaoke Machines": 287, "Touchscreen Display": 238, "Wireless Microphone": 235, "Portable Speaker": 146, "Touchscreen Displays": 143, "Portable Speakers": 116, "Karaoke Systems": 102}, "purchase_stages": {"browsing": 806, "deciding": 178, "comparing": 230, "browsing/comparing": 4}, "top_attributes": {"High-Fidelity Sound": 571, "Versatile Connectivity": 542, "10.1\" HD Touchscreen": 440, "Extended Battery Life": 330, "Professional Wireless Microphone": 286, "Wireless Microphones": 242, "Wireless Microphone": 222, "Professional-Grade Wireless Microphone": 204, "Long-Lasting Battery": 197, "13.3\" HD Touchscreen": 168}, "price_ranges": {"mid-range": 517, "premium": 521, "budget": 153, "budget/mid-range/premium": 1, "budget-range": 6, "budget/mid-range": 18, "mid-range to premium": 1, "budget-mid-range": 1}, "top_concerns": {"shipping policy": 4, "shipping cost": 3, "None explicitly identified": 2, "Return Policy": 2, "Return & Exchange Policy": 2, "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": 1, "Product functionality and support (e.g., WiFi connection, accessories, exchanges)": 1, "Karafun activation and product differentiation (Break X1 vs X2)": 1, "Shipping and order arrival times": 1, "Product usage and features (user guide)": 1}, "use_cases": {"Home entertainment, parties, or professional performances.": 43, "Home entertainment, parties, and social gatherings.": 40, "Home entertainment and parties.": 39, "Home entertainment, parties, and potentially small events.": 31, "Home entertainment, parties, outdoor events.": 26}}, "other_user_features": {"top_interests": {"Karaoke Machine": 1443, "Wireless Microphones": 1185, "High-Fidelity Sound": 1042, "Karaoke Machines": 801, "Wireless Microphone": 627, "Touchscreen Display": 541, "Ikarao Break X2 Karaoke Machine": 461, "Touchscreen Displays": 385, "Portable Speakers": 299, "Karaoke machine features": 290}, "purchase_stages": {"browsing": 2152, "comparing": 723, "deciding": 818, "browsing/comparing": 9, "support": 12, "post-purchase": 12, "troubleshooting": 1}, "top_attributes": {"10.1\" HD Touchscreen": 1557, "Versatile Connectivity": 1446, "High-Fidelity Sound": 1378, "Professional Wireless Microphone": 1145, "Extended Battery Life": 830, "Wireless Microphones": 622, "Long-Lasting Battery": 613, "Professional-Grade Wireless Microphone": 601, "Wireless Microphone": 595, "13.3\" HD Touchscreen": 427}, "price_ranges": {"mid-range": 1460, "premium": 1635, "budget/mid-range": 51, "budget": 538, "budget-range": 5, "budget-mid-range": 10, "budget/mid-range/premium": 6, "budget-to-mid-range": 6, "unknown": 7, "mid-range to premium": 4, "budget-to-premium": 1, "budget to premium": 2, "budget/premium": 1, "mid-range/premium": 1}, "top_concerns": {"None explicitly identified": 12, "The user is experiencing technical issues with their Ikarao Break X2 karaoke machine, specifically related to charging and sparking. They are actively seeking support, indicating a concern about product functionality and potential repair or replacement.": 9, "Shipping information": 7, "Warranty Information": 6, "product registration and warranty details": 6, "After-Sale Service": 4, "None explicitly identified, but user has viewed product manuals.": 4, "Shipping costs and return policy": 4, "None explicitly detected": 3, "Warranty information": 3}, "use_cases": {"Home entertainment, parties, and potentially small events.": 88, "Home entertainment and parties.": 85, "Home entertainment, parties, or professional performances.": 83, "Home entertainment, parties, performances.": 80, "Home entertainment, parties, and social gatherings.": 63}}, "comparisons": {"core_interests": [{"feature": "Karaoke Machine", "core_count": 554, "core_percentage": 45.5, "other_count": 1443, "other_percentage": 38.7, "difference": 6.8, "is_core_higher": true}, {"feature": "Ikarao Break X2 Karaoke Machine", "core_count": 69, "core_percentage": 5.7, "other_count": 461, "other_percentage": 12.4, "difference": -6.7, "is_core_higher": false}, {"feature": "Touchscreen Display", "core_count": 238, "core_percentage": 19.5, "other_count": 541, "other_percentage": 14.5, "difference": 5.0, "is_core_higher": true}, {"feature": "Portable Speaker", "core_count": 146, "core_percentage": 12.0, "other_count": 268, "other_percentage": 7.2, "difference": 4.8, "is_core_higher": true}, {"feature": "Karaoke machine features", "core_count": 44, "core_percentage": 3.6, "other_count": 290, "other_percentage": 7.8, "difference": -4.2, "is_core_higher": false}, {"feature": "Wireless Microphones", "core_count": 438, "core_percentage": 36.0, "other_count": 1185, "other_percentage": 31.8, "difference": 4.2, "is_core_higher": true}, {"feature": "Karaoke Machine Features", "core_count": 44, "core_percentage": 3.6, "other_count": 270, "other_percentage": 7.2, "difference": -3.6, "is_core_higher": false}, {"feature": "10.1\" HD Touchscreen", "core_count": 29, "core_percentage": 2.4, "other_count": 211, "other_percentage": 5.7, "difference": -3.3, "is_core_higher": false}, {"feature": "HD Touchscreen", "core_count": 92, "core_percentage": 7.6, "other_count": 188, "other_percentage": 5.0, "difference": 2.6, "is_core_higher": true}, {"feature": "Wireless Microphone", "core_count": 235, "core_percentage": 19.3, "other_count": 627, "other_percentage": 16.8, "difference": 2.5, "is_core_higher": true}, {"feature": "Karaoke Machines", "core_count": 287, "core_percentage": 23.6, "other_count": 801, "other_percentage": 21.5, "difference": 2.1, "is_core_higher": true}], "purchase_stages": [{"feature": "browsing", "core_count": 806, "core_percentage": 66.2, "other_count": 2152, "other_percentage": 57.7, "difference": 8.5, "is_core_higher": true}, {"feature": "deciding", "core_count": 178, "core_percentage": 14.6, "other_count": 818, "other_percentage": 21.9, "difference": -7.3, "is_core_higher": false}], "key_attributes": [{"feature": "High-Fidelity Sound", "core_count": 571, "core_percentage": 46.9, "other_count": 1378, "other_percentage": 37.0, "difference": 9.9, "is_core_higher": true}, {"feature": "Professional Wireless Microphone", "core_count": 286, "core_percentage": 23.5, "other_count": 1145, "other_percentage": 30.7, "difference": -7.2, "is_core_higher": false}, {"feature": "Versatile Connectivity", "core_count": 542, "core_percentage": 44.5, "other_count": 1446, "other_percentage": 38.8, "difference": 5.7, "is_core_higher": true}, {"feature": "10.1\" HD Touchscreen", "core_count": 440, "core_percentage": 36.1, "other_count": 1557, "other_percentage": 41.8, "difference": -5.7, "is_core_higher": false}, {"feature": "High-Fidelity Sound (106dB SPL)", "core_count": 27, "core_percentage": 2.2, "other_count": 280, "other_percentage": 7.5, "difference": -5.3, "is_core_higher": false}, {"feature": "Extended Battery Life", "core_count": 330, "core_percentage": 27.1, "other_count": 830, "other_percentage": 22.3, "difference": 4.8, "is_core_higher": true}, {"feature": "Versatile Connectivity (Bluetooth V5.4, HDMI, AUX, USB)", "core_count": 13, "core_percentage": 1.1, "other_count": 161, "other_percentage": 4.3, "difference": -3.2, "is_core_higher": false}, {"feature": "Wireless Microphones", "core_count": 242, "core_percentage": 19.9, "other_count": 622, "other_percentage": 16.7, "difference": 3.2, "is_core_higher": true}, {"feature": "13.3\" HD Touchscreen", "core_count": 168, "core_percentage": 13.8, "other_count": 427, "other_percentage": 11.5, "difference": 2.3, "is_core_higher": true}, {"feature": "Wireless Microphone", "core_count": 222, "core_percentage": 18.2, "other_count": 595, "other_percentage": 16.0, "difference": 2.2, "is_core_higher": true}], "price_ranges": [{"feature": "mid-range", "core_count": 517, "core_percentage": 42.4, "other_count": 1460, "other_percentage": 39.2, "difference": 3.2, "is_core_higher": true}]}, "core_user_clusters": {"10-30s_cluster_0": {"time_range": "10-30s", "cluster_id": "cluster_0", "size": 116, "top_interests": {"Karaoke Machines": 5, "Wireless Microphones": 4, "Karaoke Machine": 4, "High-Fidelity Sound": 4, "Touchscreen Displays": 3}, "purchase_stages": {"comparing": 10}, "top_attributes": {"Wireless Microphones": 7, "High-Fidelity Sound": 6, "10.1\" HD Touchscreen": 4, "Sound Quality": 3, "Versatile Connectivity": 3}, "price_ranges": {"mid-range": 8, "budget": 1, "premium": 1}}, "10-30s_cluster_1": {"time_range": "10-30s", "cluster_id": "cluster_1", "size": 135, "top_interests": {"Karaoke Machine": 7, "High-Fidelity Sound": 5, "Wireless Microphones": 5, "Touchscreen Display": 3, "Karaoke Machines": 2}, "purchase_stages": {"browsing": 10}, "top_attributes": {"High-Fidelity Sound": 10, "Versatile Connectivity": 8, "10.1\" HD Touchscreen": 6, "Professional Wireless Microphone": 5, "Long-Lasting Battery": 4}, "price_ranges": {"mid-range": 9, "premium": 1}}, "10-30s_cluster_2": {"time_range": "10-30s", "cluster_id": "cluster_2", "size": 107, "top_interests": {"Ikarao Shell S1 Karaoke Machine": 5, "Wireless Microphone": 4, "Karaoke machines": 3, "Ikarao Break X1 Karaoke Machine": 3, "Ikarao Break X2 Karaoke Machine": 3}, "purchase_stages": {"comparing": 2, "browsing": 4, "deciding": 4}, "top_attributes": {"High-Fidelity Sound": 7, "Versatile Connectivity": 7, "10.1\" HD Touchscreen": 6, "Extended Battery Life": 4, "Wireless Microphone": 4}, "price_ranges": {"premium": 6, "mid-range": 2, "budget/mid-range/premium": 1, "budget": 1}}, "10-30s_cluster_3": {"time_range": "10-30s", "cluster_id": "cluster_3", "size": 171, "top_interests": {"wireless microphones": 3, "Karaoke Machine": 3, "Wireless Microphone": 3, "Karaoke Machines": 2, "Wireless Microphones": 2}, "purchase_stages": {"browsing": 10}, "top_attributes": {"Extended Battery Life": 4, "wireless microphones": 3, "Wireless Microphone": 3, "High-Fidelity Sound": 3, "Versatile Connectivity": 3}, "price_ranges": {"mid-range": 4, "budget": 1, "premium": 5}}, "10-30s_cluster_4": {"time_range": "10-30s", "cluster_id": "cluster_4", "size": 58, "top_interests": {"Wireless Microphones": 5, "Karaoke Machines": 4, "Touchscreen Displays": 4, "Long Battery Life": 3, "Portable Speakers": 2}, "purchase_stages": {"deciding": 10}, "top_attributes": {"10.1\" HD Touchscreen": 8, "High-Fidelity Sound": 4, "Wireless Microphones": 3, "Professional Wireless Microphone": 3, "Extended Battery Life": 3}, "price_ranges": {"mid-range": 6, "budget": 2, "premium": 2}}, "30-60s_cluster_0": {"time_range": "30-60s", "cluster_id": "cluster_0", "size": 80, "top_interests": {"Karaoke Machines": 6, "Wireless Microphones": 5, "Wireless microphones": 3, "Karaoke Machine": 3, "High-Fidelity Sound": 3}, "purchase_stages": {"comparing": 10}, "top_attributes": {"Wireless microphones": 3, "High-Fidelity Sound": 3, "Extended Battery Life": 3, "Versatile Connectivity": 3, "Wireless Microphones": 3}, "price_ranges": {"mid-range": 5, "premium": 3, "mid-range to premium": 1, "budget/mid-range": 1}}, "30-60s_cluster_1": {"time_range": "30-60s", "cluster_id": "cluster_1", "size": 183, "top_interests": {"Wireless Microphones": 5, "Karaoke Machines": 4, "Touchscreen Displays": 3, "Portable Audio Systems": 2, "Karaoke Machine": 2}, "purchase_stages": {"browsing": 10}, "top_attributes": {"Versatile Connectivity": 4, "13.3-inch HD Touchscreen": 3, "High-Fidelity Sound": 3, "Professional-Grade Wireless Microphone": 3, "Extended Battery Life": 3}, "price_ranges": {"mid-range": 6, "budget": 2, "premium": 2}}, "30-60s_cluster_2": {"time_range": "30-60s", "cluster_id": "cluster_2", "size": 80, "top_interests": {"Karaoke Machine": 5, "Wireless Microphones": 4, "Wireless Microphone": 4, "Touchscreen Display": 2, "HD Touchscreen": 2}, "purchase_stages": {"deciding": 10}, "top_attributes": {"10.1\" HD Touchscreen": 7, "High-Fidelity Sound": 3, "Professional-Grade Wireless Microphone": 3, "High-Fidelity Sound (104dB SPL)": 3, "Versatile Connectivity": 3}, "price_ranges": {"mid-range": 3, "premium": 4, "budget": 2, "budget/mid-range": 1}}, "30-60s_cluster_3": {"time_range": "30-60s", "cluster_id": "cluster_3", "size": 107, "top_interests": {"Karaoke Machine": 4, "Ikarao Break X1 Karaoke Machine": 3, "Karaoke Systems": 3, "Ikarao Shell S2 Karaoke Machine": 2, "Ikarao Break X2 Karaoke Machine": 2}, "purchase_stages": {"comparing": 2, "browsing": 6, "browsing/comparing": 1, "deciding": 1}, "top_attributes": {"Versatile Connectivity": 5, "10.1\" HD Touchscreen": 4, "High-Fidelity Sound": 4, "Wireless Microphone": 3, "Long-Lasting Battery": 3}, "price_ranges": {"premium": 5, "budget": 1, "budget/mid-range": 1, "mid-range": 3}}, "30-60s_cluster_4": {"time_range": "30-60s", "cluster_id": "cluster_4", "size": 181, "top_interests": {"Karaoke Machine": 7, "Wireless Microphones": 7, "Touchscreen Display": 6, "High-Fidelity Sound": 4, "Portable Speaker": 2}, "purchase_stages": {"browsing": 10}, "top_attributes": {"10.1\" HD Touchscreen": 8, "Professional Wireless Microphone": 6, "High-Fidelity Sound": 6, "Versatile Connectivity": 5, "Long-Lasting Battery": 5}, "price_ranges": {"budget": 1, "mid-range": 4, "premium": 5}}}}</script>
+    <script>
+        // 从script标签中读取JSON数据
+        const dataScript = document.getElementById('data-script');
+        let analysisData = null;
+        
+        try {
+            analysisData = JSON.parse(dataScript.textContent);
+            console.log('数据加载成功', analysisData);
+        } catch (error) {
+            console.error('JSON解析错误:', error);
+            document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据加载失败</h2><p style="color: red;">' + error.message + '</p></div>';
+        }
+
+        function renderPage() {
+            if (!analysisData) {
+                document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据未加载</h2></div>';
+                return;
+            }
+            
+            const content = document.getElementById('content');
+            let html = '';
+            
+            // 概览
+            const coreTotal = analysisData.summary.core_users_total;
+            const otherTotal = analysisData.summary.other_users_total;
+            const total = coreTotal + otherTotal;
+            const corePercent = Math.round((coreTotal / total) * 100);
+            
+            html += '<div class="section"><h2>📊 数据概览</h2>';
+            html += '<div class="stats-grid">';
+            html += '<div class="stat-card"><div class="value">' + coreTotal.toLocaleString() + '</div><div>核心用户（10-60s）</div><div style="margin-top: 10px; color: #4caf50; font-weight: bold;">占比: ' + corePercent + '%</div></div>';
+            html += '<div class="stat-card"><div class="value">' + otherTotal.toLocaleString() + '</div><div>其他用户</div><div style="margin-top: 10px; color: #ff9800; font-weight: bold;">占比: ' + (100-corePercent) + '%</div></div>';
+            html += '<div class="stat-card"><div class="value">' + total.toLocaleString() + '</div><div>总用户数</div></div>';
+            html += '</div></div>';
+            
+            // 核心用户特征
+            html += '<div class="section"><h2>👥 核心用户特征（10-60s）</h2>';
+            html += '<p>核心用户总数: ' + coreTotal.toLocaleString() + '</p>';
+            html += '<h3 style="margin-top: 20px; color: #555;">Top 5 核心兴趣</h3><ul style="list-style: none; padding: 0;">';
+            const topInterests = Object.entries(analysisData.core_user_features.top_interests).slice(0, 5);
+            topInterests.forEach(([k, v]) => {
+                html += '<li style="padding: 8px; background: #f5f7fa; margin: 5px 0; border-radius: 5px;"><strong>' + k + '</strong>: ' + v + '次</li>';
+            });
+            html += '</ul></div>';
+            
+            // 对比分析
+            html += '<div class="section"><h2>⚖️ 核心用户 vs 其他用户对比</h2>';
+            html += '<h3 style="margin-top: 20px; color: #555;">核心兴趣差异（Top 10）</h3>';
+            html += '<table class="comparison-table"><thead><tr><th>兴趣</th><th>核心用户占比</th><th>其他用户占比</th><th>差异</th></tr></thead><tbody>';
+            analysisData.comparisons.core_interests.slice(0, 10).forEach(diff => {
+                html += '<tr><td>' + diff.feature + '</td><td>' + diff.core_percentage + '%</td><td>' + diff.other_percentage + '%</td>';
+                html += '<td class="' + (diff.is_core_higher ? 'diff-positive' : 'diff-negative') + '">' + (diff.difference > 0 ? '+' : '') + diff.difference + '%</td></tr>';
+            });
+            html += '</tbody></table></div>';
+            
+            // 核心用户聚类详情
+            html += renderCoreClusters(analysisData);
+            
+            // 关键发现
+            html += '<div class="section"><div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border-radius: 12px; padding: 20px; border-left: 5px solid #f39c12;"><h3 style="color: #f39c12; margin-bottom: 15px;">💡 关键发现</h3><ul style="list-style: none; padding: 0;"><li style="padding: 10px; margin: 5px 0; background: white; border-radius: 8px;">核心用户更关注产品本身和音质</li><li style="padding: 10px; margin: 5px 0; background: white; border-radius: 8px;">核心用户处于深度浏览阶段</li><li style="padding: 10px; margin: 5px 0; background: white; border-radius: 8px;">核心用户价格敏感度更均衡</li></ul></div></div>';
+            
+            content.innerHTML = html;
+        }
+        
+        function renderCoreClusters(data) {
+            const clusters = data.core_user_clusters;
+            if (!clusters || Object.keys(clusters).length === 0) {
+                return '<div class="section"><h2>🔍 核心用户聚类详情</h2><p style="color: #666;">暂无聚类数据</p></div>';
+            }
+            
+            let html = '<div class="section"><h2>🔍 核心用户聚类详情</h2>';
+            html += '<p style="margin-bottom: 20px; color: #666;">以下是10-60s核心用户的' + Object.keys(clusters).length + '个聚类，展示了不同用户群体的特征：</p>';
+            
+            for (const [clusterId, cluster] of Object.entries(clusters)) {
+                html += '<div class="cluster-card">';
+                html += '<h3>' + clusterId + ' (' + cluster.size + ' 条记录)</h3>';
+                html += '<div class="cluster-info">';
+                html += '<div class="cluster-info-item"><strong>时间范围:</strong> ' + cluster.time_range + '</div>';
+                html += '<div class="cluster-info-item"><strong>购买阶段:</strong> ' + Object.keys(cluster.purchase_stages).join(', ') + '</div>';
+                html += '<div class="cluster-info-item"><strong>价格范围:</strong> ' + Object.keys(cluster.price_ranges).join(', ') + '</div>';
+                html += '</div>';
+                html += '<div style="margin-top: 15px;"><strong>Top 兴趣:</strong> ' + Object.keys(cluster.top_interests).slice(0, 5).join(', ') + '</div>';
+                html += '<div style="margin-top: 10px;"><strong>Top 特征:</strong> ' + Object.keys(cluster.top_attributes).slice(0, 5).join(', ') + '</div>';
+                html += '</div>';
+            }
+            html += '</div>';
+            return html;
+        }
+        
+        // 页面加载时执行
+        if (analysisData) {
+            renderPage();
+        }
+    </script>
+</body>
+</html>

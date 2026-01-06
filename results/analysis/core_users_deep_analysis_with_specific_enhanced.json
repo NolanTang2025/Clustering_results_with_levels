@@ -1,0 +1,1910 @@
+{
+  "summary": {
+    "title": "10-60s核心用户深度分析报告 - 决策支持",
+    "total_clusters": 10,
+    "total_users": 1218,
+    "analysis_date": "2025-01-06",
+    "purpose": "为运营决策提供数据支撑和行动建议"
+  },
+  "cluster_analyses": [
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "10-30s",
+      "size": 116,
+      "avg_intent_score": 0.83,
+      "statistics": {
+        "total_records_analyzed": 116,
+        "intent_score_available": 116,
+        "avg_intent_score": 0.83,
+        "intent_score_std": 0.04
+      },
+      "top_interests": {
+        "Wireless Microphones": 71,
+        "Karaoke Machines": 64,
+        "High-Fidelity Sound": 43,
+        "Touchscreen Displays": 39,
+        "Karaoke Machine": 37
+      },
+      "purchase_stage_distribution": {
+        "comparing": 115,
+        "browsing/comparing": 1
+      },
+      "price_range_distribution": {
+        "mid-range": 72,
+        "budget": 3,
+        "premium": 34,
+        "budget-range": 1,
+        "budget/mid-range": 6
+      },
+      "top_attributes": {
+        "Wireless Microphones": 66,
+        "High-Fidelity Sound": 62,
+        "Versatile Connectivity": 33,
+        "Sound Quality": 27,
+        "10.1\" HD Touchscreen": 24
+      },
+      "top_concerns": {
+        "The user has been researching FAQ sections, indicating a need for detailed information and potentially addressing concerns about functionality and setup, which aligns with a 'deciding' stage rather than 'comparing'.": 1,
+        "None explicitly stated, but price comparison suggests budget consideration.": 1,
+        "Product differences, microphone support, Android version": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含116位用户。核心特征：主要关注Wireless Microphones, Karaoke Machines, High-Fidelity Sound（分别出现71, 64, 43次），0.0%处于决策阶段，99.1%在对比，0.0%在浏览。价格敏感度：29.3%偏好高端，62.1%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "medium",
+        "key_differentiators": [
+          "Wireless Microphones",
+          "High-Fidelity Sound",
+          "Versatile Connectivity"
+        ],
+        "pain_points": [
+          "The user has been researching FAQ sections, indicating a need for detailed information and potentially addressing concerns about functionality and setup, which aligns with a 'deciding' stage rather than 'comparing'.",
+          "None explicitly stated, but price comparison suggests budget consideration.",
+          "Product differences, microphone support, Android version"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有115位用户（99.1%）在对比",
+            "action": "提供产品对比工具和详细规格",
+            "expected_impact": "预计提升转化率15-20%",
+            "data_support": "115位对比用户，提供对比工具可加速决策"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助115位对比用户快速决策，预计额外转化17位用户，带来约$5,950收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：115位用户在对比（99.1%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 5950,
+              "development_cost": 3000,
+              "net_revenue": 2950,
+              "roi_percentage": 98.33333333333333
+            }
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：116位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：0位决策（0.0%），115位对比（99.1%），0位浏览（0.0%）",
+          "核心兴趣证据：Wireless Microphones, Karaoke Machines, High-Fidelity Sound共出现178次，占总兴趣的33.3%",
+          "意图分数证据：平均意图分数0.83，超过70%阈值，0位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：Wireless Microphones, High-Fidelity Sound, Versatile Connectivity共出现66, 62, 33次，占总特征的27.9%",
+          "痛点证据：The user has been researching FAQ sections, indicating a need for detailed information and potentially addressing concerns about functionality and setup, which aligns with a 'deciding' stage rather than 'comparing'., None explicitly stated, but price comparison suggests budget consideration., Product differences, microphone support, Android version被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 116,
+          "interest": 115,
+          "consideration": 115,
+          "decision": 0,
+          "conversion_estimate": 17,
+          "funnel_drop_off": {
+            "awareness_to_interest": "99.1%",
+            "interest_to_consideration": "100.0%",
+            "consideration_to_decision": "0.0%"
+          }
+        },
+        "competitive_advantages": [],
+        "risk_factors": [],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.83），0位用户处于决策阶段（0.0%），115位在对比（99.1%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "中等转化潜力（评分: 0.50），需要更多引导和激励。预计可转化14位用户，带来约$4,900收入。"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是80位用户的集合，主要关注Wireless Microphones, Karaoke Machines, Karaoke Machine。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, Wireless Microphones。",
+        "distinctive_user_profile": "该聚类包含80位用户，0.0%处于决策阶段，100.0%在对比中。",
+        "what_makes_different": [
+          "该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"
+        ],
+        "differentiation_score": 0.0,
+        "unique_interests": [],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [],
+        "targeted_recommendations": [],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": [
+          "该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "10-30s",
+      "size": 135,
+      "avg_intent_score": 0.7,
+      "statistics": {
+        "total_records_analyzed": 135,
+        "intent_score_available": 135,
+        "avg_intent_score": 0.7,
+        "intent_score_std": 0.17
+      },
+      "top_interests": {
+        "Karaoke Machine": 85,
+        "High-Fidelity Sound": 55,
+        "Wireless Microphones": 53,
+        "Touchscreen Display": 50,
+        "Wireless Microphone": 32
+      },
+      "purchase_stage_distribution": {
+        "browsing": 134,
+        "comparing": 1
+      },
+      "price_range_distribution": {
+        "mid-range": 66,
+        "premium": 56,
+        "budget": 13
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 105,
+        "Versatile Connectivity": 84,
+        "High-Fidelity Sound": 83,
+        "Professional Wireless Microphone": 70,
+        "Long-Lasting Battery": 63
+      },
+      "top_concerns": {
+        "Product functionality and support (e.g., WiFi connection, accessories, exchanges)": 1,
+        "Shipping and order arrival times": 1,
+        "Microphone charging/battery": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含135位用户。核心特征：主要关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones（分别出现85, 55, 53次），0.0%处于决策阶段，0.7%在对比，99.3%在浏览。价格敏感度：41.5%偏好高端，48.9%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity",
+          "High-Fidelity Sound"
+        ],
+        "pain_points": [
+          "Product functionality and support (e.g., WiFi connection, accessories, exchanges)",
+          "Shipping and order arrival times",
+          "Microphone charging/battery"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有56位用户（41.5%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "41.5%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助1位对比用户快速决策，预计额外转化0位用户，带来约$0收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：1位用户在对比（0.7%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 0,
+              "development_cost": 3000,
+              "net_revenue": -3000,
+              "roi_percentage": -100.0
+            }
+          },
+          {
+            "action": "明确配送政策",
+            "priority": "medium",
+            "expected_impact": "消除用户顾虑，预计减少5-10%的跳出率，提升转化率",
+            "implementation": "在首屏显著位置展示配送时间、免费配送政策和配送跟踪信息",
+            "data_support": "数据支撑：1个痛点与配送相关，明确政策可消除顾虑"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：135位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：0位决策（0.0%），1位对比（0.7%），134位浏览（99.3%）",
+          "核心兴趣证据：Karaoke Machine, High-Fidelity Sound, Wireless Microphones共出现193次，占总兴趣的31.2%",
+          "意图分数证据：平均意图分数0.70，超过70%阈值，0位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound共出现105, 84, 83次，占总特征的40.6%",
+          "痛点证据：Product functionality and support (e.g., WiFi connection, accessories, exchanges), Shipping and order arrival times, Microphone charging/battery被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 135,
+          "interest": 135,
+          "consideration": 1,
+          "decision": 0,
+          "conversion_estimate": 8,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "0.7%",
+            "consideration_to_decision": "0.0%"
+          }
+        },
+        "competitive_advantages": [
+          "41.5%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [
+          "99.3%用户仅处于浏览阶段，转化风险较高，需要更多引导"
+        ],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.70），0位用户处于决策阶段（0.0%），1位在对比（0.7%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.2%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Extended Battery Life'高度专注群体，15.8%的用户关注此兴趣（是平均水平的2.14倍），比平均水平高8.5个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户对'Built-in Screen'有极高的关注度（分别是平均水平的2.88倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。",
+        "distinctive_user_profile": "该聚类包含183位用户，1.1%处于决策阶段，1.6%在对比中。",
+        "what_makes_different": [
+          "对'Extended Battery Life'的关注度是平均水平的2.14倍（15.8% vs 7.4%，高8.5个百分点）",
+          "对'Portable Karaoke'的关注度是平均水平的1.93倍（13.7% vs 7.1%，高6.6个百分点）",
+          "对'Built-in Screen'特性的关注度是平均水平的2.88倍（14.2% vs 4.9%，高9.3个百分点）"
+        ],
+        "differentiation_score": 0.75,
+        "unique_interests": [
+          {
+            "interest": "Extended Battery Life",
+            "cluster_count": 29,
+            "cluster_pct": 15.8,
+            "avg_pct": 7.4,
+            "difference": 8.5,
+            "uniqueness_ratio": 2.14
+          },
+          {
+            "interest": "Portable Karaoke",
+            "cluster_count": 25,
+            "cluster_pct": 13.7,
+            "avg_pct": 7.1,
+            "difference": 6.6,
+            "uniqueness_ratio": 1.93
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Built-in Screen",
+            "cluster_count": 26,
+            "cluster_pct": 14.2,
+            "avg_pct": 4.9,
+            "difference": 9.3,
+            "uniqueness_ratio": 2.88
+          }
+        ],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Extended Battery Life'有极高偏好（15.8% vs 平均7.4%，是平均水平的2.14倍）",
+            "action": "为该聚类创建专门的'Extended Battery Life'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知8.5%以上",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，显著高于其他聚类"
+          },
+          {
+            "opportunity": "该聚类特别关注'Built-in Screen'特性（14.2% vs 平均4.9%，是平均水平的2.88倍）",
+            "action": "在产品页面和营销材料中重点突出'Built-in Screen'特性的详细说明和优势",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的特征"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Extended Battery Life'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Extended Battery Life的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知8.5%以上",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，这是该聚类最显著的差异化特征"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Built-in Screen'特性（该聚类最独特特征）",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Built-in Screen的详细说明、优势对比和用户评价",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的属性偏好"
+          }
+        ],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "10-30s",
+      "size": 107,
+      "avg_intent_score": 0.78,
+      "statistics": {
+        "total_records_analyzed": 107,
+        "intent_score_available": 107,
+        "avg_intent_score": 0.78,
+        "intent_score_std": 0.13
+      },
+      "top_interests": {
+        "Ikarao Shell S2 Karaoke Machine": 34,
+        "Ikarao Break X2 Karaoke Machine": 33,
+        "Ikarao Break X1 Karaoke Machine": 32,
+        "Karaoke Machine": 31,
+        "Karaoke Systems": 30
+      },
+      "purchase_stage_distribution": {
+        "comparing": 17,
+        "browsing": 68,
+        "deciding": 21,
+        "browsing/comparing": 1
+      },
+      "price_range_distribution": {
+        "premium": 45,
+        "mid-range": 32,
+        "budget/mid-range/premium": 1,
+        "budget": 27,
+        "budget/mid-range": 1,
+        "budget-range": 1
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 50,
+        "Versatile Connectivity": 48,
+        "10.1\" HD Touchscreen": 42,
+        "Wireless Microphone": 32,
+        "Extended Battery Life": 31
+      },
+      "top_concerns": {
+        "Karafun activation and product differentiation (Break X1 vs X2)": 1,
+        "Product usage and features (user guide)": 1,
+        "None explicitly identified": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含107位用户。核心特征：主要关注Ikarao Shell S2 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Ikarao Break X1 Karaoke Machine（分别出现34, 33, 32次），19.6%处于决策阶段，15.9%在对比，63.6%在浏览。价格敏感度：42.1%偏好高端，29.9%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen"
+        ],
+        "pain_points": [
+          "Karafun activation and product differentiation (Break X1 vs X2)",
+          "Product usage and features (user guide)",
+          "None explicitly identified"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有45位用户（42.1%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "42.1%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化6位决策阶段用户，带来约$2,100收入，扣除$525成本后净收入$1,575",
+            "implementation": "对21位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：21位用户处于决策阶段（19.6%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 2100,
+              "discount_cost": 315.0,
+              "marketing_cost": 210.0,
+              "net_revenue": 1575.0,
+              "roi_percentage": 300.0
+            }
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助17位对比用户快速决策，预计额外转化2位用户，带来约$700收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：17位用户在对比（15.9%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 700,
+              "development_cost": 3000,
+              "net_revenue": -2300,
+              "roi_percentage": -76.66666666666667
+            }
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：107位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：21位决策（19.6%），17位对比（15.9%），68位浏览（63.6%）",
+          "核心兴趣证据：Ikarao Shell S2 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Ikarao Break X1 Karaoke Machine共出现99次，占总兴趣的23.0%",
+          "意图分数证据：平均意图分数0.78，超过70%阈值，21位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：High-Fidelity Sound, Versatile Connectivity, 10.1\" HD Touchscreen共出现50, 48, 42次，占总特征的26.1%",
+          "痛点证据：Karafun activation and product differentiation (Break X1 vs X2), Product usage and features (user guide), None explicitly identified被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 107,
+          "interest": 106,
+          "consideration": 38,
+          "decision": 21,
+          "conversion_estimate": 11,
+          "funnel_drop_off": {
+            "awareness_to_interest": "99.1%",
+            "interest_to_consideration": "35.8%",
+            "consideration_to_decision": "55.3%"
+          }
+        },
+        "competitive_advantages": [
+          "42.1%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.78），21位用户处于决策阶段（19.6%），17位在对比（15.9%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "低转化潜力（评分: 0.36），需要长期培育。预计转化率: 36.4%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Touchscreen display'高度专注群体，13.8%的用户关注此兴趣（是平均水平的5.78倍），比平均水平高11.4个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户对'Professional-Grade Wireless Microphone'有极高的关注度（分别是平均水平的2.02倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。",
+        "what_makes_different": [
+          "对'Touchscreen display'的关注度是平均水平的5.78倍（13.8% vs 2.4%，高11.4个百分点）",
+          "对'Karaoke machine features'的关注度是平均水平的4.5倍（16.2% vs 3.6%，高12.6个百分点）",
+          "对'HD Touchscreen'的关注度是平均水平的2.48倍（18.8% vs 7.6%，高11.2个百分点）",
+          "对'Professional-Grade Wireless Microphone'特性的关注度是平均水平的2.02倍（33.8% vs 16.7%，高17.0个百分点）",
+          "购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"
+        ],
+        "differentiation_score": 1.2,
+        "unique_interests": [
+          {
+            "interest": "HD Touchscreen",
+            "cluster_count": 15,
+            "cluster_pct": 18.8,
+            "avg_pct": 7.6,
+            "difference": 11.2,
+            "uniqueness_ratio": 2.48
+          },
+          {
+            "interest": "Karaoke machine features",
+            "cluster_count": 13,
+            "cluster_pct": 16.2,
+            "avg_pct": 3.6,
+            "difference": 12.6,
+            "uniqueness_ratio": 4.5
+          },
+          {
+            "interest": "Touchscreen display",
+            "cluster_count": 11,
+            "cluster_pct": 13.8,
+            "avg_pct": 2.4,
+            "difference": 11.4,
+            "uniqueness_ratio": 5.78
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Professional-Grade Wireless Microphone",
+            "cluster_count": 27,
+            "cluster_pct": 33.8,
+            "avg_pct": 16.7,
+            "difference": 17.0,
+            "uniqueness_ratio": 2.02
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "deciding",
+            "cluster_count": 80,
+            "cluster_pct": 100.0,
+            "avg_pct": 14.6,
+            "difference": 85.4,
+            "uniqueness_ratio": 6.84
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Touchscreen display'有极高偏好（13.8% vs 平均2.4%，是平均水平的5.78倍）",
+            "action": "为该聚类创建专门的'Touchscreen display'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.4%以上",
+            "data_support": "数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，显著高于其他聚类"
+          },
+          {
+            "opportunity": "该聚类特别关注'Professional-Grade Wireless Microphone'特性（33.8% vs 平均16.7%，是平均水平的2.02倍）",
+            "action": "在产品页面和营销材料中重点突出'Professional-Grade Wireless Microphone'特性的详细说明和优势",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的特征"
+          },
+          {
+            "opportunity": "该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）",
+            "action": "立即推送限时优惠和紧迫感信息",
+            "expected_impact": "预计可转化24位用户",
+            "data_support": "数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Touchscreen display'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Touchscreen display的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.4%以上",
+            "data_support": "数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，这是该聚类最显著的差异化特征"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Professional-Grade Wireless Microphone'特性（该聚类最独特特征）",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Professional-Grade Wireless Microphone的详细说明、优势对比和用户评价",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的属性偏好"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.2），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：3个独特兴趣、1个独特属性。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "10-30s",
+      "size": 171,
+      "avg_intent_score": 0.66,
+      "statistics": {
+        "total_records_analyzed": 171,
+        "intent_score_available": 171,
+        "avg_intent_score": 0.66,
+        "intent_score_std": 0.19
+      },
+      "top_interests": {
+        "Karaoke Machine": 77,
+        "Wireless Microphones": 56,
+        "High-Fidelity Sound": 42,
+        "Karaoke Machines": 41,
+        "Wireless Microphone": 31
+      },
+      "purchase_stage_distribution": {
+        "browsing": 170,
+        "deciding": 1
+      },
+      "price_range_distribution": {
+        "mid-range": 62,
+        "budget": 26,
+        "premium": 81,
+        "budget/mid-range": 1,
+        "budget-range": 1
+      },
+      "top_attributes": {
+        "Extended Battery Life": 66,
+        "High-Fidelity Sound": 61,
+        "Versatile Connectivity": 58,
+        "13.3-inch HD Touchscreen": 37,
+        "Wireless Microphone": 36
+      },
+      "top_concerns": {
+        "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": 1,
+        "How to connect to Apple Music and display lyrics": 1,
+        "battery life for outdoor use": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含171位用户。核心特征：主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound（分别出现77, 56, 42次），0.6%处于决策阶段，0.0%在对比，99.4%在浏览。价格敏感度：47.4%偏好高端，36.3%偏好中端。",
+        "purchase_intent_level": "medium",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Extended Battery Life",
+          "High-Fidelity Sound",
+          "Versatile Connectivity"
+        ],
+        "pain_points": [
+          "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.",
+          "How to connect to Apple Music and display lyrics",
+          "battery life for outdoor use"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有81位用户（47.4%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "47.4%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化1位决策阶段用户，带来约$350收入，扣除$88成本后净收入$262",
+            "implementation": "对1位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：1位用户处于决策阶段（0.6%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 350,
+              "discount_cost": 52.5,
+              "marketing_cost": 35.0,
+              "net_revenue": 262.5,
+              "roi_percentage": 300.0
+            }
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：171位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：1位决策（0.6%），0位对比（0.0%），170位浏览（99.4%）",
+          "核心兴趣证据：Karaoke Machine, Wireless Microphones, High-Fidelity Sound共出现175次，占总兴趣的22.9%",
+          "关键特征证据：Extended Battery Life, High-Fidelity Sound, Versatile Connectivity共出现66, 61, 58次，占总特征的21.6%",
+          "痛点证据：None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research., How to connect to Apple Music and display lyrics, battery life for outdoor use被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 171,
+          "interest": 171,
+          "consideration": 1,
+          "decision": 1,
+          "conversion_estimate": 10,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "0.6%",
+            "consideration_to_decision": "100.0%"
+          }
+        },
+        "competitive_advantages": [
+          "47.4%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [
+          "99.4%用户仅处于浏览阶段，转化风险较高，需要更多引导"
+        ],
+        "purchase_intent_description": "中等购买意图（平均意图分数: 0.66），主要处于浏览和比较阶段，需要更多引导。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.4%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Ikarao Break X1 Karaoke Machine'高度专注群体，33.6%的用户关注此兴趣（是平均水平的6.03倍），比平均水平高28.1个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是Versatile Connectivity, High-Fidelity Sound, 10.1\" HD Touchscreen。",
+        "distinctive_user_profile": "该聚类包含107位用户，15.0%处于决策阶段，13.1%在对比中。",
+        "what_makes_different": [
+          "对'Ikarao Break X1 Karaoke Machine'的关注度是平均水平的6.03倍（33.6% vs 5.6%，高28.1个百分点）",
+          "对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.94倍（33.6% vs 5.7%，高28.0个百分点）",
+          "对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的4.82倍（23.4% vs 4.8%，高18.5个百分点）"
+        ],
+        "differentiation_score": 1.25,
+        "unique_interests": [
+          {
+            "interest": "Ikarao Break X1 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.6,
+            "difference": 28.1,
+            "uniqueness_ratio": 6.03
+          },
+          {
+            "interest": "Ikarao Break X2 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.7,
+            "difference": 28.0,
+            "uniqueness_ratio": 5.94
+          },
+          {
+            "interest": "Karaoke Systems",
+            "cluster_count": 30,
+            "cluster_pct": 28.0,
+            "avg_pct": 8.4,
+            "difference": 19.7,
+            "uniqueness_ratio": 3.35
+          },
+          {
+            "interest": "Ikarao Shell S2 Karaoke Machine",
+            "cluster_count": 25,
+            "cluster_pct": 23.4,
+            "avg_pct": 4.8,
+            "difference": 18.5,
+            "uniqueness_ratio": 4.82
+          },
+          {
+            "interest": "Ikarao Shell S1 Karaoke Machine",
+            "cluster_count": 15,
+            "cluster_pct": 14.0,
+            "avg_pct": 3.1,
+            "difference": 10.9,
+            "uniqueness_ratio": 4.49
+          }
+        ],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Ikarao Break X1 Karaoke Machine'有极高偏好（33.6% vs 平均5.6%，是平均水平的6.03倍）",
+            "action": "为该聚类创建专门的'Ikarao Break X1 Karaoke Machine'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知28.1%以上",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，显著高于其他聚类"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Ikarao Break X1 Karaoke Machine'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Ikarao Break X1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知28.1%以上",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，这是该聚类最显著的差异化特征"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.25），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：5个独特兴趣、0个独特属性。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "10-30s",
+      "size": 58,
+      "avg_intent_score": 0.89,
+      "statistics": {
+        "total_records_analyzed": 58,
+        "intent_score_available": 58,
+        "avg_intent_score": 0.89,
+        "intent_score_std": 0.04
+      },
+      "top_interests": {
+        "Karaoke Machine": 31,
+        "Wireless Microphones": 25,
+        "High-Fidelity Sound": 23,
+        "Wireless Microphone": 18,
+        "Touchscreen Display": 16
+      },
+      "purchase_stage_distribution": {
+        "deciding": 58
+      },
+      "price_range_distribution": {
+        "mid-range": 27,
+        "budget": 7,
+        "premium": 23,
+        "budget/mid-range": 1
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 31,
+        "High-Fidelity Sound": 24,
+        "Professional Wireless Microphone": 20,
+        "Versatile Connectivity": 18,
+        "Extended Battery Life": 16
+      },
+      "top_concerns": {
+        "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision.": 1,
+        "Ease of use for parents, Android version, accessory availability, microphone connectivity.": 1,
+        "shipping cost": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含58位用户。核心特征：主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound（分别出现31, 25, 23次），100.0%处于决策阶段，0.0%在对比，0.0%在浏览。价格敏感度：39.7%偏好高端，46.6%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "high",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Professional Wireless Microphone"
+        ],
+        "pain_points": [
+          "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision.",
+          "Ease of use for parents, Android version, accessory availability, microphone connectivity.",
+          "shipping cost"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有58位用户（100.0%）处于决策阶段",
+            "action": "提供限时优惠促进转化",
+            "expected_impact": "预计可转化17位用户",
+            "data_support": "58位决策阶段用户，转化概率30%"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化17位决策阶段用户，带来约$5,950收入，扣除$1,488成本后净收入$4,462",
+            "implementation": "对58位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：58位用户处于决策阶段（100.0%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 5950,
+              "discount_cost": 892.5,
+              "marketing_cost": 595.0,
+              "net_revenue": 4462.5,
+              "roi_percentage": 300.0
+            }
+          },
+          {
+            "action": "明确配送政策",
+            "priority": "medium",
+            "expected_impact": "消除用户顾虑，预计减少5-10%的跳出率，提升转化率",
+            "implementation": "在首屏显著位置展示配送时间、免费配送政策和配送跟踪信息",
+            "data_support": "数据支撑：1个痛点与配送相关，明确政策可消除顾虑"
+          }
+        ],
+        "roi_estimate": "预计可转化13位用户，带来约$4,550收入。投入成本约$1,138（营销$455 + 优惠$682），净收入$3,412，ROI约300%",
+        "data_evidence": [
+          "用户规模证据：58位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：58位决策（100.0%），0位对比（0.0%），0位浏览（0.0%）",
+          "核心兴趣证据：Karaoke Machine, Wireless Microphones, High-Fidelity Sound共出现79次，占总兴趣的28.6%",
+          "意图分数证据：平均意图分数0.89，超过70%阈值，58位用户处于决策阶段，表明高购买意图",
+          "转化潜力证据：58位决策用户 × 0.8权重 + 0位对比用户 × 0.5权重 + 0位浏览用户 × 0.2权重 = 0.80转化潜力评分",
+          "关键特征证据：10.1\" HD Touchscreen, High-Fidelity Sound, Professional Wireless Microphone共出现31, 24, 20次，占总特征的25.7%",
+          "痛点证据：User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision., Ease of use for parents, Android version, accessory availability, microphone connectivity., shipping cost被提及1, 1, 1次，表明这些是用户的主要顾虑",
+          "ROI计算证据：58位用户 × 0.80转化潜力 × 30%转化率 = 13位转化用户 × $350平均订单 = $4,550收入，扣除$1,138成本后ROI 300%"
+        ],
+        "conversion_funnel": {
+          "awareness": 58,
+          "interest": 58,
+          "consideration": 58,
+          "decision": 58,
+          "conversion_estimate": 13,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "100.0%",
+            "consideration_to_decision": "100.0%"
+          }
+        },
+        "competitive_advantages": [
+          "100.0%用户处于决策阶段，表明产品吸引力强"
+        ],
+        "risk_factors": [],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.89），58位用户处于决策阶段（100.0%），0位在对比（0.0%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "高转化潜力（评分: 0.80），58位用户处于决策阶段，0位在对比。预计可转化13位用户（转化率80.0%），带来约$4,550收入。"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是181位用户的集合，主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound。",
+        "distinctive_user_profile": "该聚类包含181位用户，0.0%处于决策阶段，0.0%在对比中。",
+        "what_makes_different": [
+          "该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"
+        ],
+        "differentiation_score": 0.0,
+        "unique_interests": [],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [],
+        "targeted_recommendations": [],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": [
+          "该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "30-60s",
+      "size": 80,
+      "avg_intent_score": 0.84,
+      "statistics": {
+        "total_records_analyzed": 80,
+        "intent_score_available": 80,
+        "avg_intent_score": 0.84,
+        "intent_score_std": 0.05
+      },
+      "top_interests": {
+        "Wireless Microphones": 47,
+        "Karaoke Machines": 41,
+        "Karaoke Machine": 29,
+        "High-Fidelity Sound": 24,
+        "Touchscreen Displays": 24
+      },
+      "purchase_stage_distribution": {
+        "comparing": 80
+      },
+      "price_range_distribution": {
+        "mid-range": 51,
+        "premium": 23,
+        "mid-range to premium": 1,
+        "budget/mid-range": 3,
+        "budget-range": 1,
+        "budget": 1
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 40,
+        "Versatile Connectivity": 33,
+        "Wireless Microphones": 31,
+        "10.1\" HD Touchscreen": 19,
+        "Long Battery Life": 17
+      },
+      "top_concerns": {
+        "warranty information": 1,
+        "Accessories, Software Updates, Wi-Fi Connectivity, Tablet Inclusion, Waterproof Rating": 1,
+        "Product compatibility (e.g., with Apple phones), charging, accessories, and ease of use for parents.": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含80位用户。核心特征：主要关注Wireless Microphones, Karaoke Machines, Karaoke Machine（分别出现47, 41, 29次），0.0%处于决策阶段，100.0%在对比，0.0%在浏览。价格敏感度：28.7%偏好高端，63.7%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "medium",
+        "key_differentiators": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "Wireless Microphones"
+        ],
+        "pain_points": [
+          "warranty information",
+          "Accessories, Software Updates, Wi-Fi Connectivity, Tablet Inclusion, Waterproof Rating",
+          "Product compatibility (e.g., with Apple phones), charging, accessories, and ease of use for parents."
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有80位用户（100.0%）在对比",
+            "action": "提供产品对比工具和详细规格",
+            "expected_impact": "预计提升转化率15-20%",
+            "data_support": "80位对比用户，提供对比工具可加速决策"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助80位对比用户快速决策，预计额外转化12位用户，带来约$4,200收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：80位用户在对比（100.0%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 4200,
+              "development_cost": 3000,
+              "net_revenue": 1200,
+              "roi_percentage": 40.0
+            }
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：80位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：0位决策（0.0%），80位对比（100.0%），0位浏览（0.0%）",
+          "核心兴趣证据：Wireless Microphones, Karaoke Machines, Karaoke Machine共出现117次，占总兴趣的31.3%",
+          "意图分数证据：平均意图分数0.84，超过70%阈值，0位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：High-Fidelity Sound, Versatile Connectivity, Wireless Microphones共出现40, 33, 31次，占总特征的26.0%",
+          "痛点证据：warranty information, Accessories, Software Updates, Wi-Fi Connectivity, Tablet Inclusion, Waterproof Rating, Product compatibility (e.g., with Apple phones), charging, accessories, and ease of use for parents.被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 80,
+          "interest": 80,
+          "consideration": 80,
+          "decision": 0,
+          "conversion_estimate": 12,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "100.0%",
+            "consideration_to_decision": "0.0%"
+          }
+        },
+        "competitive_advantages": [],
+        "risk_factors": [],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.84），0位用户处于决策阶段（0.0%），80位在对比（100.0%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "中等转化潜力（评分: 0.50），需要更多引导和激励。预计可转化10位用户，带来约$3,500收入。"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是80位用户的集合，主要关注Wireless Microphones, Karaoke Machines, Karaoke Machine。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, Wireless Microphones。",
+        "distinctive_user_profile": "该聚类包含80位用户，0.0%处于决策阶段，100.0%在对比中。",
+        "what_makes_different": [
+          "该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"
+        ],
+        "differentiation_score": 0.0,
+        "unique_interests": [],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [],
+        "targeted_recommendations": [],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": [
+          "该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "30-60s",
+      "size": 183,
+      "avg_intent_score": 0.71,
+      "statistics": {
+        "total_records_analyzed": 183,
+        "intent_score_available": 183,
+        "avg_intent_score": 0.71,
+        "intent_score_std": 0.16
+      },
+      "top_interests": {
+        "Karaoke Machine": 86,
+        "Wireless Microphones": 65,
+        "High-Fidelity Sound": 50,
+        "Karaoke Machines": 45,
+        "Wireless Microphone": 40
+      },
+      "purchase_stage_distribution": {
+        "browsing": 178,
+        "comparing": 3,
+        "deciding": 2
+      },
+      "price_range_distribution": {
+        "mid-range": 72,
+        "budget": 25,
+        "premium": 82,
+        "budget-range": 2,
+        "budget-mid-range": 1,
+        "budget/mid-range": 1
+      },
+      "top_attributes": {
+        "Extended Battery Life": 74,
+        "High-Fidelity Sound": 72,
+        "Versatile Connectivity": 68,
+        "Wireless Microphone": 41,
+        "13.3\" HD Touchscreen": 40
+      },
+      "top_concerns": {
+        "shipping policy": 3,
+        "Shipping information": 1,
+        "After-sale service": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含183位用户。核心特征：主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound（分别出现86, 65, 50次），1.1%处于决策阶段，1.6%在对比，97.3%在浏览。价格敏感度：44.8%偏好高端，39.3%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Extended Battery Life",
+          "High-Fidelity Sound",
+          "Versatile Connectivity"
+        ],
+        "pain_points": [
+          "shipping policy",
+          "Shipping information",
+          "After-sale service"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有82位用户（44.8%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "44.8%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化1位决策阶段用户，带来约$350收入，扣除$88成本后净收入$262",
+            "implementation": "对2位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：2位用户处于决策阶段（1.1%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 350,
+              "discount_cost": 52.5,
+              "marketing_cost": 35.0,
+              "net_revenue": 262.5,
+              "roi_percentage": 300.0
+            }
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助3位对比用户快速决策，预计额外转化0位用户，带来约$0收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：3位用户在对比（1.6%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 0,
+              "development_cost": 3000,
+              "net_revenue": -3000,
+              "roi_percentage": -100.0
+            }
+          },
+          {
+            "action": "明确配送政策",
+            "priority": "medium",
+            "expected_impact": "消除用户顾虑，预计减少5-10%的跳出率，提升转化率",
+            "implementation": "在首屏显著位置展示配送时间、免费配送政策和配送跟踪信息",
+            "data_support": "数据支撑：2个痛点与配送相关，明确政策可消除顾虑"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：183位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：2位决策（1.1%），3位对比（1.6%），178位浏览（97.3%）",
+          "核心兴趣证据：Karaoke Machine, Wireless Microphones, High-Fidelity Sound共出现201次，占总兴趣的24.5%",
+          "意图分数证据：平均意图分数0.71，超过70%阈值，2位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：Extended Battery Life, High-Fidelity Sound, Versatile Connectivity共出现74, 72, 68次，占总特征的23.3%",
+          "痛点证据：shipping policy, Shipping information, After-sale service被提及3, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 183,
+          "interest": 183,
+          "consideration": 5,
+          "decision": 2,
+          "conversion_estimate": 11,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "2.7%",
+            "consideration_to_decision": "40.0%"
+          }
+        },
+        "competitive_advantages": [
+          "44.8%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [
+          "97.3%用户仅处于浏览阶段，转化风险较高，需要更多引导"
+        ],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.71），2位用户处于决策阶段（1.1%），3位在对比（1.6%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "低转化潜力（评分: 0.21），需要长期培育。预计转化率: 21.1%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Extended Battery Life'高度专注群体，15.8%的用户关注此兴趣（是平均水平的2.14倍），比平均水平高8.5个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户对'Built-in Screen'有极高的关注度（分别是平均水平的2.88倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。",
+        "distinctive_user_profile": "该聚类包含183位用户，1.1%处于决策阶段，1.6%在对比中。",
+        "what_makes_different": [
+          "对'Extended Battery Life'的关注度是平均水平的2.14倍（15.8% vs 7.4%，高8.5个百分点）",
+          "对'Portable Karaoke'的关注度是平均水平的1.93倍（13.7% vs 7.1%，高6.6个百分点）",
+          "对'Built-in Screen'特性的关注度是平均水平的2.88倍（14.2% vs 4.9%，高9.3个百分点）"
+        ],
+        "differentiation_score": 0.75,
+        "unique_interests": [
+          {
+            "interest": "Extended Battery Life",
+            "cluster_count": 29,
+            "cluster_pct": 15.8,
+            "avg_pct": 7.4,
+            "difference": 8.5,
+            "uniqueness_ratio": 2.14
+          },
+          {
+            "interest": "Portable Karaoke",
+            "cluster_count": 25,
+            "cluster_pct": 13.7,
+            "avg_pct": 7.1,
+            "difference": 6.6,
+            "uniqueness_ratio": 1.93
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Built-in Screen",
+            "cluster_count": 26,
+            "cluster_pct": 14.2,
+            "avg_pct": 4.9,
+            "difference": 9.3,
+            "uniqueness_ratio": 2.88
+          }
+        ],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Extended Battery Life'有极高偏好（15.8% vs 平均7.4%，是平均水平的2.14倍）",
+            "action": "为该聚类创建专门的'Extended Battery Life'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知8.5%以上",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，显著高于其他聚类"
+          },
+          {
+            "opportunity": "该聚类特别关注'Built-in Screen'特性（14.2% vs 平均4.9%，是平均水平的2.88倍）",
+            "action": "在产品页面和营销材料中重点突出'Built-in Screen'特性的详细说明和优势",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的特征"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Extended Battery Life'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Extended Battery Life的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知8.5%以上",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，这是该聚类最显著的差异化特征"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Built-in Screen'特性（该聚类最独特特征）",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Built-in Screen的详细说明、优势对比和用户评价",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的属性偏好"
+          }
+        ],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "30-60s",
+      "size": 80,
+      "avg_intent_score": 0.89,
+      "statistics": {
+        "total_records_analyzed": 80,
+        "intent_score_available": 80,
+        "avg_intent_score": 0.89,
+        "intent_score_std": 0.03
+      },
+      "top_interests": {
+        "Karaoke Machine": 41,
+        "Wireless Microphones": 27,
+        "High-Fidelity Sound": 25,
+        "Wireless Microphone": 21,
+        "Touchscreen Display": 17
+      },
+      "purchase_stage_distribution": {
+        "deciding": 80
+      },
+      "price_range_distribution": {
+        "mid-range": 26,
+        "premium": 42,
+        "budget": 11,
+        "budget/mid-range": 1
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 38,
+        "10.1\" HD Touchscreen": 35,
+        "Versatile Connectivity": 31,
+        "Professional-Grade Wireless Microphone": 27,
+        "Extended Battery Life": 26
+      },
+      "top_concerns": {
+        "shipping cost": 2,
+        "None explicitly identified, but exploration of features suggests a desire for a comprehensive solution.": 1,
+        "Warranty coverage": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含80位用户。核心特征：主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound（分别出现41, 27, 25次），100.0%处于决策阶段，0.0%在对比，0.0%在浏览。价格敏感度：52.5%偏好高端，32.5%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "high",
+        "key_differentiators": [
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity"
+        ],
+        "pain_points": [
+          "shipping cost",
+          "None explicitly identified, but exploration of features suggests a desire for a comprehensive solution.",
+          "Warranty coverage"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有80位用户（100.0%）处于决策阶段",
+            "action": "提供限时优惠促进转化",
+            "expected_impact": "预计可转化24位用户",
+            "data_support": "80位决策阶段用户，转化概率30%"
+          },
+          {
+            "opportunity": "有42位用户（52.5%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "52.5%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化24位决策阶段用户，带来约$8,400收入，扣除$2,100成本后净收入$6,300",
+            "implementation": "对80位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：80位用户处于决策阶段（100.0%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 8400,
+              "discount_cost": 1260.0,
+              "marketing_cost": 840.0,
+              "net_revenue": 6300.0,
+              "roi_percentage": 300.0
+            }
+          },
+          {
+            "action": "明确配送政策",
+            "priority": "medium",
+            "expected_impact": "消除用户顾虑，预计减少5-10%的跳出率，提升转化率",
+            "implementation": "在首屏显著位置展示配送时间、免费配送政策和配送跟踪信息",
+            "data_support": "数据支撑：1个痛点与配送相关，明确政策可消除顾虑"
+          }
+        ],
+        "roi_estimate": "预计可转化19位用户，带来约$6,650收入。投入成本约$1,662（营销$665 + 优惠$998），净收入$4,988，ROI约300%",
+        "data_evidence": [
+          "用户规模证据：80位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：80位决策（100.0%），0位对比（0.0%），0位浏览（0.0%）",
+          "核心兴趣证据：Karaoke Machine, Wireless Microphones, High-Fidelity Sound共出现93次，占总兴趣的24.3%",
+          "意图分数证据：平均意图分数0.89，超过70%阈值，80位用户处于决策阶段，表明高购买意图",
+          "转化潜力证据：80位决策用户 × 0.8权重 + 0位对比用户 × 0.5权重 + 0位浏览用户 × 0.2权重 = 0.80转化潜力评分",
+          "关键特征证据：High-Fidelity Sound, 10.1\" HD Touchscreen, Versatile Connectivity共出现38, 35, 31次，占总特征的25.8%",
+          "痛点证据：shipping cost, None explicitly identified, but exploration of features suggests a desire for a comprehensive solution., Warranty coverage被提及2, 1, 1次，表明这些是用户的主要顾虑",
+          "ROI计算证据：80位用户 × 0.80转化潜力 × 30%转化率 = 19位转化用户 × $350平均订单 = $6,650收入，扣除$1,662成本后ROI 300%"
+        ],
+        "conversion_funnel": {
+          "awareness": 80,
+          "interest": 80,
+          "consideration": 80,
+          "decision": 80,
+          "conversion_estimate": 19,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "100.0%",
+            "consideration_to_decision": "100.0%"
+          }
+        },
+        "competitive_advantages": [
+          "52.5%用户偏好高端产品，表明品牌定位与用户需求高度匹配",
+          "100.0%用户处于决策阶段，表明产品吸引力强"
+        ],
+        "risk_factors": [],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.89），80位用户处于决策阶段（100.0%），0位在对比（0.0%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "高转化潜力（评分: 0.80），80位用户处于决策阶段，0位在对比。预计可转化19位用户（转化率80.0%），带来约$6,650收入。"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Touchscreen display'高度专注群体，13.8%的用户关注此兴趣（是平均水平的5.78倍），比平均水平高11.4个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户对'Professional-Grade Wireless Microphone'有极高的关注度（分别是平均水平的2.02倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。",
+        "what_makes_different": [
+          "对'Touchscreen display'的关注度是平均水平的5.78倍（13.8% vs 2.4%，高11.4个百分点）",
+          "对'Karaoke machine features'的关注度是平均水平的4.5倍（16.2% vs 3.6%，高12.6个百分点）",
+          "对'HD Touchscreen'的关注度是平均水平的2.48倍（18.8% vs 7.6%，高11.2个百分点）",
+          "对'Professional-Grade Wireless Microphone'特性的关注度是平均水平的2.02倍（33.8% vs 16.7%，高17.0个百分点）",
+          "购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"
+        ],
+        "differentiation_score": 1.2,
+        "unique_interests": [
+          {
+            "interest": "HD Touchscreen",
+            "cluster_count": 15,
+            "cluster_pct": 18.8,
+            "avg_pct": 7.6,
+            "difference": 11.2,
+            "uniqueness_ratio": 2.48
+          },
+          {
+            "interest": "Karaoke machine features",
+            "cluster_count": 13,
+            "cluster_pct": 16.2,
+            "avg_pct": 3.6,
+            "difference": 12.6,
+            "uniqueness_ratio": 4.5
+          },
+          {
+            "interest": "Touchscreen display",
+            "cluster_count": 11,
+            "cluster_pct": 13.8,
+            "avg_pct": 2.4,
+            "difference": 11.4,
+            "uniqueness_ratio": 5.78
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Professional-Grade Wireless Microphone",
+            "cluster_count": 27,
+            "cluster_pct": 33.8,
+            "avg_pct": 16.7,
+            "difference": 17.0,
+            "uniqueness_ratio": 2.02
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "deciding",
+            "cluster_count": 80,
+            "cluster_pct": 100.0,
+            "avg_pct": 14.6,
+            "difference": 85.4,
+            "uniqueness_ratio": 6.84
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Touchscreen display'有极高偏好（13.8% vs 平均2.4%，是平均水平的5.78倍）",
+            "action": "为该聚类创建专门的'Touchscreen display'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.4%以上",
+            "data_support": "数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，显著高于其他聚类"
+          },
+          {
+            "opportunity": "该聚类特别关注'Professional-Grade Wireless Microphone'特性（33.8% vs 平均16.7%，是平均水平的2.02倍）",
+            "action": "在产品页面和营销材料中重点突出'Professional-Grade Wireless Microphone'特性的详细说明和优势",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的特征"
+          },
+          {
+            "opportunity": "该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）",
+            "action": "立即推送限时优惠和紧迫感信息",
+            "expected_impact": "预计可转化24位用户",
+            "data_support": "数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Touchscreen display'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Touchscreen display的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.4%以上",
+            "data_support": "数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，这是该聚类最显著的差异化特征"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Professional-Grade Wireless Microphone'特性（该聚类最独特特征）",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Professional-Grade Wireless Microphone的详细说明、优势对比和用户评价",
+            "expected_impact": "预计可显著提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的属性偏好"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.2），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：3个独特兴趣、1个独特属性。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "30-60s",
+      "size": 107,
+      "avg_intent_score": 0.8,
+      "statistics": {
+        "total_records_analyzed": 107,
+        "intent_score_available": 107,
+        "avg_intent_score": 0.8,
+        "intent_score_std": 0.12
+      },
+      "top_interests": {
+        "Ikarao Break X1 Karaoke Machine": 36,
+        "Ikarao Break X2 Karaoke Machine": 36,
+        "Karaoke Machine": 30,
+        "Karaoke Systems": 30,
+        "Ikarao Shell S2 Karaoke Machine": 25
+      },
+      "purchase_stage_distribution": {
+        "comparing": 14,
+        "browsing": 75,
+        "browsing/comparing": 2,
+        "deciding": 16
+      },
+      "price_range_distribution": {
+        "premium": 62,
+        "budget": 24,
+        "budget/mid-range": 4,
+        "mid-range": 17
+      },
+      "top_attributes": {
+        "Versatile Connectivity": 55,
+        "High-Fidelity Sound": 44,
+        "10.1\" HD Touchscreen": 38,
+        "Extended Battery Life": 35,
+        "Wireless Microphone": 31
+      },
+      "top_concerns": {
+        "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": 1,
+        "Microphone battery/charging, TV connectivity, product differences.": 1,
+        "shipping policy": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含107位用户。核心特征：主要关注Ikarao Break X1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Karaoke Machine（分别出现36, 36, 30次），15.0%处于决策阶段，13.1%在对比，70.1%在浏览。价格敏感度：57.9%偏好高端，15.9%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Versatile Connectivity",
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen"
+        ],
+        "pain_points": [
+          "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.",
+          "Microphone battery/charging, TV connectivity, product differences.",
+          "shipping policy"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有62位用户（57.9%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "57.9%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化4位决策阶段用户，带来约$1,400收入，扣除$350成本后净收入$1,050",
+            "implementation": "对16位决策阶段用户推送\"限时优惠\"弹窗，提供10-15%折扣，有效期24小时",
+            "data_support": "数据支撑：16位用户处于决策阶段（15.0%），转化概率30%，平均订单价值$350，ROI约300%",
+            "roi_breakdown": {
+              "estimated_revenue": 1400,
+              "discount_cost": 210.0,
+              "marketing_cost": 140.0,
+              "net_revenue": 1050.0,
+              "roi_percentage": 300.0
+            }
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助14位对比用户快速决策，预计额外转化2位用户，带来约$700收入",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势，展示详细规格对比表",
+            "data_support": "数据支撑：14位用户在对比（13.1%），提供对比工具可提升15-20%转化率",
+            "roi_breakdown": {
+              "estimated_revenue": 700,
+              "development_cost": 3000,
+              "net_revenue": -2300,
+              "roi_percentage": -76.66666666666667
+            }
+          },
+          {
+            "action": "明确配送政策",
+            "priority": "medium",
+            "expected_impact": "消除用户顾虑，预计减少5-10%的跳出率，提升转化率",
+            "implementation": "在首屏显著位置展示配送时间、免费配送政策和配送跟踪信息",
+            "data_support": "数据支撑：1个痛点与配送相关，明确政策可消除顾虑"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：107位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：16位决策（15.0%），14位对比（13.1%），75位浏览（70.1%）",
+          "核心兴趣证据：Ikarao Break X1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Karaoke Machine共出现102次，占总兴趣的24.0%",
+          "意图分数证据：平均意图分数0.80，超过70%阈值，16位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：Versatile Connectivity, High-Fidelity Sound, 10.1\" HD Touchscreen共出现55, 44, 38次，占总特征的25.4%",
+          "痛点证据：None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one., Microphone battery/charging, TV connectivity, product differences., shipping policy被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 107,
+          "interest": 105,
+          "consideration": 30,
+          "decision": 16,
+          "conversion_estimate": 10,
+          "funnel_drop_off": {
+            "awareness_to_interest": "98.1%",
+            "interest_to_consideration": "28.6%",
+            "consideration_to_decision": "53.3%"
+          }
+        },
+        "competitive_advantages": [
+          "57.9%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [
+          "70.1%用户仅处于浏览阶段，转化风险较高，需要更多引导"
+        ],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.80），16位用户处于决策阶段（15.0%），14位在对比（13.1%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "低转化潜力（评分: 0.33），需要长期培育。预计转化率: 32.5%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是'Ikarao Break X1 Karaoke Machine'高度专注群体，33.6%的用户关注此兴趣（是平均水平的6.03倍），比平均水平高28.1个百分点。这是该聚类最显著的差异化特征。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是Versatile Connectivity, High-Fidelity Sound, 10.1\" HD Touchscreen。",
+        "distinctive_user_profile": "该聚类包含107位用户，15.0%处于决策阶段，13.1%在对比中。",
+        "what_makes_different": [
+          "对'Ikarao Break X1 Karaoke Machine'的关注度是平均水平的6.03倍（33.6% vs 5.6%，高28.1个百分点）",
+          "对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.94倍（33.6% vs 5.7%，高28.0个百分点）",
+          "对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的4.82倍（23.4% vs 4.8%，高18.5个百分点）"
+        ],
+        "differentiation_score": 1.25,
+        "unique_interests": [
+          {
+            "interest": "Ikarao Break X1 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.6,
+            "difference": 28.1,
+            "uniqueness_ratio": 6.03
+          },
+          {
+            "interest": "Ikarao Break X2 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.7,
+            "difference": 28.0,
+            "uniqueness_ratio": 5.94
+          },
+          {
+            "interest": "Karaoke Systems",
+            "cluster_count": 30,
+            "cluster_pct": 28.0,
+            "avg_pct": 8.4,
+            "difference": 19.7,
+            "uniqueness_ratio": 3.35
+          },
+          {
+            "interest": "Ikarao Shell S2 Karaoke Machine",
+            "cluster_count": 25,
+            "cluster_pct": 23.4,
+            "avg_pct": 4.8,
+            "difference": 18.5,
+            "uniqueness_ratio": 4.82
+          },
+          {
+            "interest": "Ikarao Shell S1 Karaoke Machine",
+            "cluster_count": 15,
+            "cluster_pct": 14.0,
+            "avg_pct": 3.1,
+            "difference": 10.9,
+            "uniqueness_ratio": 4.49
+          }
+        ],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Ikarao Break X1 Karaoke Machine'有极高偏好（33.6% vs 平均5.6%，是平均水平的6.03倍）",
+            "action": "为该聚类创建专门的'Ikarao Break X1 Karaoke Machine'主题页面和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知28.1%以上",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，显著高于其他聚类"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Ikarao Break X1 Karaoke Machine'主题的专属营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Ikarao Break X1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐",
+            "expected_impact": "预计可提升该聚类用户的相关性感知28.1%以上",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，这是该聚类最显著的差异化特征"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.25），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：5个独特兴趣、0个独特属性。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "30-60s",
+      "size": 181,
+      "avg_intent_score": 0.72,
+      "statistics": {
+        "total_records_analyzed": 181,
+        "intent_score_available": 181,
+        "avg_intent_score": 0.72,
+        "intent_score_std": 0.18
+      },
+      "top_interests": {
+        "Karaoke Machine": 107,
+        "Wireless Microphones": 74,
+        "Touchscreen Display": 69,
+        "High-Fidelity Sound": 67,
+        "Wireless Microphone": 43
+      },
+      "purchase_stage_distribution": {
+        "browsing": 181
+      },
+      "price_range_distribution": {
+        "budget": 16,
+        "mid-range": 92,
+        "premium": 73
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 146,
+        "Versatile Connectivity": 114,
+        "High-Fidelity Sound": 97,
+        "Professional Wireless Microphone": 90,
+        "Long-Lasting Battery": 70
+      },
+      "top_concerns": {
+        "Warranty extension process": 1,
+        "Return & Exchange Policy, Terms of Service, Intellectual Property Policy": 1,
+        "Return policy, warranty information": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含181位用户。核心特征：主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display（分别出现107, 74, 69次），0.0%处于决策阶段，0.0%在对比，100.0%在浏览。价格敏感度：40.3%偏好高端，50.8%偏好中端。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity",
+          "High-Fidelity Sound"
+        ],
+        "pain_points": [
+          "Warranty extension process",
+          "Return & Exchange Policy, Terms of Service, Intellectual Property Policy",
+          "Return policy, warranty information"
+        ],
+        "opportunities": [
+          {
+            "opportunity": "有73位用户（40.3%）偏好高端产品",
+            "action": "强调品牌价值和VIP服务",
+            "expected_impact": "提升品牌感知和用户忠诚度",
+            "data_support": "40.3%用户偏好高端，表明对品质有高期待"
+          }
+        ],
+        "recommended_actions": [],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化，预计3-6个月ROI约200-300%",
+        "data_evidence": [
+          "用户规模证据：181位用户，样本量充足，分析结果具有统计意义",
+          "购买阶段证据：0位决策（0.0%），0位对比（0.0%），181位浏览（100.0%）",
+          "核心兴趣证据：Karaoke Machine, Wireless Microphones, Touchscreen Display共出现250次，占总兴趣的30.3%",
+          "意图分数证据：平均意图分数0.72，超过70%阈值，0位用户处于决策阶段，表明高购买意图",
+          "关键特征证据：10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound共出现146, 114, 97次，占总特征的39.8%",
+          "痛点证据：Warranty extension process, Return & Exchange Policy, Terms of Service, Intellectual Property Policy, Return policy, warranty information被提及1, 1, 1次，表明这些是用户的主要顾虑"
+        ],
+        "conversion_funnel": {
+          "awareness": 181,
+          "interest": 181,
+          "consideration": 0,
+          "decision": 0,
+          "conversion_estimate": 10,
+          "funnel_drop_off": {
+            "awareness_to_interest": "100.0%",
+            "interest_to_consideration": "0.0%",
+            "consideration_to_decision": "0%"
+          }
+        },
+        "competitive_advantages": [
+          "40.3%用户偏好高端产品，表明品牌定位与用户需求高度匹配"
+        ],
+        "risk_factors": [
+          "100.0%用户仅处于浏览阶段，转化风险较高，需要更多引导"
+        ],
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.72），0位用户处于决策阶段（0.0%），0位在对比（0.0%）。数据表明该聚类用户有强烈的购买意愿。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.0%"
+      },
+      "cluster_specific": {
+        "cluster_identity": "该聚类是181位用户的集合，主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound。",
+        "distinctive_user_profile": "该聚类包含181位用户，0.0%处于决策阶段，0.0%在对比中。",
+        "what_makes_different": [
+          "该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"
+        ],
+        "differentiation_score": 0.0,
+        "unique_interests": [],
+        "unique_attributes": [],
+        "unique_stages": [],
+        "unique_price_sensitivity": "",
+        "cluster_specific_opportunities": [],
+        "targeted_recommendations": [],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": [
+          "该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"
+        ]
+      }
+    }
+  ],
+  "comparisons": {
+    "size_distribution": {
+      "cluster_0": 80,
+      "cluster_1": 183,
+      "cluster_2": 80,
+      "cluster_3": 107,
+      "cluster_4": 181
+    },
+    "intent_score_comparison": {
+      "cluster_0": 0.84,
+      "cluster_1": 0.71,
+      "cluster_2": 0.89,
+      "cluster_3": 0.8,
+      "cluster_4": 0.72
+    },
+    "stage_distribution": {
+      "cluster_0": {
+        "comparing": 80
+      },
+      "cluster_1": {
+        "browsing": 178,
+        "comparing": 3,
+        "deciding": 2
+      },
+      "cluster_2": {
+        "deciding": 80
+      },
+      "cluster_3": {
+        "comparing": 14,
+        "browsing": 75,
+        "browsing/comparing": 2,
+        "deciding": 16
+      },
+      "cluster_4": {
+        "browsing": 181
+      }
+    },
+    "price_sensitivity_comparison": {
+      "cluster_0": {
+        "mid-range": 51,
+        "premium": 23,
+        "mid-range to premium": 1,
+        "budget/mid-range": 3,
+        "budget-range": 1,
+        "budget": 1
+      },
+      "cluster_1": {
+        "mid-range": 72,
+        "budget": 25,
+        "premium": 82,
+        "budget-range": 2,
+        "budget-mid-range": 1,
+        "budget/mid-range": 1
+      },
+      "cluster_2": {
+        "mid-range": 26,
+        "premium": 42,
+        "budget": 11,
+        "budget/mid-range": 1
+      },
+      "cluster_3": {
+        "premium": 62,
+        "budget": 24,
+        "budget/mid-range": 4,
+        "mid-range": 17
+      },
+      "cluster_4": {
+        "budget": 16,
+        "mid-range": 92,
+        "premium": 73
+      }
+    },
+    "conversion_potential_comparison": {
+      "cluster_0": "medium",
+      "cluster_1": "low",
+      "cluster_2": "high",
+      "cluster_3": "low",
+      "cluster_4": "low"
+    },
+    "key_differences": [
+      {
+        "type": "购买意图差异",
+        "description": "购买意图最高的聚类: cluster_0, cluster_2（意图分数: 0.89），最低的聚类意图分数: 0.71，差异0.18",
+        "implication": "应优先对高意图聚类进行转化，对低意图聚类进行培育",
+        "data_support": "数据支撑：意图分数范围0.71-0.89，差异显著"
+      }
+    ],
+    "cluster_ranking": [
+      {
+        "cluster_id": "cluster_2",
+        "conversion_potential": "high",
+        "size": 80
+      },
+      {
+        "cluster_id": "cluster_4",
+        "conversion_potential": "high",
+        "size": 58
+      },
+      {
+        "cluster_id": "cluster_0",
+        "conversion_potential": "medium",
+        "size": 116
+      },
+      {
+        "cluster_id": "cluster_0",
+        "conversion_potential": "medium",
+        "size": 80
+      },
+      {
+        "cluster_id": "cluster_1",
+        "conversion_potential": "low",
+        "size": 183
+      },
+      {
+        "cluster_id": "cluster_4",
+        "conversion_potential": "low",
+        "size": 181
+      },
+      {
+        "cluster_id": "cluster_3",
+        "conversion_potential": "low",
+        "size": 171
+      },
+      {
+        "cluster_id": "cluster_1",
+        "conversion_potential": "low",
+        "size": 135
+      },
+      {
+        "cluster_id": "cluster_2",
+        "conversion_potential": "low",
+        "size": 107
+      },
+      {
+        "cluster_id": "cluster_3",
+        "conversion_potential": "low",
+        "size": 107
+      }
+    ]
+  },
+  "strategic_recommendations": [
+    {
+      "priority": "high",
+      "category": "立即转化",
+      "recommendation": "优先转化9个高意图聚类（共1047位用户，其中177位处于决策阶段）",
+      "actions": [
+        "推送限时优惠（10-15%折扣）",
+        "提供\"立即购买\"快捷按钮",
+        "展示库存紧张信息创造紧迫感",
+        "提供免费配送和快速发货承诺"
+      ],
+      "expected_impact": "预计可转化53位用户，带来约$18,550收入",
+      "roi": "投入约$4,638（营销$1,855 + 优惠$2,782），净收入$13,912，ROI约300%",
+      "data_support": "数据支撑：177位用户处于决策阶段，转化概率30%，平均订单价值$350，ROI约300%",
+      "implementation_timeline": "立即执行，24小时内完成优惠推送",
+      "success_metrics": [
+        "转化率提升至30%",
+        "收入达到$18,550",
+        "ROI达到300%"
+      ]
+    },
+    {
+      "priority": "high",
+      "category": "优化转化路径",
+      "recommendation": "优化2个高转化潜力聚类的用户体验（共138位用户）",
+      "actions": [
+        "提供产品对比工具和详细规格",
+        "展示用户评价和视频演示",
+        "优化页面加载速度和移动端体验",
+        "提供在线客服支持"
+      ],
+      "expected_impact": "预计提升整体转化率15-25%",
+      "roi": "投入约$3,000-5,000（开发+优化），长期ROI约500%+",
+      "data_support": "数据支撑：2个聚类具有高转化潜力，优化用户体验可显著提升转化率",
+      "implementation_timeline": "2-4周内完成开发和优化",
+      "success_metrics": [
+        "转化率提升15-25%",
+        "用户停留时间增加20%",
+        "跳出率降低10%"
+      ]
+    }
+  ]
+}

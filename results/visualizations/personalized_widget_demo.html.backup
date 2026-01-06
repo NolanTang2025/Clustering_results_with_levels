@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个性化推荐挂件 - 基于聚类分析的智能推送</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* 右下角挂件样式 */
+        .widget-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            z-index: 1000;
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .widget {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .widget::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .widget-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .widget-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .widget-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .widget-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .widget-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .widget-image-placeholder {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .widget-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+
+        .widget-reason {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .widget-cta {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .widget-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .widget-cta:active {
+            transform: translateY(0);
+        }
+
+        /* 聚类选择器 */
+        .cluster-selector {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .cluster-selector label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cluster-selector select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .cluster-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+
+        .cluster-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .cluster-info p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .cluster-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .widget-container {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+
+        /* 隐藏状态 */
+        .widget-container.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎯 个性化推荐挂件演示</h1>
+        <p class="subtitle">基于聚类分析的智能推送系统 - 右下角挂件展示</p>
+
+        <div class="cluster-selector">
+            <label for="clusterSelect">选择聚类查看个性化挂件：</label>
+            <select id="clusterSelect">
+                <option value="">请选择聚类...</option>
+            </select>
+
+            <div id="clusterInfo" class="cluster-info" style="display: none;">
+                <h3 id="clusterTitle"></h3>
+                <p id="clusterDescription"></p>
+                <div class="cluster-tags" id="clusterTags"></div>
+            </div>
+        </div>
+
+        <div style="padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin-bottom: 15px;">📋 功能说明</h3>
+            <ul style="line-height: 2; color: #666;">
+                <li><strong>智能识别：</strong>通过意图识别技术分析用户行为，自动匹配最适合的聚类</li>
+                <li><strong>个性化内容：</strong>根据聚类特征生成AI图片和引导性文本</li>
+                <li><strong>精准推送：</strong>在用户浏览过程中，右下角弹出个性化推荐挂件</li>
+                <li><strong>促进转化：</strong>通过针对性的内容引导用户下单</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 右下角挂件 -->
+    <div id="widgetContainer" class="widget-container hidden">
+        <div class="widget">
+            <button class="widget-close" onclick="closeWidget()">×</button>
+            <div class="widget-content">
+                <div class="widget-image" id="widgetImage">
+                    <div class="widget-image-placeholder">
+                        🎤 AI生成的产品图片<br>
+                        <small>基于聚类特征生成</small>
+                    </div>
+                </div>
+                <div class="widget-title" id="widgetTitle">个性化推荐</div>
+                <div class="widget-subtitle" id="widgetSubtitle">专为您定制</div>
+                <div class="widget-reason" id="widgetReason">基于您的浏览行为，我们为您推荐最适合的产品</div>
+                <button class="widget-cta" id="widgetCTA" onclick="handleCTAClick()">立即查看 →</button>
+            </div>
+        </div>
+    </div>
+
+    <script id="widgetsData" type="application/json"></script>
+    <script>
+        let widgetsData = [];
+        let currentWidget = null;
+
+        // 加载挂件配置
+        async function loadWidgets() {
+            try {
+                const response = await fetch('personalized_widgets_config.json');
+                widgetsData = await response.json();
+                populateClusterSelector();
+            } catch (error) {
+                console.error('加载挂件配置失败:', error);
+                // 使用示例数据
+                widgetsData = getExampleWidgets();
+                populateClusterSelector();
+            }
+        }
+
+        // 示例数据（如果无法加载JSON）
+        function getExampleWidgets() {
+            return [
+                {
+                    cluster_id: 'cluster_0',
+                    time_range: '10-30s',
+                    size: 116,
+                    differentiation_score: 2.0,
+                    unique_interests: ['Portable Speakers'],
+                    unique_attributes: ['Wireless Microphones', 'Sound Quality', 'Portable Design'],
+                    widget: {
+                        image_prompt: 'Modern, elegant portable karaoke speaker with wireless microphones, professional product photography',
+                        title: '专为便携音响爱好者设计',
+                        subtitle: '突出无线麦克风特性',
+                        recommendation_reason: '基于您的兴趣偏好，我们为您推荐Portable Speakers相关产品',
+                        cta_text: '立即查看 →',
+                        personalization_level: 'high'
+                    }
+                }
+            ];
+        }
+
+        // 填充聚类选择器
+        function populateClusterSelector() {
+            const select = document.getElementById('clusterSelect');
+            widgetsData.forEach((widget, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${widget.cluster_id} (${widget.size}位用户, ${widget.time_range}, 差异化: ${widget.differentiation_score})`;
+                select.appendChild(option);
+            });
+        }
+
+        // 显示聚类信息
+        function showClusterInfo(index) {
+            const widget = widgetsData[index];
+            if (!widget) return;
+
+            const infoDiv = document.getElementById('clusterInfo');
+            const title = document.getElementById('clusterTitle');
+            const description = document.getElementById('clusterDescription');
+            const tags = document.getElementById('clusterTags');
+
+            title.textContent = `${widget.cluster_id} - ${widget.size}位用户`;
+            description.textContent = `时间范围: ${widget.time_range} | 差异化分数: ${widget.differentiation_score}`;
+
+            tags.innerHTML = '';
+            widget.unique_interests.forEach(interest => {
+                const tag = document.createElement('span');
+                tag.className = 'tag';
+                tag.textContent = `兴趣: ${interest}`;
+                tags.appendChild(tag);
+            });
+            widget.unique_attributes.forEach(attr => {
+                const tag = document.createElement('span');
+                tag.className = 'tag';
+                tag.textContent = `属性: ${attr}`;
+                tags.appendChild(tag);
+            });
+
+            infoDiv.style.display = 'block';
+        }
+
+        // 显示挂件
+        function showWidget(index) {
+            const widget = widgetsData[index];
+            if (!widget) return;
+
+            currentWidget = widget;
+            const widgetData = widget.widget;
+            const container = document.getElementById('widgetContainer');
+
+            // 更新挂件内容
+            document.getElementById('widgetTitle').textContent = widgetData.title;
+            document.getElementById('widgetSubtitle').textContent = widgetData.subtitle;
+            document.getElementById('widgetReason').textContent = widgetData.recommendation_reason;
+            document.getElementById('widgetCTA').textContent = widgetData.cta_text;
+
+            // 生成AI图片（这里使用占位符，实际应该调用AI图片生成API）
+            const imageDiv = document.getElementById('widgetImage');
+            imageDiv.innerHTML = `
+                <div class="widget-image-placeholder">
+                    🎤 ${widgetData.image_prompt}<br>
+                    <small style="font-size: 11px; opacity: 0.7;">AI生成的产品图片预览</small>
+                </div>
+            `;
+
+            // 显示挂件
+            container.classList.remove('hidden');
+
+            // 3秒后自动关闭（可选）
+            // setTimeout(() => closeWidget(), 10000);
+        }
+
+        // 关闭挂件
+        function closeWidget() {
+            const container = document.getElementById('widgetContainer');
+            container.classList.add('hidden');
+        }
+
+        // 处理CTA点击
+        function handleCTAClick() {
+            if (currentWidget) {
+                // 这里应该跳转到对应的产品页面或执行相应的操作
+                alert(`跳转到 ${currentWidget.cluster_id} 的推荐产品页面\n\n实际应用中，这里会：\n1. 跳转到匹配的产品页面\n2. 高亮显示相关产品\n3. 展示个性化推荐内容`);
+                closeWidget();
+            }
+        }
+
+        // 聚类选择器变化事件
+        document.getElementById('clusterSelect').addEventListener('change', function(e) {
+            const index = parseInt(e.target.value);
+            if (!isNaN(index) && index >= 0) {
+                showClusterInfo(index);
+                showWidget(index);
+            } else {
+                document.getElementById('clusterInfo').style.display = 'none';
+                closeWidget();
+            }
+        });
+
+        // 页面加载时初始化
+        window.addEventListener('DOMContentLoaded', function() {
+            loadWidgets();
+        });
+
+        // 模拟意图识别和自动推送（演示用）
+        function simulateIntentRecognition() {
+            // 在实际应用中，这里会：
+            // 1. 分析用户的浏览行为
+            // 2. 提取意图特征
+            // 3. 匹配到对应的聚类
+            // 4. 自动显示个性化挂件
+
+            console.log('模拟意图识别...');
+            // 随机选择一个聚类进行演示
+            if (widgetsData.length > 0) {
+                const randomIndex = Math.floor(Math.random() * widgetsData.length);
+                setTimeout(() => {
+                    document.getElementById('clusterSelect').value = randomIndex;
+                    showClusterInfo(randomIndex);
+                    showWidget(randomIndex);
+                }, 2000);
+            }
+        }
+
+        // 5秒后自动演示（可选）
+        // setTimeout(simulateIntentRecognition, 5000);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5秒内跳出用户分析 Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .user-profile {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 25px;
+            line-height: 1.8;
+            font-size: 1.05em;
+            color: #444;
+        }
+
+        .bounce-reasons {
+            display: grid;
+            gap: 20px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .reason-card h3 {
+            color: #c92a2a;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .confidence-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 25px;
+            margin: 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .confidence-fill {
+            background: linear-gradient(90deg, #ff6b6b 0%, #ee5a6f 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .evidence {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 3px solid #ff6b6b;
+        }
+
+        .intent-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .intent-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .intent-card h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(#667eea 0deg 306deg, #e9ecef 306deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .score-text {
+            position: relative;
+            z-index: 1;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .insights-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .insights-list li {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #f39c12;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .insights-list li::before {
+            content: "💡";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .recommendation-card {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #4caf50;
+        }
+
+        .recommendation-card h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .priority-high {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .priority-medium {
+            background: #ffa726;
+            color: white;
+        }
+
+        .priority-low {
+            background: #66bb6a;
+            color: white;
+        }
+
+        .chart-container {
+            margin: 20px 0;
+            position: relative;
+            height: 300px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #667eea;
+            border: 2px solid #667eea;
+            font-weight: 500;
+        }
+
+        .tag-large {
+            font-size: 1.1em;
+            padding: 10px 20px;
+        }
+
+        .tag-medium {
+            font-size: 1em;
+            padding: 9px 18px;
+        }
+
+        .data-evidence {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .data-evidence h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .data-evidence ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .data-evidence li {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .data-point {
+            display: inline-block;
+            background: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.9em;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+
+        .data-point strong {
+            color: #764ba2;
+        }
+
+        .raw-example {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .raw-example h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .raw-example pre {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .example-summary {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .example-summary strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 5秒内跳出用户行为分析 Dashboard</h1>
+            <p class="subtitle">基于Gemini AI的深度分析 - 高置信度洞察</p>
+            <span class="confidence-badge">整体置信度: 90.0%</span>
+        </div>
+
+        <div id="content">
+            <!-- 动态生成内容 -->
+        </div>
+    </div>
+
+    <script>
+        let analysisData = null;
+
+        function loadData() {
+            try {
+                analysisData = {"metadata": {"time_range": "0-5s", "total_users": 499, "analysis_date": "2025-01-05", "model": "gemini-pro"}, "behavior_statistics": {"top_interests": {"Karaoke Machine": 186, "Wireless Microphones": 177, "Karaoke Machines": 156, "High-Fidelity Sound": 120, "Portable Speakers": 77, "Touchscreen Displays": 77, "Touchscreen Display": 72, "Wireless Microphone": 59, "Karaoke Systems": 49, "Ikarao Break X2 Karaoke Machine": 49}, "top_stages": {"browsing": 272, "comparing": 146, "deciding": 80, "browsing/comparing": 1}, "top_concerns": {"After-Sale Service": 4, "Shipping information": 4, "Product details and after-sale service": 2, "Warranty and Returns": 1, "None explicitly identified, but user is exploring FAQ sections.": 1, "Shipping times": 1, "None explicitly identified, but engagement with FAQ suggests seeking detailed information.": 1, "None explicitly identified, but engagement with FAQ suggests information gathering.": 1, "Compatibility with Apple devices": 1, "product quality": 1}, "top_attributes": {"Versatile Connectivity": 207, "High-Fidelity Sound": 199, "10.1\" HD Touchscreen": 172, "All-in-one entertainment": 145, "Extended Battery Life": 131, "Wireless Microphones": 127, "Professional Wireless Microphone": 121, "Wireless Microphone": 87, "Long-Lasting Battery": 74, "Professional-Grade Wireless Microphone": 70}, "top_price_ranges": {"premium": 225, "mid-range": 210, "budget": 48, "budget/mid-range": 7, "budget-mid-range": 3}}, "gemini_analysis": {"user_profile": "这些在5秒内跳出的用户具有高度的产品兴趣和明确的需求。他们并非误入页面的随机访客，而是积极搜索卡拉OK机及相关配件的潜在买家。其核心特征包括：对'卡拉OK机'、'无线麦克风'等产品类型有强烈兴趣（核心兴趣分布中占比极高），甚至有用户明确搜索'Ikarao Break X2 Karaoke Machine'。在购买阶段，他们主要处于'浏览'和'比较'阶段，但也有相当一部分在'决定'阶段，表明他们并非仅仅是随意看看，而是有具体的购买意图。这些用户对产品特性有清晰的认知和偏好，高度关注'多功能连接性'、'高保真音效'、'10.1英寸高清触摸屏'、'一体化娱乐'和'长续航电池'等高端或实用功能。在价格敏感度方面，绝大多数用户（超过85%）倾向于'高端'或'中端'产品，表明他们对产品质量和功能有较高期待，愿意为更好的体验支付溢价，而非追求低价。综合来看，这是一群对卡拉OK产品有明确需求、注重品质和功能的、处于购买漏斗中上游的潜在客户。", "bounce_reasons": [{"reason": "产品信息展示不符合用户预期或不够突出", "confidence": 0.95, "evidence": "用户对'高保真音效'、'10.1英寸高清触摸屏'、'多功能连接性'、'无线麦克风'等特定产品特征有极高关注（产品特征关注数据），但他们在5秒内即跳出。这表明，页面未能在用户着陆后第一时间，在'首屏'或最显眼位置清晰、有吸引力地呈现这些他们最看重的核心特征，导致用户无法快速确认产品是否满足其关键需求。"}, {"reason": "用户无法在极短时间内快速获得价值验证或匹配感", "confidence": 0.9, "evidence": "272次'browsing'和146次'comparing'的购买阶段分布，加上用户关注点中关于'售后服务'、'运输信息'等细节咨询极少（最高仅4次），这表明用户在5秒内根本没有足够时间深入研究。他们需要快速的视觉或信息刺激来判断产品是否值得进一步探索。如果页面的第一印象（视觉设计、排版、主图等）未能立即传递出符合其'高端/中端'价格敏感度所期待的品质感和专业性，便会迅速离开。"}, {"reason": "特定搜索意图与实际着陆页内容不符", "confidence": 0.8, "evidence": "49次核心兴趣明确指向'Ikarao Break X2 Karaoke Machine'。如果这些用户通过搜索此特定型号后，着陆在一个泛泛的卡拉OK机品类页或另一个型号的产品页上，而非他们期望的精确产品页，他们会迅速跳出，因为未立即找到目标信息。"}], "purchase_intent": {"level": "medium_to_high", "description": "这些用户的购买意图处于中高水平。他们并非误点或随机浏览者，因为数据显示出对'卡拉OK机'及各种高级功能（如无线麦克风、高保真音效、触摸屏）的明确兴趣，甚至有品牌/型号的特定关注。购买阶段分布中'比较'和'决定'的用户占比可观，进一步证实了他们是积极的潜在买家。5秒跳出并非源于缺乏购买意愿，而是因为页面未能迅速捕捉或满足其已有的明确需求。", "confidence": 0.95}, "product_fit": {"score": 0.85, "description": "这些用户与Ikarao产品的匹配度极高。用户高度关注的'卡拉OK机'、'无线麦克风'、'高保真音效'、'10.1英寸高清触摸屏'、'一体化娱乐'和'长续航电池'等产品特征，与Ikarao卡拉OK机的产品定位和核心卖点高度吻合。此外，许多用户明确搜索'Ikarao Break X2 Karaoke Machine'，直接证明了品牌和产品知名度以及用户对该品牌的兴趣。用户主要集中在'高端'和'中端'价格敏感度区间，这与Ikarao作为专业卡拉OK设备品牌的市场定位相符。因此，问题不在于产品不适合用户，而在于页面未能有效地在关键的5秒内将这种高度匹配迅速有效地传达给用户。", "confidence": 0.9}, "key_insights": ["5秒跳出用户并非低质量流量，而是对卡拉OK产品有明确需求和高购买潜力的目标客户。", "用户的跳出主要归因于着陆页在极短时间内未能有效、直观地展示产品核心价值和用户关注的特定功能，而非产品本身与用户需求不匹配。", "用户对品质和功能有较高期待（偏好高端/中端），这意味着网站的首屏视觉、信息呈现和品牌印象至关重要。"], "recommendations": [{"action": "优化着陆页首屏内容（Above-the-Fold）", "priority": "high", "expected_impact": "在用户无需滚动即可看到的第一屏，以大图、清晰标题和简洁卖点（如：'10.1英寸高清触摸屏'、'专业无线麦克风'、'高保真音效'）快速传递产品核心价值和主要特征。使用引人注目的视觉设计，确保第一印象即符合'高端/中端'用户的品质期待。这将显著降低跳出率，鼓励用户继续浏览。"}, {"action": "提升页面加载速度和响应能力", "priority": "high", "expected_impact": "虽然数据未直接提供，但对于5秒内跳出用户，页面加载速度是核心因素。确保页面（尤其是首屏）秒级加载，提供流畅的移动端体验。这将消除技术障碍，让用户有足够时间消化首屏信息。"}, {"action": "针对特定搜索意图提供精准着陆页", "priority": "medium", "expected_impact": "对于搜索'Ikarao Break X2 Karaoke Machine'等具体型号的用户，确保他们直接跳转到该产品的详情页，而非泛品类页。这将减少用户因找不到精确信息而跳出的情况，提高特定流量的转化效率。"}, {"action": "强化价值主张与价格的匹配性", "priority": "medium", "expected_impact": "在首屏或关键位置，除了罗列功能，更要强调这些功能如何为用户带来'一体化娱乐'、'专业级体验'等价值，以快速证明产品价格的合理性。这能有效应对用户对'高端/中端'产品的期待，避免因价格未立即匹配感知价值而跳出。"}], "confidence_score": 0.9}};
+                renderPage();
+            } catch (error) {
+                document.getElementById('content').innerHTML = `
+                    <div class="section">
+                        <h2>❌ 数据加载失败</h2>
+                        <p style="color: red;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderPage() {
+            const content = document.getElementById('content');
+            const data = analysisData.gemini_analysis;
+            const stats = analysisData.behavior_statistics;
+            
+            let html = '';
+
+            // 概览统计
+            html += renderOverview(stats);
+            
+            // 用户画像
+            html += renderUserProfile(data);
+            
+            // 跳出原因分析
+            html += renderBounceReasons(data);
+            
+            // 购买意图和产品匹配度
+            html += renderIntentAndFit(data);
+            
+            // 关键洞察
+            html += renderKeyInsights(data);
+            
+            // 运营建议
+            html += renderRecommendations(data);
+            
+            // 数据可视化
+            html += renderDataVisualization(stats);
+            
+            // 原始数据例证
+            html += renderRawIntentExamples();
+
+            content.innerHTML = html;
+            renderCharts(stats);
+        }
+
+        function renderOverview(stats) {
+            const totalUsers = analysisData.metadata.total_users;
+            
+            return `
+                <div class="section">
+                    <h2>📊 数据概览</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">${totalUsers}</div>
+                            <div class="label">总用户数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${Object.keys(stats.top_interests).length}</div>
+                            <div class="label">核心兴趣类型</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${Object.keys(stats.top_stages).length}</div>
+                            <div class="label">购买阶段类型</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${Math.round((stats.top_price_ranges.premium + stats.top_price_ranges['mid-range']) / totalUsers * 100)}%</div>
+                            <div class="label">高端/中端用户占比</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderUserProfile(data) {
+            const stats = analysisData.behavior_statistics;
+            const totalUsers = analysisData.metadata.total_users;
+            
+            // 计算关键数据点
+            const topInterests = Object.entries(stats.top_interests).slice(0, 5);
+            const topStages = Object.entries(stats.top_stages);
+            const premiumMidUsers = (stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0);
+            const premiumMidPercent = Math.round((premiumMidUsers / totalUsers) * 100);
+            
+            return `
+                <div class="section">
+                    <h2>👤 用户画像</h2>
+                    <div class="user-profile">
+                        ${data.user_profile}
+                    </div>
+                    <div class="data-evidence">
+                        <h4>📊 判断依据</h4>
+                        <p style="margin-top: 10px;"><strong>1. 具体品牌/型号搜索（购买意图强）:</strong></p>
+                        <ul>
+                            <li>明确搜索"Ikarao Break X2 Karaoke Machine": <strong>${stats.top_interests['Ikarao Break X2 Karaoke Machine'] || 0}次</strong> (${Math.round((stats.top_interests['Ikarao Break X2 Karaoke Machine'] || 0)/totalUsers*100)}%)，表明有明确购买目标</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>2. 具体产品特征关注（非泛泛浏览）:</strong></p>
+                        <ul>
+                            <li>"高保真音效": <strong>${stats.top_attributes['High-Fidelity Sound'] || 0}次</strong> (${Math.round((stats.top_attributes['High-Fidelity Sound'] || 0)/totalUsers*100)}%)</li>
+                            <li>"10.1英寸高清触摸屏": <strong>${stats.top_attributes['10.1" HD Touchscreen'] || 0}次</strong> (${Math.round((stats.top_attributes['10.1" HD Touchscreen'] || 0)/totalUsers*100)}%)</li>
+                            <li>"多功能连接性": <strong>${stats.top_attributes['Versatile Connectivity'] || 0}次</strong> (${Math.round((stats.top_attributes['Versatile Connectivity'] || 0)/totalUsers*100)}%)</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>3. 购买阶段分布（处于决策阶段）:</strong></p>
+                        <ul>
+                            ${topStages.map(([stage, count]) => 
+                                `<li><strong>${stage}</strong>: ${count}次 (${Math.round(count/totalUsers*100)}%)</li>`
+                            ).join('')}
+                            <li><strong>比较+决定阶段占比:</strong> <strong>${Math.round(((stats.top_stages.comparing || 0) + (stats.top_stages.deciding || 0))/totalUsers*100)}%</strong>，表明处于购买决策阶段</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>4. 价格敏感度（品质导向）:</strong></p>
+                        <ul>
+                            <li>高端用户: <strong>${stats.top_price_ranges.premium || 0}次</strong> (${Math.round((stats.top_price_ranges.premium || 0)/totalUsers*100)}%)</li>
+                            <li>中端用户: <strong>${stats.top_price_ranges['mid-range'] || 0}次</strong> (${Math.round((stats.top_price_ranges['mid-range'] || 0)/totalUsers*100)}%)</li>
+                            <li>高端+中端占比: <strong>${premiumMidPercent}%</strong>，表明愿意为品质付费，非价格敏感型用户</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderBounceReasons(data) {
+            return `
+                <div class="section">
+                    <h2>🔍 跳出原因分析（高置信度）</h2>
+                    <div class="bounce-reasons">
+                        ${data.bounce_reasons.map((reason, index) => `
+                            <div class="reason-card">
+                                <h3>${index + 1}. ${reason.reason}</h3>
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: ${reason.confidence * 100}%">
+                                        ${(reason.confidence * 100).toFixed(0)}%
+                                    </div>
+                                </div>
+                                <div class="evidence">
+                                    <strong>数据证据:</strong> ${reason.evidence}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderIntentAndFit(data) {
+            const intent = data.purchase_intent;
+            const fit = data.product_fit;
+            const stats = analysisData.behavior_statistics;
+            const totalUsers = analysisData.metadata.total_users;
+            
+            // 计算购买意图相关数据
+            const comparingDeciding = (stats.top_stages.comparing || 0) + (stats.top_stages.deciding || 0);
+            const comparingDecidingPercent = Math.round((comparingDeciding / totalUsers) * 100);
+            const premiumMidUsers = (stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0);
+            const premiumMidPercent = Math.round((premiumMidUsers / totalUsers) * 100);
+            
+            // 计算产品匹配度相关数据
+            const topAttributes = Object.entries(stats.top_attributes).slice(0, 5);
+            const ikaraoBrandMentions = stats.top_interests['Ikarao Break X2 Karaoke Machine'] || 0;
+            
+            return `
+                <div class="section">
+                    <h2>🎯 购买意图 & 产品匹配度</h2>
+                    <div class="intent-section">
+                        <div class="intent-card">
+                            <h3>购买意图</h3>
+                            <div class="score-circle">
+                                <div class="score-text">${intent.level === 'medium_to_high' ? '中高' : intent.level}</div>
+                            </div>
+                            <p style="text-align: center; margin-top: 10px;">
+                                <strong>置信度:</strong> ${(intent.confidence * 100).toFixed(0)}%
+                            </p>
+                            <p style="margin-top: 15px; line-height: 1.6;">
+                                ${intent.description}
+                            </p>
+                            <div class="data-evidence" style="margin-top: 15px;">
+                                <h4>📊 判断依据</h4>
+                                <ul>
+                                    <li><strong>具体品牌/型号搜索:</strong> "Ikarao Break X2 Karaoke Machine"明确搜索 <strong>${ikaraoBrandMentions}次</strong> (${Math.round(ikaraoBrandMentions/totalUsers*100)}%)，表明用户有明确购买目标而非随机浏览</li>
+                                    <li><strong>具体产品特征关注:</strong> 用户关注"高保真音效"(${stats.top_attributes['High-Fidelity Sound'] || 0}次)、"10.1英寸触摸屏"(${stats.top_attributes['10.1" HD Touchscreen'] || 0}次)等具体功能，而非泛泛浏览</li>
+                                    <li><strong>购买阶段分布:</strong> "比较"(${stats.top_stages.comparing || 0}次)和"决定"(${stats.top_stages.deciding || 0}次)阶段用户共 <strong>${comparingDeciding}次</strong> (${comparingDecidingPercent}%)，表明处于购买决策阶段</li>
+                                    <li><strong>价格敏感度:</strong> ${premiumMidPercent}%用户偏好高端/中端产品，表明愿意为品质付费，购买意图较强</li>
+                                    <li><strong>配件关注:</strong> "无线麦克风"相关关注${stats.top_interests['Wireless Microphones'] + stats.top_interests['Wireless Microphone'] || 0}次，表明用户在考虑完整购买方案</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="intent-card">
+                            <h3>产品匹配度</h3>
+                            <div class="score-circle" style="background: conic-gradient(#4caf50 0deg ${fit.score * 360}deg, #e9ecef ${fit.score * 360}deg 360deg);">
+                                <div class="score-text" style="color: #4caf50;">${(fit.score * 100).toFixed(0)}%</div>
+                            </div>
+                            <p style="text-align: center; margin-top: 10px;">
+                                <strong>置信度:</strong> ${(fit.confidence * 100).toFixed(0)}%
+                            </p>
+                            <p style="margin-top: 15px; line-height: 1.6;">
+                                ${fit.description}
+                            </p>
+                            <div class="data-evidence" style="margin-top: 15px;">
+                                <h4>📊 判断依据</h4>
+                                <p><strong>用户关注的产品特征（Top 5）:</strong></p>
+                                <ul>
+                                    ${topAttributes.map(([attr, count]) => 
+                                        `<li><strong>${attr}</strong>: ${count}次 (${Math.round(count/totalUsers*100)}%)</li>`
+                                    ).join('')}
+                                </ul>
+                                <p style="margin-top: 10px;"><strong>品牌匹配证据:</strong></p>
+                                <ul>
+                                    <li>明确搜索"Ikarao Break X2": <strong>${ikaraoBrandMentions}次</strong></li>
+                                    <li>价格敏感度匹配: 高端+中端用户占比 <strong>${Math.round(((stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0))/totalUsers*100)}%</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderKeyInsights(data) {
+            const stats = analysisData.behavior_statistics;
+            const totalUsers = analysisData.metadata.total_users;
+            
+            // 为每个洞察添加数据支撑
+            const comparingDeciding = (stats.top_stages.comparing || 0) + (stats.top_stages.deciding || 0);
+            const comparingDecidingPercent = Math.round((comparingDeciding / totalUsers) * 100);
+            const ikaraoBrandMentions = stats.top_interests['Ikarao Break X2 Karaoke Machine'] || 0;
+            
+            const insightsWithEvidence = [
+                {
+                    insight: data.key_insights[0],
+                    evidence: `数据支撑: ${ikaraoBrandMentions}次明确搜索"Ikarao Break X2"（具体品牌/型号），${comparingDecidingPercent}%用户处于"比较"和"决定"阶段，${Math.round(((stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0))/totalUsers*100)}%用户偏好高端/中端产品，表明明确的购买意图而非随机浏览。`
+                },
+                {
+                    insight: data.key_insights[1],
+                    evidence: `数据支撑: 用户高度关注的产品特征（如"高保真音效"${stats.top_attributes['High-Fidelity Sound'] || 0}次，"10.1英寸触摸屏"${stats.top_attributes['10.1" HD Touchscreen'] || 0}次）与产品高度匹配，但5秒内跳出，说明页面展示问题而非产品匹配问题。`
+                },
+                {
+                    insight: data.key_insights[2],
+                    evidence: `数据支撑: ${Math.round(((stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0))/totalUsers*100)}%的用户偏好高端/中端产品，表明对品质有高期待。`
+                }
+            ];
+            
+            return `
+                <div class="section">
+                    <h2>💡 关键洞察</h2>
+                    <ul class="insights-list">
+                        ${insightsWithEvidence.map((item, index) => `
+                            <li>
+                                <strong>${item.insight}</strong>
+                                <div class="data-evidence" style="margin-top: 10px; background: rgba(255,255,255,0.7);">
+                                    <small>${item.evidence}</small>
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        function renderRecommendations(data) {
+            const stats = analysisData.behavior_statistics;
+            const totalUsers = analysisData.metadata.total_users;
+            
+            // 为每个建议添加数据依据
+            const recommendationsWithEvidence = data.recommendations.map((rec, index) => {
+                let evidence = '';
+                if (index === 0) { // 优化首屏内容
+                    const topAttrs = Object.entries(stats.top_attributes).sort((a,b) => b[1]-a[1]);
+                    evidence = `数据依据: 用户最关注的具体产品特征"${topAttrs[0][0]}"(${topAttrs[0][1]}次，${Math.round(topAttrs[0][1]/totalUsers*100)}%)、"${topAttrs[1][0]}"(${topAttrs[1][1]}次，${Math.round(topAttrs[1][1]/totalUsers*100)}%)等，但5秒内跳出，说明首屏未能在第一时间展示这些用户最关心的核心特征。`;
+                } else if (index === 1) { // 页面加载速度
+                    evidence = `数据依据: 5秒内跳出用户共${totalUsers}人，极短访问时间表明技术障碍（加载慢）可能是重要因素。`;
+                } else if (index === 2) { // 精准着陆页
+                    evidence = `数据依据: ${stats.top_interests['Ikarao Break X2 Karaoke Machine'] || 0}次明确搜索"Ikarao Break X2"，但可能未直接跳转到对应产品页。`;
+                } else if (index === 3) { // 价值主张匹配
+                    evidence = `数据依据: ${Math.round(((stats.top_price_ranges.premium || 0) + (stats.top_price_ranges['mid-range'] || 0))/totalUsers*100)}%用户偏好高端/中端，但首屏可能未快速证明价值匹配。`;
+                }
+                return { ...rec, evidence };
+            });
+            
+            return `
+                <div class="section">
+                    <h2>🎯 运营建议</h2>
+                    <div class="recommendations-grid">
+                        ${recommendationsWithEvidence.map((rec, index) => `
+                            <div class="recommendation-card">
+                                <span class="priority-badge priority-${rec.priority}">
+                                    ${rec.priority === 'high' ? '高优先级' : rec.priority === 'medium' ? '中优先级' : '低优先级'}
+                                </span>
+                                <h3>${index + 1}. ${rec.action}</h3>
+                                <p style="margin-top: 10px; line-height: 1.6; color: #555;">
+                                    <strong>预期影响:</strong> ${rec.expected_impact}
+                                </p>
+                                ${rec.evidence ? `
+                                    <div class="data-evidence" style="margin-top: 10px; background: rgba(255,255,255,0.7);">
+                                        <small><strong>数据依据:</strong> ${rec.evidence}</small>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDataVisualization(stats) {
+            return `
+                <div class="section">
+                    <h2>📈 数据可视化</h2>
+                    
+                    <h3 style="margin-top: 20px; color: #555;">核心兴趣分布</h3>
+                    <div class="chart-container">
+                        <canvas id="interestsChart"></canvas>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; color: #555;">购买阶段分布</h3>
+                    <div class="chart-container">
+                        <canvas id="stagesChart"></canvas>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; color: #555;">价格敏感度分布</h3>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; color: #555;">Top 产品特征</h3>
+                    <div class="tag-cloud">
+                        ${Object.entries(stats.top_attributes)
+                            .sort((a, b) => b[1] - a[1])
+                            .slice(0, 10)
+                            .map(([attr, count]) => {
+                                const size = count > 150 ? 'tag-large' : count > 100 ? 'tag-medium' : '';
+                                return `<span class="tag ${size}" title="出现 ${count} 次">${attr} (${count})</span>`;
+                            })
+                            .join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCharts(stats) {
+            // 核心兴趣分布
+            const interestsCtx = document.getElementById('interestsChart').getContext('2d');
+            const topInterests = Object.entries(stats.top_interests)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 8);
+            
+            new Chart(interestsCtx, {
+                type: 'bar',
+                data: {
+                    labels: topInterests.map(([label]) => label),
+                    datasets: [{
+                        label: '出现次数',
+                        data: topInterests.map(([, count]) => count),
+                        backgroundColor: '#667eea',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // 购买阶段分布
+            const stagesCtx = document.getElementById('stagesChart').getContext('2d');
+            new Chart(stagesCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(stats.top_stages),
+                    datasets: [{
+                        data: Object.values(stats.top_stages),
+                        backgroundColor: [
+                            '#667eea',
+                            '#f093fb',
+                            '#4facfe',
+                            '#43e97b'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 价格敏感度分布
+            const priceCtx = document.getElementById('priceChart').getContext('2d');
+            new Chart(priceCtx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(stats.top_price_ranges),
+                    datasets: [{
+                        data: Object.values(stats.top_price_ranges),
+                        backgroundColor: [
+                            '#667eea',
+                            '#f093fb',
+                            '#4facfe',
+                            '#43e97b',
+                            '#ffe66d'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderRawIntentExamples() {
+            // 嵌入原始数据例证（选择3条最简单的）
+            const examples = [
+                {
+                    session_id: "holosession-1.0.35-1767061288520-5jzglwo",
+                    core_interests: ["Karaoke Machine", "Product Features", "Customer Support/FAQ"],
+                    purchase_stage: "browsing",
+                    key_attributes: ["10.1-inch HD Touchscreen", "Wireless Microphones", "Karaoke Apps"],
+                    price_range: "mid-range",
+                    concerns: "Warranty and Returns",
+                    raw_output: {
+                        intent: {
+                            core_interests: ["Karaoke Machine", "Product Features", "Customer Support/FAQ"],
+                            product_focus: {
+                                key_attributes: ["10.1-inch HD Touchscreen", "Wireless Microphones", "Karaoke Apps"],
+                                price_range: "mid-range",
+                                main_appeal: "Entertainment"
+                            },
+                            purchase_signals: {
+                                stage: "browsing",
+                                concerns: "Warranty and Returns"
+                            }
+                        }
+                    }
+                },
+                {
+                    session_id: "holosession-1.0.32-1766677246426-ujax4n3",
+                    core_interests: ["Karaoke Machine", "Product Features", "Customer Support/Information"],
+                    purchase_stage: "browsing",
+                    key_attributes: ["10.1\" HD Touchscreen", "Professional Wireless Microphone", "Long-Lasting Battery"],
+                    price_range: "premium",
+                    concerns: "None explicitly identified",
+                    raw_output: {
+                        intent: {
+                            core_interests: ["Karaoke Machine", "Product Features", "Customer Support/Information"],
+                            product_focus: {
+                                key_attributes: ["10.1\" HD Touchscreen", "Professional Wireless Microphone", "Long-Lasting Battery"],
+                                price_range: "premium",
+                                main_appeal: "All-in-one Karaoke System"
+                            },
+                            purchase_signals: {
+                                stage: "browsing",
+                                concerns: "None explicitly identified, but user is exploring FAQ sections."
+                            }
+                        }
+                    }
+                },
+                {
+                    session_id: "holosession-1.0.29-1766076806266-wpyc54a",
+                    core_interests: ["Shipping", "Karaoke Systems", "Product Features"],
+                    purchase_stage: "browsing",
+                    key_attributes: ["13.3-inch HD Touchscreen", "Professional-Grade Wireless Microphone", "Extended Battery Life"],
+                    price_range: "mid-range",
+                    concerns: "Shipping times",
+                    raw_output: {
+                        intent: {
+                            core_interests: ["Shipping", "Karaoke Systems", "Product Features"],
+                            product_focus: {
+                                key_attributes: ["13.3-inch HD Touchscreen", "Professional-Grade Wireless Microphone", "Extended Battery Life"],
+                                price_range: "mid-range",
+                                main_appeal: "All-in-one Karaoke"
+                            },
+                            purchase_signals: {
+                                stage: "browsing",
+                                concerns: "Shipping times"
+                            }
+                        }
+                    }
+                }
+            ];
+            
+            return `
+                <div class="section">
+                    <h2>📋 原始Intent数据例证</h2>
+                    <p style="margin-bottom: 20px; color: #666;">
+                        以下是3条从5秒内跳出用户中提取的简单raw intent数据，展示了AI分析的基础数据来源：
+                    </p>
+                    ${examples.map((ex, index) => `
+                        <div class="raw-example">
+                            <h4>例证 ${index + 1}</h4>
+                            <div class="example-summary">
+                                <strong>Session ID:</strong> ${ex.session_id}<br>
+                                <strong>核心兴趣:</strong> ${ex.core_interests.join(', ')}<br>
+                                <strong>购买阶段:</strong> ${ex.purchase_stage}<br>
+                                <strong>关键属性:</strong> ${ex.key_attributes.join(', ')}<br>
+                                <strong>价格范围:</strong> ${ex.price_range}<br>
+                                <strong>关注点:</strong> ${ex.concerns}
+                            </div>
+                            <pre>${JSON.stringify(ex.raw_output, null, 2)}</pre>
+                        </div>
+                    `).join('')}
+                    <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
+                        <strong>说明:</strong> 这些原始数据展示了用户在5秒内跳出的行为特征：
+                        虽然用户有明确的产品兴趣（如"卡拉OK机"、"产品特征"）和具体的功能关注（如"10.1英寸触摸屏"、"无线麦克风"），
+                        但他们在极短时间内就离开了页面，这支持了AI分析中"页面未能快速展示用户关注的核心特征"的结论。
+                    </p>
+                </div>
+            `;
+        }
+
+        // 页面加载时执行
+        loadData();
+    </script>
+</body>
+</html>
+

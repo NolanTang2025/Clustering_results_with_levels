@@ -1,0 +1,932 @@
+{
+  "summary": {
+    "title": "Shop 57 聚类分析报告 - 运营Insights",
+    "time_ranges_analyzed": [
+      "0-5s",
+      "10-30s",
+      "1m-3m",
+      "30-60s",
+      "3m+",
+      "5-10s"
+    ],
+    "total_time_ranges": 6
+  },
+  "statistics": {
+    "0-5s": {
+      "total_records": 499,
+      "n_clusters": 5,
+      "avg_cluster_size": 99.8
+    },
+    "10-30s": {
+      "total_records": 587,
+      "n_clusters": 5,
+      "avg_cluster_size": 117.4
+    },
+    "1m-3m": {
+      "total_records": 889,
+      "n_clusters": 5,
+      "avg_cluster_size": 177.8
+    },
+    "30-60s": {
+      "total_records": 631,
+      "n_clusters": 5,
+      "avg_cluster_size": 126.2
+    },
+    "3m+": {
+      "total_records": 2045,
+      "n_clusters": 5,
+      "avg_cluster_size": 409.0
+    },
+    "5-10s": {
+      "total_records": 260,
+      "n_clusters": 5,
+      "avg_cluster_size": 52.0
+    }
+  },
+  "insights_by_time_range": {
+    "0-5s": [
+      {
+        "cluster": "cluster_2",
+        "time_range": "0-5s",
+        "size": 122,
+        "percentage": 24.4,
+        "user_profile": "关注Karaoke Machine, Wireless Microphones, Product Features的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Professional Wireless Microphone",
+          "Long-Lasting Battery"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Wireless Microphones",
+          "Product Features"
+        ],
+        "concerns": [
+          "Warranty and Returns",
+          "None explicitly identified, but user is exploring FAQ sections.",
+          "After-Sale Service"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "0-5s",
+        "size": 116,
+        "percentage": 23.2,
+        "user_profile": "关注Wireless Microphones, Karaoke Machines, Karaoke Machine的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "Wireless Microphones",
+          "High-Fidelity Sound",
+          "Sound Quality"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machines",
+          "Karaoke Machine"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_1",
+        "time_range": "0-5s",
+        "size": 107,
+        "percentage": 21.4,
+        "user_profile": "关注Ikarao Break X1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Karaoke Systems的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Versatile Connectivity",
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Ikarao Break X1 Karaoke Machine",
+          "Ikarao Break X2 Karaoke Machine",
+          "Karaoke Systems"
+        ],
+        "concerns": [
+          "None explicitly identified, but engagement with FAQ suggests seeking detailed information."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_4",
+        "time_range": "0-5s",
+        "size": 104,
+        "percentage": 20.8,
+        "user_profile": "关注Wireless Microphones, Karaoke Machine, Karaoke Machines的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "Extended Battery Life"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machine",
+          "Karaoke Machines"
+        ],
+        "concerns": [
+          "Shipping times"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "明确配送时间和免费配送政策",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_3",
+        "time_range": "0-5s",
+        "size": 50,
+        "percentage": 10.0,
+        "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Karaoke Machine",
+          "High-Fidelity Sound",
+          "Wireless Microphones"
+        ],
+        "concerns": [
+          "product quality"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "强调产品质量保证、保修政策和用户评价",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      }
+    ],
+    "10-30s": [
+      {
+        "cluster": "cluster_3",
+        "time_range": "10-30s",
+        "size": 171,
+        "percentage": 29.1,
+        "user_profile": "关注wireless microphones, Karaoke Machine, Wireless Microphone的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Extended Battery Life",
+          "wireless microphones",
+          "Wireless Microphone"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "wireless microphones",
+          "Karaoke Machine",
+          "Wireless Microphone"
+        ],
+        "concerns": [
+          "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_1",
+        "time_range": "10-30s",
+        "size": 135,
+        "percentage": 23.0,
+        "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "High-Fidelity Sound",
+          "Wireless Microphones"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "10-30s",
+        "size": 116,
+        "percentage": 19.8,
+        "user_profile": "关注Karaoke Machines, Wireless Microphones, Karaoke Machine的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "Wireless Microphones",
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Karaoke Machines",
+          "Wireless Microphones",
+          "Karaoke Machine"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_2",
+        "time_range": "10-30s",
+        "size": 107,
+        "percentage": 18.2,
+        "user_profile": "关注Ikarao Shell S1 Karaoke Machine, Wireless Microphone, Karaoke machines的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Ikarao Shell S1 Karaoke Machine",
+          "Wireless Microphone",
+          "Karaoke machines"
+        ],
+        "concerns": [
+          "Karafun activation and product differentiation (Break X1 vs X2)"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_4",
+        "time_range": "10-30s",
+        "size": 58,
+        "percentage": 9.9,
+        "user_profile": "关注Wireless Microphones, Karaoke Machines, Touchscreen Displays的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Wireless Microphones"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machines",
+          "Touchscreen Displays"
+        ],
+        "concerns": [
+          "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      }
+    ],
+    "1m-3m": [
+      {
+        "cluster": "cluster_4",
+        "time_range": "1m-3m",
+        "size": 272,
+        "percentage": 30.6,
+        "user_profile": "关注Karaoke Machine, Karaoke Machines, High-Fidelity Sound的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "portable",
+          "wireless mics",
+          "Extended Battery Life"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Karaoke Machines",
+          "High-Fidelity Sound"
+        ],
+        "concerns": [
+          "product usage, features, and app integration",
+          "product usage, charging, shipping, and potential issues like damage or incorrect items",
+          "Product specifications and functionality"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_1",
+        "time_range": "1m-3m",
+        "size": 227,
+        "percentage": 25.5,
+        "user_profile": "关注Wireless Microphones, Karaoke machine, Wireless microphone的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Professional Wireless Microphone"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke machine",
+          "Wireless microphone"
+        ],
+        "concerns": [
+          "product functionality and support"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_3",
+        "time_range": "1m-3m",
+        "size": 149,
+        "percentage": 16.8,
+        "user_profile": "关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Versatile Connectivity"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Wireless Microphones",
+          "High-Fidelity Sound"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_2",
+        "time_range": "1m-3m",
+        "size": 139,
+        "percentage": 15.6,
+        "user_profile": "关注Ikarao Shell S2 Karaoke Machine, Wireless Microphones, portable karaoke machine的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Wireless Microphones",
+          "Bluetooth Connectivity",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Ikarao Shell S2 Karaoke Machine",
+          "Wireless Microphones",
+          "portable karaoke machine"
+        ],
+        "concerns": [
+          "Warranty information and product registration"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "1m-3m",
+        "size": 102,
+        "percentage": 11.5,
+        "user_profile": "关注Karaoke Machines, Wireless Microphones, Portable Karaoke Systems的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "Wireless Microphones",
+          "10.1\" HD Touchscreen",
+          "Sound Quality"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Karaoke Machines",
+          "Wireless Microphones",
+          "Portable Karaoke Systems"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      }
+    ],
+    "30-60s": [
+      {
+        "cluster": "cluster_1",
+        "time_range": "30-60s",
+        "size": 183,
+        "percentage": 29.0,
+        "user_profile": "关注Wireless Microphones, Karaoke Machines, Touchscreen Displays的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Versatile Connectivity",
+          "13.3-inch HD Touchscreen",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machines",
+          "Touchscreen Displays"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_4",
+        "time_range": "30-60s",
+        "size": 181,
+        "percentage": 28.7,
+        "user_profile": "关注Karaoke Machine, Wireless Microphones, Touchscreen Display的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Professional Wireless Microphone",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Wireless Microphones",
+          "Touchscreen Display"
+        ],
+        "concerns": [
+          "Warranty extension process"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_3",
+        "time_range": "30-60s",
+        "size": 107,
+        "percentage": 17.0,
+        "user_profile": "关注Karaoke Machine, Ikarao Break X1 Karaoke Machine, Karaoke Systems的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Ikarao Break X1 Karaoke Machine",
+          "Karaoke Systems"
+        ],
+        "concerns": [
+          "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比和促销信息，提供分期付款选项",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "30-60s",
+        "size": 80,
+        "percentage": 12.7,
+        "user_profile": "关注Karaoke Machines, Wireless Microphones, Wireless microphones的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "Wireless microphones",
+          "High-Fidelity Sound",
+          "Extended Battery Life"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Karaoke Machines",
+          "Wireless Microphones",
+          "Wireless microphones"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_2",
+        "time_range": "30-60s",
+        "size": 80,
+        "percentage": 12.7,
+        "user_profile": "关注Karaoke Machine, Wireless Microphones, Wireless Microphone的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Professional-Grade Wireless Microphone"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Wireless Microphones",
+          "Wireless Microphone"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      }
+    ],
+    "3m+": [
+      {
+        "cluster": "cluster_2",
+        "time_range": "3m+",
+        "size": 715,
+        "percentage": 35.0,
+        "user_profile": "关注Wireless Microphones, Karaoke Machine, High-Fidelity Sound的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Versatile Connectivity",
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machine",
+          "High-Fidelity Sound"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_1",
+        "time_range": "3m+",
+        "size": 581,
+        "percentage": 28.4,
+        "user_profile": "关注Ikarao Break X2 Karaoke Machine, Ikarao Break X1 Karaoke Machine, Karaoke machines的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Wireless Microphone",
+          "Professional Wireless Microphone"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Ikarao Break X2 Karaoke Machine",
+          "Ikarao Break X1 Karaoke Machine",
+          "Karaoke machines"
+        ],
+        "concerns": [
+          "product documentation (manuals)",
+          "What's in the box, connectivity options",
+          "user manual availability"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "3m+",
+        "size": 280,
+        "percentage": 13.7,
+        "user_profile": "关注Wireless Microphones, Karaoke Machine, Karaoke Machines的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity",
+          "Wireless Microphones"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machine",
+          "Karaoke Machines"
+        ],
+        "concerns": [
+          "None explicitly identified"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_4",
+        "time_range": "3m+",
+        "size": 236,
+        "percentage": 11.5,
+        "user_profile": "关注Troubleshooting, Customer Service, Karaoke Machine的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "Wireless Microphone",
+          "Extended Battery Life",
+          "Versatile Connectivity"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Troubleshooting",
+          "Customer Service",
+          "Karaoke Machine"
+        ],
+        "concerns": [
+          "The user is actively typing into a support form, indicating a potential issue or question. The previous history shows a focus on customer support and order inquiries, suggesting a concern about product functionality or post-purchase support.",
+          "The user is experiencing an issue where lyrics are not displayed on the built-in monitor of the karaoke machine; only the song title is visible. They are actively seeking support to resolve this problem.",
+          "The user's repeated interaction with the support page and input fields, specifically the placeholder for an 'Amazon order number', suggests they might be looking for support related to a past purchase or are trying to understand warranty/return policies, which could indicate a concern about post-purchase support or product issues."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "premium",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "强调高端功能和品牌价值，提供VIP服务"
+        ]
+      },
+      {
+        "cluster": "cluster_3",
+        "time_range": "3m+",
+        "size": 233,
+        "percentage": 11.4,
+        "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Wireless Microphone的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Professional-Grade Wireless Microphone",
+          "Professional Wireless Microphone"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Karaoke Machine",
+          "High-Fidelity Sound",
+          "Wireless Microphone"
+        ],
+        "concerns": [
+          "Ease of use for parents, tablet inclusion, and detailed product functionality."
+        ],
+        "use_cases": [],
+        "price_sensitivity": "budget",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      }
+    ],
+    "5-10s": [
+      {
+        "cluster": "cluster_1",
+        "time_range": "5-10s",
+        "size": 82,
+        "percentage": 31.5,
+        "user_profile": "关注Karaoke Machine, High-Fidelity Sound, Touchscreen Display的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Versatile Connectivity",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "High-Fidelity Sound",
+          "Touchscreen Display"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_2",
+        "time_range": "5-10s",
+        "size": 62,
+        "percentage": 23.8,
+        "user_profile": "关注Karaoke Machines, Wireless Microphones, High-Fidelity Sound的用户，处于comparing (对比)阶段",
+        "key_features": [
+          "Battery Life",
+          "High-Fidelity Sound",
+          "Sound Quality"
+        ],
+        "purchase_stage": "comparing (对比)",
+        "main_interests": [
+          "Karaoke Machines",
+          "Wireless Microphones",
+          "High-Fidelity Sound"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比表格，突出差异化优势",
+          "展示专业评测和用户对比视频",
+          "提供相似产品推荐，帮助用户找到最适合的产品",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_0",
+        "time_range": "5-10s",
+        "size": 61,
+        "percentage": 23.5,
+        "user_profile": "关注Ikarao Shell S1 Karaoke Machine, Ikarao Break X2 Karaoke Machine, Ikarao Break X1 Karaoke Machine的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "Wireless Microphone",
+          "Versatile Connectivity"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Ikarao Shell S1 Karaoke Machine",
+          "Ikarao Break X2 Karaoke Machine",
+          "Ikarao Break X1 Karaoke Machine"
+        ],
+        "concerns": [
+          "Purchase platform (Amazon vs. Ikarao Store)"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_4",
+        "time_range": "5-10s",
+        "size": 34,
+        "percentage": 13.1,
+        "user_profile": "关注Karaoke Machine, Karaoke System, Wireless Microphones的用户，处于browsing (浏览)阶段",
+        "key_features": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Versatile Connectivity"
+        ],
+        "purchase_stage": "browsing (浏览)",
+        "main_interests": [
+          "Karaoke Machine",
+          "Karaoke System",
+          "Wireless Microphones"
+        ],
+        "concerns": [
+          "Shipping cost (indicated by entering shipping details)",
+          "Product warranty and registration process",
+          "Product functionality and usage details"
+        ],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供产品对比工具和详细规格说明，帮助用户做决策",
+          "展示用户评价和视频演示，增强信任度",
+          "优化产品页面加载速度，减少跳出率",
+          "突出性价比和促销信息，提供分期付款选项",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      },
+      {
+        "cluster": "cluster_3",
+        "time_range": "5-10s",
+        "size": 21,
+        "percentage": 8.1,
+        "user_profile": "关注Wireless Microphones, Karaoke Machines, Wireless microphones的用户，处于deciding (决策)阶段",
+        "key_features": [
+          "Versatile Connectivity",
+          "Professional Wireless Microphone",
+          "High-Fidelity Sound"
+        ],
+        "purchase_stage": "deciding (决策)",
+        "main_interests": [
+          "Wireless Microphones",
+          "Karaoke Machines",
+          "Wireless microphones"
+        ],
+        "concerns": [],
+        "use_cases": [],
+        "price_sensitivity": "mid-range",
+        "recommendations": [
+          "提供限时优惠或免费配送，促进转化",
+          "展示库存紧张信息，创造紧迫感",
+          "提供立即购买按钮和快速结账流程",
+          "突出性价比，提供优惠码和捆绑销售"
+        ]
+      }
+    ]
+  },
+  "cross_range_insights": {
+    "stage_distribution": {
+      "browsing (浏览)": 18,
+      "comparing (对比)": 6,
+      "deciding (决策)": 6
+    },
+    "key_findings": [
+      "不同时间范围的用户购买阶段分布存在差异",
+      "短时间访问(0-5s, 5-10s)的用户多为浏览阶段",
+      "长时间访问(1m-3m, 3m+)的用户更可能处于决策阶段"
+    ]
+  }
+}

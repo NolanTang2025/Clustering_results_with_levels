@@ -1,0 +1,1515 @@
+{
+  "summary": {
+    "title": "聚类特定分析报告 - Cluster-Specific结论",
+    "total_clusters": 10,
+    "analysis_date": "2025-01-06",
+    "purpose": "识别每个聚类的独特特征，生成针对性的洞察和建议"
+  },
+  "cluster_analyses": [
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "10-30s",
+      "size": 116,
+      "features": {
+        "top_interests": {
+          "Wireless Microphones": 71,
+          "Karaoke Machines": 64,
+          "High-Fidelity Sound": 43,
+          "Touchscreen Displays": 39,
+          "Karaoke Machine": 37
+        },
+        "purchase_stages": {
+          "comparing": 115,
+          "browsing/comparing": 1
+        },
+        "price_ranges": {
+          "mid-range": 72,
+          "budget": 3,
+          "premium": 34,
+          "budget-range": 1,
+          "budget/mid-range": 6
+        },
+        "top_attributes": {
+          "Wireless Microphones": 66,
+          "High-Fidelity Sound": 62,
+          "Versatile Connectivity": 33,
+          "Sound Quality": 27,
+          "10.1\" HD Touchscreen": 24
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Wireless Microphones",
+            "cluster_count": 71,
+            "cluster_pct": 61.2,
+            "avg_pct": 36.0,
+            "difference": 25.2
+          },
+          {
+            "interest": "Karaoke Machines",
+            "cluster_count": 64,
+            "cluster_pct": 55.2,
+            "avg_pct": 23.6,
+            "difference": 31.6
+          },
+          {
+            "interest": "Touchscreen Displays",
+            "cluster_count": 39,
+            "cluster_pct": 33.6,
+            "avg_pct": 11.7,
+            "difference": 21.9
+          },
+          {
+            "interest": "Portable Speakers",
+            "cluster_count": 29,
+            "cluster_pct": 25.0,
+            "avg_pct": 9.5,
+            "difference": 15.5
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Wireless Microphones",
+            "cluster_count": 66,
+            "cluster_pct": 56.9,
+            "avg_pct": 19.9,
+            "difference": 37.0
+          },
+          {
+            "attribute": "Sound Quality",
+            "cluster_count": 27,
+            "cluster_pct": 23.3,
+            "avg_pct": 8.8,
+            "difference": 14.5
+          },
+          {
+            "attribute": "Long Battery Life",
+            "cluster_count": 21,
+            "cluster_pct": 18.1,
+            "avg_pct": 8.0,
+            "difference": 10.1
+          },
+          {
+            "attribute": "Portable Design",
+            "cluster_count": 19,
+            "cluster_pct": 16.4,
+            "avg_pct": 5.7,
+            "difference": 10.6
+          },
+          {
+            "attribute": "Battery Life",
+            "cluster_count": 19,
+            "cluster_pct": 16.4,
+            "avg_pct": 7.0,
+            "difference": 9.4
+          },
+          {
+            "attribute": "Portability",
+            "cluster_count": 15,
+            "cluster_pct": 12.9,
+            "avg_pct": 3.9,
+            "difference": 9.0
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "comparing",
+            "cluster_count": 115,
+            "cluster_pct": 99.1,
+            "avg_pct": 18.9,
+            "difference": 80.3
+          },
+          {
+            "stage": "browsing/comparing",
+            "cluster_count": 1,
+            "cluster_pct": 0.9,
+            "avg_pct": 0.3,
+            "difference": 0.5
+          }
+        ],
+        "unique_price_sensitivity": {
+          "price_range": "mid-range",
+          "cluster_pct": 62.1,
+          "avg_pct": 42.4,
+          "difference": 19.6
+        },
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 3.6
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Wireless Microphones'深度关注者群体，61.2%的用户关注此兴趣，比平均水平高25.2个百分点。",
+        "unique_value_proposition": "该聚类用户对'Wireless Microphones, Sound Quality, Long Battery Life'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于99.1%的用户处于'comparing'阶段，比平均水平高80.3个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Wireless Microphones'的关注度比平均水平高25.2个百分点（61.2% vs 36.0%）",
+          "对'Karaoke Machines'的关注度比平均水平高31.6个百分点（55.2% vs 23.6%）",
+          "对'Touchscreen Displays'的关注度比平均水平高21.9个百分点（33.6% vs 11.7%）",
+          "对'Wireless Microphones'特性的关注度比平均水平高37.0个百分点（56.9% vs 19.9%）",
+          "对'Sound Quality'特性的关注度比平均水平高14.5个百分点（23.3% vs 8.8%）",
+          "对'Long Battery Life'特性的关注度比平均水平高10.1个百分点（18.1% vs 8.0%）",
+          "价格敏感度：62.1%偏好'mid-range'，比平均水平高19.6个百分点",
+          "购买阶段：99.1%处于'comparing'阶段，比平均水平高80.3个百分点",
+          "购买阶段：0.9%处于'browsing/comparing'阶段，比平均水平高0.5个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Wireless Microphones'有强烈偏好（61.2% vs 平均36.0%）",
+            "action": "针对该聚类重点展示与'Wireless Microphones'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：61.2%用户关注此兴趣，比平均高25.2个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'Wireless Microphones'特性（56.9% vs 平均19.9%）",
+            "action": "在产品页面和营销材料中突出展示'Wireless Microphones'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：56.9%用户关注此特性，比平均高37.0个百分点"
+          },
+          {
+            "opportunity": "该聚类有99.1%用户在对比（比平均高80.3个百分点）",
+            "action": "提供详细的产品对比工具和规格表",
+            "expected_impact": "预计可加速决策过程，提升转化率15-20%",
+            "data_support": "数据支撑：99.1%在对比，需要对比工具辅助决策"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Wireless Microphones'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Wireless Microphones的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知25.2%",
+            "data_support": "数据支撑：61.2%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Wireless Microphones'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Wireless Microphones的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：56.9%用户关注此特性，比平均高37.0个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：3.6），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "10-30s",
+      "size": 135,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 85,
+          "High-Fidelity Sound": 55,
+          "Wireless Microphones": 53,
+          "Touchscreen Display": 50,
+          "Wireless Microphone": 32
+        },
+        "purchase_stages": {
+          "browsing": 134,
+          "comparing": 1
+        },
+        "price_ranges": {
+          "mid-range": 66,
+          "premium": 56,
+          "budget": 13
+        },
+        "top_attributes": {
+          "10.1\" HD Touchscreen": 105,
+          "Versatile Connectivity": 84,
+          "High-Fidelity Sound": 83,
+          "Professional Wireless Microphone": 70,
+          "Long-Lasting Battery": 63
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Touchscreen Display",
+            "cluster_count": 50,
+            "cluster_pct": 37.0,
+            "avg_pct": 19.5,
+            "difference": 17.5
+          },
+          {
+            "interest": "Portable Speaker",
+            "cluster_count": 25,
+            "cluster_pct": 18.5,
+            "avg_pct": 12.0,
+            "difference": 6.5
+          },
+          {
+            "interest": "10.1\" HD Touchscreen",
+            "cluster_count": 8,
+            "cluster_pct": 5.9,
+            "avg_pct": 2.4,
+            "difference": 3.5
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "10.1\" HD Touchscreen",
+            "cluster_count": 105,
+            "cluster_pct": 77.8,
+            "avg_pct": 36.1,
+            "difference": 41.7
+          },
+          {
+            "attribute": "Professional Wireless Microphone",
+            "cluster_count": 70,
+            "cluster_pct": 51.9,
+            "avg_pct": 23.5,
+            "difference": 28.4
+          },
+          {
+            "attribute": "Long-Lasting Battery",
+            "cluster_count": 63,
+            "cluster_pct": 46.7,
+            "avg_pct": 16.2,
+            "difference": 30.5
+          },
+          {
+            "attribute": "10.1-inch HD Touchscreen",
+            "cluster_count": 27,
+            "cluster_pct": 20.0,
+            "avg_pct": 7.7,
+            "difference": 12.3
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "browsing",
+            "cluster_count": 134,
+            "cluster_pct": 99.3,
+            "avg_pct": 66.2,
+            "difference": 33.1
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 2.3
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Touchscreen Display'深度关注者群体，37.0%的用户关注此兴趣，比平均水平高17.5个百分点。",
+        "unique_value_proposition": "该聚类用户对'10.1\" HD Touchscreen, Professional Wireless Microphone, Long-Lasting Battery'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于99.3%的用户处于'browsing'阶段，比平均水平高33.1个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Touchscreen Display'的关注度比平均水平高17.5个百分点（37.0% vs 19.5%）",
+          "对'Portable Speaker'的关注度比平均水平高6.5个百分点（18.5% vs 12.0%）",
+          "对'10.1\" HD Touchscreen'的关注度比平均水平高3.5个百分点（5.9% vs 2.4%）",
+          "对'10.1\" HD Touchscreen'特性的关注度比平均水平高41.7个百分点（77.8% vs 36.1%）",
+          "对'Professional Wireless Microphone'特性的关注度比平均水平高28.4个百分点（51.9% vs 23.5%）",
+          "对'Long-Lasting Battery'特性的关注度比平均水平高30.5个百分点（46.7% vs 16.2%）",
+          "购买阶段：99.3%处于'browsing'阶段，比平均水平高33.1个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Touchscreen Display'有强烈偏好（37.0% vs 平均19.5%）",
+            "action": "针对该聚类重点展示与'Touchscreen Display'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：37.0%用户关注此兴趣，比平均高17.5个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'10.1\" HD Touchscreen'特性（77.8% vs 平均36.1%）",
+            "action": "在产品页面和营销材料中突出展示'10.1\" HD Touchscreen'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：77.8%用户关注此特性，比平均高41.7个百分点"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Touchscreen Display'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Touchscreen Display的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知17.5%",
+            "data_support": "数据支撑：37.0%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'10.1\" HD Touchscreen'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示10.1\" HD Touchscreen的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：77.8%用户关注此特性，比平均高41.7个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：2.3），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": [
+          "该聚类有99.3%用户仅处于浏览阶段，转化风险较高"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "10-30s",
+      "size": 107,
+      "features": {
+        "top_interests": {
+          "Ikarao Shell S2 Karaoke Machine": 34,
+          "Ikarao Break X2 Karaoke Machine": 33,
+          "Ikarao Break X1 Karaoke Machine": 32,
+          "Karaoke Machine": 31,
+          "Karaoke Systems": 30
+        },
+        "purchase_stages": {
+          "comparing": 17,
+          "browsing": 68,
+          "deciding": 21,
+          "browsing/comparing": 1
+        },
+        "price_ranges": {
+          "premium": 45,
+          "mid-range": 32,
+          "budget/mid-range/premium": 1,
+          "budget": 27,
+          "budget/mid-range": 1,
+          "budget-range": 1
+        },
+        "top_attributes": {
+          "High-Fidelity Sound": 50,
+          "Versatile Connectivity": 48,
+          "10.1\" HD Touchscreen": 42,
+          "Wireless Microphone": 32,
+          "Extended Battery Life": 31
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Ikarao Shell S2 Karaoke Machine",
+            "cluster_count": 34,
+            "cluster_pct": 31.8,
+            "avg_pct": 4.8,
+            "difference": 26.9
+          },
+          {
+            "interest": "Ikarao Break X2 Karaoke Machine",
+            "cluster_count": 33,
+            "cluster_pct": 30.8,
+            "avg_pct": 5.7,
+            "difference": 25.2
+          },
+          {
+            "interest": "Ikarao Break X1 Karaoke Machine",
+            "cluster_count": 32,
+            "cluster_pct": 29.9,
+            "avg_pct": 5.6,
+            "difference": 24.3
+          },
+          {
+            "interest": "Karaoke Systems",
+            "cluster_count": 30,
+            "cluster_pct": 28.0,
+            "avg_pct": 8.4,
+            "difference": 19.7
+          },
+          {
+            "interest": "Ikarao Shell S1 Karaoke Machine",
+            "cluster_count": 23,
+            "cluster_pct": 21.5,
+            "avg_pct": 3.1,
+            "difference": 18.4
+          },
+          {
+            "interest": "Portable Karaoke Machine",
+            "cluster_count": 9,
+            "cluster_pct": 8.4,
+            "avg_pct": 3.8,
+            "difference": 4.6
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Wireless Microphone",
+            "cluster_count": 32,
+            "cluster_pct": 29.9,
+            "avg_pct": 18.2,
+            "difference": 11.7
+          },
+          {
+            "attribute": "13.3\" HD Touchscreen",
+            "cluster_count": 25,
+            "cluster_pct": 23.4,
+            "avg_pct": 13.8,
+            "difference": 9.6
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "deciding",
+            "cluster_count": 21,
+            "cluster_pct": 19.6,
+            "avg_pct": 14.6,
+            "difference": 5.0
+          },
+          {
+            "stage": "browsing/comparing",
+            "cluster_count": 1,
+            "cluster_pct": 0.9,
+            "avg_pct": 0.3,
+            "difference": 0.6
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 2.8
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Ikarao Shell S2 Karaoke Machine'深度关注者群体，31.8%的用户关注此兴趣，比平均水平高26.9个百分点。",
+        "unique_value_proposition": "该聚类用户对'Wireless Microphone, 13.3\" HD Touchscreen'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于19.6%的用户处于'deciding'阶段，比平均水平高5.0个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Ikarao Shell S2 Karaoke Machine'的关注度比平均水平高26.9个百分点（31.8% vs 4.8%）",
+          "对'Ikarao Break X2 Karaoke Machine'的关注度比平均水平高25.2个百分点（30.8% vs 5.7%）",
+          "对'Ikarao Break X1 Karaoke Machine'的关注度比平均水平高24.3个百分点（29.9% vs 5.6%）",
+          "对'Wireless Microphone'特性的关注度比平均水平高11.7个百分点（29.9% vs 18.2%）",
+          "对'13.3\" HD Touchscreen'特性的关注度比平均水平高9.6个百分点（23.4% vs 13.8%）",
+          "购买阶段：19.6%处于'deciding'阶段，比平均水平高5.0个百分点",
+          "购买阶段：0.9%处于'browsing/comparing'阶段，比平均水平高0.6个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Ikarao Shell S2 Karaoke Machine'有强烈偏好（31.8% vs 平均4.8%）",
+            "action": "针对该聚类重点展示与'Ikarao Shell S2 Karaoke Machine'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：31.8%用户关注此兴趣，比平均高26.9个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'Wireless Microphone'特性（29.9% vs 平均18.2%）",
+            "action": "在产品页面和营销材料中突出展示'Wireless Microphone'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：29.9%用户关注此特性，比平均高11.7个百分点"
+          },
+          {
+            "opportunity": "该聚类有19.6%用户处于决策阶段（比平均高5.0个百分点）",
+            "action": "立即推送限时优惠和紧迫感信息",
+            "expected_impact": "预计可转化6位用户",
+            "data_support": "数据支撑：19.6%处于决策阶段，转化概率30%"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Ikarao Shell S2 Karaoke Machine'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Ikarao Shell S2 Karaoke Machine的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知26.9%",
+            "data_support": "数据支撑：31.8%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Wireless Microphone'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Wireless Microphone的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：29.9%用户关注此特性，比平均高11.7个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：2.8），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "10-30s",
+      "size": 171,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 77,
+          "Wireless Microphones": 56,
+          "High-Fidelity Sound": 42,
+          "Karaoke Machines": 41,
+          "Wireless Microphone": 31
+        },
+        "purchase_stages": {
+          "browsing": 170,
+          "deciding": 1
+        },
+        "price_ranges": {
+          "mid-range": 62,
+          "budget": 26,
+          "premium": 81,
+          "budget/mid-range": 1,
+          "budget-range": 1
+        },
+        "top_attributes": {
+          "Extended Battery Life": 66,
+          "High-Fidelity Sound": 61,
+          "Versatile Connectivity": 58,
+          "13.3-inch HD Touchscreen": 37,
+          "Wireless Microphone": 36
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Extended Battery Life",
+            "cluster_count": 21,
+            "cluster_pct": 12.3,
+            "avg_pct": 7.4,
+            "difference": 4.9
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "13.3-inch HD Touchscreen",
+            "cluster_count": 37,
+            "cluster_pct": 21.6,
+            "avg_pct": 8.6,
+            "difference": 13.0
+          },
+          {
+            "attribute": "Portable",
+            "cluster_count": 20,
+            "cluster_pct": 11.7,
+            "avg_pct": 4.4,
+            "difference": 7.3
+          },
+          {
+            "attribute": "140W Peak Power",
+            "cluster_count": 19,
+            "cluster_pct": 11.1,
+            "avg_pct": 4.1,
+            "difference": 7.0
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "browsing",
+            "cluster_count": 170,
+            "cluster_pct": 99.4,
+            "avg_pct": 66.2,
+            "difference": 33.2
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 1.4
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Extended Battery Life'深度关注者群体，12.3%的用户关注此兴趣，比平均水平高4.9个百分点。",
+        "unique_value_proposition": "该聚类用户对'13.3-inch HD Touchscreen, Portable, 140W Peak Power'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于99.4%的用户处于'browsing'阶段，比平均水平高33.2个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Extended Battery Life'的关注度比平均水平高4.9个百分点（12.3% vs 7.4%）",
+          "对'13.3-inch HD Touchscreen'特性的关注度比平均水平高13.0个百分点（21.6% vs 8.6%）",
+          "对'Portable'特性的关注度比平均水平高7.3个百分点（11.7% vs 4.4%）",
+          "对'140W Peak Power'特性的关注度比平均水平高7.0个百分点（11.1% vs 4.1%）",
+          "购买阶段：99.4%处于'browsing'阶段，比平均水平高33.2个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Extended Battery Life'有强烈偏好（12.3% vs 平均7.4%）",
+            "action": "针对该聚类重点展示与'Extended Battery Life'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：12.3%用户关注此兴趣，比平均高4.9个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'13.3-inch HD Touchscreen'特性（21.6% vs 平均8.6%）",
+            "action": "在产品页面和营销材料中突出展示'13.3-inch HD Touchscreen'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：21.6%用户关注此特性，比平均高13.0个百分点"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Extended Battery Life'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Extended Battery Life的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知4.9%",
+            "data_support": "数据支撑：12.3%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'13.3-inch HD Touchscreen'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示13.3-inch HD Touchscreen的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：21.6%用户关注此特性，比平均高13.0个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.4），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": [
+          "该聚类有99.4%用户仅处于浏览阶段，转化风险较高"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "10-30s",
+      "size": 58,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 31,
+          "Wireless Microphones": 25,
+          "High-Fidelity Sound": 23,
+          "Wireless Microphone": 18,
+          "Touchscreen Display": 16
+        },
+        "purchase_stages": {
+          "deciding": 58
+        },
+        "price_ranges": {
+          "mid-range": 27,
+          "budget": 7,
+          "premium": 23,
+          "budget/mid-range": 1
+        },
+        "top_attributes": {
+          "10.1\" HD Touchscreen": 31,
+          "High-Fidelity Sound": 24,
+          "Professional Wireless Microphone": 20,
+          "Versatile Connectivity": 18,
+          "Extended Battery Life": 16
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Wireless Microphone",
+            "cluster_count": 18,
+            "cluster_pct": 31.0,
+            "avg_pct": 19.3,
+            "difference": 11.7
+          }
+        ],
+        "unique_attributes": [],
+        "unique_stages": [
+          {
+            "stage": "deciding",
+            "cluster_count": 58,
+            "cluster_pct": 100.0,
+            "avg_pct": 14.6,
+            "difference": 85.4
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 0.5
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Wireless Microphone'深度关注者群体，31.0%的用户关注此兴趣，比平均水平高11.7个百分点。",
+        "unique_value_proposition": "该聚类用户最关注的产品特性是10.1\" HD Touchscreen, High-Fidelity Sound, Professional Wireless Microphone。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'deciding'阶段，比平均水平高85.4个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Wireless Microphone'的关注度比平均水平高11.7个百分点（31.0% vs 19.3%）",
+          "购买阶段：100.0%处于'deciding'阶段，比平均水平高85.4个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Wireless Microphone'有强烈偏好（31.0% vs 平均19.3%）",
+            "action": "针对该聚类重点展示与'Wireless Microphone'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：31.0%用户关注此兴趣，比平均高11.7个百分点"
+          },
+          {
+            "opportunity": "该聚类有100.0%用户处于决策阶段（比平均高85.4个百分点）",
+            "action": "立即推送限时优惠和紧迫感信息",
+            "expected_impact": "预计可转化17位用户",
+            "data_support": "数据支撑：100.0%处于决策阶段，转化概率30%"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Wireless Microphone'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Wireless Microphone的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.7%",
+            "data_support": "数据支撑：31.0%用户关注此兴趣，显著高于平均"
+          }
+        ],
+        "competitive_advantage": "该聚类与其他聚类特征相似，建议采用通用的营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "30-60s",
+      "size": 80,
+      "features": {
+        "top_interests": {
+          "Wireless Microphones": 47,
+          "Karaoke Machines": 41,
+          "Karaoke Machine": 29,
+          "High-Fidelity Sound": 24,
+          "Touchscreen Displays": 24
+        },
+        "purchase_stages": {
+          "comparing": 80
+        },
+        "price_ranges": {
+          "mid-range": 51,
+          "premium": 23,
+          "mid-range to premium": 1,
+          "budget/mid-range": 3,
+          "budget-range": 1,
+          "budget": 1
+        },
+        "top_attributes": {
+          "High-Fidelity Sound": 40,
+          "Versatile Connectivity": 33,
+          "Wireless Microphones": 31,
+          "10.1\" HD Touchscreen": 19,
+          "Long Battery Life": 17
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Wireless Microphones",
+            "cluster_count": 47,
+            "cluster_pct": 58.8,
+            "avg_pct": 36.0,
+            "difference": 22.8
+          },
+          {
+            "interest": "Karaoke Machines",
+            "cluster_count": 41,
+            "cluster_pct": 51.2,
+            "avg_pct": 23.6,
+            "difference": 27.7
+          },
+          {
+            "interest": "Touchscreen Displays",
+            "cluster_count": 24,
+            "cluster_pct": 30.0,
+            "avg_pct": 11.7,
+            "difference": 18.3
+          },
+          {
+            "interest": "Portable Speakers",
+            "cluster_count": 21,
+            "cluster_pct": 26.2,
+            "avg_pct": 9.5,
+            "difference": 16.7
+          },
+          {
+            "interest": "Home Entertainment",
+            "cluster_count": 8,
+            "cluster_pct": 10.0,
+            "avg_pct": 5.3,
+            "difference": 4.7
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Wireless Microphones",
+            "cluster_count": 31,
+            "cluster_pct": 38.8,
+            "avg_pct": 19.9,
+            "difference": 18.9
+          },
+          {
+            "attribute": "Long Battery Life",
+            "cluster_count": 17,
+            "cluster_pct": 21.2,
+            "avg_pct": 8.0,
+            "difference": 13.2
+          },
+          {
+            "attribute": "Sound Quality",
+            "cluster_count": 14,
+            "cluster_pct": 17.5,
+            "avg_pct": 8.8,
+            "difference": 8.7
+          },
+          {
+            "attribute": "Battery Life",
+            "cluster_count": 14,
+            "cluster_pct": 17.5,
+            "avg_pct": 7.0,
+            "difference": 10.5
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "comparing",
+            "cluster_count": 80,
+            "cluster_pct": 100.0,
+            "avg_pct": 18.9,
+            "difference": 81.1
+          }
+        ],
+        "unique_price_sensitivity": {
+          "price_range": "mid-range",
+          "cluster_pct": 63.7,
+          "avg_pct": 42.4,
+          "difference": 21.3
+        },
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 3.1
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Wireless Microphones'深度关注者群体，58.8%的用户关注此兴趣，比平均水平高22.8个百分点。",
+        "unique_value_proposition": "该聚类用户对'Wireless Microphones, Long Battery Life, Sound Quality'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'comparing'阶段，比平均水平高81.1个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Wireless Microphones'的关注度比平均水平高22.8个百分点（58.8% vs 36.0%）",
+          "对'Karaoke Machines'的关注度比平均水平高27.7个百分点（51.2% vs 23.6%）",
+          "对'Touchscreen Displays'的关注度比平均水平高18.3个百分点（30.0% vs 11.7%）",
+          "对'Wireless Microphones'特性的关注度比平均水平高18.9个百分点（38.8% vs 19.9%）",
+          "对'Long Battery Life'特性的关注度比平均水平高13.2个百分点（21.2% vs 8.0%）",
+          "对'Sound Quality'特性的关注度比平均水平高8.7个百分点（17.5% vs 8.8%）",
+          "价格敏感度：63.7%偏好'mid-range'，比平均水平高21.3个百分点",
+          "购买阶段：100.0%处于'comparing'阶段，比平均水平高81.1个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Wireless Microphones'有强烈偏好（58.8% vs 平均36.0%）",
+            "action": "针对该聚类重点展示与'Wireless Microphones'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：58.8%用户关注此兴趣，比平均高22.8个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'Wireless Microphones'特性（38.8% vs 平均19.9%）",
+            "action": "在产品页面和营销材料中突出展示'Wireless Microphones'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：38.8%用户关注此特性，比平均高18.9个百分点"
+          },
+          {
+            "opportunity": "该聚类有100.0%用户在对比（比平均高81.1个百分点）",
+            "action": "提供详细的产品对比工具和规格表",
+            "expected_impact": "预计可加速决策过程，提升转化率15-20%",
+            "data_support": "数据支撑：100.0%在对比，需要对比工具辅助决策"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Wireless Microphones'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Wireless Microphones的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知22.8%",
+            "data_support": "数据支撑：58.8%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Wireless Microphones'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Wireless Microphones的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：38.8%用户关注此特性，比平均高18.9个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：3.1），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "30-60s",
+      "size": 183,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 86,
+          "Wireless Microphones": 65,
+          "High-Fidelity Sound": 50,
+          "Karaoke Machines": 45,
+          "Wireless Microphone": 40
+        },
+        "purchase_stages": {
+          "browsing": 178,
+          "comparing": 3,
+          "deciding": 2
+        },
+        "price_ranges": {
+          "mid-range": 72,
+          "budget": 25,
+          "premium": 82,
+          "budget-range": 2,
+          "budget-mid-range": 1,
+          "budget/mid-range": 1
+        },
+        "top_attributes": {
+          "Extended Battery Life": 74,
+          "High-Fidelity Sound": 72,
+          "Versatile Connectivity": 68,
+          "Wireless Microphone": 41,
+          "13.3\" HD Touchscreen": 40
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Extended Battery Life",
+            "cluster_count": 29,
+            "cluster_pct": 15.8,
+            "avg_pct": 7.4,
+            "difference": 8.5
+          },
+          {
+            "interest": "Portable Karaoke",
+            "cluster_count": 25,
+            "cluster_pct": 13.7,
+            "avg_pct": 7.1,
+            "difference": 6.6
+          },
+          {
+            "interest": "HD Touchscreen",
+            "cluster_count": 21,
+            "cluster_pct": 11.5,
+            "avg_pct": 7.6,
+            "difference": 3.9
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "13.3\" HD Touchscreen",
+            "cluster_count": 40,
+            "cluster_pct": 21.9,
+            "avg_pct": 13.8,
+            "difference": 8.1
+          },
+          {
+            "attribute": "13.3-inch HD Touchscreen",
+            "cluster_count": 37,
+            "cluster_pct": 20.2,
+            "avg_pct": 8.6,
+            "difference": 11.6
+          },
+          {
+            "attribute": "Built-in Screen",
+            "cluster_count": 26,
+            "cluster_pct": 14.2,
+            "avg_pct": 4.9,
+            "difference": 9.3
+          },
+          {
+            "attribute": "Portable",
+            "cluster_count": 21,
+            "cluster_pct": 11.5,
+            "avg_pct": 4.4,
+            "difference": 7.0
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "browsing",
+            "cluster_count": 178,
+            "cluster_pct": 97.3,
+            "avg_pct": 66.2,
+            "difference": 31.1
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 2.3
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Extended Battery Life'深度关注者群体，15.8%的用户关注此兴趣，比平均水平高8.5个百分点。",
+        "unique_value_proposition": "该聚类用户对'13.3\" HD Touchscreen, 13.3-inch HD Touchscreen, Built-in Screen'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于97.3%的用户处于'browsing'阶段，比平均水平高31.1个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Extended Battery Life'的关注度比平均水平高8.5个百分点（15.8% vs 7.4%）",
+          "对'Portable Karaoke'的关注度比平均水平高6.6个百分点（13.7% vs 7.1%）",
+          "对'HD Touchscreen'的关注度比平均水平高3.9个百分点（11.5% vs 7.6%）",
+          "对'13.3\" HD Touchscreen'特性的关注度比平均水平高8.1个百分点（21.9% vs 13.8%）",
+          "对'13.3-inch HD Touchscreen'特性的关注度比平均水平高11.6个百分点（20.2% vs 8.6%）",
+          "对'Built-in Screen'特性的关注度比平均水平高9.3个百分点（14.2% vs 4.9%）",
+          "购买阶段：97.3%处于'browsing'阶段，比平均水平高31.1个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Extended Battery Life'有强烈偏好（15.8% vs 平均7.4%）",
+            "action": "针对该聚类重点展示与'Extended Battery Life'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，比平均高8.5个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'13.3\" HD Touchscreen'特性（21.9% vs 平均13.8%）",
+            "action": "在产品页面和营销材料中突出展示'13.3\" HD Touchscreen'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：21.9%用户关注此特性，比平均高8.1个百分点"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Extended Battery Life'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Extended Battery Life的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知8.5%",
+            "data_support": "数据支撑：15.8%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'13.3\" HD Touchscreen'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示13.3\" HD Touchscreen的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：21.9%用户关注此特性，比平均高8.1个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：2.3），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": [
+          "该聚类有97.3%用户仅处于浏览阶段，转化风险较高"
+        ]
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "30-60s",
+      "size": 80,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 41,
+          "Wireless Microphones": 27,
+          "High-Fidelity Sound": 25,
+          "Wireless Microphone": 21,
+          "Touchscreen Display": 17
+        },
+        "purchase_stages": {
+          "deciding": 80
+        },
+        "price_ranges": {
+          "mid-range": 26,
+          "premium": 42,
+          "budget": 11,
+          "budget/mid-range": 1
+        },
+        "top_attributes": {
+          "High-Fidelity Sound": 38,
+          "10.1\" HD Touchscreen": 35,
+          "Versatile Connectivity": 31,
+          "Professional-Grade Wireless Microphone": 27,
+          "Extended Battery Life": 26
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "HD Touchscreen",
+            "cluster_count": 15,
+            "cluster_pct": 18.8,
+            "avg_pct": 7.6,
+            "difference": 11.2
+          },
+          {
+            "interest": "Karaoke machine features",
+            "cluster_count": 13,
+            "cluster_pct": 16.2,
+            "avg_pct": 3.6,
+            "difference": 12.6
+          },
+          {
+            "interest": "Touchscreen display",
+            "cluster_count": 11,
+            "cluster_pct": 13.8,
+            "avg_pct": 2.4,
+            "difference": 11.4
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Professional-Grade Wireless Microphone",
+            "cluster_count": 27,
+            "cluster_pct": 33.8,
+            "avg_pct": 16.7,
+            "difference": 17.0
+          },
+          {
+            "attribute": "13.3\" HD Touchscreen",
+            "cluster_count": 17,
+            "cluster_pct": 21.2,
+            "avg_pct": 13.8,
+            "difference": 7.5
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "deciding",
+            "cluster_count": 80,
+            "cluster_pct": 100.0,
+            "avg_pct": 14.6,
+            "difference": 85.4
+          }
+        ],
+        "unique_price_sensitivity": {
+          "price_range": "premium",
+          "cluster_pct": 52.5,
+          "avg_pct": 42.8,
+          "difference": 9.7
+        },
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 1.9
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'HD Touchscreen'深度关注者群体，18.8%的用户关注此兴趣，比平均水平高11.2个百分点。",
+        "unique_value_proposition": "该聚类用户对'Professional-Grade Wireless Microphone, 13.3\" HD Touchscreen'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'deciding'阶段，比平均水平高85.4个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'HD Touchscreen'的关注度比平均水平高11.2个百分点（18.8% vs 7.6%）",
+          "对'Karaoke machine features'的关注度比平均水平高12.6个百分点（16.2% vs 3.6%）",
+          "对'Touchscreen display'的关注度比平均水平高11.4个百分点（13.8% vs 2.4%）",
+          "对'Professional-Grade Wireless Microphone'特性的关注度比平均水平高17.0个百分点（33.8% vs 16.7%）",
+          "对'13.3\" HD Touchscreen'特性的关注度比平均水平高7.5个百分点（21.2% vs 13.8%）",
+          "价格敏感度：52.5%偏好'premium'，比平均水平高9.7个百分点",
+          "购买阶段：100.0%处于'deciding'阶段，比平均水平高85.4个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'HD Touchscreen'有强烈偏好（18.8% vs 平均7.6%）",
+            "action": "针对该聚类重点展示与'HD Touchscreen'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：18.8%用户关注此兴趣，比平均高11.2个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'Professional-Grade Wireless Microphone'特性（33.8% vs 平均16.7%）",
+            "action": "在产品页面和营销材料中突出展示'Professional-Grade Wireless Microphone'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：33.8%用户关注此特性，比平均高17.0个百分点"
+          },
+          {
+            "opportunity": "该聚类有100.0%用户处于决策阶段（比平均高85.4个百分点）",
+            "action": "立即推送限时优惠和紧迫感信息",
+            "expected_impact": "预计可转化24位用户",
+            "data_support": "数据支撑：100.0%处于决策阶段，转化概率30%"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'HD Touchscreen'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对HD Touchscreen的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知11.2%",
+            "data_support": "数据支撑：18.8%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Professional-Grade Wireless Microphone'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Professional-Grade Wireless Microphone的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：33.8%用户关注此特性，比平均高17.0个百分点"
+          },
+          {
+            "recommendation": "为该聚类强调品牌价值和高端定位",
+            "priority": "medium",
+            "implementation": "展示品牌故事、VIP服务和高端产品线",
+            "expected_impact": "预计可提升品牌感知和用户忠诚度",
+            "data_support": "数据支撑：52.5%用户偏好高端产品，比平均高9.7个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：1.9），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "30-60s",
+      "size": 107,
+      "features": {
+        "top_interests": {
+          "Ikarao Break X1 Karaoke Machine": 36,
+          "Ikarao Break X2 Karaoke Machine": 36,
+          "Karaoke Machine": 30,
+          "Karaoke Systems": 30,
+          "Ikarao Shell S2 Karaoke Machine": 25
+        },
+        "purchase_stages": {
+          "comparing": 14,
+          "browsing": 75,
+          "browsing/comparing": 2,
+          "deciding": 16
+        },
+        "price_ranges": {
+          "premium": 62,
+          "budget": 24,
+          "budget/mid-range": 4,
+          "mid-range": 17
+        },
+        "top_attributes": {
+          "Versatile Connectivity": 55,
+          "High-Fidelity Sound": 44,
+          "10.1\" HD Touchscreen": 38,
+          "Extended Battery Life": 35,
+          "Wireless Microphone": 31
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Ikarao Break X1 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.6,
+            "difference": 28.1
+          },
+          {
+            "interest": "Ikarao Break X2 Karaoke Machine",
+            "cluster_count": 36,
+            "cluster_pct": 33.6,
+            "avg_pct": 5.7,
+            "difference": 28.0
+          },
+          {
+            "interest": "Karaoke Systems",
+            "cluster_count": 30,
+            "cluster_pct": 28.0,
+            "avg_pct": 8.4,
+            "difference": 19.7
+          },
+          {
+            "interest": "Ikarao Shell S2 Karaoke Machine",
+            "cluster_count": 25,
+            "cluster_pct": 23.4,
+            "avg_pct": 4.8,
+            "difference": 18.5
+          },
+          {
+            "interest": "Ikarao Shell S1 Karaoke Machine",
+            "cluster_count": 15,
+            "cluster_pct": 14.0,
+            "avg_pct": 3.1,
+            "difference": 10.9
+          },
+          {
+            "interest": "Ikarao Shell S1",
+            "cluster_count": 10,
+            "cluster_pct": 9.3,
+            "avg_pct": 1.2,
+            "difference": 8.1
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "Wireless Microphone",
+            "cluster_count": 31,
+            "cluster_pct": 29.0,
+            "avg_pct": 18.2,
+            "difference": 10.7
+          },
+          {
+            "attribute": "13.3\" HD Touchscreen",
+            "cluster_count": 25,
+            "cluster_pct": 23.4,
+            "avg_pct": 13.8,
+            "difference": 9.6
+          },
+          {
+            "attribute": "wireless mics",
+            "cluster_count": 12,
+            "cluster_pct": 11.2,
+            "avg_pct": 2.3,
+            "difference": 8.9
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "browsing/comparing",
+            "cluster_count": 2,
+            "cluster_pct": 1.9,
+            "avg_pct": 0.3,
+            "difference": 1.5
+          }
+        ],
+        "unique_price_sensitivity": {
+          "price_range": "premium",
+          "cluster_pct": 57.9,
+          "avg_pct": 42.8,
+          "difference": 15.2
+        },
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 3.1
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Ikarao Break X1 Karaoke Machine'深度关注者群体，33.6%的用户关注此兴趣，比平均水平高28.1个百分点。",
+        "unique_value_proposition": "该聚类用户对'Wireless Microphone, 13.3\" HD Touchscreen, wireless mics'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于1.9%的用户处于'browsing/comparing'阶段，比平均水平高1.5个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Ikarao Break X1 Karaoke Machine'的关注度比平均水平高28.1个百分点（33.6% vs 5.6%）",
+          "对'Ikarao Break X2 Karaoke Machine'的关注度比平均水平高28.0个百分点（33.6% vs 5.7%）",
+          "对'Karaoke Systems'的关注度比平均水平高19.7个百分点（28.0% vs 8.4%）",
+          "对'Wireless Microphone'特性的关注度比平均水平高10.7个百分点（29.0% vs 18.2%）",
+          "对'13.3\" HD Touchscreen'特性的关注度比平均水平高9.6个百分点（23.4% vs 13.8%）",
+          "对'wireless mics'特性的关注度比平均水平高8.9个百分点（11.2% vs 2.3%）",
+          "价格敏感度：57.9%偏好'premium'，比平均水平高15.2个百分点",
+          "购买阶段：1.9%处于'browsing/comparing'阶段，比平均水平高1.5个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Ikarao Break X1 Karaoke Machine'有强烈偏好（33.6% vs 平均5.6%）",
+            "action": "针对该聚类重点展示与'Ikarao Break X1 Karaoke Machine'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，比平均高28.1个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'Wireless Microphone'特性（29.0% vs 平均18.2%）",
+            "action": "在产品页面和营销材料中突出展示'Wireless Microphone'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：29.0%用户关注此特性，比平均高10.7个百分点"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Ikarao Break X1 Karaoke Machine'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Ikarao Break X1 Karaoke Machine的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知28.1%",
+            "data_support": "数据支撑：33.6%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'Wireless Microphone'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示Wireless Microphone的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：29.0%用户关注此特性，比平均高10.7个百分点"
+          },
+          {
+            "recommendation": "为该聚类强调品牌价值和高端定位",
+            "priority": "medium",
+            "implementation": "展示品牌故事、VIP服务和高端产品线",
+            "expected_impact": "预计可提升品牌感知和用户忠诚度",
+            "data_support": "数据支撑：57.9%用户偏好高端产品，比平均高15.2个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：3.1），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": []
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "30-60s",
+      "size": 181,
+      "features": {
+        "top_interests": {
+          "Karaoke Machine": 107,
+          "Wireless Microphones": 74,
+          "Touchscreen Display": 69,
+          "High-Fidelity Sound": 67,
+          "Wireless Microphone": 43
+        },
+        "purchase_stages": {
+          "browsing": 181
+        },
+        "price_ranges": {
+          "budget": 16,
+          "mid-range": 92,
+          "premium": 73
+        },
+        "top_attributes": {
+          "10.1\" HD Touchscreen": 146,
+          "Versatile Connectivity": 114,
+          "High-Fidelity Sound": 97,
+          "Professional Wireless Microphone": 90,
+          "Long-Lasting Battery": 70
+        }
+      },
+      "uniqueness": {
+        "unique_interests": [
+          {
+            "interest": "Touchscreen Display",
+            "cluster_count": 69,
+            "cluster_pct": 38.1,
+            "avg_pct": 19.5,
+            "difference": 18.6
+          },
+          {
+            "interest": "Portable Speaker",
+            "cluster_count": 40,
+            "cluster_pct": 22.1,
+            "avg_pct": 12.0,
+            "difference": 10.1
+          },
+          {
+            "interest": "Home Entertainment",
+            "cluster_count": 15,
+            "cluster_pct": 8.3,
+            "avg_pct": 5.3,
+            "difference": 3.0
+          }
+        ],
+        "unique_attributes": [
+          {
+            "attribute": "10.1\" HD Touchscreen",
+            "cluster_count": 146,
+            "cluster_pct": 80.7,
+            "avg_pct": 36.1,
+            "difference": 44.5
+          },
+          {
+            "attribute": "Professional Wireless Microphone",
+            "cluster_count": 90,
+            "cluster_pct": 49.7,
+            "avg_pct": 23.5,
+            "difference": 26.2
+          },
+          {
+            "attribute": "Long-Lasting Battery",
+            "cluster_count": 70,
+            "cluster_pct": 38.7,
+            "avg_pct": 16.2,
+            "difference": 22.5
+          },
+          {
+            "attribute": "10.1-inch HD Touchscreen",
+            "cluster_count": 34,
+            "cluster_pct": 18.8,
+            "avg_pct": 7.7,
+            "difference": 11.1
+          }
+        ],
+        "unique_stages": [
+          {
+            "stage": "browsing",
+            "cluster_count": 181,
+            "cluster_pct": 100.0,
+            "avg_pct": 66.2,
+            "difference": 33.8
+          }
+        ],
+        "unique_price_sensitivity": "",
+        "unique_concerns": [],
+        "distinctive_patterns": [],
+        "differentiation_score": 2.3
+      },
+      "cluster_specific_insights": {
+        "cluster_identity": "该聚类是'Touchscreen Display'深度关注者群体，38.1%的用户关注此兴趣，比平均水平高18.6个百分点。",
+        "unique_value_proposition": "该聚类用户对'10.1\" HD Touchscreen, Professional Wireless Microphone, Long-Lasting Battery'有显著高于平均的关注度，这表明他们特别重视这些产品特性。",
+        "distinctive_user_profile": "该聚类的独特之处在于100.0%的用户处于'browsing'阶段，比平均水平高33.8个百分点。这表明该聚类用户具有独特的购买行为模式。",
+        "what_makes_this_cluster_different": [
+          "对'Touchscreen Display'的关注度比平均水平高18.6个百分点（38.1% vs 19.5%）",
+          "对'Portable Speaker'的关注度比平均水平高10.1个百分点（22.1% vs 12.0%）",
+          "对'Home Entertainment'的关注度比平均水平高3.0个百分点（8.3% vs 5.3%）",
+          "对'10.1\" HD Touchscreen'特性的关注度比平均水平高44.5个百分点（80.7% vs 36.1%）",
+          "对'Professional Wireless Microphone'特性的关注度比平均水平高26.2个百分点（49.7% vs 23.5%）",
+          "对'Long-Lasting Battery'特性的关注度比平均水平高22.5个百分点（38.7% vs 16.2%）",
+          "购买阶段：100.0%处于'browsing'阶段，比平均水平高33.8个百分点"
+        ],
+        "cluster_specific_opportunities": [
+          {
+            "opportunity": "该聚类对'Touchscreen Display'有强烈偏好（38.1% vs 平均19.5%）",
+            "action": "针对该聚类重点展示与'Touchscreen Display'相关的产品和内容",
+            "expected_impact": "预计可提升该聚类用户的相关性感知和转化率",
+            "data_support": "数据支撑：38.1%用户关注此兴趣，比平均高18.6个百分点"
+          },
+          {
+            "opportunity": "该聚类特别关注'10.1\" HD Touchscreen'特性（80.7% vs 平均36.1%）",
+            "action": "在产品页面和营销材料中突出展示'10.1\" HD Touchscreen'特性",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度和购买意愿",
+            "data_support": "数据支撑：80.7%用户关注此特性，比平均高44.5个百分点"
+          }
+        ],
+        "targeted_recommendations": [
+          {
+            "recommendation": "为该聚类定制'Touchscreen Display'主题的营销内容",
+            "priority": "high",
+            "implementation": "创建专门针对Touchscreen Display的产品推荐页面，展示相关产品",
+            "expected_impact": "预计可提升该聚类用户的相关性感知18.6%",
+            "data_support": "数据支撑：38.1%用户关注此兴趣，显著高于平均"
+          },
+          {
+            "recommendation": "在产品页面突出展示'10.1\" HD Touchscreen'特性",
+            "priority": "high",
+            "implementation": "在首屏和产品详情页显著位置展示10.1\" HD Touchscreen的详细说明和优势",
+            "expected_impact": "预计可提升该聚类用户的产品匹配度",
+            "data_support": "数据支撑：80.7%用户关注此特性，比平均高44.5个百分点"
+          }
+        ],
+        "competitive_advantage": "该聚类具有较高的差异化程度（评分：2.3），具有独特的用户特征，可以针对性地制定营销策略。",
+        "risk_factors_specific": [
+          "该聚类有100.0%用户仅处于浏览阶段，转化风险较高"
+        ]
+      }
+    }
+  ]
+}

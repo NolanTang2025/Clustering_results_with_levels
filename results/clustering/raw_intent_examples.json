@@ -1,0 +1,87 @@
+[
+  {
+    "session_id": "holosession-1.0.35-1767061288520-5jzglwo",
+    "core_interests": [
+      "Karaoke Machine",
+      "Product Features",
+      "Customer Support/FAQ"
+    ],
+    "purchase_stage": "browsing",
+    "key_attributes": [
+      "10.1-inch HD Touchscreen",
+      "Wireless Microphones",
+      "Karaoke Apps"
+    ],
+    "price_range": "mid-range",
+    "concerns": "Wa",
+    "raw_output": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Karaoke Machine\",\n      \"Product Features\",\n      \"Customer Support/FAQ\"\n    ],\n    \"product_focus\": {\n      \"key_attributes\": [\n        \"10.1-inch HD Touchscreen\",\n        \"Wireless Microphones\",\n        \"Karaoke Apps\",\n        \"Sound Quality\",\n        \"Battery Life\"\n      ],\n      \"price_range\": \"mid-range\",\n      \"main_appeal\": \"Entertainment\"\n    },\n    \"purchase_signals\": {\n      \"stage\": \"browsing\",\n      \"concerns\": \"Warranty and Returns\"\n    },\n    \"behavior_summary\": {\n      \"engagement\": \"Moderate engagement with product details and FAQ sections.\",\n      \"browsing_path\": \"The user has not interacted with specific products in a sequence to indicate a clear browsing path. The current focus is on general information and FAQs. The product ID '9956241506615' is identified as 'USER CURRENT VIEWING' but no direct interaction signals are present in the provided ACTIONS.\"\n    },\n    \"match_analysis\": {\n      \"user_fit\": \"The user is exploring karaoke machines, a core offering of the shop. The interest in features like touchscreens, microphones, and apps aligns with the product catalog.\",\n      \"use_case\": \"Home entertainment, parties, or personal use.\",\n      \"customer_portrait\": \"A consumer interested in home entertainment solutions, likely looking for a complete karaoke setup for personal enjoyment or social gatherings.\"\n    }\n  },\n  \"intent_score\": 0.4,\n  \"most_interested_product_id\": \"9956241506615\"\n}"
+  },
+  {
+    "session_id": "holosession-1.0.32-1766677246426-ujax4n3",
+    "core_interests": [
+      "Karaoke Machine",
+      "Product Features",
+      "Customer Support/Information"
+    ],
+    "purchase_stage": "browsing",
+    "key_attributes": [
+      "10.1\" HD Touchscreen",
+      "Professional Wireless Microphone",
+      "Long-Lasting Battery"
+    ],
+    "price_range": "premium",
+    "concerns": "No",
+    "raw_output": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Karaoke Machine\",\n      \"Product Features\",\n      \"Customer Support/Information\"\n    ],\n    \"product_focus\": {\n      \"key_attributes\": [\n        \"10.1\\\" HD Touchscreen\",\n        \"Professional Wireless Microphone\",\n        \"Long-Lasting Battery\",\n        \"Versatile Connectivity\"\n      ],\n      \"price_range\": \"premium\",\n      \"main_appeal\": \"All-in-one Karaoke System\"\n    },\n    \"purchase_signals\": {\n      \"stage\": \"browsing\",\n      \"concerns\": \"None explicitly identified, but user is exploring FAQ sections.\"\n    },\n    \"behavior_summary\": {\n      \"engagement\": \"Moderate engagement, with a mix of page views and hovers, particularly around FAQ content.\",\n      \"browsing_path\": \"The user has viewed the 'break-x2' product page and then navigated to the FAQ section. There is no indication of comparing multiple products.\",\n      \"evolution\": \"The user's actions suggest initial interest in the product, followed by a need for more information, possibly related to its functionality or support.\"\n    },\n    \"match_analysis\": {\n      \"user_fit\": \"The user is actively browsing a specific karaoke machine, indicating a potential fit for this product. The shop's focus on karaoke machines aligns with this interest.\",\n      \"use_case\": \"Home entertainment, parties, or events requiring a portable karaoke setup.\",\n      \"customer_portrait\": \"A consumer looking for a high-quality, feature-rich karaoke machine for personal or small group use.\"\n    }\n  },\n  \"intent_score\": 0.65\n}"
+  },
+  {
+    "session_id": "holosession-1.0.29-1766076806266-wpyc54a",
+    "core_interests": [
+      "Shipping",
+      "Karaoke Systems",
+      "Product Features"
+    ],
+    "purchase_stage": "browsing",
+    "key_attributes": [
+      "13.3-inch HD Touchscreen",
+      "Professional-Grade Wireless Microphone",
+      "Extended Battery Life"
+    ],
+    "price_range": "mid-range",
+    "concerns": "Sh",
+    "raw_output": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Shipping\",\n      \"Karaoke Systems\",\n      \"Product Features\"\n    ],\n    \"product_focus\": {\n      \"key_attributes\": [\n        \"13.3-inch HD Touchscreen\",\n        \"Professional-Grade Wireless Microphone\",\n        \"Extended Battery Life\",\n        \"Customizable Audio Controls\",\n        \"Versatile Connectivity\"\n      ],\n      \"price_range\": \"mid-range\",\n      \"main_appeal\": \"All-in-one Karaoke\"\n    },\n    \"purchase_signals\": {\n      \"stage\": \"browsing\",\n      \"concerns\": \"Shipping times\"\n    },\n    \"behavior_summary\": {\n      \"engagement\": \"low\",\n      \"browsing_path\": \"N/A - Single product viewed\",\n      \"evolution\": \"No prior history to compare with.\"\n    },\n    \"match_analysis\": {\n      \"user_fit\": \"The user is investigating shipping policies, indicating a potential interest in purchasing.\",\n      \"use_case\": \"Home entertainment, parties, public speaking.\",\n      \"customer_portrait\": \"A user concerned with logistics and product features before making a purchase.\"\n    }\n  },\n  \"intent_score\": 0.4\n}"
+  },
+  {
+    "session_id": "holosession-1.0.33-1766706622325-yf7juyf",
+    "core_interests": [
+      "Karaoke Machine",
+      "Karaoke Machine Features",
+      "Karaoke Machine Compatibility"
+    ],
+    "purchase_stage": "browsing",
+    "key_attributes": [
+      "10.1\" HD Touchscreen",
+      "Wireless Microphone",
+      "Extended Battery Life"
+    ],
+    "price_range": "premium",
+    "concerns": "Co",
+    "raw_output": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Karaoke Machine\",\n      \"Karaoke Machine Features\",\n      \"Karaoke Machine Compatibility\"\n    ],\n    \"product_focus\": {\n      \"key_attributes\": [\n        \"10.1\\\" HD Touchscreen\",\n        \"Wireless Microphone\",\n        \"Extended Battery Life\",\n        \"Versatile Connectivity\",\n        \"Compatibility\"\n      ],\n      \"price_range\": \"premium\",\n      \"main_appeal\": \"All-in-one Entertainment\"\n    },\n    \"purchase_signals\": {\n      \"stage\": \"browsing\",\n      \"concerns\": \"Compatibility with Apple devices\"\n    },\n    \"behavior_summary\": {\n      \"engagement\": \"Moderate engagement with product details and FAQ.\",\n      \"browsing_path\": \"User has explored the FAQ page, showing interest in product functionality and compatibility, before viewing the product page for the Ikarao Shell S1. The interaction with the \\\"Shell S1\\\" text on the support page suggests a direct interest in this specific model.\"\n    },\n    \"match_analysis\": {\n      \"user_fit\": \"The user is investigating a high-end karaoke machine, aligning with the product's features and price point.\",\n      \"use_case\": \"Home entertainment, parties, live performances.\",\n      \"customer_portrait\": \"Tech-savvy individual or group looking for a premium, feature-rich karaoke solution for personal or social use.\"\n    }\n  },\n  \"intent_score\": 0.75\n}"
+  },
+  {
+    "session_id": "holosession-1.0.32-1766677246426-ujax4n3",
+    "core_interests": [
+      "Karaoke machine features",
+      "Product specifications",
+      "FAQ/Support"
+    ],
+    "purchase_stage": "browsing",
+    "key_attributes": [
+      "10.1\" HD Touchscreen",
+      "High-Fidelity Sound",
+      "Wireless Microphone"
+    ],
+    "price_range": "premium",
+    "concerns": "No",
+    "raw_output": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Karaoke machine features\",\n      \"Product specifications\",\n      \"FAQ/Support\"\n    ],\n    \"product_focus\": {\n      \"key_attributes\": [\n        \"10.1\\\" HD Touchscreen\",\n        \"High-Fidelity Sound\",\n        \"Wireless Microphone\",\n        \"Long-lasting Battery\",\n        \"Versatile Connectivity\"\n      ],\n      \"price_range\": \"premium\",\n      \"main_appeal\": \"All-in-one entertainment\"\n    },\n    \"purchase_signals\": {\n      \"stage\": \"browsing\",\n      \"concerns\": \"None explicitly identified, but engagement with FAQ suggests potential information-seeking.\"\n    },\n    \"behavior_summary\": {\n      \"engagement\": \"Moderate engagement, with significant hovering and clicking on FAQ elements.\",\n      \"browsing_path\": \"Single product focus on Break X2, with exploration of FAQ content.\"\n    },\n    \"match_analysis\": {\n      \"user_fit\": \"The user is actively exploring a high-end karaoke machine, indicating a potential fit for the Ikarao Break X2.\",\n      \"use_case\": \"Home entertainment, parties, or events requiring a professional sound system and interactive karaoke experience.\",\n      \"customer_portrait\": \"A consumer interested in premium home entertainment solutions, likely for social gatherings or personal enjoyment, who values advanced features and sound quality.\"\n    }\n  },\n  \"intent_score\": 0.7\n}"
+  }
+]

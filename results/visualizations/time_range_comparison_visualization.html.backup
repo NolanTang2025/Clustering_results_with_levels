@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间范围聚类特征对比分析</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin: 20px 0 15px 0;
+        }
+
+        .chart-container {
+            margin: 20px 0;
+            position: relative;
+            height: 400px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .insight-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .trend-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .difference-item {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 不同时间范围聚类特征对比分析</h1>
+            <p style="color: #666; font-size: 1.1em;">基于Gemini Embedding + K-Means的用户行为聚类对比</p>
+        </div>
+
+        <div id="content">
+            <!-- 动态生成内容 -->
+        </div>
+    </div>
+
+    <script>
+        let reportData = null;
+
+        function loadData() {
+            try {
+                reportData = {"summary": {"title": "不同时间范围聚类特征对比分析", "time_ranges_analyzed": ["0-5s", "5-10s", "10-30s", "30-60s", "1m-3m"], "total_time_ranges": 5}, "individual_analyses": [{"time_range": "0-5s", "total_records": 499, "n_clusters": 5, "avg_cluster_size": 99.8, "max_cluster_size": 122, "min_cluster_size": 50, "cluster_size_std": 25.7, "top_interests": {"Wireless Microphones": 22, "Karaoke Machine": 21, "Karaoke Machines": 14, "High-Fidelity Sound": 11, "Touchscreen Display": 8, "Portable Speakers": 8, "Karaoke Systems": 7, "Touchscreen Displays": 7, "Ikarao Break X1 Karaoke Machine": 6, "Ikarao Break X2 Karaoke Machine": 6}, "top_attributes": {"High-Fidelity Sound": 27, "Versatile Connectivity": 24, "Wireless Microphones": 19, "10.1\" HD Touchscreen": 17, "Extended Battery Life": 13, "Professional Wireless Microphone": 11, "Long-Lasting Battery": 11, "Wireless Microphone": 9, "Sound Quality": 8, "Professional-Grade Wireless Microphone": 7}, "top_stages": {"browsing": 24, "comparing": 13, "deciding": 13}, "top_concerns": {"None explicitly identified, but engagement with FAQ suggests seeking detailed information.": 1, "Warranty and Returns": 1, "None explicitly identified, but user is exploring FAQ sections.": 1, "After-Sale Service": 1, "product quality": 1, "Shipping times": 1}, "top_use_cases": {}, "top_price_ranges": {"premium": 25, "mid-range": 22, "budget": 2, "budget/mid-range": 1}, "top_appeals": {"All-in-one entertainment": 18, "All-in-one Entertainment": 8, "Karaoke Experience": 3, "Entertainment Hub": 3, "Karaoke Performance": 2}, "stage_distribution": {"browsing": 24, "comparing": 13, "deciding": 13}, "price_distribution": {"premium": 25, "mid-range": 22, "budget": 2, "budget/mid-range": 1}}, {"time_range": "5-10s", "total_records": 260, "n_clusters": 5, "avg_cluster_size": 52.0, "max_cluster_size": 82, "min_cluster_size": 21, "cluster_size_std": 21.8, "top_interests": {"Karaoke Machine": 20, "Wireless Microphones": 17, "Karaoke Machines": 14, "High-Fidelity Sound": 11, "Touchscreen Display": 10, "Touchscreen Displays": 7, "Ikarao Shell S1 Karaoke Machine": 6, "Portable Speakers": 6, "Karaoke machines": 5, "Ikarao Break X2 Karaoke Machine": 5}, "top_attributes": {"Versatile Connectivity": 20, "10.1\" HD Touchscreen": 19, "High-Fidelity Sound": 15, "Extended Battery Life": 10, "Professional Wireless Microphone": 10, "Professional-Grade Wireless Microphone": 9, "Wireless Microphone": 9, "10.1-inch HD Touchscreen": 8, "Wireless Microphones": 8, "Long-Lasting Battery": 7}, "top_stages": {"browsing": 20, "deciding": 15, "comparing": 14, "support": 1}, "top_concerns": {"Purchase platform (Amazon vs. Ikarao Store)": 1, "Shipping cost (indicated by entering shipping details)": 1, "Product warranty and registration process": 1, "Product functionality and usage details": 1, "The user interacted with the support page and typed extensively, indicating they might be troubleshooting an issue or seeking information about song lyrics, suggesting a potential concern about content availability or functionality.": 1, "TV connectivity, software updates, microphone support": 1, "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": 1, "karaoke subscription": 1, "After-Sales Service": 1, "Product not turning on, flashing red light, potential hardware failure, need for immediate replacement for an upcoming event.": 1}, "top_use_cases": {}, "top_price_ranges": {"mid-range": 29, "premium": 16, "budget": 2, "budget/mid-range": 1, "budget/mid-range/premium": 1}, "top_appeals": {"All-in-one entertainment": 17, "All-in-one Entertainment": 8, "Entertainment Hub": 4, "Entertainment": 3, "Karaoke Experience": 3}, "stage_distribution": {"browsing": 20, "deciding": 15, "comparing": 14, "support": 1}, "price_distribution": {"mid-range": 29, "premium": 16, "budget": 2, "budget/mid-range": 1, "budget/mid-range/premium": 1}}, {"time_range": "10-30s", "total_records": 587, "n_clusters": 5, "avg_cluster_size": 117.4, "max_cluster_size": 171, "min_cluster_size": 58, "cluster_size_std": 36.9, "top_interests": {"Karaoke Machine": 18, "Wireless Microphones": 17, "Karaoke Machines": 15, "High-Fidelity Sound": 14, "Wireless Microphone": 12, "Touchscreen Display": 10, "Touchscreen Displays": 9, "Portable Speakers": 8, "Ikarao Shell S1 Karaoke Machine": 5, "13.3\" HD Touchscreen": 4}, "top_attributes": {"High-Fidelity Sound": 30, "10.1\" HD Touchscreen": 24, "Versatile Connectivity": 22, "Wireless Microphones": 16, "Extended Battery Life": 16, "Wireless Microphone": 12, "Professional Wireless Microphone": 10, "Long Battery Life": 7, "13.3\" HD Touchscreen": 6, "Long-Lasting Battery": 6}, "top_stages": {"browsing": 24, "deciding": 14, "comparing": 12}, "top_concerns": {"Karafun activation and product differentiation (Break X1 vs X2)": 1, "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": 1, "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision.": 1}, "top_use_cases": {}, "top_price_ranges": {"mid-range": 29, "premium": 15, "budget": 5, "budget/mid-range/premium": 1}, "top_appeals": {"All-in-one entertainment": 16, "All-in-one Entertainment": 6, "Karaoke Experience": 5, "Entertainment": 3, "All-in-one karaoke": 2}, "stage_distribution": {"browsing": 24, "deciding": 14, "comparing": 12}, "price_distribution": {"mid-range": 29, "premium": 15, "budget": 5, "budget/mid-range/premium": 1}}, {"time_range": "30-60s", "total_records": 631, "n_clusters": 5, "avg_cluster_size": 126.2, "max_cluster_size": 183, "min_cluster_size": 80, "cluster_size_std": 46.6, "top_interests": {"Wireless Microphones": 22, "Karaoke Machine": 21, "Karaoke Machines": 14, "Touchscreen Display": 12, "High-Fidelity Sound": 11, "Wireless Microphone": 8, "Touchscreen Displays": 8, "Portable Speakers": 6, "Wireless microphones": 5, "HD Touchscreen": 5}, "top_attributes": {"Versatile Connectivity": 20, "10.1\" HD Touchscreen": 20, "High-Fidelity Sound": 19, "Extended Battery Life": 12, "Wireless Microphone": 11, "Professional Wireless Microphone": 11, "Long-Lasting Battery": 10, "Professional-Grade Wireless Microphone": 8, "Wireless Microphones": 7, "13.3\" HD Touchscreen": 6}, "top_stages": {"browsing": 26, "comparing": 12, "deciding": 11, "browsing/comparing": 1}, "top_concerns": {"None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": 1, "Warranty extension process": 1}, "top_use_cases": {}, "top_price_ranges": {"mid-range": 21, "premium": 19, "budget": 6, "budget/mid-range": 3, "mid-range to premium": 1}, "top_appeals": {"All-in-one entertainment": 16, "All-in-one Entertainment": 6, "Entertainment": 3, "All-in-one karaoke experience": 3, "Immersive Karaoke": 1}, "stage_distribution": {"browsing": 26, "comparing": 12, "deciding": 11, "browsing/comparing": 1}, "price_distribution": {"mid-range": 21, "premium": 19, "budget": 6, "budget/mid-range": 3, "mid-range to premium": 1}}, {"time_range": "1m-3m", "total_records": 889, "n_clusters": 5, "avg_cluster_size": 177.8, "max_cluster_size": 272, "min_cluster_size": 102, "cluster_size_std": 62.2, "top_interests": {"Wireless Microphones": 17, "Karaoke Machines": 13, "Karaoke Machine": 13, "High-Fidelity Sound": 10, "Touchscreen Displays": 7, "Ikarao Shell S2 Karaoke Machine": 7, "Karaoke Systems": 5, "Wireless Microphone": 5, "High-fidelity sound": 4, "Wireless microphone": 4}, "top_attributes": {"10.1\" HD Touchscreen": 20, "High-Fidelity Sound": 19, "Versatile Connectivity": 16, "Professional Wireless Microphone": 11, "Wireless Microphones": 8, "Extended Battery Life": 8, "Professional-Grade Wireless Microphone": 7, "Long-Lasting Battery": 7, "Sound Quality": 6, "13.3\" HD Touchscreen": 6}, "top_stages": {"browsing": 26, "deciding": 14, "comparing": 10}, "top_concerns": {"product functionality and support": 1, "Warranty information and product registration": 1, "product usage, features, and app integration": 1, "product usage, charging, shipping, and potential issues like damage or incorrect items": 1, "Product specifications and functionality": 1}, "top_use_cases": {}, "top_price_ranges": {"mid-range": 28, "premium": 16, "budget": 4, "budget/mid-range": 1, "budget-range": 1}, "top_appeals": {"All-in-one entertainment": 22, "Karaoke Experience": 3, "All-in-one Entertainment": 2, "Entertainment Hub": 2, "All-in-one karaoke experience": 2}, "stage_distribution": {"browsing": 26, "deciding": 14, "comparing": 10}, "price_distribution": {"mid-range": 28, "premium": 16, "budget": 4, "budget/mid-range": 1, "budget-range": 1}}], "comparison": {"stage_evolution": [{"time_range": "0-5s", "stages": {"browsing": 24, "comparing": 13, "deciding": 13}}, {"time_range": "5-10s", "stages": {"browsing": 20, "deciding": 15, "comparing": 14, "support": 1}}, {"time_range": "10-30s", "stages": {"browsing": 24, "deciding": 14, "comparing": 12}}, {"time_range": "30-60s", "stages": {"browsing": 26, "comparing": 12, "deciding": 11, "browsing/comparing": 1}}, {"time_range": "1m-3m", "stages": {"browsing": 26, "deciding": 14, "comparing": 10}}], "interest_evolution": {"Ikarao Break X2 Karaoke Machine": [{"time_range": "0-5s", "count": 6}, {"time_range": "5-10s", "count": 5}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Ikarao Shell S1 Karaoke Machine": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 6}, {"time_range": "10-30s", "count": 5}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Touchscreen Displays": [{"time_range": "0-5s", "count": 7}, {"time_range": "5-10s", "count": 7}, {"time_range": "10-30s", "count": 9}, {"time_range": "30-60s", "count": 8}, {"time_range": "1m-3m", "count": 7}], "High-fidelity sound": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 4}], "Karaoke Systems": [{"time_range": "0-5s", "count": 7}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 5}], "Portable Speakers": [{"time_range": "0-5s", "count": 8}, {"time_range": "5-10s", "count": 6}, {"time_range": "10-30s", "count": 8}, {"time_range": "30-60s", "count": 6}, {"time_range": "1m-3m", "count": 0}], "Ikarao Break X1 Karaoke Machine": [{"time_range": "0-5s", "count": 6}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Karaoke Machines": [{"time_range": "0-5s", "count": 14}, {"time_range": "5-10s", "count": 14}, {"time_range": "10-30s", "count": 15}, {"time_range": "30-60s", "count": 14}, {"time_range": "1m-3m", "count": 13}], "Karaoke Machine": [{"time_range": "0-5s", "count": 21}, {"time_range": "5-10s", "count": 20}, {"time_range": "10-30s", "count": 18}, {"time_range": "30-60s", "count": 21}, {"time_range": "1m-3m", "count": 13}], "13.3\" HD Touchscreen": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 4}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Ikarao Shell S2 Karaoke Machine": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 7}], "Wireless Microphones": [{"time_range": "0-5s", "count": 22}, {"time_range": "5-10s", "count": 17}, {"time_range": "10-30s", "count": 17}, {"time_range": "30-60s", "count": 22}, {"time_range": "1m-3m", "count": 17}], "HD Touchscreen": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 5}, {"time_range": "1m-3m", "count": 0}], "High-Fidelity Sound": [{"time_range": "0-5s", "count": 11}, {"time_range": "5-10s", "count": 11}, {"time_range": "10-30s", "count": 14}, {"time_range": "30-60s", "count": 11}, {"time_range": "1m-3m", "count": 10}], "Touchscreen Display": [{"time_range": "0-5s", "count": 8}, {"time_range": "5-10s", "count": 10}, {"time_range": "10-30s", "count": 10}, {"time_range": "30-60s", "count": 12}, {"time_range": "1m-3m", "count": 0}], "Wireless Microphone": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 12}, {"time_range": "30-60s", "count": 8}, {"time_range": "1m-3m", "count": 5}], "Wireless microphones": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 5}, {"time_range": "1m-3m", "count": 0}], "Karaoke machines": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 5}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Wireless microphone": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 4}]}, "concern_evolution": {"Purchase platform (Amazon vs. Ikarao Store)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "karaoke subscription": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product usage, charging, shipping, and potential issues like damage or incorrect items": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}], "Shipping times": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 1}, {"time_range": "1m-3m", "count": 0}], "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 1}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Karafun activation and product differentiation (Break X1 vs X2)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 1}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "TV connectivity, software updates, microphone support": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Warranty and Returns": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Product warranty and registration process": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "After-Sale Service": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product functionality and support": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}], "Shipping cost (indicated by entering shipping details)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product usage, features, and app integration": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}]}, "price_sensitivity_evolution": [{"time_range": "0-5s", "prices": {"premium": 25, "mid-range": 22, "budget": 2, "budget/mid-range": 1}}, {"time_range": "5-10s", "prices": {"mid-range": 29, "premium": 16, "budget": 2, "budget/mid-range": 1, "budget/mid-range/premium": 1}}, {"time_range": "10-30s", "prices": {"mid-range": 29, "premium": 15, "budget": 5, "budget/mid-range/premium": 1}}, {"time_range": "30-60s", "prices": {"mid-range": 21, "premium": 19, "budget": 6, "budget/mid-range": 3, "mid-range to premium": 1}}, {"time_range": "1m-3m", "prices": {"mid-range": 28, "premium": 16, "budget": 4, "budget/mid-range": 1, "budget-range": 1}}], "key_differences": ["随着访问时间增长，平均聚类大小呈现增长趋势，说明用户行为更加集中或分散", "短时间访问用户特有的关注点: Purchase platform (Amazon vs. Ikarao Store), After-Sale Service, Product not turning on, flashing red light, potential hardware failure, need for immediate replacement for an upcoming event.", "长时间访问用户特有的关注点: product functionality and support, product usage, features, and app integration, Warranty information and product registration"], "trends": ["关注点'product usage, charging, shipping, and potential issues like damage or incorrect items'在长时间访问用户中显著增加"]}, "insights": [{"title": "购买阶段分布特征", "description": "不同时间范围的用户购买阶段分布存在明显差异", "details": [{"time_range": "0-5s", "stages": {"browsing": 24, "comparing": 13, "deciding": 13}}, {"time_range": "5-10s", "stages": {"browsing": 20, "deciding": 15, "comparing": 14, "support": 1}}, {"time_range": "10-30s", "stages": {"browsing": 24, "deciding": 14, "comparing": 12}}, {"time_range": "30-60s", "stages": {"browsing": 26, "comparing": 12, "deciding": 11, "browsing/comparing": 1}}, {"time_range": "1m-3m", "stages": {"browsing": 26, "deciding": 14, "comparing": 10}}]}, {"title": "用户兴趣演变", "description": "随着访问时间增长，用户关注点发生变化", "details": "某些兴趣在长时间访问中更加突出"}, {"title": "用户关注点演变", "description": "不同时间范围的用户关注点存在差异", "details": {"Purchase platform (Amazon vs. Ikarao Store)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "karaoke subscription": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product usage, charging, shipping, and potential issues like damage or incorrect items": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}], "Shipping times": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 1}, {"time_range": "1m-3m", "count": 0}], "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 1}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Karafun activation and product differentiation (Break X1 vs X2)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 1}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "TV connectivity, software updates, microphone support": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Warranty and Returns": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "Product warranty and registration process": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "After-Sale Service": [{"time_range": "0-5s", "count": 1}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product functionality and support": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}], "Shipping cost (indicated by entering shipping details)": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 1}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 0}], "product usage, features, and app integration": [{"time_range": "0-5s", "count": 0}, {"time_range": "5-10s", "count": 0}, {"time_range": "10-30s", "count": 0}, {"time_range": "30-60s", "count": 0}, {"time_range": "1m-3m", "count": 1}]}}]};
+                renderPage();
+            } catch (error) {
+                document.getElementById('content').innerHTML = `
+                    <div class="section">
+                        <h2>❌ 数据加载失败</h2>
+                        <p style="color: red;">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderPage() {
+            const content = document.getElementById('content');
+            let html = '';
+
+            // 概览统计
+            html += renderOverview();
+            
+            // 购买阶段分布对比
+            html += renderStageComparison();
+            
+            // 用户兴趣演变
+            html += renderInterestEvolution();
+            
+            // 关注点演变
+            html += renderConcernEvolution();
+            
+            // 价格敏感度对比
+            html += renderPriceComparison();
+            
+            // 关键差异
+            html += renderKeyDifferences();
+            
+            // 趋势分析
+            html += renderTrends();
+            
+            // 详细特征对比表
+            html += renderDetailedComparison();
+
+            content.innerHTML = html;
+            renderCharts();
+        }
+
+        function renderOverview() {
+            const analyses = reportData.individual_analyses;
+            const totalRecords = analyses.reduce((sum, a) => sum + a.total_records, 0);
+            const totalClusters = analyses.reduce((sum, a) => sum + a.n_clusters, 0);
+            
+            return `
+                <div class="section">
+                    <h2>📈 概览统计</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="value">${analyses.length}</div>
+                            <div class="label">时间范围</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${totalRecords.toLocaleString()}</div>
+                            <div class="label">总记录数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${totalClusters}</div>
+                            <div class="label">总聚类数</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="value">${Math.round(totalRecords / totalClusters)}</div>
+                            <div class="label">平均聚类大小</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderStageComparison() {
+            const stageEvolution = reportData.comparison.stage_evolution;
+            
+            let tableRows = '';
+            const allStages = new Set();
+            stageEvolution.forEach(se => {
+                Object.keys(se.stages).forEach(s => allStages.add(s));
+            });
+
+            allStages.forEach(stage => {
+                tableRows += `<tr><td><strong>${stage}</strong></td>`;
+                stageEvolution.forEach(se => {
+                    tableRows += `<td>${se.stages[stage] || 0}</td>`;
+                });
+                tableRows += '</tr>';
+            });
+
+            return `
+                <div class="section">
+                    <h2>🔄 购买阶段分布对比</h2>
+                    <div class="chart-container">
+                        <canvas id="stageChart"></canvas>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>购买阶段</th>
+                                ${stageEvolution.map(se => `<th>${se.time_range}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function renderInterestEvolution() {
+            const interestEvolution = reportData.comparison.interest_evolution;
+            const topInterests = Object.entries(interestEvolution)
+                .sort((a, b) => {
+                    const aTotal = a[1].reduce((sum, e) => sum + e.count, 0);
+                    const bTotal = b[1].reduce((sum, e) => sum + e.count, 0);
+                    return bTotal - aTotal;
+                })
+                .slice(0, 10);
+
+            let tableRows = '';
+            topInterests.forEach(([interest, evolution]) => {
+                tableRows += `<tr><td><strong>${interest}</strong></td>`;
+                evolution.forEach(e => {
+                    tableRows += `<td>${e.count}</td>`;
+                });
+                tableRows += '</tr>';
+            });
+
+            const timeRanges = reportData.individual_analyses.map(a => a.time_range);
+
+            return `
+                <div class="section">
+                    <h2>🎯 用户兴趣演变</h2>
+                    <div class="chart-container">
+                        <canvas id="interestChart"></canvas>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>兴趣点</th>
+                                ${timeRanges.map(tr => `<th>${tr}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function renderConcernEvolution() {
+            const concernEvolution = reportData.comparison.concern_evolution;
+            const topConcerns = Object.entries(concernEvolution)
+                .sort((a, b) => {
+                    const aTotal = a[1].reduce((sum, e) => sum + e.count, 0);
+                    const bTotal = b[1].reduce((sum, e) => sum + e.count, 0);
+                    return bTotal - aTotal;
+                })
+                .slice(0, 10);
+
+            let tableRows = '';
+            topConcerns.forEach(([concern, evolution]) => {
+                const concernShort = concern.length > 40 ? concern.substring(0, 40) + '...' : concern;
+                tableRows += `<tr><td title="${concern}"><strong>${concernShort}</strong></td>`;
+                evolution.forEach(e => {
+                    tableRows += `<td>${e.count}</td>`;
+                });
+                tableRows += '</tr>';
+            });
+
+            const timeRanges = reportData.individual_analyses.map(a => a.time_range);
+
+            return `
+                <div class="section">
+                    <h2>⚠️ 用户关注点演变</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>关注点</th>
+                                ${timeRanges.map(tr => `<th>${tr}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function renderPriceComparison() {
+            const priceEvolution = reportData.comparison.price_sensitivity_evolution;
+            
+            let tableRows = '';
+            const allPrices = new Set();
+            priceEvolution.forEach(pe => {
+                Object.keys(pe.prices).forEach(p => allPrices.add(p));
+            });
+
+            allPrices.forEach(price => {
+                tableRows += `<tr><td><strong>${price}</strong></td>`;
+                priceEvolution.forEach(pe => {
+                    tableRows += `<td>${pe.prices[price] || 0}</td>`;
+                });
+                tableRows += '</tr>';
+            });
+
+            return `
+                <div class="section">
+                    <h2>💰 价格敏感度分布对比</h2>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>价格敏感度</th>
+                                ${priceEvolution.map(pe => `<th>${pe.time_range}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function renderKeyDifferences() {
+            const differences = reportData.comparison.key_differences;
+            
+            return `
+                <div class="section">
+                    <h2>🔍 关键差异</h2>
+                    ${differences.map(diff => `
+                        <div class="difference-item">
+                            <strong>📌</strong> ${diff}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderTrends() {
+            const trends = reportData.comparison.trends;
+            
+            return `
+                <div class="section">
+                    <h2>📈 趋势分析</h2>
+                    ${trends.map(trend => `
+                        <div class="trend-item">
+                            <strong>📊</strong> ${trend}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderDetailedComparison() {
+            const analyses = reportData.individual_analyses;
+            
+            let html = '<div class="section"><h2>📋 详细特征对比</h2>';
+            
+            analyses.forEach(analysis => {
+                html += `
+                    <div class="insight-card">
+                        <h3>${analysis.time_range} 时间范围</h3>
+                        <p><strong>总记录数:</strong> ${analysis.total_records.toLocaleString()} | 
+                           <strong>聚类数:</strong> ${analysis.n_clusters} | 
+                           <strong>平均聚类大小:</strong> ${analysis.avg_cluster_size}</p>
+                        
+                        <h4 style="margin-top: 15px;">Top 5 兴趣点</h4>
+                        <ul style="margin-left: 20px;">
+                            ${Object.entries(analysis.top_interests)
+                                .sort((a, b) => b[1] - a[1])
+                                .slice(0, 5)
+                                .map(([interest, count]) => `<li>${interest}: ${count} 次</li>`)
+                                .join('')}
+                        </ul>
+                        
+                        <h4 style="margin-top: 15px;">Top 5 产品特征</h4>
+                        <ul style="margin-left: 20px;">
+                            ${Object.entries(analysis.top_attributes)
+                                .sort((a, b) => b[1] - a[1])
+                                .slice(0, 5)
+                                .map(([attr, count]) => `<li>${attr}: ${count} 次</li>`)
+                                .join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            return html;
+        }
+
+        function renderCharts() {
+            // 购买阶段分布图表
+            const stageEvolution = reportData.comparison.stage_evolution;
+            const stageCtx = document.getElementById('stageChart').getContext('2d');
+            
+            const allStages = new Set();
+            stageEvolution.forEach(se => {
+                Object.keys(se.stages).forEach(s => allStages.add(s));
+            });
+            
+            const datasets = Array.from(allStages).map((stage, idx) => {
+                const colors = ['#667eea', '#f093fb', '#4facfe', '#00f2fe', '#43e97b'];
+                return {
+                    label: stage,
+                    data: stageEvolution.map(se => se.stages[stage] || 0),
+                    backgroundColor: colors[idx % colors.length],
+                    borderColor: colors[idx % colors.length],
+                };
+            });
+            
+            new Chart(stageCtx, {
+                type: 'bar',
+                data: {
+                    labels: stageEvolution.map(se => se.time_range),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 用户兴趣演变图表
+            const interestEvolution = reportData.comparison.interest_evolution;
+            const topInterests = Object.entries(interestEvolution)
+                .sort((a, b) => {
+                    const aTotal = a[1].reduce((sum, e) => sum + e.count, 0);
+                    const bTotal = b[1].reduce((sum, e) => sum + e.count, 0);
+                    return bTotal - aTotal;
+                })
+                .slice(0, 5);
+
+            const interestCtx = document.getElementById('interestChart').getContext('2d');
+            const interestDatasets = topInterests.map(([interest, evolution], idx) => {
+                const colors = ['#667eea', '#f093fb', '#4facfe', '#00f2fe', '#43e97b'];
+                return {
+                    label: interest,
+                    data: evolution.map(e => e.count),
+                    borderColor: colors[idx % colors.length],
+                    backgroundColor: colors[idx % colors.length] + '40',
+                    tension: 0.4
+                };
+            });
+
+            new Chart(interestCtx, {
+                type: 'line',
+                data: {
+                    labels: topInterests[0][1].map(e => e.time_range),
+                    datasets: interestDatasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 价格敏感度分布图表
+            const priceEvolution = reportData.comparison.price_sensitivity_evolution;
+            const priceCtx = document.getElementById('priceChart').getContext('2d');
+            
+            const allPrices = new Set();
+            priceEvolution.forEach(pe => {
+                Object.keys(pe.prices).forEach(p => allPrices.add(p));
+            });
+            
+            const priceDatasets = Array.from(allPrices).map((price, idx) => {
+                const colors = ['#667eea', '#f093fb', '#4facfe'];
+                return {
+                    label: price,
+                    data: priceEvolution.map(pe => pe.prices[price] || 0),
+                    backgroundColor: colors[idx % colors.length],
+                };
+            });
+            
+            new Chart(priceCtx, {
+                type: 'bar',
+                data: {
+                    labels: priceEvolution.map(pe => pe.time_range),
+                    datasets: priceDatasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        // 页面加载时执行
+        loadData();
+    </script>
+</body>
+</html>
+

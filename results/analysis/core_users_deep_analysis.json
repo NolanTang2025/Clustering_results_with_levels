@@ -1,0 +1,710 @@
+{
+  "summary": {
+    "title": "10-60s核心用户深度分析报告 - 决策支持",
+    "total_clusters": 10,
+    "analysis_date": "2025-01-06",
+    "purpose": "为运营决策提供数据支撑和行动建议"
+  },
+  "cluster_analyses": [
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "10-30s",
+      "size": 10,
+      "avg_intent_score": 0.83,
+      "top_interests": {
+        "Karaoke Machines": 5,
+        "Wireless Microphones": 4,
+        "Karaoke Machine": 4,
+        "High-Fidelity Sound": 4,
+        "Touchscreen Displays": 3
+      },
+      "purchase_stage_distribution": {
+        "comparing": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 8,
+        "budget": 1,
+        "premium": 1
+      },
+      "top_attributes": {
+        "Wireless Microphones": 7,
+        "High-Fidelity Sound": 6,
+        "10.1\" HD Touchscreen": 4,
+        "Sound Quality": 3,
+        "Versatile Connectivity": 3
+      },
+      "top_concerns": {},
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machines, Wireless Microphones, Karaoke Machine，处于comparing阶段，价格敏感度为mid-range。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "medium",
+        "key_differentiators": [
+          "Wireless Microphones",
+          "High-Fidelity Sound",
+          "10.1\" HD Touchscreen"
+        ],
+        "pain_points": [
+          "未明确识别"
+        ],
+        "opportunities": [
+          "有10位用户在对比，可提供产品对比工具和详细规格"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助10位对比用户快速决策，预计提升转化率15-20%",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.83），10位用户中有10位处于决策阶段。",
+        "conversion_potential_description": "中等转化潜力（评分: 0.50），需要更多引导和激励。预计转化率: 50.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "10-30s",
+      "size": 10,
+      "avg_intent_score": 0.74,
+      "top_interests": {
+        "Karaoke Machine": 7,
+        "High-Fidelity Sound": 5,
+        "Wireless Microphones": 5,
+        "Touchscreen Display": 3,
+        "Karaoke Machines": 2
+      },
+      "purchase_stage_distribution": {
+        "browsing": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 9,
+        "premium": 1
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 10,
+        "Versatile Connectivity": 8,
+        "10.1\" HD Touchscreen": 6,
+        "Professional Wireless Microphone": 5,
+        "Long-Lasting Battery": 4
+      },
+      "top_concerns": {},
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machine, High-Fidelity Sound, Wireless Microphones，处于browsing阶段，价格敏感度为mid-range。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen"
+        ],
+        "pain_points": [
+          "未明确识别"
+        ],
+        "opportunities": [],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.74），10位用户中有0位处于决策阶段。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "10-30s",
+      "size": 10,
+      "avg_intent_score": 0.8,
+      "top_interests": {
+        "Ikarao Shell S1 Karaoke Machine": 5,
+        "Wireless Microphone": 4,
+        "Karaoke machines": 3,
+        "Ikarao Break X1 Karaoke Machine": 3,
+        "Ikarao Break X2 Karaoke Machine": 3
+      },
+      "purchase_stage_distribution": {
+        "comparing": 2,
+        "browsing": 4,
+        "deciding": 4
+      },
+      "price_range_distribution": {
+        "premium": 6,
+        "mid-range": 2,
+        "budget/mid-range/premium": 1,
+        "budget": 1
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 7,
+        "Versatile Connectivity": 7,
+        "10.1\" HD Touchscreen": 6,
+        "Extended Battery Life": 4,
+        "Wireless Microphone": 4
+      },
+      "top_concerns": {
+        "Karafun activation and product differentiation (Break X1 vs X2)": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Ikarao Shell S1 Karaoke Machine, Wireless Microphone, Karaoke machines，处于browsing阶段，价格敏感度为premium。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "medium",
+        "key_differentiators": [
+          "High-Fidelity Sound",
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen"
+        ],
+        "pain_points": [
+          "Karafun activation and product differentiation (Break X1 vs X2)"
+        ],
+        "opportunities": [
+          "有4位用户处于决策阶段，可提供限时优惠促进转化",
+          "有6位用户偏好高端产品，可强调品牌价值和VIP服务"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化1位用户，带来约$420收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助2位对比用户快速决策，预计提升转化率15-20%",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.81），10位用户中有6位处于决策阶段。",
+        "conversion_potential_description": "中等转化潜力（评分: 0.50），需要更多引导和激励。预计转化率: 50.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "10-30s",
+      "size": 10,
+      "avg_intent_score": 0.72,
+      "top_interests": {
+        "wireless microphones": 3,
+        "Karaoke Machine": 3,
+        "Wireless Microphone": 3,
+        "Karaoke Machines": 2,
+        "Wireless Microphones": 2
+      },
+      "purchase_stage_distribution": {
+        "browsing": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 4,
+        "budget": 1,
+        "premium": 5
+      },
+      "top_attributes": {
+        "Extended Battery Life": 4,
+        "wireless microphones": 3,
+        "Wireless Microphone": 3,
+        "High-Fidelity Sound": 3,
+        "Versatile Connectivity": 3
+      },
+      "top_concerns": {
+        "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注wireless microphones, Karaoke Machine, Wireless Microphone，处于browsing阶段，价格敏感度为premium。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Extended Battery Life",
+          "wireless microphones",
+          "Wireless Microphone"
+        ],
+        "pain_points": [
+          "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research."
+        ],
+        "opportunities": [
+          "有5位用户偏好高端产品，可强调品牌价值和VIP服务"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.72），10位用户中有0位处于决策阶段。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "10-30s",
+      "size": 10,
+      "avg_intent_score": 0.88,
+      "top_interests": {
+        "Wireless Microphones": 5,
+        "Karaoke Machines": 4,
+        "Touchscreen Displays": 4,
+        "Long Battery Life": 3,
+        "Portable Speakers": 2
+      },
+      "purchase_stage_distribution": {
+        "deciding": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 6,
+        "budget": 2,
+        "premium": 2
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 8,
+        "High-Fidelity Sound": 4,
+        "Wireless Microphones": 3,
+        "Professional Wireless Microphone": 3,
+        "Extended Battery Life": 3
+      },
+      "top_concerns": {
+        "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision.": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Wireless Microphones, Karaoke Machines, Touchscreen Displays，处于deciding阶段，价格敏感度为mid-range。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "high",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Wireless Microphones"
+        ],
+        "pain_points": [
+          "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision."
+        ],
+        "opportunities": [
+          "有10位用户处于决策阶段，可提供限时优惠促进转化"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化3位用户，带来约$1050收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "预计可转化2位用户，带来约$700收入。投入成本（营销+优惠）约$70，ROI约900%",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.88），10位用户中有10位处于决策阶段。",
+        "conversion_potential_description": "高转化潜力（评分: 0.80），10位用户处于决策阶段，0位在对比中。预计转化率: 80.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_0",
+      "time_range": "30-60s",
+      "size": 10,
+      "avg_intent_score": 0.84,
+      "top_interests": {
+        "Karaoke Machines": 6,
+        "Wireless Microphones": 5,
+        "Wireless microphones": 3,
+        "Karaoke Machine": 3,
+        "High-Fidelity Sound": 3
+      },
+      "purchase_stage_distribution": {
+        "comparing": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 5,
+        "premium": 3,
+        "mid-range to premium": 1,
+        "budget/mid-range": 1
+      },
+      "top_attributes": {
+        "Wireless microphones": 3,
+        "High-Fidelity Sound": 3,
+        "Extended Battery Life": 3,
+        "Versatile Connectivity": 3,
+        "Wireless Microphones": 3
+      },
+      "top_concerns": {},
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machines, Wireless Microphones, Wireless microphones，处于comparing阶段，价格敏感度为mid-range。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "medium",
+        "key_differentiators": [
+          "Wireless microphones",
+          "High-Fidelity Sound",
+          "Extended Battery Life"
+        ],
+        "pain_points": [
+          "未明确识别"
+        ],
+        "opportunities": [
+          "有10位用户在对比，可提供产品对比工具和详细规格"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助10位对比用户快速决策，预计提升转化率15-20%",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.83），10位用户中有10位处于决策阶段。",
+        "conversion_potential_description": "中等转化潜力（评分: 0.50），需要更多引导和激励。预计转化率: 50.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_1",
+      "time_range": "30-60s",
+      "size": 10,
+      "avg_intent_score": 0.73,
+      "top_interests": {
+        "Wireless Microphones": 5,
+        "Karaoke Machines": 4,
+        "Touchscreen Displays": 3,
+        "Portable Audio Systems": 2,
+        "Karaoke Machine": 2
+      },
+      "purchase_stage_distribution": {
+        "browsing": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 6,
+        "budget": 2,
+        "premium": 2
+      },
+      "top_attributes": {
+        "Versatile Connectivity": 4,
+        "13.3-inch HD Touchscreen": 3,
+        "High-Fidelity Sound": 3,
+        "Professional-Grade Wireless Microphone": 3,
+        "Extended Battery Life": 3
+      },
+      "top_concerns": {},
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Wireless Microphones, Karaoke Machines, Touchscreen Displays，处于browsing阶段，价格敏感度为mid-range。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Versatile Connectivity",
+          "13.3-inch HD Touchscreen",
+          "High-Fidelity Sound"
+        ],
+        "pain_points": [
+          "未明确识别"
+        ],
+        "opportunities": [],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.73），10位用户中有0位处于决策阶段。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_2",
+      "time_range": "30-60s",
+      "size": 10,
+      "avg_intent_score": 0.88,
+      "top_interests": {
+        "Karaoke Machine": 5,
+        "Wireless Microphones": 4,
+        "Wireless Microphone": 4,
+        "Touchscreen Display": 2,
+        "HD Touchscreen": 2
+      },
+      "purchase_stage_distribution": {
+        "deciding": 10
+      },
+      "price_range_distribution": {
+        "mid-range": 3,
+        "premium": 4,
+        "budget": 2,
+        "budget/mid-range": 1
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 7,
+        "High-Fidelity Sound": 3,
+        "Professional-Grade Wireless Microphone": 3,
+        "High-Fidelity Sound (104dB SPL)": 3,
+        "Versatile Connectivity": 3
+      },
+      "top_concerns": {},
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machine, Wireless Microphones, Wireless Microphone，处于deciding阶段，价格敏感度为premium。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "high",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound",
+          "Professional-Grade Wireless Microphone"
+        ],
+        "pain_points": [
+          "未明确识别"
+        ],
+        "opportunities": [
+          "有10位用户处于决策阶段，可提供限时优惠促进转化"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化3位用户，带来约$1050收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "预计可转化2位用户，带来约$700收入。投入成本（营销+优惠）约$70，ROI约900%",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.88），10位用户中有10位处于决策阶段。",
+        "conversion_potential_description": "高转化潜力（评分: 0.80），10位用户处于决策阶段，0位在对比中。预计转化率: 80.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_3",
+      "time_range": "30-60s",
+      "size": 10,
+      "avg_intent_score": 0.76,
+      "top_interests": {
+        "Karaoke Machine": 4,
+        "Ikarao Break X1 Karaoke Machine": 3,
+        "Karaoke Systems": 3,
+        "Ikarao Shell S2 Karaoke Machine": 2,
+        "Ikarao Break X2 Karaoke Machine": 2
+      },
+      "purchase_stage_distribution": {
+        "comparing": 2,
+        "browsing": 6,
+        "browsing/comparing": 1,
+        "deciding": 1
+      },
+      "price_range_distribution": {
+        "premium": 5,
+        "budget": 1,
+        "budget/mid-range": 1,
+        "mid-range": 3
+      },
+      "top_attributes": {
+        "Versatile Connectivity": 5,
+        "10.1\" HD Touchscreen": 4,
+        "High-Fidelity Sound": 4,
+        "Wireless Microphone": 3,
+        "Long-Lasting Battery": 3
+      },
+      "top_concerns": {
+        "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machine, Ikarao Break X1 Karaoke Machine, Karaoke Systems，处于browsing阶段，价格敏感度为premium。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "Versatile Connectivity",
+          "10.1\" HD Touchscreen",
+          "High-Fidelity Sound"
+        ],
+        "pain_points": [
+          "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one."
+        ],
+        "opportunities": [
+          "有5位用户偏好高端产品，可强调品牌价值和VIP服务"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$105收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          },
+          {
+            "action": "提供产品对比工具",
+            "priority": "high",
+            "expected_impact": "帮助2位对比用户快速决策，预计提升转化率15-20%",
+            "implementation": "在产品页面添加\"对比\"功能，突出差异化优势"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.76），10位用户中有3位处于决策阶段。",
+        "conversion_potential_description": "低转化潜力（评分: 0.30），需要长期培育。预计转化率: 30.0%"
+      }
+    },
+    {
+      "cluster_id": "cluster_4",
+      "time_range": "30-60s",
+      "size": 10,
+      "avg_intent_score": 0.78,
+      "top_interests": {
+        "Karaoke Machine": 7,
+        "Wireless Microphones": 7,
+        "Touchscreen Display": 6,
+        "High-Fidelity Sound": 4,
+        "Portable Speaker": 2
+      },
+      "purchase_stage_distribution": {
+        "browsing": 10
+      },
+      "price_range_distribution": {
+        "budget": 1,
+        "mid-range": 4,
+        "premium": 5
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 8,
+        "Professional Wireless Microphone": 6,
+        "High-Fidelity Sound": 6,
+        "Versatile Connectivity": 5,
+        "Long-Lasting Battery": 5
+      },
+      "top_concerns": {
+        "Warranty extension process": 1
+      },
+      "insights": {
+        "user_profile": "该聚类包含10位用户，主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display，处于browsing阶段，价格敏感度为premium。",
+        "purchase_intent_level": "high",
+        "conversion_potential": "low",
+        "key_differentiators": [
+          "10.1\" HD Touchscreen",
+          "Professional Wireless Microphone",
+          "High-Fidelity Sound"
+        ],
+        "pain_points": [
+          "Warranty extension process"
+        ],
+        "opportunities": [
+          "有5位用户偏好高端产品，可强调品牌价值和VIP服务"
+        ],
+        "recommended_actions": [
+          {
+            "action": "立即推送限时优惠",
+            "priority": "high",
+            "expected_impact": "预计可转化0位用户，带来约$0收入",
+            "implementation": "在用户下次访问时显示\"限时优惠\"弹窗，提供10-15%折扣"
+          }
+        ],
+        "roi_estimate": "需要长期培育，建议通过内容营销和邮件营销逐步转化",
+        "purchase_intent_description": "高购买意图（平均意图分数: 0.78），10位用户中有0位处于决策阶段。",
+        "conversion_potential_description": "低转化潜力（评分: 0.20），需要长期培育。预计转化率: 20.0%"
+      }
+    }
+  ],
+  "comparisons": {
+    "size_distribution": {
+      "cluster_0": 10,
+      "cluster_1": 10,
+      "cluster_2": 10,
+      "cluster_3": 10,
+      "cluster_4": 10
+    },
+    "intent_score_comparison": {
+      "cluster_0": 0.84,
+      "cluster_1": 0.73,
+      "cluster_2": 0.88,
+      "cluster_3": 0.76,
+      "cluster_4": 0.78
+    },
+    "stage_distribution": {
+      "cluster_0": {
+        "comparing": 10
+      },
+      "cluster_1": {
+        "browsing": 10
+      },
+      "cluster_2": {
+        "deciding": 10
+      },
+      "cluster_3": {
+        "comparing": 2,
+        "browsing": 6,
+        "browsing/comparing": 1,
+        "deciding": 1
+      },
+      "cluster_4": {
+        "browsing": 10
+      }
+    },
+    "price_sensitivity_comparison": {
+      "cluster_0": {
+        "mid-range": 5,
+        "premium": 3,
+        "mid-range to premium": 1,
+        "budget/mid-range": 1
+      },
+      "cluster_1": {
+        "mid-range": 6,
+        "budget": 2,
+        "premium": 2
+      },
+      "cluster_2": {
+        "mid-range": 3,
+        "premium": 4,
+        "budget": 2,
+        "budget/mid-range": 1
+      },
+      "cluster_3": {
+        "premium": 5,
+        "budget": 1,
+        "budget/mid-range": 1,
+        "mid-range": 3
+      },
+      "cluster_4": {
+        "budget": 1,
+        "mid-range": 4,
+        "premium": 5
+      }
+    },
+    "key_differences": [
+      {
+        "type": "购买意图差异",
+        "description": "购买意图最高的聚类: cluster_0, cluster_2（意图分数: 0.88），最低的聚类意图分数: 0.73",
+        "implication": "应优先对高意图聚类进行转化，对低意图聚类进行培育"
+      }
+    ]
+  },
+  "strategic_recommendations": [
+    {
+      "priority": "high",
+      "category": "立即转化",
+      "recommendation": "优先转化10个高意图聚类（共100位用户）",
+      "actions": [
+        "推送限时优惠（10-15%折扣）",
+        "提供\"立即购买\"快捷按钮",
+        "展示库存紧张信息创造紧迫感",
+        "提供免费配送和快速发货承诺"
+      ],
+      "expected_impact": "预计可转化30位用户，带来约$10,500收入",
+      "roi": "投入约$5,000-8,000（优惠+营销），ROI约300-400%"
+    },
+    {
+      "priority": "high",
+      "category": "优化转化路径",
+      "recommendation": "优化2个高转化潜力聚类的用户体验",
+      "actions": [
+        "提供产品对比工具和详细规格",
+        "展示用户评价和视频演示",
+        "优化页面加载速度和移动端体验",
+        "提供在线客服支持"
+      ],
+      "expected_impact": "预计提升整体转化率15-25%",
+      "roi": "投入约$3,000-5,000（开发+优化），长期ROI约500%+"
+    }
+  ]
+}

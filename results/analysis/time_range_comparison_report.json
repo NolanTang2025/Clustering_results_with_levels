@@ -1,0 +1,1623 @@
+{
+  "summary": {
+    "title": "不同时间范围聚类特征对比分析",
+    "time_ranges_analyzed": [
+      "0-5s",
+      "5-10s",
+      "10-30s",
+      "30-60s",
+      "1m-3m"
+    ],
+    "total_time_ranges": 5
+  },
+  "individual_analyses": [
+    {
+      "time_range": "0-5s",
+      "total_records": 499,
+      "n_clusters": 5,
+      "avg_cluster_size": 99.8,
+      "max_cluster_size": 122,
+      "min_cluster_size": 50,
+      "cluster_size_std": 25.7,
+      "top_interests": {
+        "Wireless Microphones": 22,
+        "Karaoke Machine": 21,
+        "Karaoke Machines": 14,
+        "High-Fidelity Sound": 11,
+        "Touchscreen Display": 8,
+        "Portable Speakers": 8,
+        "Karaoke Systems": 7,
+        "Touchscreen Displays": 7,
+        "Ikarao Break X1 Karaoke Machine": 6,
+        "Ikarao Break X2 Karaoke Machine": 6
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 27,
+        "Versatile Connectivity": 24,
+        "Wireless Microphones": 19,
+        "10.1\" HD Touchscreen": 17,
+        "Extended Battery Life": 13,
+        "Professional Wireless Microphone": 11,
+        "Long-Lasting Battery": 11,
+        "Wireless Microphone": 9,
+        "Sound Quality": 8,
+        "Professional-Grade Wireless Microphone": 7
+      },
+      "top_stages": {
+        "browsing": 24,
+        "comparing": 13,
+        "deciding": 13
+      },
+      "top_concerns": {
+        "None explicitly identified, but engagement with FAQ suggests seeking detailed information.": 1,
+        "Warranty and Returns": 1,
+        "None explicitly identified, but user is exploring FAQ sections.": 1,
+        "After-Sale Service": 1,
+        "product quality": 1,
+        "Shipping times": 1
+      },
+      "top_use_cases": {},
+      "top_price_ranges": {
+        "premium": 25,
+        "mid-range": 22,
+        "budget": 2,
+        "budget/mid-range": 1
+      },
+      "top_appeals": {
+        "All-in-one entertainment": 18,
+        "All-in-one Entertainment": 8,
+        "Karaoke Experience": 3,
+        "Entertainment Hub": 3,
+        "Karaoke Performance": 2
+      },
+      "stage_distribution": {
+        "browsing": 24,
+        "comparing": 13,
+        "deciding": 13
+      },
+      "price_distribution": {
+        "premium": 25,
+        "mid-range": 22,
+        "budget": 2,
+        "budget/mid-range": 1
+      }
+    },
+    {
+      "time_range": "5-10s",
+      "total_records": 260,
+      "n_clusters": 5,
+      "avg_cluster_size": 52.0,
+      "max_cluster_size": 82,
+      "min_cluster_size": 21,
+      "cluster_size_std": 21.8,
+      "top_interests": {
+        "Karaoke Machine": 20,
+        "Wireless Microphones": 17,
+        "Karaoke Machines": 14,
+        "High-Fidelity Sound": 11,
+        "Touchscreen Display": 10,
+        "Touchscreen Displays": 7,
+        "Ikarao Shell S1 Karaoke Machine": 6,
+        "Portable Speakers": 6,
+        "Karaoke machines": 5,
+        "Ikarao Break X2 Karaoke Machine": 5
+      },
+      "top_attributes": {
+        "Versatile Connectivity": 20,
+        "10.1\" HD Touchscreen": 19,
+        "High-Fidelity Sound": 15,
+        "Extended Battery Life": 10,
+        "Professional Wireless Microphone": 10,
+        "Professional-Grade Wireless Microphone": 9,
+        "Wireless Microphone": 9,
+        "10.1-inch HD Touchscreen": 8,
+        "Wireless Microphones": 8,
+        "Long-Lasting Battery": 7
+      },
+      "top_stages": {
+        "browsing": 20,
+        "deciding": 15,
+        "comparing": 14,
+        "support": 1
+      },
+      "top_concerns": {
+        "Purchase platform (Amazon vs. Ikarao Store)": 1,
+        "Shipping cost (indicated by entering shipping details)": 1,
+        "Product warranty and registration process": 1,
+        "Product functionality and usage details": 1,
+        "The user interacted with the support page and typed extensively, indicating they might be troubleshooting an issue or seeking information about song lyrics, suggesting a potential concern about content availability or functionality.": 1,
+        "TV connectivity, software updates, microphone support": 1,
+        "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": 1,
+        "karaoke subscription": 1,
+        "After-Sales Service": 1,
+        "Product not turning on, flashing red light, potential hardware failure, need for immediate replacement for an upcoming event.": 1
+      },
+      "top_use_cases": {},
+      "top_price_ranges": {
+        "mid-range": 29,
+        "premium": 16,
+        "budget": 2,
+        "budget/mid-range": 1,
+        "budget/mid-range/premium": 1
+      },
+      "top_appeals": {
+        "All-in-one entertainment": 17,
+        "All-in-one Entertainment": 8,
+        "Entertainment Hub": 4,
+        "Entertainment": 3,
+        "Karaoke Experience": 3
+      },
+      "stage_distribution": {
+        "browsing": 20,
+        "deciding": 15,
+        "comparing": 14,
+        "support": 1
+      },
+      "price_distribution": {
+        "mid-range": 29,
+        "premium": 16,
+        "budget": 2,
+        "budget/mid-range": 1,
+        "budget/mid-range/premium": 1
+      }
+    },
+    {
+      "time_range": "10-30s",
+      "total_records": 587,
+      "n_clusters": 5,
+      "avg_cluster_size": 117.4,
+      "max_cluster_size": 171,
+      "min_cluster_size": 58,
+      "cluster_size_std": 36.9,
+      "top_interests": {
+        "Karaoke Machine": 18,
+        "Wireless Microphones": 17,
+        "Karaoke Machines": 15,
+        "High-Fidelity Sound": 14,
+        "Wireless Microphone": 12,
+        "Touchscreen Display": 10,
+        "Touchscreen Displays": 9,
+        "Portable Speakers": 8,
+        "Ikarao Shell S1 Karaoke Machine": 5,
+        "13.3\" HD Touchscreen": 4
+      },
+      "top_attributes": {
+        "High-Fidelity Sound": 30,
+        "10.1\" HD Touchscreen": 24,
+        "Versatile Connectivity": 22,
+        "Wireless Microphones": 16,
+        "Extended Battery Life": 16,
+        "Wireless Microphone": 12,
+        "Professional Wireless Microphone": 10,
+        "Long Battery Life": 7,
+        "13.3\" HD Touchscreen": 6,
+        "Long-Lasting Battery": 6
+      },
+      "top_stages": {
+        "browsing": 24,
+        "deciding": 14,
+        "comparing": 12
+      },
+      "top_concerns": {
+        "Karafun activation and product differentiation (Break X1 vs X2)": 1,
+        "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": 1,
+        "User is actively seeking information about product manuals, indicating a desire to understand usage and potentially troubleshoot, which is a common step before a purchase decision.": 1
+      },
+      "top_use_cases": {},
+      "top_price_ranges": {
+        "mid-range": 29,
+        "premium": 15,
+        "budget": 5,
+        "budget/mid-range/premium": 1
+      },
+      "top_appeals": {
+        "All-in-one entertainment": 16,
+        "All-in-one Entertainment": 6,
+        "Karaoke Experience": 5,
+        "Entertainment": 3,
+        "All-in-one karaoke": 2
+      },
+      "stage_distribution": {
+        "browsing": 24,
+        "deciding": 14,
+        "comparing": 12
+      },
+      "price_distribution": {
+        "mid-range": 29,
+        "premium": 15,
+        "budget": 5,
+        "budget/mid-range/premium": 1
+      }
+    },
+    {
+      "time_range": "30-60s",
+      "total_records": 631,
+      "n_clusters": 5,
+      "avg_cluster_size": 126.2,
+      "max_cluster_size": 183,
+      "min_cluster_size": 80,
+      "cluster_size_std": 46.6,
+      "top_interests": {
+        "Wireless Microphones": 22,
+        "Karaoke Machine": 21,
+        "Karaoke Machines": 14,
+        "Touchscreen Display": 12,
+        "High-Fidelity Sound": 11,
+        "Wireless Microphone": 8,
+        "Touchscreen Displays": 8,
+        "Portable Speakers": 6,
+        "Wireless microphones": 5,
+        "HD Touchscreen": 5
+      },
+      "top_attributes": {
+        "Versatile Connectivity": 20,
+        "10.1\" HD Touchscreen": 20,
+        "High-Fidelity Sound": 19,
+        "Extended Battery Life": 12,
+        "Wireless Microphone": 11,
+        "Professional Wireless Microphone": 11,
+        "Long-Lasting Battery": 10,
+        "Professional-Grade Wireless Microphone": 8,
+        "Wireless Microphones": 7,
+        "13.3\" HD Touchscreen": 6
+      },
+      "top_stages": {
+        "browsing": 26,
+        "comparing": 12,
+        "deciding": 11,
+        "browsing/comparing": 1
+      },
+      "top_concerns": {
+        "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": 1,
+        "Warranty extension process": 1
+      },
+      "top_use_cases": {},
+      "top_price_ranges": {
+        "mid-range": 21,
+        "premium": 19,
+        "budget": 6,
+        "budget/mid-range": 3,
+        "mid-range to premium": 1
+      },
+      "top_appeals": {
+        "All-in-one entertainment": 16,
+        "All-in-one Entertainment": 6,
+        "Entertainment": 3,
+        "All-in-one karaoke experience": 3,
+        "Immersive Karaoke": 1
+      },
+      "stage_distribution": {
+        "browsing": 26,
+        "comparing": 12,
+        "deciding": 11,
+        "browsing/comparing": 1
+      },
+      "price_distribution": {
+        "mid-range": 21,
+        "premium": 19,
+        "budget": 6,
+        "budget/mid-range": 3,
+        "mid-range to premium": 1
+      }
+    },
+    {
+      "time_range": "1m-3m",
+      "total_records": 889,
+      "n_clusters": 5,
+      "avg_cluster_size": 177.8,
+      "max_cluster_size": 272,
+      "min_cluster_size": 102,
+      "cluster_size_std": 62.2,
+      "top_interests": {
+        "Wireless Microphones": 17,
+        "Karaoke Machines": 13,
+        "Karaoke Machine": 13,
+        "High-Fidelity Sound": 10,
+        "Touchscreen Displays": 7,
+        "Ikarao Shell S2 Karaoke Machine": 7,
+        "Karaoke Systems": 5,
+        "Wireless Microphone": 5,
+        "High-fidelity sound": 4,
+        "Wireless microphone": 4
+      },
+      "top_attributes": {
+        "10.1\" HD Touchscreen": 20,
+        "High-Fidelity Sound": 19,
+        "Versatile Connectivity": 16,
+        "Professional Wireless Microphone": 11,
+        "Wireless Microphones": 8,
+        "Extended Battery Life": 8,
+        "Professional-Grade Wireless Microphone": 7,
+        "Long-Lasting Battery": 7,
+        "Sound Quality": 6,
+        "13.3\" HD Touchscreen": 6
+      },
+      "top_stages": {
+        "browsing": 26,
+        "deciding": 14,
+        "comparing": 10
+      },
+      "top_concerns": {
+        "product functionality and support": 1,
+        "Warranty information and product registration": 1,
+        "product usage, features, and app integration": 1,
+        "product usage, charging, shipping, and potential issues like damage or incorrect items": 1,
+        "Product specifications and functionality": 1
+      },
+      "top_use_cases": {},
+      "top_price_ranges": {
+        "mid-range": 28,
+        "premium": 16,
+        "budget": 4,
+        "budget/mid-range": 1,
+        "budget-range": 1
+      },
+      "top_appeals": {
+        "All-in-one entertainment": 22,
+        "Karaoke Experience": 3,
+        "All-in-one Entertainment": 2,
+        "Entertainment Hub": 2,
+        "All-in-one karaoke experience": 2
+      },
+      "stage_distribution": {
+        "browsing": 26,
+        "deciding": 14,
+        "comparing": 10
+      },
+      "price_distribution": {
+        "mid-range": 28,
+        "premium": 16,
+        "budget": 4,
+        "budget/mid-range": 1,
+        "budget-range": 1
+      }
+    }
+  ],
+  "comparison": {
+    "stage_evolution": [
+      {
+        "time_range": "0-5s",
+        "stages": {
+          "browsing": 24,
+          "comparing": 13,
+          "deciding": 13
+        }
+      },
+      {
+        "time_range": "5-10s",
+        "stages": {
+          "browsing": 20,
+          "deciding": 15,
+          "comparing": 14,
+          "support": 1
+        }
+      },
+      {
+        "time_range": "10-30s",
+        "stages": {
+          "browsing": 24,
+          "deciding": 14,
+          "comparing": 12
+        }
+      },
+      {
+        "time_range": "30-60s",
+        "stages": {
+          "browsing": 26,
+          "comparing": 12,
+          "deciding": 11,
+          "browsing/comparing": 1
+        }
+      },
+      {
+        "time_range": "1m-3m",
+        "stages": {
+          "browsing": 26,
+          "deciding": 14,
+          "comparing": 10
+        }
+      }
+    ],
+    "interest_evolution": {
+      "Ikarao Break X2 Karaoke Machine": [
+        {
+          "time_range": "0-5s",
+          "count": 6
+        },
+        {
+          "time_range": "5-10s",
+          "count": 5
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Ikarao Shell S1 Karaoke Machine": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 6
+        },
+        {
+          "time_range": "10-30s",
+          "count": 5
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Touchscreen Displays": [
+        {
+          "time_range": "0-5s",
+          "count": 7
+        },
+        {
+          "time_range": "5-10s",
+          "count": 7
+        },
+        {
+          "time_range": "10-30s",
+          "count": 9
+        },
+        {
+          "time_range": "30-60s",
+          "count": 8
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 7
+        }
+      ],
+      "High-fidelity sound": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 4
+        }
+      ],
+      "Karaoke Systems": [
+        {
+          "time_range": "0-5s",
+          "count": 7
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 5
+        }
+      ],
+      "Portable Speakers": [
+        {
+          "time_range": "0-5s",
+          "count": 8
+        },
+        {
+          "time_range": "5-10s",
+          "count": 6
+        },
+        {
+          "time_range": "10-30s",
+          "count": 8
+        },
+        {
+          "time_range": "30-60s",
+          "count": 6
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Ikarao Break X1 Karaoke Machine": [
+        {
+          "time_range": "0-5s",
+          "count": 6
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Karaoke Machines": [
+        {
+          "time_range": "0-5s",
+          "count": 14
+        },
+        {
+          "time_range": "5-10s",
+          "count": 14
+        },
+        {
+          "time_range": "10-30s",
+          "count": 15
+        },
+        {
+          "time_range": "30-60s",
+          "count": 14
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 13
+        }
+      ],
+      "Karaoke Machine": [
+        {
+          "time_range": "0-5s",
+          "count": 21
+        },
+        {
+          "time_range": "5-10s",
+          "count": 20
+        },
+        {
+          "time_range": "10-30s",
+          "count": 18
+        },
+        {
+          "time_range": "30-60s",
+          "count": 21
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 13
+        }
+      ],
+      "13.3\" HD Touchscreen": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 4
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Ikarao Shell S2 Karaoke Machine": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 7
+        }
+      ],
+      "Wireless Microphones": [
+        {
+          "time_range": "0-5s",
+          "count": 22
+        },
+        {
+          "time_range": "5-10s",
+          "count": 17
+        },
+        {
+          "time_range": "10-30s",
+          "count": 17
+        },
+        {
+          "time_range": "30-60s",
+          "count": 22
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 17
+        }
+      ],
+      "HD Touchscreen": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 5
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "High-Fidelity Sound": [
+        {
+          "time_range": "0-5s",
+          "count": 11
+        },
+        {
+          "time_range": "5-10s",
+          "count": 11
+        },
+        {
+          "time_range": "10-30s",
+          "count": 14
+        },
+        {
+          "time_range": "30-60s",
+          "count": 11
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 10
+        }
+      ],
+      "Touchscreen Display": [
+        {
+          "time_range": "0-5s",
+          "count": 8
+        },
+        {
+          "time_range": "5-10s",
+          "count": 10
+        },
+        {
+          "time_range": "10-30s",
+          "count": 10
+        },
+        {
+          "time_range": "30-60s",
+          "count": 12
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Wireless Microphone": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 12
+        },
+        {
+          "time_range": "30-60s",
+          "count": 8
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 5
+        }
+      ],
+      "Wireless microphones": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 5
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Karaoke machines": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 5
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Wireless microphone": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 4
+        }
+      ]
+    },
+    "concern_evolution": {
+      "Purchase platform (Amazon vs. Ikarao Store)": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "karaoke subscription": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "product usage, charging, shipping, and potential issues like damage or incorrect items": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 1
+        }
+      ],
+      "Shipping times": [
+        {
+          "time_range": "0-5s",
+          "count": 1
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 1
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 1
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Karafun activation and product differentiation (Break X1 vs X2)": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 1
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "TV connectivity, software updates, microphone support": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Warranty and Returns": [
+        {
+          "time_range": "0-5s",
+          "count": 1
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "Product warranty and registration process": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "After-Sale Service": [
+        {
+          "time_range": "0-5s",
+          "count": 1
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "product functionality and support": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 1
+        }
+      ],
+      "Shipping cost (indicated by entering shipping details)": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 1
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 0
+        }
+      ],
+      "product usage, features, and app integration": [
+        {
+          "time_range": "0-5s",
+          "count": 0
+        },
+        {
+          "time_range": "5-10s",
+          "count": 0
+        },
+        {
+          "time_range": "10-30s",
+          "count": 0
+        },
+        {
+          "time_range": "30-60s",
+          "count": 0
+        },
+        {
+          "time_range": "1m-3m",
+          "count": 1
+        }
+      ]
+    },
+    "price_sensitivity_evolution": [
+      {
+        "time_range": "0-5s",
+        "prices": {
+          "premium": 25,
+          "mid-range": 22,
+          "budget": 2,
+          "budget/mid-range": 1
+        }
+      },
+      {
+        "time_range": "5-10s",
+        "prices": {
+          "mid-range": 29,
+          "premium": 16,
+          "budget": 2,
+          "budget/mid-range": 1,
+          "budget/mid-range/premium": 1
+        }
+      },
+      {
+        "time_range": "10-30s",
+        "prices": {
+          "mid-range": 29,
+          "premium": 15,
+          "budget": 5,
+          "budget/mid-range/premium": 1
+        }
+      },
+      {
+        "time_range": "30-60s",
+        "prices": {
+          "mid-range": 21,
+          "premium": 19,
+          "budget": 6,
+          "budget/mid-range": 3,
+          "mid-range to premium": 1
+        }
+      },
+      {
+        "time_range": "1m-3m",
+        "prices": {
+          "mid-range": 28,
+          "premium": 16,
+          "budget": 4,
+          "budget/mid-range": 1,
+          "budget-range": 1
+        }
+      }
+    ],
+    "key_differences": [
+      "随着访问时间增长，平均聚类大小呈现增长趋势，说明用户行为更加集中或分散",
+      "短时间访问用户特有的关注点: Purchase platform (Amazon vs. Ikarao Store), After-Sale Service, Product not turning on, flashing red light, potential hardware failure, need for immediate replacement for an upcoming event.",
+      "长时间访问用户特有的关注点: product functionality and support, product usage, features, and app integration, Warranty information and product registration"
+    ],
+    "trends": [
+      "关注点'product usage, charging, shipping, and potential issues like damage or incorrect items'在长时间访问用户中显著增加"
+    ]
+  },
+  "insights": [
+    {
+      "title": "购买阶段分布特征",
+      "description": "不同时间范围的用户购买阶段分布存在明显差异",
+      "details": [
+        {
+          "time_range": "0-5s",
+          "stages": {
+            "browsing": 24,
+            "comparing": 13,
+            "deciding": 13
+          }
+        },
+        {
+          "time_range": "5-10s",
+          "stages": {
+            "browsing": 20,
+            "deciding": 15,
+            "comparing": 14,
+            "support": 1
+          }
+        },
+        {
+          "time_range": "10-30s",
+          "stages": {
+            "browsing": 24,
+            "deciding": 14,
+            "comparing": 12
+          }
+        },
+        {
+          "time_range": "30-60s",
+          "stages": {
+            "browsing": 26,
+            "comparing": 12,
+            "deciding": 11,
+            "browsing/comparing": 1
+          }
+        },
+        {
+          "time_range": "1m-3m",
+          "stages": {
+            "browsing": 26,
+            "deciding": 14,
+            "comparing": 10
+          }
+        }
+      ]
+    },
+    {
+      "title": "用户兴趣演变",
+      "description": "随着访问时间增长，用户关注点发生变化",
+      "details": "某些兴趣在长时间访问中更加突出"
+    },
+    {
+      "title": "用户关注点演变",
+      "description": "不同时间范围的用户关注点存在差异",
+      "details": {
+        "Purchase platform (Amazon vs. Ikarao Store)": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "karaoke subscription": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "product usage, charging, shipping, and potential issues like damage or incorrect items": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 1
+          }
+        ],
+        "Shipping times": [
+          {
+            "time_range": "0-5s",
+            "count": 1
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "None explicitly stated, but the user viewed a higher-priced item first and then a mid-range one.": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 1
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "None explicitly stated, but engagement with support and FAQs suggests potential pre-purchase research.": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 1
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "Karafun activation and product differentiation (Break X1 vs X2)": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 1
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "TV connectivity, software updates, microphone support": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "Product functionality and setup (KaraFun activation, TV connectivity, microphone support)": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "Warranty and Returns": [
+          {
+            "time_range": "0-5s",
+            "count": 1
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "Product warranty and registration process": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "After-Sale Service": [
+          {
+            "time_range": "0-5s",
+            "count": 1
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "product functionality and support": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 1
+          }
+        ],
+        "Shipping cost (indicated by entering shipping details)": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 1
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 0
+          }
+        ],
+        "product usage, features, and app integration": [
+          {
+            "time_range": "0-5s",
+            "count": 0
+          },
+          {
+            "time_range": "5-10s",
+            "count": 0
+          },
+          {
+            "time_range": "10-30s",
+            "count": 0
+          },
+          {
+            "time_range": "30-60s",
+            "count": 0
+          },
+          {
+            "time_range": "1m-3m",
+            "count": 1
+          }
+        ]
+      }
+    }
+  ]
+}

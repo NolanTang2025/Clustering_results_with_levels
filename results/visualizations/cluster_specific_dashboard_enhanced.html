@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-60s核心用户深度分析 - Cluster-Specific Dashboard (含证据)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-bottom: 100px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #1a1a1a;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 32px;
+        }
+
+        .card, .stat-card, .cluster-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .cluster-card:hover {
+            border-color: #1a1a1a;
+            border-left-width: 4px;
+            padding-left: 36px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+        }
+
+        table th, table td {
+            color: #333;
+            font-weight: 300;
+            padding: 20px 24px;
+        }
+        
+        table tr:hover td {
+            background: #fafafa;
+        }
+
+        table th {
+            font-weight: 600;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            background: #fafafa;
+            padding: 20px 24px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #1a1a1a;
+            background: transparent;
+            font-size: 0.875rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: #1a1a1a;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            color: #ffffff;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            opacity: 0.6;
+            border-bottom-color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+        }
+        </style>
+    <link rel="stylesheet" href="minimal_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 10-60s核心用户深度分析 - Cluster-Specific Dashboard (含证据)</h1>
+            <p style="color: #666; font-size: 1.1em;">每个分析结论都有对应的数据证据支撑</p>
+        </div>
+        <div id="content">加载中...</div>
+    </div>
+    <script id="data-script" type="application/json">{"summary":{"title":"增强版聚类特定分析报告 - 降低重合度","total_clusters":10,"analysis_date":"2025-01-06","purpose":"识别每个聚类的独特特征，降低重合度，提高区分度","total_users":1218},"cluster_analyses":[{"cluster_id":"cluster_0","time_range":"10-30s","size":116,"features":{"top_interests":{"Wireless Microphones":71,"Karaoke Machines":64,"High-Fidelity Sound":43,"Touchscreen Displays":39,"Karaoke Machine":37},"purchase_stages":{"comparing":115,"browsing/comparing":1},"price_ranges":{"mid-range":72,"budget":3,"premium":34,"budget-range":1,"budget/mid-range":6},"top_attributes":{"Wireless Microphones":66,"High-Fidelity Sound":62,"Versatile Connectivity":33,"Sound Quality":27,"10.1\" HD Touchscreen":24}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Portable Speakers'高度专注群体，25.0%的用户关注此兴趣（是平均水平的2.62倍），比平均水平高15.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Touchscreen Display, Portability, Wireless Microphones'有极高的关注度（分别是平均水平的5.08, 3.28, 2.86倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含116位用户，0.0%处于决策阶段，99.1%在对比中。","what_makes_this_cluster_different":["对'Portable Speakers'的关注度是平均水平的2.62倍（25.0% vs 9.5%，高15.5个百分点）","对'Touchscreen Display'特性的关注度是平均水平的5.08倍（12.9% vs 2.5%，高10.4个百分点）","对'Portability'特性的关注度是平均水平的3.28倍（12.9% vs 3.9%，高9.0个百分点）","对'Wireless Microphones'特性的关注度是平均水平的2.86倍（56.9% vs 19.9%，高37.0个百分点）"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Portable Speakers'有极高偏好（25.0% vs 平均9.5%，是平均水平的2.62倍）","action":"为该聚类创建专门的'Portable Speakers'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知15.5%以上","data_support":"数据支撑：25.0%用户关注此兴趣，是平均水平的2.62倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Touchscreen Display'特性（12.9% vs 平均2.5%，是平均水平的5.08倍）","action":"在产品页面和营销材料中重点突出'Touchscreen Display'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：12.9%用户关注此特性，是平均水平的5.08倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Portable Speakers'主题的专属营销内容","priority":"high","implementation":"创建专门针对Portable Speakers的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知15.5%以上","data_support":"数据支撑：25.0%用户关注此兴趣，是平均水平的2.62倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Touchscreen Display'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Touchscreen Display的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：12.9%用户关注此特性，是平均水平的5.08倍，这是该聚类最独特的属性偏好"}],"competitive_advantage":"该聚类具有较高的差异化程度（评分：2.0），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：1个独特兴趣、7个独特属性。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"Portable Speakers","cluster_count":29,"cluster_pct":25.0,"avg_pct":9.5,"difference":15.5,"uniqueness_ratio":2.62}],"unique_attributes":[{"attribute":"Wireless Microphones","cluster_count":66,"cluster_pct":56.9,"avg_pct":19.9,"difference":37.0,"uniqueness_ratio":2.86},{"attribute":"Sound Quality","cluster_count":27,"cluster_pct":23.3,"avg_pct":8.8,"difference":14.5,"uniqueness_ratio":2.65},{"attribute":"Long Battery Life","cluster_count":21,"cluster_pct":18.1,"avg_pct":8.0,"difference":10.1,"uniqueness_ratio":2.25},{"attribute":"Portable Design","cluster_count":19,"cluster_pct":16.4,"avg_pct":5.7,"difference":10.6,"uniqueness_ratio":2.85},{"attribute":"Battery Life","cluster_count":19,"cluster_pct":16.4,"avg_pct":7.0,"difference":9.4,"uniqueness_ratio":2.35},{"attribute":"Portability","cluster_count":15,"cluster_pct":12.9,"avg_pct":3.9,"difference":9.0,"uniqueness_ratio":3.28},{"attribute":"Touchscreen Display","cluster_count":15,"cluster_pct":12.9,"avg_pct":2.5,"difference":10.4,"uniqueness_ratio":5.08}],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":2.0,"cluster_identity":"该聚类是'Portable Speakers'高度专注群体，25.0%的用户关注此兴趣（是平均水平的2.62倍），比平均水平高15.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Touchscreen Display, Portability, Wireless Microphones'有极高的关注度（分别是平均水平的5.08, 3.28, 2.86倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含116位用户，0.0%处于决策阶段，99.1%在对比中。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Portable Speakers'有极高偏好（25.0% vs 平均9.5%，是平均水平的2.62倍）","action":"为该聚类创建专门的'Portable Speakers'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知15.5%以上","data_support":"数据支撑：25.0%用户关注此兴趣，是平均水平的2.62倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Touchscreen Display'特性（12.9% vs 平均2.5%，是平均水平的5.08倍）","action":"在产品页面和营销材料中重点突出'Touchscreen Display'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：12.9%用户关注此特性，是平均水平的5.08倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Portable Speakers'主题的专属营销内容","priority":"high","implementation":"创建专门针对Portable Speakers的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知15.5%以上","data_support":"数据支撑：25.0%用户关注此兴趣，是平均水平的2.62倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Touchscreen Display'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Touchscreen Display的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：12.9%用户关注此特性，是平均水平的5.08倍，这是该聚类最独特的属性偏好"}],"what_makes_different":["对'Portable Speakers'的关注度是平均水平的2.62倍（25.0% vs 9.5%，高15.5个百分点）","对'Touchscreen Display'特性的关注度是平均水平的5.08倍（12.9% vs 2.5%，高10.4个百分点）","对'Portability'特性的关注度是平均水平的3.28倍（12.9% vs 3.9%，高9.0个百分点）","对'Wireless Microphones'特性的关注度是平均水平的2.86倍（56.9% vs 19.9%，高37.0个百分点）"]}},{"cluster_id":"cluster_1","time_range":"10-30s","size":135,"features":{"top_interests":{"Karaoke Machine":85,"High-Fidelity Sound":55,"Wireless Microphones":53,"Touchscreen Display":50,"Wireless Microphone":32},"purchase_stages":{"browsing":134,"comparing":1},"price_ranges":{"mid-range":66,"premium":56,"budget":13},"top_attributes":{"10.1\" HD Touchscreen":105,"Versatile Connectivity":84,"High-Fidelity Sound":83,"Professional Wireless Microphone":70,"Long-Lasting Battery":63}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Touchscreen Display'高度专注群体，37.0%的用户关注此兴趣（是平均水平的1.9倍），比平均水平高17.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'10.1-inch HD Touchscreen, Professional Wireless Microphone, 10.1\" HD Touchscreen'有极高的关注度（分别是平均水平的2.59, 2.21, 2.15倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含135位用户，0.0%处于决策阶段，0.7%在对比中。","what_makes_this_cluster_different":["对'Touchscreen Display'的关注度是平均水平的1.9倍（37.0% vs 19.5%，高17.5个百分点）","对'10.1-inch HD Touchscreen'特性的关注度是平均水平的2.59倍（20.0% vs 7.7%，高12.3个百分点）","对'Professional Wireless Microphone'特性的关注度是平均水平的2.21倍（51.9% vs 23.5%，高28.4个百分点）","对'10.1\" HD Touchscreen'特性的关注度是平均水平的2.15倍（77.8% vs 36.1%，高41.7个百分点）"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Touchscreen Display'有极高偏好（37.0% vs 平均19.5%，是平均水平的1.9倍）","action":"为该聚类创建专门的'Touchscreen Display'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知17.5%以上","data_support":"数据支撑：37.0%用户关注此兴趣，是平均水平的1.9倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'10.1-inch HD Touchscreen'特性（20.0% vs 平均7.7%，是平均水平的2.59倍）","action":"在产品页面和营销材料中重点突出'10.1-inch HD Touchscreen'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：20.0%用户关注此特性，是平均水平的2.59倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Touchscreen Display'主题的专属营销内容","priority":"high","implementation":"创建专门针对Touchscreen Display的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知17.5%以上","data_support":"数据支撑：37.0%用户关注此兴趣，是平均水平的1.9倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'10.1-inch HD Touchscreen'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示10.1-inch HD Touchscreen的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：20.0%用户关注此特性，是平均水平的2.59倍，这是该聚类最独特的属性偏好"}],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"Touchscreen Display","cluster_count":50,"cluster_pct":37.0,"avg_pct":19.5,"difference":17.5,"uniqueness_ratio":1.9}],"unique_attributes":[{"attribute":"10.1\" HD Touchscreen","cluster_count":105,"cluster_pct":77.8,"avg_pct":36.1,"difference":41.7,"uniqueness_ratio":2.15},{"attribute":"Professional Wireless Microphone","cluster_count":70,"cluster_pct":51.9,"avg_pct":23.5,"difference":28.4,"uniqueness_ratio":2.21},{"attribute":"10.1-inch HD Touchscreen","cluster_count":27,"cluster_pct":20.0,"avg_pct":7.7,"difference":12.3,"uniqueness_ratio":2.59}],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":1.0,"cluster_identity":"该聚类是'Touchscreen Display'高度专注群体，37.0%的用户关注此兴趣（是平均水平的1.9倍），比平均水平高17.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'10.1-inch HD Touchscreen, Professional Wireless Microphone, 10.1\" HD Touchscreen'有极高的关注度（分别是平均水平的2.59, 2.21, 2.15倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含135位用户，0.0%处于决策阶段，0.7%在对比中。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Touchscreen Display'有极高偏好（37.0% vs 平均19.5%，是平均水平的1.9倍）","action":"为该聚类创建专门的'Touchscreen Display'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知17.5%以上","data_support":"数据支撑：37.0%用户关注此兴趣，是平均水平的1.9倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'10.1-inch HD Touchscreen'特性（20.0% vs 平均7.7%，是平均水平的2.59倍）","action":"在产品页面和营销材料中重点突出'10.1-inch HD Touchscreen'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：20.0%用户关注此特性，是平均水平的2.59倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Touchscreen Display'主题的专属营销内容","priority":"high","implementation":"创建专门针对Touchscreen Display的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知17.5%以上","data_support":"数据支撑：37.0%用户关注此兴趣，是平均水平的1.9倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'10.1-inch HD Touchscreen'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示10.1-inch HD Touchscreen的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：20.0%用户关注此特性，是平均水平的2.59倍，这是该聚类最独特的属性偏好"}],"what_makes_different":["对'Touchscreen Display'的关注度是平均水平的1.9倍（37.0% vs 19.5%，高17.5个百分点）","对'10.1-inch HD Touchscreen'特性的关注度是平均水平的2.59倍（20.0% vs 7.7%，高12.3个百分点）","对'Professional Wireless Microphone'特性的关注度是平均水平的2.21倍（51.9% vs 23.5%，高28.4个百分点）","对'10.1\" HD Touchscreen'特性的关注度是平均水平的2.15倍（77.8% vs 36.1%，高41.7个百分点）"]}},{"cluster_id":"cluster_2","time_range":"10-30s","size":107,"features":{"top_interests":{"Ikarao Shell S2 Karaoke Machine":34,"Ikarao Break X2 Karaoke Machine":33,"Ikarao Break X1 Karaoke Machine":32,"Karaoke Machine":31,"Karaoke Systems":30},"purchase_stages":{"comparing":17,"browsing":68,"deciding":21,"browsing/comparing":1},"price_ranges":{"premium":45,"mid-range":32,"budget/mid-range/premium":1,"budget":27,"budget/mid-range":1,"budget-range":1},"top_attributes":{"High-Fidelity Sound":50,"Versatile Connectivity":48,"10.1\" HD Touchscreen":42,"Wireless Microphone":32,"Extended Battery Life":31}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Ikarao Shell S1 Karaoke Machine'高度专注群体，21.5%的用户关注此兴趣（是平均水平的6.89倍），比平均水平高18.4个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, 10.1\" HD Touchscreen。","distinctive_user_profile":"该聚类包含107位用户，19.6%处于决策阶段，15.9%在对比中。","what_makes_this_cluster_different":["对'Ikarao Shell S1 Karaoke Machine'的关注度是平均水平的6.89倍（21.5% vs 3.1%，高18.4个百分点）","对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的6.56倍（31.8% vs 4.8%，高26.9个百分点）","对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.44倍（30.8% vs 5.7%，高25.2个百分点）"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Ikarao Shell S1 Karaoke Machine'有极高偏好（21.5% vs 平均3.1%，是平均水平的6.89倍）","action":"为该聚类创建专门的'Ikarao Shell S1 Karaoke Machine'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知18.4%以上","data_support":"数据支撑：21.5%用户关注此兴趣，是平均水平的6.89倍，显著高于其他聚类"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Ikarao Shell S1 Karaoke Machine'主题的专属营销内容","priority":"high","implementation":"创建专门针对Ikarao Shell S1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知18.4%以上","data_support":"数据支撑：21.5%用户关注此兴趣，是平均水平的6.89倍，这是该聚类最显著的差异化特征"}],"competitive_advantage":"该聚类具有较高的差异化程度（评分：1.25），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：5个独特兴趣、0个独特属性。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"Ikarao Shell S2 Karaoke Machine","cluster_count":34,"cluster_pct":31.8,"avg_pct":4.8,"difference":26.9,"uniqueness_ratio":6.56},{"interest":"Ikarao Break X2 Karaoke Machine","cluster_count":33,"cluster_pct":30.8,"avg_pct":5.7,"difference":25.2,"uniqueness_ratio":5.44},{"interest":"Ikarao Break X1 Karaoke Machine","cluster_count":32,"cluster_pct":29.9,"avg_pct":5.6,"difference":24.3,"uniqueness_ratio":5.36},{"interest":"Karaoke Systems","cluster_count":30,"cluster_pct":28.0,"avg_pct":8.4,"difference":19.7,"uniqueness_ratio":3.35},{"interest":"Ikarao Shell S1 Karaoke Machine","cluster_count":23,"cluster_pct":21.5,"avg_pct":3.1,"difference":18.4,"uniqueness_ratio":6.89}],"unique_attributes":[],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":1.25,"cluster_identity":"该聚类是'Ikarao Shell S1 Karaoke Machine'高度专注群体，21.5%的用户关注此兴趣（是平均水平的6.89倍），比平均水平高18.4个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, 10.1\" HD Touchscreen。","distinctive_user_profile":"该聚类包含107位用户，19.6%处于决策阶段，15.9%在对比中。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Ikarao Shell S1 Karaoke Machine'有极高偏好（21.5% vs 平均3.1%，是平均水平的6.89倍）","action":"为该聚类创建专门的'Ikarao Shell S1 Karaoke Machine'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知18.4%以上","data_support":"数据支撑：21.5%用户关注此兴趣，是平均水平的6.89倍，显著高于其他聚类"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Ikarao Shell S1 Karaoke Machine'主题的专属营销内容","priority":"high","implementation":"创建专门针对Ikarao Shell S1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知18.4%以上","data_support":"数据支撑：21.5%用户关注此兴趣，是平均水平的6.89倍，这是该聚类最显著的差异化特征"}],"what_makes_different":["对'Ikarao Shell S1 Karaoke Machine'的关注度是平均水平的6.89倍（21.5% vs 3.1%，高18.4个百分点）","对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的6.56倍（31.8% vs 4.8%，高26.9个百分点）","对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.44倍（30.8% vs 5.7%，高25.2个百分点）"]}},{"cluster_id":"cluster_3","time_range":"10-30s","size":171,"features":{"top_interests":{"Karaoke Machine":77,"Wireless Microphones":56,"High-Fidelity Sound":42,"Karaoke Machines":41,"Wireless Microphone":31},"purchase_stages":{"browsing":170,"deciding":1},"price_ranges":{"mid-range":62,"budget":26,"premium":81,"budget/mid-range":1,"budget-range":1},"top_attributes":{"Extended Battery Life":66,"High-Fidelity Sound":61,"Versatile Connectivity":58,"13.3-inch HD Touchscreen":37,"Wireless Microphone":36}},"cluster_specific_insights":{"cluster_identity":"该聚类是171位用户的集合，主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound。","unique_value_proposition":"该聚类用户最关注的产品特性是Extended Battery Life, High-Fidelity Sound, Versatile Connectivity。","distinctive_user_profile":"该聚类包含171位用户，0.6%处于决策阶段，0.0%在对比中。","what_makes_this_cluster_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"],"cluster_specific_opportunities":[],"targeted_recommendations":[],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":["该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"]},"cluster_specific":{"unique_interests":[],"unique_attributes":[],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":0.0,"cluster_identity":"该聚类是171位用户的集合，主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound。","unique_value_proposition":"该聚类用户最关注的产品特性是Extended Battery Life, High-Fidelity Sound, Versatile Connectivity。","distinctive_user_profile":"该聚类包含171位用户，0.6%处于决策阶段，0.0%在对比中。","cluster_specific_opportunities":[],"targeted_recommendations":[],"what_makes_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"]}},{"cluster_id":"cluster_4","time_range":"10-30s","size":58,"features":{"top_interests":{"Karaoke Machine":31,"Wireless Microphones":25,"High-Fidelity Sound":23,"Wireless Microphone":18,"Touchscreen Display":16},"purchase_stages":{"deciding":58},"price_ranges":{"mid-range":27,"budget":7,"premium":23,"budget/mid-range":1},"top_attributes":{"10.1\" HD Touchscreen":31,"High-Fidelity Sound":24,"Professional Wireless Microphone":20,"Versatile Connectivity":18,"Extended Battery Life":16}},"cluster_specific_insights":{"cluster_identity":"该聚类是58位用户的集合，主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound。","unique_value_proposition":"该聚类用户最关注的产品特性是10.1\" HD Touchscreen, High-Fidelity Sound, Professional Wireless Microphone。","distinctive_user_profile":"该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。","what_makes_this_cluster_different":["购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"],"cluster_specific_opportunities":[{"opportunity":"该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）","action":"立即推送限时优惠和紧迫感信息","expected_impact":"预计可转化17位用户","data_support":"数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"}],"targeted_recommendations":[],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":["该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"]},"cluster_specific":{"unique_interests":[],"unique_attributes":[],"unique_stages":[{"stage":"deciding","cluster_count":58,"cluster_pct":100.0,"avg_pct":14.6,"difference":85.4,"uniqueness_ratio":6.84}],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":0.2,"cluster_identity":"该聚类是58位用户的集合，主要关注Karaoke Machine, Wireless Microphones, High-Fidelity Sound。","unique_value_proposition":"该聚类用户最关注的产品特性是10.1\" HD Touchscreen, High-Fidelity Sound, Professional Wireless Microphone。","distinctive_user_profile":"该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。","cluster_specific_opportunities":[{"opportunity":"该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）","action":"立即推送限时优惠和紧迫感信息","expected_impact":"预计可转化17位用户","data_support":"数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"}],"targeted_recommendations":[],"what_makes_different":["购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"]}},{"cluster_id":"cluster_0","time_range":"30-60s","size":80,"features":{"top_interests":{"Wireless Microphones":47,"Karaoke Machines":41,"Karaoke Machine":29,"High-Fidelity Sound":24,"Touchscreen Displays":24},"purchase_stages":{"comparing":80},"price_ranges":{"mid-range":51,"premium":23,"mid-range to premium":1,"budget/mid-range":3,"budget-range":1,"budget":1},"top_attributes":{"High-Fidelity Sound":40,"Versatile Connectivity":33,"Wireless Microphones":31,"10.1\" HD Touchscreen":19,"Long Battery Life":17}},"cluster_specific_insights":{"cluster_identity":"该聚类是80位用户的集合，主要关注Wireless Microphones, Karaoke Machines, Karaoke Machine。","unique_value_proposition":"该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, Wireless Microphones。","distinctive_user_profile":"该聚类包含80位用户，0.0%处于决策阶段，100.0%在对比中。","what_makes_this_cluster_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"],"cluster_specific_opportunities":[],"targeted_recommendations":[],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":["该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"]},"cluster_specific":{"unique_interests":[],"unique_attributes":[],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":0.0,"cluster_identity":"该聚类是80位用户的集合，主要关注Wireless Microphones, Karaoke Machines, Karaoke Machine。","unique_value_proposition":"该聚类用户最关注的产品特性是High-Fidelity Sound, Versatile Connectivity, Wireless Microphones。","distinctive_user_profile":"该聚类包含80位用户，0.0%处于决策阶段，100.0%在对比中。","cluster_specific_opportunities":[],"targeted_recommendations":[],"what_makes_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"]}},{"cluster_id":"cluster_1","time_range":"30-60s","size":183,"features":{"top_interests":{"Karaoke Machine":86,"Wireless Microphones":65,"High-Fidelity Sound":50,"Karaoke Machines":45,"Wireless Microphone":40},"purchase_stages":{"browsing":178,"comparing":3,"deciding":2},"price_ranges":{"mid-range":72,"budget":25,"premium":82,"budget-range":2,"budget-mid-range":1,"budget/mid-range":1},"top_attributes":{"Extended Battery Life":74,"High-Fidelity Sound":72,"Versatile Connectivity":68,"Wireless Microphone":41,"13.3\" HD Touchscreen":40}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Extended Battery Life'高度专注群体，15.8%的用户关注此兴趣（是平均水平的2.14倍），比平均水平高8.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Built-in Screen'有极高的关注度（分别是平均水平的2.88倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含183位用户，1.1%处于决策阶段，1.6%在对比中。","what_makes_this_cluster_different":["对'Extended Battery Life'的关注度是平均水平的2.14倍（15.8% vs 7.4%，高8.5个百分点）","对'Portable Karaoke'的关注度是平均水平的1.93倍（13.7% vs 7.1%，高6.6个百分点）","对'Built-in Screen'特性的关注度是平均水平的2.88倍（14.2% vs 4.9%，高9.3个百分点）"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Extended Battery Life'有极高偏好（15.8% vs 平均7.4%，是平均水平的2.14倍）","action":"为该聚类创建专门的'Extended Battery Life'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知8.5%以上","data_support":"数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Built-in Screen'特性（14.2% vs 平均4.9%，是平均水平的2.88倍）","action":"在产品页面和营销材料中重点突出'Built-in Screen'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Extended Battery Life'主题的专属营销内容","priority":"high","implementation":"创建专门针对Extended Battery Life的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知8.5%以上","data_support":"数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Built-in Screen'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Built-in Screen的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的属性偏好"}],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"Extended Battery Life","cluster_count":29,"cluster_pct":15.8,"avg_pct":7.4,"difference":8.5,"uniqueness_ratio":2.14},{"interest":"Portable Karaoke","cluster_count":25,"cluster_pct":13.7,"avg_pct":7.1,"difference":6.6,"uniqueness_ratio":1.93}],"unique_attributes":[{"attribute":"Built-in Screen","cluster_count":26,"cluster_pct":14.2,"avg_pct":4.9,"difference":9.3,"uniqueness_ratio":2.88}],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":0.75,"cluster_identity":"该聚类是'Extended Battery Life'高度专注群体，15.8%的用户关注此兴趣（是平均水平的2.14倍），比平均水平高8.5个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Built-in Screen'有极高的关注度（分别是平均水平的2.88倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类包含183位用户，1.1%处于决策阶段，1.6%在对比中。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Extended Battery Life'有极高偏好（15.8% vs 平均7.4%，是平均水平的2.14倍）","action":"为该聚类创建专门的'Extended Battery Life'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知8.5%以上","data_support":"数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Built-in Screen'特性（14.2% vs 平均4.9%，是平均水平的2.88倍）","action":"在产品页面和营销材料中重点突出'Built-in Screen'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的特征"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Extended Battery Life'主题的专属营销内容","priority":"high","implementation":"创建专门针对Extended Battery Life的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知8.5%以上","data_support":"数据支撑：15.8%用户关注此兴趣，是平均水平的2.14倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Built-in Screen'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Built-in Screen的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：14.2%用户关注此特性，是平均水平的2.88倍，这是该聚类最独特的属性偏好"}],"what_makes_different":["对'Extended Battery Life'的关注度是平均水平的2.14倍（15.8% vs 7.4%，高8.5个百分点）","对'Portable Karaoke'的关注度是平均水平的1.93倍（13.7% vs 7.1%，高6.6个百分点）","对'Built-in Screen'特性的关注度是平均水平的2.88倍（14.2% vs 4.9%，高9.3个百分点）"]}},{"cluster_id":"cluster_2","time_range":"30-60s","size":80,"features":{"top_interests":{"Karaoke Machine":41,"Wireless Microphones":27,"High-Fidelity Sound":25,"Wireless Microphone":21,"Touchscreen Display":17},"purchase_stages":{"deciding":80},"price_ranges":{"mid-range":26,"premium":42,"budget":11,"budget/mid-range":1},"top_attributes":{"High-Fidelity Sound":38,"10.1\" HD Touchscreen":35,"Versatile Connectivity":31,"Professional-Grade Wireless Microphone":27,"Extended Battery Life":26}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Touchscreen display'高度专注群体，13.8%的用户关注此兴趣（是平均水平的5.78倍），比平均水平高11.4个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Professional-Grade Wireless Microphone'有极高的关注度（分别是平均水平的2.02倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。","what_makes_this_cluster_different":["对'Touchscreen display'的关注度是平均水平的5.78倍（13.8% vs 2.4%，高11.4个百分点）","对'Karaoke machine features'的关注度是平均水平的4.5倍（16.2% vs 3.6%，高12.6个百分点）","对'HD Touchscreen'的关注度是平均水平的2.48倍（18.8% vs 7.6%，高11.2个百分点）","对'Professional-Grade Wireless Microphone'特性的关注度是平均水平的2.02倍（33.8% vs 16.7%，高17.0个百分点）","购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Touchscreen display'有极高偏好（13.8% vs 平均2.4%，是平均水平的5.78倍）","action":"为该聚类创建专门的'Touchscreen display'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知11.4%以上","data_support":"数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Professional-Grade Wireless Microphone'特性（33.8% vs 平均16.7%，是平均水平的2.02倍）","action":"在产品页面和营销材料中重点突出'Professional-Grade Wireless Microphone'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的特征"},{"opportunity":"该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）","action":"立即推送限时优惠和紧迫感信息","expected_impact":"预计可转化24位用户","data_support":"数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Touchscreen display'主题的专属营销内容","priority":"high","implementation":"创建专门针对Touchscreen display的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知11.4%以上","data_support":"数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Professional-Grade Wireless Microphone'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Professional-Grade Wireless Microphone的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的属性偏好"}],"competitive_advantage":"该聚类具有较高的差异化程度（评分：1.2），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：3个独特兴趣、1个独特属性。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"HD Touchscreen","cluster_count":15,"cluster_pct":18.8,"avg_pct":7.6,"difference":11.2,"uniqueness_ratio":2.48},{"interest":"Karaoke machine features","cluster_count":13,"cluster_pct":16.2,"avg_pct":3.6,"difference":12.6,"uniqueness_ratio":4.5},{"interest":"Touchscreen display","cluster_count":11,"cluster_pct":13.8,"avg_pct":2.4,"difference":11.4,"uniqueness_ratio":5.78}],"unique_attributes":[{"attribute":"Professional-Grade Wireless Microphone","cluster_count":27,"cluster_pct":33.8,"avg_pct":16.7,"difference":17.0,"uniqueness_ratio":2.02}],"unique_stages":[{"stage":"deciding","cluster_count":80,"cluster_pct":100.0,"avg_pct":14.6,"difference":85.4,"uniqueness_ratio":6.84}],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":1.2,"cluster_identity":"该聚类是'Touchscreen display'高度专注群体，13.8%的用户关注此兴趣（是平均水平的5.78倍），比平均水平高11.4个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户对'Professional-Grade Wireless Microphone'有极高的关注度（分别是平均水平的2.02倍），这表明他们特别重视这些产品特性，是这些特性的重度用户。","distinctive_user_profile":"该聚类的独特之处在于100.0%的用户处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点。这表明该聚类用户具有非常独特的购买行为模式，与其他聚类显著不同。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Touchscreen display'有极高偏好（13.8% vs 平均2.4%，是平均水平的5.78倍）","action":"为该聚类创建专门的'Touchscreen display'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知11.4%以上","data_support":"数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，显著高于其他聚类"},{"opportunity":"该聚类特别关注'Professional-Grade Wireless Microphone'特性（33.8% vs 平均16.7%，是平均水平的2.02倍）","action":"在产品页面和营销材料中重点突出'Professional-Grade Wireless Microphone'特性的详细说明和优势","expected_impact":"预计可显著提升该聚类用户的产品匹配度和购买意愿","data_support":"数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的特征"},{"opportunity":"该聚类有100.0%用户处于决策阶段（是平均水平的6.84倍）","action":"立即推送限时优惠和紧迫感信息","expected_impact":"预计可转化24位用户","data_support":"数据支撑：100.0%处于决策阶段，是平均水平的6.84倍，转化概率30%"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Touchscreen display'主题的专属营销内容","priority":"high","implementation":"创建专门针对Touchscreen display的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知11.4%以上","data_support":"数据支撑：13.8%用户关注此兴趣，是平均水平的5.78倍，这是该聚类最显著的差异化特征"},{"recommendation":"在产品页面突出展示'Professional-Grade Wireless Microphone'特性（该聚类最独特特征）","priority":"high","implementation":"在首屏和产品详情页显著位置展示Professional-Grade Wireless Microphone的详细说明、优势对比和用户评价","expected_impact":"预计可显著提升该聚类用户的产品匹配度","data_support":"数据支撑：33.8%用户关注此特性，是平均水平的2.02倍，这是该聚类最独特的属性偏好"}],"what_makes_different":["对'Touchscreen display'的关注度是平均水平的5.78倍（13.8% vs 2.4%，高11.4个百分点）","对'Karaoke machine features'的关注度是平均水平的4.5倍（16.2% vs 3.6%，高12.6个百分点）","对'HD Touchscreen'的关注度是平均水平的2.48倍（18.8% vs 7.6%，高11.2个百分点）","对'Professional-Grade Wireless Microphone'特性的关注度是平均水平的2.02倍（33.8% vs 16.7%，高17.0个百分点）","购买阶段：100.0%处于'deciding'阶段（是平均水平的6.84倍），比平均水平高85.4个百分点"]}},{"cluster_id":"cluster_3","time_range":"30-60s","size":107,"features":{"top_interests":{"Ikarao Break X1 Karaoke Machine":36,"Ikarao Break X2 Karaoke Machine":36,"Karaoke Machine":30,"Karaoke Systems":30,"Ikarao Shell S2 Karaoke Machine":25},"purchase_stages":{"comparing":14,"browsing":75,"browsing/comparing":2,"deciding":16},"price_ranges":{"premium":62,"budget":24,"budget/mid-range":4,"mid-range":17},"top_attributes":{"Versatile Connectivity":55,"High-Fidelity Sound":44,"10.1\" HD Touchscreen":38,"Extended Battery Life":35,"Wireless Microphone":31}},"cluster_specific_insights":{"cluster_identity":"该聚类是'Ikarao Break X1 Karaoke Machine'高度专注群体，33.6%的用户关注此兴趣（是平均水平的6.03倍），比平均水平高28.1个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户最关注的产品特性是Versatile Connectivity, High-Fidelity Sound, 10.1\" HD Touchscreen。","distinctive_user_profile":"该聚类包含107位用户，15.0%处于决策阶段，13.1%在对比中。","what_makes_this_cluster_different":["对'Ikarao Break X1 Karaoke Machine'的关注度是平均水平的6.03倍（33.6% vs 5.6%，高28.1个百分点）","对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.94倍（33.6% vs 5.7%，高28.0个百分点）","对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的4.82倍（23.4% vs 4.8%，高18.5个百分点）"],"cluster_specific_opportunities":[{"opportunity":"该聚类对'Ikarao Break X1 Karaoke Machine'有极高偏好（33.6% vs 平均5.6%，是平均水平的6.03倍）","action":"为该聚类创建专门的'Ikarao Break X1 Karaoke Machine'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知28.1%以上","data_support":"数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，显著高于其他聚类"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Ikarao Break X1 Karaoke Machine'主题的专属营销内容","priority":"high","implementation":"创建专门针对Ikarao Break X1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知28.1%以上","data_support":"数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，这是该聚类最显著的差异化特征"}],"competitive_advantage":"该聚类具有较高的差异化程度（评分：1.25），具有独特的用户特征，可以针对性地制定营销策略。该聚类的独特性主要体现在：5个独特兴趣、0个独特属性。","risk_factors_specific":[]},"cluster_specific":{"unique_interests":[{"interest":"Ikarao Break X1 Karaoke Machine","cluster_count":36,"cluster_pct":33.6,"avg_pct":5.6,"difference":28.1,"uniqueness_ratio":6.03},{"interest":"Ikarao Break X2 Karaoke Machine","cluster_count":36,"cluster_pct":33.6,"avg_pct":5.7,"difference":28.0,"uniqueness_ratio":5.94},{"interest":"Karaoke Systems","cluster_count":30,"cluster_pct":28.0,"avg_pct":8.4,"difference":19.7,"uniqueness_ratio":3.35},{"interest":"Ikarao Shell S2 Karaoke Machine","cluster_count":25,"cluster_pct":23.4,"avg_pct":4.8,"difference":18.5,"uniqueness_ratio":4.82},{"interest":"Ikarao Shell S1 Karaoke Machine","cluster_count":15,"cluster_pct":14.0,"avg_pct":3.1,"difference":10.9,"uniqueness_ratio":4.49}],"unique_attributes":[],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":1.25,"cluster_identity":"该聚类是'Ikarao Break X1 Karaoke Machine'高度专注群体，33.6%的用户关注此兴趣（是平均水平的6.03倍），比平均水平高28.1个百分点。这是该聚类最显著的差异化特征。","unique_value_proposition":"该聚类用户最关注的产品特性是Versatile Connectivity, High-Fidelity Sound, 10.1\" HD Touchscreen。","distinctive_user_profile":"该聚类包含107位用户，15.0%处于决策阶段，13.1%在对比中。","cluster_specific_opportunities":[{"opportunity":"该聚类对'Ikarao Break X1 Karaoke Machine'有极高偏好（33.6% vs 平均5.6%，是平均水平的6.03倍）","action":"为该聚类创建专门的'Ikarao Break X1 Karaoke Machine'主题页面和内容","expected_impact":"预计可提升该聚类用户的相关性感知28.1%以上","data_support":"数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，显著高于其他聚类"}],"targeted_recommendations":[{"recommendation":"为该聚类定制'Ikarao Break X1 Karaoke Machine'主题的专属营销内容","priority":"high","implementation":"创建专门针对Ikarao Break X1 Karaoke Machine的产品推荐页面、专题内容和个性化推荐","expected_impact":"预计可提升该聚类用户的相关性感知28.1%以上","data_support":"数据支撑：33.6%用户关注此兴趣，是平均水平的6.03倍，这是该聚类最显著的差异化特征"}],"what_makes_different":["对'Ikarao Break X1 Karaoke Machine'的关注度是平均水平的6.03倍（33.6% vs 5.6%，高28.1个百分点）","对'Ikarao Break X2 Karaoke Machine'的关注度是平均水平的5.94倍（33.6% vs 5.7%，高28.0个百分点）","对'Ikarao Shell S2 Karaoke Machine'的关注度是平均水平的4.82倍（23.4% vs 4.8%，高18.5个百分点）"]}},{"cluster_id":"cluster_4","time_range":"30-60s","size":181,"features":{"top_interests":{"Karaoke Machine":107,"Wireless Microphones":74,"Touchscreen Display":69,"High-Fidelity Sound":67,"Wireless Microphone":43},"purchase_stages":{"browsing":181},"price_ranges":{"budget":16,"mid-range":92,"premium":73},"top_attributes":{"10.1\" HD Touchscreen":146,"Versatile Connectivity":114,"High-Fidelity Sound":97,"Professional Wireless Microphone":90,"Long-Lasting Battery":70}},"cluster_specific_insights":{"cluster_identity":"该聚类是181位用户的集合，主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display。","unique_value_proposition":"该聚类用户最关注的产品特性是10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound。","distinctive_user_profile":"该聚类包含181位用户，0.0%处于决策阶段，0.0%在对比中。","what_makes_this_cluster_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"],"cluster_specific_opportunities":[],"targeted_recommendations":[],"competitive_advantage":"该聚类与其他聚类特征相似，建议采用通用的营销策略。","risk_factors_specific":["该聚类缺乏明显的独特特征，可能难以制定针对性的营销策略"]},"cluster_specific":{"unique_interests":[],"unique_attributes":[],"unique_stages":[],"unique_price_sensitivity":"","unique_concerns":[],"unique_use_cases":[],"distinctive_patterns":[],"differentiation_score":0.0,"cluster_identity":"该聚类是181位用户的集合，主要关注Karaoke Machine, Wireless Microphones, Touchscreen Display。","unique_value_proposition":"该聚类用户最关注的产品特性是10.1\" HD Touchscreen, Versatile Connectivity, High-Fidelity Sound。","distinctive_user_profile":"该聚类包含181位用户，0.0%处于决策阶段，0.0%在对比中。","cluster_specific_opportunities":[],"targeted_recommendations":[],"what_makes_different":["该聚类与其他聚类在特征分布上较为相似，但仍有细微差异。"]}}]}</script>
+    <script>
+        console.log('开始加载数据...');
+        const dataScript = document.getElementById('data-script');
+        let analysisData = null;
+        
+        if (!dataScript) {
+            console.error('未找到data-script元素');
+            document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据加载失败</h2><p>未找到数据脚本</p></div>';
+        } else {
+            try {
+            analysisData = JSON.parse(dataScript.textContent);
+                console.log('数据加载成功，聚类数:', analysisData.cluster_analyses ? analysisData.cluster_analyses.length : 0);
+            } catch (error) {
+            console.error('JSON解析错误:', error);
+                document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据加载失败</h2><p>' + error.message + '</p></div>';
+            }
+        }
+
+        function renderPage() {
+            if (!analysisData) {
+                console.error('analysisData为空');
+                document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据为空</h2><p>无法渲染页面</p></div>';
+                return;
+            }
+            
+            console.log('开始渲染页面...');
+            const content = document.getElementById('content');
+            if (!content) {
+                console.error('未找到content元素');
+                return;
+            }
+            let html = '';
+            
+            // 执行摘要
+            const summary = analysisData.summary;
+            html += '<div class="section"><h2>📊 执行摘要</h2>';
+            html += '<div class="card">';
+            html += '<p><strong>总聚类数:</strong> ' + summary.total_clusters + '</p>';
+            html += '<p><strong>总用户数:</strong> ' + (summary.total_users ? summary.total_users.toLocaleString() : 'N/A') + '</p>';
+            html += '<p><strong>分析日期:</strong> ' + summary.analysis_date + '</p>';
+            html += '<p><strong>分析目的:</strong> ' + summary.purpose + '</p>';
+            html += '</div></div>';
+            
+            // 添加表格（从数据生成）
+            if (analysisData.cluster_analyses && analysisData.cluster_analyses.length > 0) {
+                // 聚类特征对比总览表
+                html += '<div class="section"><h2>聚类特征对比总览</h2><table><thead><tr><th>聚类ID</th><th>用户数</th><th>时间范围</th><th>差异化分数</th><th>独特兴趣数</th><th>独特属性数</th><th>主要特征</th></tr></thead><tbody>';
+                
+                analysisData.cluster_analyses.forEach(function(cluster) {
+                    const clusterSpecific = cluster.cluster_specific || {};
+                    const uniqueInterests = clusterSpecific.unique_interests || [];
+                    const uniqueAttributes = clusterSpecific.unique_attributes || [];
+                    const mainFeatures = [];
+                    if (uniqueInterests.length > 0) mainFeatures.push(uniqueInterests[0].interest);
+                    if (uniqueAttributes.length > 0) mainFeatures.push(uniqueAttributes[0].attribute);
+                    const mainFeature = mainFeatures.join(', ') || 'N/A';
+                    
+                    html += '<tr>';
+                    html += '<td><strong>' + cluster.cluster_id + '</strong></td>';
+                    html += '<td>' + cluster.size + '</td>';
+                    html += '<td>' + cluster.time_range + '</td>';
+                    html += '<td>' + (clusterSpecific.differentiation_score || 0).toFixed(2) + '</td>';
+                    html += '<td>' + uniqueInterests.length + '</td>';
+                    html += '<td>' + uniqueAttributes.length + '</td>';
+                    html += '<td>' + mainFeature + '</td>';
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table></div>';
+                
+                // 独特兴趣排名表
+                const allUniqueInterests = {};
+                analysisData.cluster_analyses.forEach(function(cluster) {
+                    const uniqueInterests = (cluster.cluster_specific || {}).unique_interests || [];
+                    uniqueInterests.forEach(function(interest) {
+                        const name = interest.interest;
+                        if (name) {
+                            if (!allUniqueInterests[name]) {
+                                allUniqueInterests[name] = {
+                                    count: 0,
+                                    maxRatio: 0,
+                                    clusters: []
+                                };
+                            }
+                            allUniqueInterests[name].count++;
+                            const ratio = interest.uniqueness_ratio || 0;
+                            if (ratio > allUniqueInterests[name].maxRatio) {
+                                allUniqueInterests[name].maxRatio = ratio;
+                            }
+                            allUniqueInterests[name].clusters.push(cluster.cluster_id);
+                        }
+                    });
+                });
+                
+                const sortedInterests = Object.keys(allUniqueInterests)
+                    .map(function(name) {
+                        return {name: name, info: allUniqueInterests[name]};
+                    })
+                    .sort(function(a, b) {
+                        return b.info.maxRatio - a.info.maxRatio;
+                    })
+                    .slice(0, 15);
+                
+                if (sortedInterests.length > 0) {
+                    html += '<div class="section"><h2>独特兴趣排名（按独特性倍数）</h2><table><thead><tr><th>排名</th><th>兴趣</th><th>出现聚类数</th><th>最高独特性倍数</th><th>相关聚类</th></tr></thead><tbody>';
+                    sortedInterests.forEach(function(item, index) {
+                        html += '<tr>';
+                        html += '<td>' + (index + 1) + '</td>';
+                        html += '<td><strong>' + item.name + '</strong></td>';
+                        html += '<td>' + item.info.count + '</td>';
+                        html += '<td>' + item.info.maxRatio.toFixed(2) + 'x</td>';
+                        html += '<td>' + item.info.clusters.slice(0, 3).join(', ') + '</td>';
+                        html += '</tr>';
+                    });
+                    html += '</tbody></table></div>';
+                }
+                
+                // 独特属性排名表
+                const allUniqueAttributes = {};
+                analysisData.cluster_analyses.forEach(function(cluster) {
+                    const uniqueAttributes = (cluster.cluster_specific || {}).unique_attributes || [];
+                    uniqueAttributes.forEach(function(attr) {
+                        const name = attr.attribute;
+                        if (name) {
+                            if (!allUniqueAttributes[name]) {
+                                allUniqueAttributes[name] = {
+                                    count: 0,
+                                    maxRatio: 0,
+                                    clusters: []
+                                };
+                            }
+                            allUniqueAttributes[name].count++;
+                            const ratio = attr.uniqueness_ratio || 0;
+                            if (ratio > allUniqueAttributes[name].maxRatio) {
+                                allUniqueAttributes[name].maxRatio = ratio;
+                            }
+                            allUniqueAttributes[name].clusters.push(cluster.cluster_id);
+                        }
+                    });
+                });
+                
+                const sortedAttributes = Object.keys(allUniqueAttributes)
+                    .map(function(name) {
+                        return {name: name, info: allUniqueAttributes[name]};
+                    })
+                    .sort(function(a, b) {
+                        return b.info.maxRatio - a.info.maxRatio;
+                    })
+                    .slice(0, 15);
+                
+                if (sortedAttributes.length > 0) {
+                    html += '<div class="section"><h2>独特属性排名（按独特性倍数）</h2><table><thead><tr><th>排名</th><th>属性</th><th>出现聚类数</th><th>最高独特性倍数</th><th>相关聚类</th></tr></thead><tbody>';
+                    sortedAttributes.forEach(function(item, index) {
+                        html += '<tr>';
+                        html += '<td>' + (index + 1) + '</td>';
+                        html += '<td><strong>' + item.name + '</strong></td>';
+                        html += '<td>' + item.info.count + '</td>';
+                        html += '<td>' + item.info.maxRatio.toFixed(2) + 'x</td>';
+                        html += '<td>' + item.info.clusters.slice(0, 3).join(', ') + '</td>';
+                        html += '</tr>';
+                    });
+                    html += '</tbody></table></div>';
+                }
+            }
+            
+            // 聚类详细分析
+            html += '<div class="section"><h2>🔍 聚类详细分析 - Cluster-Specific特征（含证据）</h2>';
+            
+            if (analysisData.cluster_analyses && analysisData.cluster_analyses.length > 0) {
+                analysisData.cluster_analyses.forEach(function(cluster) {
+                const specific = cluster.cluster_specific;
+                    if (!specific) {
+                    html += '<div class="cluster-card"><h3>' + cluster.cluster_id + ' - ' + cluster.size + '位用户</h3><p>暂无cluster-specific分析</p></div>';
+                    return;
+                    }
+                
+                html += '<div class="cluster-card">';
+                html += '<h3>' + cluster.cluster_id + ' - ' + cluster.size + '位用户 (' + cluster.time_range + ')</h3>';
+                
+                    // 聚类身份
+                    html += '<div class="unique-feature-box"><h4>🎯 聚类身份</h4><p>' + specific.cluster_identity + '</p></div>';
+                    
+                    // 独特价值主张
+                    html += '<div class="unique-feature-box"><h4>💎 独特价值主张</h4><p>' + specific.unique_value_proposition + '</p></div>';
+                    
+                    // 差异化用户画像
+                    html += '<div class="unique-feature-box"><h4>👤 差异化用户画像</h4><p>' + specific.distinctive_user_profile + '</p></div>';
+                    
+                    // 什么使这个聚类不同
+                    if (specific.what_makes_different && specific.what_makes_different.length > 0) {
+                        html += '<h4 style="margin-top: 20px;">✨ 什么使这个聚类不同</h4><ul style="list-style: none; padding: 0;">';
+                        specific.what_makes_different.forEach(function(diff) {
+                            html += '<li style="padding: 8px 0; border-bottom: 1px solid #e5e5e5;">' + diff + '</li>';
+                        });
+                html += '</ul>';
+                    }
+                    
+                    // 独特兴趣表
+                    if (specific.unique_interests && specific.unique_interests.length > 0) {
+                        html += '<h4 style="margin-top: 20px;">🌟 独特兴趣</h4>';
+                    html += '<table><thead><tr><th>兴趣</th><th>该聚类出现次数</th><th>该聚类占比</th><th>平均占比</th><th>差异</th><th>独特性倍数</th></tr></thead><tbody>';
+                        specific.unique_interests.forEach(function(u) {
+                        html += '<tr>';
+                        html += '<td><strong>' + u.interest + '</strong></td>';
+                            html += '<td>' + u.cluster_count + '</td>';
+                            html += '<td>' + u.cluster_pct + '%</td>';
+                            html += '<td>' + u.avg_pct + '%</td>';
+                            html += '<td style="color: #1a1a1a;">+' + u.difference + '%</td>';
+                            html += '<td>' + u.uniqueness_ratio + 'x</td>';
+                        html += '</tr>';
+                        });
+                    html += '</tbody></table>';
+                    }
+                    
+                    // 独特属性表
+                    if (specific.unique_attributes && specific.unique_attributes.length > 0) {
+                        html += '<h4 style="margin-top: 20px;">🔧 独特属性</h4>';
+                    html += '<table><thead><tr><th>属性</th><th>该聚类出现次数</th><th>该聚类占比</th><th>平均占比</th><th>差异</th><th>独特性倍数</th></tr></thead><tbody>';
+                        specific.unique_attributes.forEach(function(u) {
+                        html += '<tr>';
+                        html += '<td><strong>' + u.attribute + '</strong></td>';
+                            html += '<td>' + u.cluster_count + '</td>';
+                            html += '<td>' + u.cluster_pct + '%</td>';
+                            html += '<td>' + u.avg_pct + '%</td>';
+                            html += '<td style="color: #1a1a1a;">+' + u.difference + '%</td>';
+                            html += '<td>' + u.uniqueness_ratio + 'x</td>';
+                        html += '</tr>';
+                        });
+                    html += '</tbody></table>';
+                    }
+                    
+                    // 聚类特定机会
+                    if (specific.cluster_specific_opportunities && specific.cluster_specific_opportunities.length > 0) {
+                        html += '<h4 style="margin-top: 20px;">🎯 聚类特定机会</h4>';
+                        specific.cluster_specific_opportunities.forEach(function(opp) {
+                            html += '<div class="card" style="margin-bottom: 16px;">';
+                        html += '<h4>' + opp.opportunity + '</h4>';
+                        html += '<p><strong>行动:</strong> ' + opp.action + '</p>';
+                        html += '<p><strong>预期影响:</strong> ' + opp.expected_impact + '</p>';
+                            html += '<p style="margin-top: 12px; color: #666; font-size: 0.875rem;"><strong>数据支撑:</strong> ' + opp.data_support + '</p>';
+                        html += '</div>';
+                        });
+                    }
+                    
+                    // 针对性推荐
+                    if (specific.targeted_recommendations && specific.targeted_recommendations.length > 0) {
+                        html += '<h4 style="margin-top: 20px;">💡 针对性推荐</h4>';
+                        specific.targeted_recommendations.forEach(function(rec) {
+                            html += '<div class="card" style="margin-bottom: 16px;">';
+                        html += '<h4>' + rec.recommendation + '</h4>';
+                            html += '<p><strong>优先级:</strong> ' + (rec.priority === 'high' ? '高' : '中') + '</p>';
+                        html += '<p><strong>实施方案:</strong> ' + rec.implementation + '</p>';
+                        html += '<p><strong>预期影响:</strong> ' + rec.expected_impact + '</p>';
+                            html += '<p style="margin-top: 12px; color: #666; font-size: 0.875rem;"><strong>数据支撑:</strong> ' + rec.data_support + '</p>';
+                        html += '</div>';
+                        });
+                    }
+                
+                html += '</div>';
+                });
+            }
+            
+            html += '</div>';
+            
+            content.innerHTML = html;
+            console.log('页面渲染完成');
+        }
+        
+        // 页面加载时执行
+        if (analysisData) {
+            try {
+                renderPage();
+            } catch (error) {
+                console.error('渲染页面时出错:', error);
+                document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 渲染失败</h2><p>' + error.message + '</p><pre>' + error.stack + '</pre></div>';
+            }
+        } else {
+            console.error('analysisData为空，无法渲染');
+            document.getElementById('content').innerHTML = '<div class="section"><h2>❌ 数据加载失败</h2><p>请检查数据文件</p></div>';
+        }
+    </script>
+</body>
+</html>
