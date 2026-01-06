@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意图聚类分析可视化</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 30px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-container h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .clusters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .cluster-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 5px solid #667eea;
+        }
+
+        .cluster-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .cluster-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cluster-id {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .cluster-size {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .cluster-summary {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cluster-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .prototype-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #764ba2;
+        }
+
+        .prototype-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .prototype-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .intent-strength {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .intent-strength.high {
+            background: #4caf50;
+            color: white;
+        }
+
+        .intent-strength.medium {
+            background: #ff9800;
+            color: white;
+        }
+
+        .intent-strength.low {
+            background: #9e9e9e;
+            color: white;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .interests-list, .tags-list, .audience-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-item, .audience-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .strategy-item, .opportunity-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 3px solid #667eea;
+            line-height: 1.6;
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            font-size: 1.1em;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid #f0f0f0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .clusters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 意图聚类分析可视化</h1>
+            <p>用户意图聚类与数字资产原型分析</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('clusters')">聚类分析</button>
+            <button class="tab" onclick="switchTab('prototypes')">Intent Prototypes</button>
+            <button class="tab" onclick="switchTab('non-product')">非产品相关意图</button>
+        </div>
+
+        <!-- 聚类分析标签页 -->
+        <div id="clusters-tab" class="tab-content active">
+            <div class="stats-grid" id="cluster-stats"></div>
+            <div class="chart-container">
+                <h2>聚类分布</h2>
+                <canvas id="clusterChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>K值选择分析</h2>
+                <canvas id="kSelectionChart"></canvas>
+            </div>
+            <div class="search-box">
+                <input type="text" id="cluster-search" placeholder="搜索聚类摘要..." onkeyup="filterClusters()">
+            </div>
+            <div class="clusters-grid" id="clusters-grid"></div>
+        </div>
+
+        <!-- Intent Prototypes标签页 -->
+        <div id="prototypes-tab" class="tab-content">
+            <div class="stats-grid" id="prototype-stats"></div>
+            <div class="search-box">
+                <input type="text" id="prototype-search" placeholder="搜索Intent Prototype..." onkeyup="filterPrototypes()">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterByStrength('all')">全部</button>
+                    <button class="filter-btn" onclick="filterByStrength('high')">高意图强度</button>
+                    <button class="filter-btn" onclick="filterByStrength('medium')">中等意图强度</button>
+                    <button class="filter-btn" onclick="filterByStrength('low')">低意图强度</button>
+                </div>
+            </div>
+            <div id="prototypes-container"></div>
+        </div>
+
+        <!-- 非产品相关意图标签页 -->
+        <div id="non-product-tab" class="tab-content">
+            <div class="stats-grid" id="non-product-stats"></div>
+            <div class="chart-container">
+                <h2>意图类型分布</h2>
+                <canvas id="intentTypeChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>关键词分布（Top 15）</h2>
+                <canvas id="keywordChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>日期分布</h2>
+                <canvas id="dateChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>核心兴趣Top 10</h2>
+                <canvas id="coreInterestsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let clusterData = null;
+        let prototypeData = null;
+        let nonProductData = null;
+        let currentStrengthFilter = 'all';
+
+        // 加载数据（已嵌入）
+        function loadData() {
+            try {
+                // 使用嵌入的数据
+                clusterData = {
+  "optimal_k": 15,
+  "k_selection_results": {
+    "k_values": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "inertias": [
+      105.14920943330365,
+      100.15667818009169,
+      95.98942081152977,
+      89.01279823940048,
+      85.06595000046195,
+      81.53392368382443,
+      79.77680932560816,
+      79.6374479390603,
+      78.37686956891353,
+      75.13675340116274,
+      73.88100362705065,
+      72.55498235348088,
+      71.2949025363846,
+      69.90171394730883,
+      69.79486268337236,
+      69.74927627213685,
+      68.5577961608922,
+      68.20469280307195,
+      69.2089263044048
+    ],
+    "silhouette_scores": [
+      0.3341275769230852,
+      0.09240308601004894,
+      0.08830123965489373,
+      0.14779797377112802,
+      0.14151234952027492,
+      0.14410824532756017,
+      0.13223482913486723,
+      0.15928198927629697,
+      0.12130098198906855,
+      0.16758093744673092,
+      0.165912776527264,
+      0.1676858624302339,
+      0.14850811853063267,
+      0.17141668378523597,
+      0.14318010215193183,
+      0.13352516210734464,
+      0.15120958840791057,
+      0.13575043772634635,
+      0.10457757039273925
+    ],
+    "best_k": 15,
+    "inertia_rates": [
+      0.047480444980223434,
+      0.041607383993594274,
+      0.07268116124825383,
+      0.04434023328110027,
+      0.041521035345145105,
+      0.021550715074501754,
+      0.0017468909539745993,
+      0.015828964925035927,
+      0.041340208987319896,
+      0.016712856455315745,
+      0.017948067953482135,
+      0.017367240349633,
+      0.019541208971633892,
+      0.0015285929042744254,
+      0.0006531485195738449,
+      0.017082329379245843,
+      0.0051504479080917145,
+      -0.014723818260312103
+    ]
+  },
+  "cluster_summaries": [
+    {
+      "cluster_id": 0,
+      "size": 95,
+      "top_samples": [
+        {
+          "id": "57e67a4b785ab98707afb6b8de1a54cf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Full body silicone baby dolls\",\n      \"Realistic rebo..."
+        },
+        {
+          "id": "0437021679aff405453d28ae1bc7af75",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic full-body silicone baby dolls\",\n      \"Coll..."
+        },
+        {
+          "id": "5a37aa15c9d011d801ace020522d0517",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Baby doll size..."
+        },
+        {
+          "id": "47d1300d39f5ff2c3bc3ee52084b7ead",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"full silicone ba..."
+        },
+        {
+          "id": "069babd037f6fbcdcf04c4cfa7425794",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "012f1366f0a273fbfa12b55542618b04",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Collectible Do..."
+        },
+        {
+          "id": "0506f7ea2be05b71d98cfd3ff2cf7555",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"full silicone baby doll..."
+        },
+        {
+          "id": "485d20cc6e9bb82483029cda5e147e3f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Vari..."
+        },
+        {
+          "id": "00fa1715196ce4fde5540144dc493677",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "62f1cb44d2f807e5ec0db2521dbf61f5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n此聚类高度聚焦于**全身硅胶**（Full Body Silicone）的**逼真新生儿娃娃**，核心需求围绕其**收藏价值**和**高仿真细节**展开，区别于单纯的玩耍或母性模拟类需求。用户关注点集中在娃娃的材质、尺寸、以及将其作为**可收藏的艺术品或投资**的属性。"
+    },
+    {
+      "cluster_id": 1,
+      "size": 36,
+      "top_samples": [
+        {
+          "id": "57ae65ee71e40993f989f2c4a8478faf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Login/Account Management\",\n      \"Reborn Dolls\",\n    ..."
+        },
+        {
+          "id": "647487190006006ffb238c68dd3cc13a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Re..."
+        },
+        {
+          "id": "58f38535726d9034334aba1753c61d53",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"In..."
+        },
+        {
+          "id": "679e164a07ba49fd4a7f4cf79bb3689e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "04165d1f66a71bb2e09712b974370786",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "58e3e1d2f472029e88aca581bf6d8ca9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"In..."
+        },
+        {
+          "id": "59df55511a9b3c7be632beea3645c9c8",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Account Login/Password Reset\",\n      \"Realistic Silic..."
+        },
+        {
+          "id": "6521f3acec5c336440bc5fa198fa6ea5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant-sized D..."
+        },
+        {
+          "id": "03070f59e9e60a51233aa9c3bed8e11a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Collector Dolls\",\n     ..."
+        },
+        {
+          "id": "637acfa11f2dee6658f3903401e6e8f2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类核心关注点在于**账户管理和登录/密码重置**的特定操作需求，而非单纯的产品浏览或购买意图。其独特性在于用户直接将账户安全与技术支持需求与对逼真硅胶/收藏级重生娃娃的兴趣混合，表明这批用户已处于**高参与度（或已注册）** 阶段，正在处理账户层面的障碍。"
+    },
+    {
+      "cluster_id": 2,
+      "size": 64,
+      "top_samples": [
+        {
+          "id": "643450bc12fd49e0edf78b5620cd9c9d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Interactive Doll..."
+        },
+        {
+          "id": "48164927e5a1d4c0da6046e3e5dfc6d3",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Reborn Dolls\",\n      \"B..."
+        },
+        {
+          "id": "590266971b3e9434f03ef9e32b70dc98",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Doll\",\n      \"Baby Noah Doll\",\n..."
+        },
+        {
+          "id": "5958631f16c7d3ae4437adb9407ff6d4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Reborn Dolls\",\n      \"D..."
+        },
+        {
+          "id": "56e608023626997f50a88bca38229d56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic reborn baby dolls\",\n      \"Infant dolls\",\n ..."
+        },
+        {
+          "id": "5846e9bb75d519a2ced331b53b934407",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Baby Doll..."
+        },
+        {
+          "id": "5860392b1427d3efcb923aa6e1d89b35",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Realistic baby doll featur..."
+        },
+        {
+          "id": "64f934b8f9a70443414f3e111b61d5a9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Infant Dolls\",\n      \"Real..."
+        },
+        {
+          "id": "5b47f98cc10b90b140dbad1a3844f3f7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Baby Doll Accessories\",\n  ..."
+        },
+        {
+          "id": "4894e0b1a7a523e9f1298dd6f3dce397",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"reborn baby dolls with ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户的核心需求是**娃娃本体的逼真度**（Reborn/Realistic），但关键的区分点在于他们明确且强烈地搜寻**配套的“配件”（Accessories）**，而非仅仅关注娃娃的尺寸、互动性或特定品牌/名字。这表明他们的购买意图是完成一个完整的“婴儿”体验场景搭建，配件是其购买路径中的明确下一阶段。"
+    },
+    {
+      "cluster_id": 3,
+      "size": 263,
+      "top_samples": [
+        {
+          "id": "04b3020e6479bf655fdf9cbf2a6f802b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "04f8370f4e4d2c3174da17ff232a27d8",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "04e954e123e053f39765c6f581900729",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "046ff33580a9377409324f8349253a36",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Collectible Dolls\",\n   ..."
+        },
+        {
+          "id": "0058c7de904a40feaa04b5a2a6195fa7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "0546ec7f4f233d07b6a79279c07cd214",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "047df1eec0db45bad72faef801fa61b5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"High-Quality Silicone D..."
+        },
+        {
+          "id": "001eb5e41fc3f56b8fe342c14e93cb6b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Collectible Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "0343d33e8f07bb8891ea4cbfa172b79f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "0159d7b32f1a2730cddec74771fe0a80",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Lifelike Baby Dolls\",\n      \"Silicone Dolls\",\n      \"..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n此聚类专注于追求**高仿真度硅胶娃娃**，其核心驱动力明显偏向于**收藏价值**而非单纯的玩耍需求。用户明确搜索“Collectible Dolls”，表明其关注点在于娃娃的稀有性、工艺水平和长期增值潜力。"
+    },
+    {
+      "cluster_id": 4,
+      "size": 218,
+      "top_samples": [
+        {
+          "id": "583c880cbf83ed63d721bd7d40d45c2d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Silicone Baby Do..."
+        },
+        {
+          "id": "62e8be3b09938cf2af6e5ffe146000a2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "63240dae52264d1ac0c1620ebdf27d2c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "00b9e041e5207e6df8608859c8939b47",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "642ff30beefda249d077e49705c0d378",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "5b113ce0abf5394c60df075eefa4809b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "5ab8c4f7d4cd794ec9bb54adb8212192",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Acce..."
+        },
+        {
+          "id": "56fa022b58153fdd9203bc977ec96f5e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "5b537fbcf5f1a0d7b6582d19f4d230e1",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        },
+        {
+          "id": "64d51ff2bd169c180bd81c5258cbd17a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Features ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户明确聚焦于追求**高度逼真（Realistic）**且采用**硅胶（Silicone）**材质的婴儿娃娃，其搜索行为高度集中于**娃娃的特定物理特性、细节特征（Features）及配件**的探究。与其他可能仅关注“娃娃购买”的用户不同，此群体的核心需求在于材料的真实感和功能的细节验证。"
+    },
+    {
+      "cluster_id": 5,
+      "size": 119,
+      "top_samples": [
+        {
+          "id": "46b2fab9fc3ea82ac30f8ecc1f751b65",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Silicone Baby Dolls\",\n      \"Realistic Baby Dolls\",\n ..."
+        },
+        {
+          "id": "0171eea645ea01fd7c5b64ca4a7151dd",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Newborn Doll\",\n..."
+        },
+        {
+          "id": "4751d4b3ae8667548cbf55c35a772d91",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Reborn dolls\",\n      \"D..."
+        },
+        {
+          "id": "670fe24c8adc4fe740e634ec30836b1f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Reborn dolls\",..."
+        },
+        {
+          "id": "63c303510685ca1bec69a487f13fe43a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Dolls\",..."
+        },
+        {
+          "id": "4847a6b0d4a96f5aa3eff13668f2ceda",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Size..."
+        },
+        {
+          "id": "67a00c1c94049e2f4d0e292836b5a7ef",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "636554ec896c914f7332e3de82d91d22",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Infant Girl Dol..."
+        },
+        {
+          "id": "62fa6460140eeb7dde66e4711c18119c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Product Detail..."
+        },
+        {
+          "id": "49a261a8024631e450c91e7e2f68766a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Doll Ac..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户群体集中于寻找**高度逼真的硅胶（Silicone）重生娃娃（Reborn Dolls）**，并且对娃娃的**尺寸（Size）和配件（Accessories）**等具体产品细节表现出明确的偏好。其核心驱动力在于追求极致的真实触感和外观，区别于只关注一般逼真度或特定年龄段的客户。"
+    },
+    {
+      "cluster_id": 6,
+      "size": 219,
+      "top_samples": [
+        {
+          "id": "669e8ab4fc31451bd6a3293d3076f3e7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "46d066565456ed9766100e165f7b4696",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "488ac59eb312f7c9d32e1dad310ccd1a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "474ed4c96fcb70e7107cf00840847f09",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Silicone Dolls\",..."
+        },
+        {
+          "id": "57ef5078560557070d023094289d41a5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "58637b9b4b6dbcf63c1d090663f10e9a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant dolls\",..."
+        },
+        {
+          "id": "470624320c20ef3b166698ef7172315c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "66f8524ee0f9311232029995af35afb6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"reborn dolls\",..."
+        },
+        {
+          "id": "47088d7bb6e5dab9d0547b56c652e4e5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "46c77c8bcbe5ad6144f651f9b2dfbc8c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"silicone baby do..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户明确聚焦于**“硅胶材质”（Silicone）**和**“超写实重生娃娃”（Reborn）**这两种高度专业化的娃娃类型，显示出对极致真实感和特定工艺材料的偏好。其核心区别在于对“Reborn”和“Silicone”属性的**双重、强烈的、且高度一致的**绑定需求，而非仅仅是寻找一般的“逼真娃娃”。"
+    },
+    {
+      "cluster_id": 7,
+      "size": 48,
+      "top_samples": [
+        {
+          "id": "63971043575cd908abc9061af7ebeab7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Reborn baby do..."
+        },
+        {
+          "id": "0413ba95fb6175c9f43e844a2f55296f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "58f405548767158570a8bec9c7f77265",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "4843084bb0678eef38613b69f0212311",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "479f9f58cad1a99be08c145b09167f1e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Infant-sized d..."
+        },
+        {
+          "id": "03339dc86650a144f1f5599159ea5814",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "5b4deb43f1d7cac8ee6cf8751d73938d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "0547917698684f25e88b5e05299c2db4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "66b60aef984d93f745acde4fe3568489",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Dolls\",..."
+        },
+        {
+          "id": "63666f5d6926523ccc20d0bbb785992d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Sizes (12..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户专注于**高逼真度的硅胶材质婴儿娃娃（Realistic Silicone Baby Dolls）**，显示出对材料精细度和感官体验的强烈偏好。区分点在于他们对**特定尺寸（如12英寸或特定婴儿尺寸）**的明确需求，表明目标是寻求精确模拟真实婴儿外观和手感的收藏或陪伴产品，而非泛指的玩偶。"
+    },
+    {
+      "cluster_id": 8,
+      "size": 25,
+      "top_samples": [
+        {
+          "id": "5a010b2f2ec2b455c803929ce878ba00",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Package Status\",\n      \"Order..."
+        },
+        {
+          "id": "5771f48366893e1ce45c59ee36cd61cd",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Management\",\n      \"Account Access\"\n    ],\n    ..."
+        },
+        {
+          "id": "66171127c5e5b3ff71ec10d20ef2de19",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order status\",\n      \"payment pending\",\n      \"shippi..."
+        },
+        {
+          "id": "483f622cb80a1679cce5d97f1851fe22",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"tracking info\",\n      \"order details\"\n    ],\n    \"pro..."
+        },
+        {
+          "id": "6771bdf4117f2e1a1bcc88cf748ab313",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order tracking and delivery status\",\n      \"Order det..."
+        },
+        {
+          "id": "648240cfa61c1ec1ce2a70a30dd52d2d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order history\",\n      \"Shipping status\",\n      \"Payme..."
+        },
+        {
+          "id": "5b3eabf58fa1b89d233966efe8e2a364",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\",\n      \"Produ..."
+        },
+        {
+          "id": "64233e76946a775f6529e91503dd45a1",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order details\",\n      \"Delivery confirmation\"\n    ],\n..."
+        },
+        {
+          "id": "029c37d29796ad87d9b172e20e598b7f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Management\",\n      \"Past Purchases\"\n    ],\n    ..."
+        },
+        {
+          "id": "66a67bf3b0d1ab1c6ecb8256a1312a7e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Account Management\",\n      \"Login\",\n      \"Registrati..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户专注于**既有订单的生命周期管理**，核心关注点集中在追踪（Tracking）、配送状态（Delivery status）和已完成的或待处理的支付状态（Payment pending）。他们的意图高度聚焦于**“我的订单现在在哪里”**以及**“我的账户访问/历史记录”**，而非产品探索或退换货等售后纠纷。"
+    },
+    {
+      "cluster_id": 9,
+      "size": 40,
+      "top_samples": [
+        {
+          "id": "62aa697f5431ee9873682bf6174ec684",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order tracking\",\n      \"realistic baby dolls\",\n      ..."
+        },
+        {
+          "id": "63cc19e5e5e32df580511ed1d4a05cad",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Re..."
+        },
+        {
+          "id": "669fa8ce1270886e0c9bfeb96f847900",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Dolls\",\n      \"Baby Dolls\",\n      ..."
+        },
+        {
+          "id": "02edc69ea69c83f4f72039166a074d44",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Dolls\",\n      \"Realistic Baby Dolls\",\n      \"C..."
+        },
+        {
+          "id": "0399a54ce2a8ec7b9d3ad42c8c92774b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Realistic Baby Doll\",\n     ..."
+        },
+        {
+          "id": "474992787ead9fa5a19b514180c77008",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order details\",\n      \"shipping status\",\n      \"reali..."
+        },
+        {
+          "id": "657ded1117c950392860de436eb5ec91",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"Re..."
+        },
+        {
+          "id": "5a203cf1d5fcace1745fd7fdca660c56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Status\",\n      \"Shipping Information\",\n      \"P..."
+        },
+        {
+          "id": "597409dc973342e86d90e6218b56a180",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Product Details\",\n      \"Rebo..."
+        },
+        {
+          "id": "0635130696f66dd56cfd1a3e18801010",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\",\n      \"Reali..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户核心关注点在于**订单状态的即时追踪和物流细节查询**，特别是对“Order Tracking”和“Shipping Status”的明确需求占据主导。虽然部分用户间接提及了“Reborn Dolls”等产品，但其**操作意图明确指向售后和已购产品的管理**，而非初始的产品比较或购买决策，从而将此聚类与纯粹的产品探索型聚类区分开。"
+    },
+    {
+      "cluster_id": 10,
+      "size": 87,
+      "top_samples": [
+        {
+          "id": "010af845f43f538ffa4b605c244bbd1b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "043e4c619457d7a7c715657b779e8030",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Doll Accessories\",\n      \"D..."
+        },
+        {
+          "id": "671ca4e2fa9c5acd886a26186e57118d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll\",\n      \"Doll features (heartbeat, c..."
+        },
+        {
+          "id": "655f1300d93429e2ff36e72ab8e79f61",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Realistic baby dolls\",\n   ..."
+        },
+        {
+          "id": "47b4c51f0d9a15ee4cdd5768eab53bb7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll 'Sunny'\",\n      \"Doll features (hear..."
+        },
+        {
+          "id": "56e981bc99b5a3c465be1622513dbb5c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Interactive doll features ..."
+        },
+        {
+          "id": "5afa1938e234feb480bd023aa4a66168",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Doll Features (Heartbeat, ..."
+        },
+        {
+          "id": "65f934fd4ee573c8a69af19c9a352488",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Doll Features (Heartbeat, ..."
+        },
+        {
+          "id": "63f44edad429cea4a34e944059eed254",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Doll features (heartbeat, ..."
+        },
+        {
+          "id": "66223d7ed0297e3e2d9f4210f2a69891",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll 'Sunny'\",\n      \"Doll features (hear..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户核心关注点在于**高阶的仿真互动功能**（如心跳机制）以及**特定配件的采购**，远超对基础逼真度的需求。他们积极搜索带有明确电子或机械特性的娃娃模型，并集中探索这些附加功能带来的沉浸式体验。"
+    },
+    {
+      "cluster_id": 11,
+      "size": 116,
+      "top_samples": [
+        {
+          "id": "5b1ac31218af4907c7c907f331c948fe",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\"\n    ],\n    \"p..."
+        },
+        {
+          "id": "654530e9da8a37d762dd01fc8402692c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Status\",\n      \"Product Details\"\n    ],\n    \"pr..."
+        },
+        {
+          "id": "64e95092b25f827d6221dcb21217fc56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Product Detail..."
+        },
+        {
+          "id": "5715f5ef6f33c5e76bc70c49e743fdb4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Product Details..."
+        },
+        {
+          "id": "58d603efd4f8641b5c0f4c46e8e0005a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Product Details\"\n    ],\n    \"..."
+        },
+        {
+          "id": "64b3c9d01f49ab598b92f321df2c344f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking Information\",\n      \"Realistic Silicon..."
+        },
+        {
+          "id": "5a41cecbec96353c0c097f4de497cf34",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Realistic Silicone Baby Dolls..."
+        },
+        {
+          "id": "5a477b6c769877d83d46e475804a88c7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        },
+        {
+          "id": "57895ee80cafa8e4fed381f687e942e3",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order details\",\n      \"Tracking information\"\n    ],\n ..."
+        },
+        {
+          "id": "47d64fc8630c5e8eaf19ea245355e4b2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Dolls\",\n      \"Silicone Baby Dolls\",\n      \"Re..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类核心关注点是**交易生命周期管理**，用户集中查询**订单的实时状态和历史购买记录**，而非产品本身的特性或功能。其独特性在于对“Order Tracking”和“Past Purchases”的持续、高频关注，表明用户处于**购买后跟进阶段**，而非浏览或决策阶段。"
+    },
+    {
+      "cluster_id": 12,
+      "size": 159,
+      "top_samples": [
+        {
+          "id": "4971b17f8ead63f8d65ef21c6d8e229a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic reborn baby dolls\",\n      \"Silicone baby do..."
+        },
+        {
+          "id": "46d835e044982cb262a7f46cf1c9e6e4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "485c6918be5acb9980882f26eab99907",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "49316ce050b6ff52c5add2dd4f9738e0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Infant dolls\",..."
+        },
+        {
+          "id": "56dc74d1708075b76cbc34f19115bb0f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"reborn dolls\",..."
+        },
+        {
+          "id": "58eb3ff04dcadd15470f96cb307ffed0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "5983f4a5b2fd8d0bd77594268e6366c4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant girl do..."
+        },
+        {
+          "id": "5a2977e889d56d2bf7be58fa3a378380",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Baby doll vari..."
+        },
+        {
+          "id": "662e84b09aa75385033836305fe9c70f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Silicone baby dolls\",\n      \"Reborn dolls\",\n      \"Ba..."
+        },
+        {
+          "id": "04e71b07a5a267e9a15f8ea364b7f598",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Lifelike Baby Dolls\",\n      \"Silicone Dolls\",\n      \"..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户明确聚焦于追求最高拟真度的**硅胶（Silicone）材质**婴儿娃娃，强调“再造生命（Reborn）”的沉浸式体验。其核心差异点在于对**材料（Silicone）**和**极度逼真度（Realistic/Lifelike）**的并重，区别于仅关注基础婴儿娃娃或非硅胶材质的收藏者。"
+    },
+    {
+      "cluster_id": 13,
+      "size": 130,
+      "top_samples": [
+        {
+          "id": "0518f114794961f50c863d0bfe05e88d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Li..."
+        },
+        {
+          "id": "5779cb2a56cc2b89911acb0603d44221",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Dolls\",\n ..."
+        },
+        {
+          "id": "491e9cfe84732bc3cd1914576365bca6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"infant dolls\",\n ..."
+        },
+        {
+          "id": "6585b4b23640e0a33d1b6223fde997f6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "47f3429e5a457b31255c64d8b9c73578",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant-sized Dol..."
+        },
+        {
+          "id": "024ac52785f0760e900a1feb5fff018a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "00ad3875dd69a0e7b8b9cd0600e70945",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Realistic Baby Doll\",\n     ..."
+        },
+        {
+          "id": "4898e871fb3229652c5cd05e8e8eb4ad",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Dolls\",\n ..."
+        },
+        {
+          "id": "05a5a471990b19a17d3995c77382002f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Li..."
+        },
+        {
+          "id": "0272d2f7d54343e5d72877ce2ad5df34",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户明确聚焦于追求**高度逼真（Realistic）的“重生娃娃”（Reborn Dolls）**，且兴趣集中于**硅胶材质（Silicone）**和**婴儿尺寸（Infant/Infant-sized）**的特定细分产品。他们的核心需求是**极致的真实感和材料的高端化**，而不是简单的娃娃收藏或配件采购。"
+    },
+    {
+      "cluster_id": 14,
+      "size": 289,
+      "top_samples": [
+        {
+          "id": "48b63b5a2993f0deb26fa42c15e95ee0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "62f169984bc2f59bd0d2c682cdced681",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone dolls\",\n      ..."
+        },
+        {
+          "id": "46dfc7081fedfd972bed4e59fa15b3c6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "486eda254cf7aaf20347fbe258715bf9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "46cb3a72d79fd5cf3b2f6e611488ffe4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant dolls\",..."
+        },
+        {
+          "id": "661b5e3bb37f9167d61a468fc7ae57ae",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"baby doll acce..."
+        },
+        {
+          "id": "66d910040eca5b1dc288d5b7e2dc46cf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "578cce64e6405e7332cc17ddfd1c3231",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "58764eec05fb1e0a7ef9db1236f22c86",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "630dd6455e795d5ad63ea7d9196b099e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Full silicone dolls\",\n ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户高度专注于**全硅胶材质**的**超写实婴儿娃娃**，追求极致的触感和外观模拟。他们的核心需求紧密围绕“硅胶”（Silicone）这一特定材料属性，与其他可能关注布料、乙烯基或其他材质的买家形成鲜明区分。"
+    }
+  ],
+  "total_samples": 1908
+};
+                prototypeData = {
+  "metadata": {
+    "generation_date": "2025-12-30T19:01:00.053940",
+    "original_cluster_count": 15,
+    "final_prototype_count": 4,
+    "merged_count": 2,
+    "total_samples": 1908,
+    "optimal_k": 15,
+    "similarity_threshold": 0.95
+  },
+  "intent_prototypes": [
+    {
+      "intent_cluster_id": 0,
+      "cluster_size": 1648,
+      "intent_description": {
+        "summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）的“重生娃娃”（Reborn Dolls），且兴趣集中于硅胶材质（Silicone）和婴儿尺寸（Infant/Infant-sized）的特定细分产品。他们的核心需求是极致的真实感和材料的高端化，而不是简单的娃娃收藏或配件采购。",
+        "full_summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）的“重生娃娃”（Reborn Dolls），且兴趣集中于硅胶材质（Silicone）和婴儿尺寸（Infant/Infant-sized）的特定细分产品。他们的核心需求是极致的真实感和材料的高端化，而不是简单的娃娃收藏或配件采购。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "收藏",
+          "配件",
+          "重生",
+          "材质",
+          "尺寸"
+        ],
+        "user_behavior_patterns": [
+          "收藏价值导向",
+          "高流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "娃娃配件",
+          "收藏级娃娃",
+          "重生婴儿娃娃",
+          "硅胶婴儿娃娃"
+        ],
+        "key_product_attributes": [
+          "尺寸",
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家"
+        ],
+        "content_strategy": [
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "merged_from_clusters": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        13,
+        14
+      ],
+      "is_merged": true
+    },
+    {
+      "intent_cluster_id": 1,
+      "cluster_size": 36,
+      "intent_description": {
+        "summary": "该聚类核心关注点在于账户管理和登录/密码重置的特定操作需求，而非单纯的产品浏览或购买意图。其独特性在于用户直接将账户安全与技术支持需求与对逼真硅胶/收藏级重生娃娃的兴趣混合，表明这批用户已处于高参与度（或已注册） 阶段，正在处理账户层面的障碍。",
+        "full_summary": "该聚类核心关注点在于账户管理和登录/密码重置的特定操作需求，而非单纯的产品浏览或购买意图。其独特性在于用户直接将账户安全与技术支持需求与对逼真硅胶/收藏级重生娃娃的兴趣混合，表明这批用户已处于高参与度（或已注册） 阶段，正在处理账户层面的障碍。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "娃娃",
+          "账户",
+          "登录",
+          "收藏",
+          "重生",
+          "硅胶",
+          "逼真"
+        ],
+        "user_behavior_patterns": [
+          "账户管理与登录需求",
+          "细分意图群体"
+        ],
+        "intent_strength": "low"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "收藏级娃娃",
+          "重生婴儿娃娃",
+          "硅胶婴儿娃娃"
+        ],
+        "key_product_attributes": [
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家",
+          "现有客户"
+        ],
+        "content_strategy": [
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": [
+          "购买意向明确，可提供快速购买路径"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 8,
+      "cluster_size": 25,
+      "intent_description": {
+        "summary": "该聚类用户专注于既有订单的生命周期管理，核心关注点集中在追踪（Tracking）、配送状态（Delivery status）和已完成的或待处理的支付状态（Payment pending）。他们的意图高度聚焦于“我的订单现在在哪里”以及“我的账户访问/历史记录”，而非产品探索或退换货等售后纠纷。",
+        "full_summary": "该聚类用户专注于既有订单的生命周期管理，核心关注点集中在追踪（Tracking）、配送状态（Delivery status）和已完成的或待处理的支付状态（Payment pending）。他们的意图高度聚焦于“我的订单现在在哪里”以及“我的账户访问/历史记录”，而非产品探索或退换货等售后纠纷。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "订单",
+          "追踪",
+          "账户"
+        ],
+        "user_behavior_patterns": [
+          "订单管理相关意图",
+          "细分意图群体"
+        ],
+        "intent_strength": "low"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [],
+        "key_product_attributes": []
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "现有客户"
+        ],
+        "content_strategy": [],
+        "conversion_opportunities": [
+          "购买意向明确，可提供快速购买路径"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 9,
+      "cluster_size": 199,
+      "intent_description": {
+        "summary": "该聚类用户核心关注点在于订单状态的即时追踪和物流细节查询，特别是对“Order Tracking”和“Shipping Status”的明确需求占据主导。虽然部分用户间接提及了“Reborn Dolls”等产品，但其操作意图明确指向售后和已购产品的管理，而非初始的产品比较或购买决策，从而将此聚类与纯粹的产品探索型聚类区分开。",
+        "full_summary": "该聚类用户核心关注点在于订单状态的即时追踪和物流细节查询，特别是对“Order Tracking”和“Shipping Status”的明确需求占据主导。虽然部分用户间接提及了“Reborn Dolls”等产品，但其操作意图明确指向售后和已购产品的管理，而非初始的产品比较或购买决策，从而将此聚类与纯粹的产品探索型聚类区分开。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "订单",
+          "追踪"
+        ],
+        "user_behavior_patterns": [
+          "订单查询与追踪需求",
+          "中等流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "重生婴儿娃娃"
+        ],
+        "key_product_attributes": []
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "现有客户"
+        ],
+        "content_strategy": [
+          "优化SEO关键词，匹配用户搜索意图",
+          "突出产品细节和特征的高质量内容"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动",
+          "购买意向明确，可提供快速购买路径",
+          "对比需求，提供产品对比工具"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "merged_from_clusters": [
+        9,
+        12
+      ],
+      "is_merged": true
+    }
+  ]
+};
+                
+                // 加载非产品相关意图分析数据
+                nonProductData = {
+  "metadata": {
+    "analysis_date": "2025-12-30T18:06:20.227779",
+    "total_records": 668,
+    "unique_users": 586
+  },
+  "keyword_distribution": {
+    "tracking": 207,
+    "order tracking": 187,
+    "order details": 128,
+    "order status": 110,
+    "order history": 93,
+    "login": 92,
+    "account management": 22,
+    "password": 15,
+    "password reset": 10,
+    "shipping status": 9,
+    "past purchases": 9,
+    "account registration": 7,
+    "delivery status": 7,
+    "account access": 5,
+    "register": 3,
+    "purchase_stage: order tracking": 1
+  },
+  "intent_types": {
+    "其他": 378,
+    "账号管理": 33,
+    "订单追踪": 257
+  },
+  "date_distribution": {
+    "2025-12-23": 252,
+    "2025-12-25": 203,
+    "2025-12-27": 169,
+    "2025-12-29": 44
+  },
+  "top_core_interests": {
+    "Realistic Silicone Baby Dolls": 128,
+    "Realistic Baby Dolls": 111,
+    "Order Tracking": 106,
+    "Silicone Dolls": 72,
+    "Product Details": 69,
+    "Collectible Dolls": 59,
+    "Reborn Baby Dolls": 59,
+    "Realistic baby dolls": 58,
+    "Realistic Baby Doll": 42,
+    "Silicone dolls": 39,
+    "Reborn Dolls": 36,
+    "Doll Accessories": 30,
+    "Realistic Silicone Baby Doll": 30,
+    "Reborn baby dolls": 30,
+    "Reborn Baby Doll": 26
+  }
+};
+                
+                // 加载订单追踪分析数据
+                orderTrackingData = {
+  "analysis_date": "2025-12-30T18:11:34.765607",
+  "total_order_tracking_records": 245,
+  "unique_users": 226,
+  "frequent_users_count": 19,
+  "avg_checks_per_user": 1.084070796460177,
+  "behavior_patterns": {},
+  "top_concerns": {
+    "shipping status": 11,
+    "shipping and delivery status": 5,
+    "order status and product details": 3,
+    "tracking information": 3,
+    "shipping status and delivery timeline": 2,
+    "shipping/tracking information": 2,
+    "shipping and order status": 2,
+    "order tracking and delivery status": 2,
+    "product care and handling (due to delicate silicone material)": 2,
+    "order status and tracking information": 2
+  },
+  "analysis_text": "\n## 订单追踪行为分析：用户摩擦点识别\n\n### 数据概览\n- **订单追踪相关意图记录数**: 246 条\n- **涉及用户数**: 226 个\n\n### 关键发现：用户更关注订单状态，而非物流配送\n\n#### 数据洞察\n从用户查询行为分析发现一个**重要现象**：\n- **订单状态/追踪相关查询**: 211 条 (85.8%)\n- **物流配送相关查询**: 2 条 (0.8%)\n- **订单历史相关查询**: 16 条 (6.5%)\n\n**核心发现**：用户对**订单状态和追踪（Order Status/Tracking）**的关注度（85.8%）远高于**物流配送（Shipping/Delivery）**（0.8%），这表明：\n\n#### 1. **订单确认和状态查询是主要痛点**\n用户频繁查询订单状态和追踪信息，可能的原因：\n- **订单确认不及时**：用户下单后无法立即确认订单是否成功创建\n- **支付状态不明确**：用户不确定支付是否成功，订单是否已确认\n- **订单处理状态不透明**：用户不知道订单是否在处理中、是否已发货\n- **订单状态更新不及时**：用户需要主动查询才能获取最新状态\n- **状态展示位置不明显**：订单状态可能隐藏在订单详情中，用户需要多次点击才能看到\n\n#### 2. **物流信息不是主要关注点**\n用户对shipping/delivery的关注度较低（0.8%），可能说明：\n- **物流信息相对清晰**：一旦订单状态显示\"已发货\"，用户对后续物流跟踪的需求较低\n- **物流不是决策关键点**：用户更关心\"订单是否成功\"、\"订单在哪里\"而非\"货物具体配送细节\"\n- **或者物流信息获取渠道畅通**：用户可能通过其他方式（如物流公司APP、短信通知）获取物流信息\n- **用户对物流时效有预期**：用户可能对配送时间有合理预期，不需要频繁查询\n\n#### 3. **订单状态信息架构问题**\n用户频繁查询order status/tracking，暗示：\n- **订单状态分类不清晰**：可能缺少明确的\"待确认\"、\"已确认\"、\"处理中\"、\"已发货\"等状态\n- **状态更新不及时**：订单状态可能没有实时更新，导致用户需要主动查询\n- **状态说明不充分**：用户可能不理解某些状态的含义（如\"处理中\"具体指什么）\n- **订单追踪信息不完整**：用户可能无法清楚地看到订单的完整处理流程\n\n### 改进建议\n\n#### 优先级1：优化订单状态展示和追踪\n1. **订单列表页面直接显示状态**\n   - 在订单列表直接显示\"待确认\"、\"已确认\"、\"已发货\"等状态\n   - 使用颜色和图标区分不同状态\n   - 显示状态更新时间\n\n2. **订单确认流程优化**\n   - 下单后立即显示订单确认页面\n   - 发送订单确认邮件/短信\n   - 在用户中心首页显示最新订单状态\n\n3. **订单追踪信息可视化**\n   - 提供订单处理流程的时间线展示\n   - 清晰显示订单当前处于哪个环节\n   - 显示每个环节的预期完成时间\n\n#### 优先级2：减少订单状态查询需求\n1. **主动推送状态更新**\n   - 订单状态变更时主动通知用户（邮件、短信、站内消息）\n   - 设置状态变更提醒功能\n   - 在APP/网站首页显示订单状态摘要\n\n2. **简化查询流程**\n   - 优化订单查询入口的可见性\n   - 提供订单号的快速查询功能\n   - 支持通过订单号、商品名称等多种方式查询\n\n### 结论\n用户对**订单状态和追踪（Order Status/Tracking）**的关注度（85.8%）远高于**物流配送（Shipping/Delivery）**（0.8%），这强烈暗示订单系统的**订单确认和状态管理环节**存在明显的用户摩擦点。用户需要频繁查询才能确认订单是否成功、是否在处理中、是否已发货等关键信息。相比之下，用户对物流配送细节的关注度较低，说明一旦订单状态清晰，用户对后续物流跟踪的需求也相应降低。建议优先优化订单状态的展示、追踪和通知机制，减少用户的主动查询需求。\n",
+  "category_stats": {
+    "order_status": 45,
+    "shipping": 161,
+    "order_history": 11,
+    "mixed": 29
+  },
+  "keyword_distribution": {
+    "order details": 46,
+    "order tracking": 151,
+    "order status": 30,
+    "shipping status": 9,
+    "delivery status": 6
+  },
+  "category_stats_corrected": {
+    "order_status_tracking": 211,
+    "shipping_delivery": 2,
+    "order_history": 16,
+    "mixed": 17
+  }
+};
+                
+                renderClusterTab();
+                renderPrototypeTab();
+                renderNonProductTab();
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                document.body.innerHTML = '<div style="text-align:center;padding:50px;color:white;"><h2>数据加载错误</h2><p>' + error.message + '</p></div>';
+            }
+        }
+
+        // 切换标签页
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tab + '-tab').classList.add('active');
+            
+            // 如果切换到非产品相关意图tab，渲染图表
+            if (tab === 'non-product' && nonProductData) {
+                renderNonProductTab();
+            }
+        }
+
+        // 渲染聚类分析标签页
+        function renderClusterTab() {
+            // 统计卡片
+            const stats = clusterData.cluster_summaries;
+            const totalSamples = clusterData.total_samples;
+            const optimalK = clusterData.optimal_k;
+            
+            document.getElementById('cluster-stats').innerHTML = `
+                <div class="stat-card">
+                    <h3>总聚类数</h3>
+                    <div class="value">${stats.length}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>总样本数</h3>
+                    <div class="value">${totalSamples}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>最优K值</h3>
+                    <div class="value">${optimalK}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均聚类大小</h3>
+                    <div class="value">${Math.round(totalSamples / stats.length)}</div>
+                </div>
+            `;
+
+            // 聚类分布图表
+            const sizes = stats.map(s => s.size);
+            const labels = stats.map((s, i) => `聚类 ${i}`);
+            const colors = generateColors(stats.length);
+
+            new Chart(document.getElementById('clusterChart'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '样本数量',
+                        data: sizes,
+                        backgroundColor: colors,
+                        borderColor: colors.map(c => c.replace('0.8', '1')),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // K值选择图表
+            const kResults = clusterData.k_selection_results;
+            new Chart(document.getElementById('kSelectionChart'), {
+                type: 'line',
+                data: {
+                    labels: kResults.k_values,
+                    datasets: [
+                        {
+                            label: '轮廓系数',
+                            data: kResults.silhouette_scores,
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            yAxisID: 'y',
+                            tension: 0.4
+                        },
+                        {
+                            label: '惯性 (归一化)',
+                            data: normalizeData(kResults.inertias),
+                            borderColor: '#764ba2',
+                            backgroundColor: 'rgba(118, 75, 162, 0.1)',
+                            yAxisID: 'y1',
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: { type: 'linear', position: 'left', title: { display: true, text: '轮廓系数' } },
+                        y1: { type: 'linear', position: 'right', title: { display: true, text: '惯性 (归一化)' }, grid: { drawOnChartArea: false } }
+                    }
+                }
+            });
+
+            // 渲染聚类卡片
+            renderClusters();
+        }
+
+        // 渲染聚类卡片
+        function renderClusters() {
+            const container = document.getElementById('clusters-grid');
+            container.innerHTML = clusterData.cluster_summaries.map((cluster, idx) => {
+                const summary = cluster.summary.replace(/\*\*/g, '').replace(/聚类摘要：/g, '').trim();
+                return `
+                    <div class="cluster-card" data-cluster-id="${cluster.cluster_id}">
+                        <div class="cluster-header">
+                            <div class="cluster-id">聚类 ${cluster.cluster_id}</div>
+                            <div class="cluster-size">${cluster.size} 个样本</div>
+                        </div>
+                        <div class="cluster-summary">${summary}</div>
+                        <div class="cluster-tags">
+                            ${cluster.top_samples.slice(0, 3).map(s => 
+                                `<span class="tag">样本 ${s.id.substring(0, 8)}...</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 渲染Intent Prototypes标签页
+        function renderPrototypeTab() {
+            const stats = prototypeData.intent_prototypes;
+            const highCount = stats.filter(s => s.user_intent_characteristics.intent_strength === 'high').length;
+            const mediumCount = stats.filter(s => s.user_intent_characteristics.intent_strength === 'medium').length;
+            const lowCount = stats.filter(s => s.user_intent_characteristics.intent_strength === 'low').length;
+
+            document.getElementById('prototype-stats').innerHTML = `
+                <div class="stat-card">
+                    <h3>总Prototype数</h3>
+                    <div class="value">${stats.length}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>高意图强度</h3>
+                    <div class="value" style="color: #4caf50;">${highCount}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>中等意图强度</h3>
+                    <div class="value" style="color: #ff9800;">${mediumCount}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>低意图强度</h3>
+                    <div class="value" style="color: #9e9e9e;">${lowCount}</div>
+                </div>
+            `;
+
+            renderPrototypes();
+        }
+
+        // 渲染Prototypes
+        function renderPrototypes() {
+            const container = document.getElementById('prototypes-container');
+            let filtered = prototypeData.intent_prototypes;
+
+            // 强度筛选
+            if (currentStrengthFilter !== 'all') {
+                filtered = filtered.filter(p => 
+                    p.user_intent_characteristics.intent_strength === currentStrengthFilter
+                );
+            }
+
+            // 搜索筛选
+            const searchTerm = document.getElementById('prototype-search').value.toLowerCase();
+            if (searchTerm) {
+                filtered = filtered.filter(p => {
+                    const summary = p.intent_description.summary.toLowerCase();
+                    const interests = p.user_intent_characteristics.primary_interests.join(' ').toLowerCase();
+                    return summary.includes(searchTerm) || interests.includes(searchTerm);
+                });
+            }
+
+            container.innerHTML = filtered.map(proto => {
+                const strength = proto.user_intent_characteristics.intent_strength;
+                const mergedInfo = proto.is_merged && proto.merged_from_clusters ? 
+                    ` <span style="font-size:0.8em;color:#666;">[合并自: ${proto.merged_from_clusters.join(', ')}]</span>` : '';
+                return `
+                    <div class="prototype-card">
+                        <div class="prototype-header">
+                            <div class="prototype-title">Intent Prototype #${proto.intent_cluster_id}${mergedInfo}</div>
+                            <div class="intent-strength ${strength}">${strength.toUpperCase()} (${proto.cluster_size}样本)</div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">意图描述</div>
+                            <div class="cluster-summary">${proto.intent_description.summary}</div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">主要兴趣</div>
+                            <div class="interests-list">
+                                ${proto.user_intent_characteristics.primary_interests.map(i => 
+                                    `<span class="interest-item">${i}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">目标受众</div>
+                            <div class="audience-list">
+                                ${proto.marketing_insights.target_audience.map(a => 
+                                    `<span class="audience-item">${a}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">相关标签</div>
+                            <div class="tags-list">
+                                ${proto.product_alignment.relevant_tags.slice(0, 10).map(t => 
+                                    `<span class="tag">${t}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">内容策略</div>
+                            ${proto.marketing_insights.content_strategy.map(s => 
+                                `<div class="strategy-item">${s}</div>`
+                            ).join('')}
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">转化机会</div>
+                            ${proto.marketing_insights.conversion_opportunities.map(o => 
+                                `<div class="opportunity-item">${o}</div>`
+                            ).join('')}
+                        </div>
+
+                        <div class="section">
+                            <div class="section-title">适用渠道</div>
+                            <div class="tags-list">
+                                ${proto.long_term_value.applicable_channels.map(c => 
+                                    `<span class="tag">${c}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 筛选函数
+        function filterClusters() {
+            const searchTerm = document.getElementById('cluster-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.cluster-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        function filterPrototypes() {
+            renderPrototypes();
+        }
+
+        function filterByStrength(strength) {
+            currentStrengthFilter = strength;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderPrototypes();
+        }
+
+        // 工具函数
+        function generateColors(count) {
+            const colors = [];
+            for (let i = 0; i < count; i++) {
+                const hue = (i * 360 / count) % 360;
+                colors.push(`hsla(${hue}, 70%, 60%, 0.8)`);
+            }
+            return colors;
+        }
+
+        function normalizeData(data) {
+            const max = Math.max(...data);
+            const min = Math.min(...data);
+            return data.map(d => (d - min) / (max - min));
+        }
+
+        // 渲染非产品相关意图标签页
+        function renderNonProductTab() {
+            if (!nonProductData) return;
+            
+            const metadata = nonProductData.metadata;
+            const intentTypes = nonProductData.intent_types;
+            const keywordDist = nonProductData.keyword_distribution;
+            const dateDist = nonProductData.date_distribution;
+            const coreInterests = nonProductData.top_core_interests;
+            
+            // 统计卡片
+            document.getElementById('non-product-stats').innerHTML = `
+                <div class="stat-card">
+                    <h3>总记录数</h3>
+                    <div class="value">${metadata.total_records}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>不同用户数</h3>
+                    <div class="value">${metadata.unique_users}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>订单追踪</h3>
+                    <div class="value" style="color: #ff9800;">${intentTypes['订单追踪'] || 0}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>账号管理</h3>
+                    <div class="value" style="color: #f44336;">${intentTypes['账号管理'] || 0}</div>
+                </div>
+            `;
+            
+            // 意图类型分布（饼图）
+            const intentTypeLabels = Object.keys(intentTypes);
+            const intentTypeData = Object.values(intentTypes);
+            const intentTypeColors = ['#ff9800', '#f44336', '#9e9e9e'];
+            
+            new Chart(document.getElementById('intentTypeChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: intentTypeLabels,
+                    datasets: [{
+                        data: intentTypeData,
+                        backgroundColor: intentTypeColors,
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 关键词分布（柱状图）
+            const keywordEntries = Object.entries(keywordDist).sort((a, b) => b[1] - a[1]).slice(0, 15);
+            const keywordLabels = keywordEntries.map(e => e[0]);
+            const keywordValues = keywordEntries.map(e => e[1]);
+            const keywordColors = generateColors(keywordLabels.length);
+            
+            new Chart(document.getElementById('keywordChart'), {
+                type: 'bar',
+                data: {
+                    labels: keywordLabels,
+                    datasets: [{
+                        label: '出现次数',
+                        data: keywordValues,
+                        backgroundColor: keywordColors,
+                        borderColor: keywordColors.map(c => c.replace('0.8', '1')),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { beginAtZero: true }
+                    }
+                }
+            });
+            
+            // 日期分布（折线图）
+            const dateLabels = Object.keys(dateDist).sort();
+            const dateValues = dateLabels.map(d => dateDist[d]);
+            
+            new Chart(document.getElementById('dateChart'), {
+                type: 'line',
+                data: {
+                    labels: dateLabels,
+                    datasets: [{
+                        label: '记录数',
+                        data: dateValues,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+            
+            // 核心兴趣Top 10（柱状图）
+            const interestEntries = Object.entries(coreInterests).sort((a, b) => b[1] - a[1]).slice(0, 10);
+            const interestLabels = interestEntries.map(e => e[0]);
+            const interestValues = interestEntries.map(e => e[1]);
+            const interestColors = generateColors(interestLabels.length);
+            
+            new Chart(document.getElementById('coreInterestsChart'), {
+                type: 'bar',
+                data: {
+                    labels: interestLabels,
+                    datasets: [{
+                        label: '出现次数',
+                        data: interestValues,
+                        backgroundColor: interestColors,
+                        borderColor: interestColors.map(c => c.replace('0.8', '1')),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: { beginAtZero: true }
+                    }
+                }
+            });
+        }
+
+        // 页面加载时初始化
+        loadData();
+    </script>
+</body>
+</html>
+

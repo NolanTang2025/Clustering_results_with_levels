@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "analysis_date": "2025-12-30T18:06:20.227779",
+    "total_records": 668,
+    "unique_users": 586
+  },
+  "keyword_distribution": {
+    "tracking": 207,
+    "order tracking": 187,
+    "order details": 128,
+    "order status": 110,
+    "order history": 93,
+    "login": 92,
+    "account management": 22,
+    "password": 15,
+    "password reset": 10,
+    "shipping status": 9,
+    "past purchases": 9,
+    "account registration": 7,
+    "delivery status": 7,
+    "account access": 5,
+    "register": 3,
+    "purchase_stage: order tracking": 1
+  },
+  "intent_types": {
+    "其他": 378,
+    "账号管理": 33,
+    "订单追踪": 257
+  },
+  "date_distribution": {
+    "2025-12-23": 252,
+    "2025-12-25": 203,
+    "2025-12-27": 169,
+    "2025-12-29": 44
+  },
+  "top_core_interests": {
+    "Realistic Silicone Baby Dolls": 128,
+    "Realistic Baby Dolls": 111,
+    "Order Tracking": 106,
+    "Silicone Dolls": 72,
+    "Product Details": 69,
+    "Collectible Dolls": 59,
+    "Reborn Baby Dolls": 59,
+    "Realistic baby dolls": 58,
+    "Realistic Baby Doll": 42,
+    "Silicone dolls": 39,
+    "Reborn Dolls": 36,
+    "Doll Accessories": 30,
+    "Realistic Silicone Baby Doll": 30,
+    "Reborn baby dolls": 30,
+    "Reborn Baby Doll": 26
+  }
+}

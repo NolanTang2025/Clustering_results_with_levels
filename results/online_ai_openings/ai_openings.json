@@ -1,0 +1,1646 @@
+{
+  "metadata": {
+    "generation_date": "2026-01-05 18:35:05",
+    "total_count": 17,
+    "source_file": "../data/intent_prototype_online.csv"
+  },
+  "ai_openings": [
+    {
+      "id": "14",
+      "shop_id": "28",
+      "status": "NOMINATING",
+      "cluster_hit": "2",
+      "summary": "{\"core_interests\":[\"Oversized Hoodie\",\"Loungewear\",\"Comfortable Apparel\",\"Burgundy Color\",\"Fall Fashion\",\"Hoodies\",\"Athleisure\"],\"product_focus\":{\"key_attributes\":[\"Oversized Fit\",\"Burgundy Color\",\"Comfortable Fabric\",\"Hooded\",\"Kangaroo Pocket\",\"Soft Fabric\"],\"price_range\":\"budget\",\"main_appeal\":\"Comfort and Style\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"low\",\"browsing_path\":\"N/A (single product view)\",\"evolution\":\"No clear evolution as only one product was viewed.\"},\"match_analysis\":{\"user_fit\":\"The user's interactions suggest an interest in casual, comfortable, and trendy apparel, aligning with the product's description.\",\"use_case\":\"Casual wear, loungewear, everyday outfit.\",\"customer_portrait\":\"A fashion-conscious individual seeking comfortable and stylish everyday wear, likely interested in current trends like athleisure.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 14 - The Burgundy Comfort Quest\n\n**Target Cluster Focus:** Fashion-conscious seeking the perfect *Oversized Burgundy Loungewear Hoodie* for casual comfort, worried about fit/fabric quality on a budget.\n\n**Character:** Caucasian Woman, late 20s, average build, long wavy brunette hair, wearing a soft, neutral-toned cardigan (to emphasize the focus product).\n\n**Setting Differentiation:** A **Bright, Cozy Home Folding Station**—a large, warm, slightly cluttered wooden table covered in a cream-colored, nubby textured throw blanket, positioned near a window letting in soft, warm, late-afternoon sunlight (Fall lighting).\n\n**Visual Metaphor:** The **Kangaroo Pocket** becoming an unexpected, safe \"hiding spot\" or measure of true comfort/oversized fit.\n\n**Emotional Journey:** Initial high expectation/search → Gentle doubt regarding the \"feel\" and \"drape\" → Tender realization that the fit *is* perfectly snug/oversized in the right way.\n\n| Shot | Time (Approx.) | Visual Description & Action | Camera Movement & Effects | Cluster Alignment & Emotion |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **ESTABLISHING ACTION:** The woman is holding up a freshly unwrapped **Burgundy Oversized Hoodie**. She examines the fabric texture using the **side of her hand** (not the palm) for a quick, tactile assessment, tilting her head slightly to catch the light on the rich burgundy color. She is clearly evaluating *Comfortable Fabric* and *Burgundy Color*. | **Slow, intentional push-in (zoom)** on her hands and the fabric texture. Lighting is warm, emphasizing the depth of the burgundy. | **SETUP/EXPECTATION:** Establishing interest in key attributes (Color, Fabric, Hooded). Her expression is focused and slightly critical (Pain Point: Uncertainty about product choice). |\n| **2** | 2.5s | **RISING TENSION:** She immediately tries to test the **Oversized Fit** and *Kangaroo Pocket*. She attempts to fit both hands deeply into the pocket, but her fingers barely graze the back seam, suggesting it might be too small or not truly oversized. She pulls her hands out, letting the fabric momentarily collapse. Her brow furrows slightly in gentle disappointment. | **Rack Focus:** Sharp focus on the empty, slightly taut pocket opening, then quickly racks focus back to her slightly worried eyes. Gentle lens flare from the warm window light. | **PROBLEM IDENTIFICATION:** Visual metaphor of the pocket not meeting the *Oversized Fit* expectation. The concern about quality/fit is visible. |\n| **3** | 2.5s | **CLIMAX/RESOLUTION:** She sighs softly (visually indicated by relaxed shoulders) and decides to try it on her body (implied). She pulls the fabric taut across her chest to judge the drape, then stops. Instead of giving up, she gently pushes her cheek against the fabric near the shoulder seam, testing the promised *Soft Fabric*. A genuine, soft, small smile breaks through as she realizes the *feel* overcomes the initial fit hesitation—it is undeniably cozy loungewear. | **Static Medium Shot, slight upward tilt.** The focus settles softly on her contented, closed-eye expression as she leans into the fabric. Warm color grading enhanced. | **TENDER REALIZATION:** The concern resolves into satisfaction based on *Comfort*. The action of leaning into the fabric shows acceptance of the product's main appeal (Loungewear/Comfort). |\n| **4** | 0.5s | **AFTERMATH:** Quick final frame showing her hands loosely folding the hoodie into a soft, bulky pile on the cream blanket, perfectly content with the purchase decision. | **Quick Fade Out/Cut.** | **FINAL SATISFACTION:** Confirmation that the *Casual wear/Loungewear* goal has been met, despite minor initial doubts. |\n\n**Total Time: 8.0 Seconds Maximum**",
+      "cluster_analysis": {
+        "cluster_id": "2",
+        "size": 1,
+        "top_interests": [
+          [
+            "Oversized Hoodie",
+            1
+          ],
+          [
+            "Loungewear",
+            1
+          ],
+          [
+            "Comfortable Apparel",
+            1
+          ],
+          [
+            "Burgundy Color",
+            1
+          ],
+          [
+            "Fall Fashion",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Oversized Fit",
+            1
+          ],
+          [
+            "Burgundy Color",
+            1
+          ],
+          [
+            "Comfortable Fabric",
+            1
+          ],
+          [
+            "Hooded",
+            1
+          ],
+          [
+            "Kangaroo Pocket",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "28",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "low"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "17",
+      "shop_id": "39",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Pet Water Fountain\",\"Cordless Pet Supplies\",\"Stainless Steel Pet Products\",\"Smart Pet Devices\",\"Pet Health and Wellness\",\"Pet Supplies\",\"Pet Grooming\"],\"product_focus\":{\"key_attributes\":[\"Cordless design\",\"Stainless Steel\",\"3.5L Capacity\",\"5-layer filtration\",\"Quiet operation (<30dB)\",\"3-layer filtration\",\"60-day battery life\",\"304 stainless steel\",\"3 water modes\"],\"price_range\":\"mid-range\",\"main_appeal\":\"Convenience & Health\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.\",\"browsing_path\":\"The user viewed the Oneisall 3.5L Cordless Smart Pet Water Fountain. Prior to this, they interacted with other Oneisall products like a pet grooming vacuum and clipper. This indicates a general interest in Oneisall pet products, with a specific focus now on the water fountain.\",\"evolution\":\"This is the user's first interaction in this session, so there are no previous patterns to compare against. The user's actions indicate a clear interest in the displayed product.\"},\"match_analysis\":{\"user_fit\":\"The user has shown interest in pet supplies, specifically a pet water fountain with features like cordless operation and stainless steel construction, which aligns with the product offering.\",\"use_case\":\"Providing a convenient, hygienic, and safe water source for a pet, especially for owners concerned about cords or wanting a portable solution.\",\"customer_portrait\":\"A pet owner, likely of cats or small dogs, who values convenience, hygiene, and pet health. They may have concerns about pet safety (chewing cords) or are looking for a modern, low-maintenance pet care solution.\"}}",
+      "ai_opening": "## TikTok Script: The Unplugged Promise (Prototype 17)\n\n**Target Cluster Focus:** Pet owner highly valuing convenience, hygiene, and safety (specifically cordless design and stainless steel for health/portability), feeling uncertainty about finding the *right* solution.\n\n**Aesthetic:** Warm, playful, cozy nursery/playroom setting with bright, soft lighting.\n\n**Character Detail:** Caucasian Woman, mid-30s, average build, long wavy brown hair tied loosely back, wearing a soft cream-colored cardigan.\n\n**Total Duration:** ~7.5 seconds\n\n---\n\n### Visual Sequence (Completely Silent)\n\n| Shot | Duration (Sec) | Composition & Action (Visual Translation of Cluster Summary) | Emotional Beat |\n| :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.5s | **SETTING:** A bright, airy corner of a playroom, featuring soft pastel toys and a plush, light-colored rug. **ACTION (SPECIFIC OPENING GESTURE):** Close-up on the character's hands near a standard, corded pet water bowl. Her fingers delicately trace the dark, visible power cord with a look of slight discomfort/hesitation, immediately conveying the \"cord concern\" pain point. | Setup/Context: Establishing the issue of cords and standard pet supplies. |\n| **SHOT 2** | 2.5s | **CAMERA:** Slow, gentle push-in on the character's face, then a quick rack focus down to her hands. **ACTION:** Her expression shifts from hesitation to focused evaluation. She gently pushes the old, corded bowl aside with one finger. **VISUAL METAPHOR:** Her eyes flick briefly to an empty space where a sleek, stainless steel object *should* be, conveying the seeking of the ideal, modern solution (Stainless Steel, Cordless). | Rising Tension: Uncertainty about current options and clear desire for a superior, safer product. |\n| **SHOT 3** | 2.5s | **CAMERA:** Medium close-up, slightly low angle (looking up lovingly). **ACTION:** The character triumphantly brings in the *Oneisall Cordless Stainless Steel Fountain* (represented by a sleek, simple silver object). She holds it up, then places it down carefully on the rug. Her hands then move to the base, showing the **cordless nature** by gently lifting and rotating the entire unit with one hand, demonstrating ease and portability (Convenience/Cordless Attribute). She smiles softly. | Emotional Peak/Climax: Resolution found in the key attributes (Cordless, Stainless Steel, Convenience). Tender acceptance of the perfect fit. |\n\n---\n\n### Style & Post-Production Notes\n\n*   **Color Grading:** Very warm (high saturation on yellows and soft oranges). Everything looks sun-drenched and cozy (Babeside aesthetic).\n*   **Camera Movement:** Smooth, deliberate, and non-jarring movements to maintain the gentle, warm tone.\n*   **Visual Metaphor Reinforcement:** The visual comparison between the \"tangled/wired\" feeling of Shot 1 and the clean, free placement of the new item in Shot 3 directly addresses the pain point of cord safety/convenience.\n*   **Character Action Consistency:** The entire arc is driven by the physical interaction with the \"cord\" vs. the \"cordless unit,\" aligning precisely with the cluster's specific product interest.",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "shop_id": "47",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"sci-fi animation\",\"survival horror\",\"space exploration\",\"animated horror\",\"psychological thriller\",\"Test SKU\"],\"product_focus\":{\"key_attributes\":[\"animated\",\"sci-fi\",\"horror\",\"space\",\"survival\",\"hoodie\",\"spiderweb pattern\",\"star pattern\"],\"price_range\":\"mid-range\",\"main_appeal\":\"narrative\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"medium\",\"browsing_path\":\"N/A - only one product viewed\",\"evolution\":\"The user's current session shows continued interest in sci-fi and horror themes, consistent with previous browsing history. The user hovered over the product image and the page was visible, indicating moderate engagement with the 'Test SKU'.\"},\"match_analysis\":{\"user_fit\":\"The user's historical interest in 'sci-fi animation', 'survival horror', and 'space exploration' aligns with the themes suggested by the VIDEO TAGS, even though the 'Test SKU' product itself lacks specific thematic relevance. The user's engagement suggests they are looking for content or products related to these genres.\",\"use_case\":\"Exploring animated sci-fi and horror content, potentially seeking entertainment or merchandise related to these themes.\",\"customer_portrait\":\"A user interested in dark, thought-provoking, and suspenseful animated content, with a preference for sci-fi and horror genres.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 7 - The Suspenseful Snuggle\n\n**Cluster Alignment Focus:** Translating the user's interest in *sci-fi/survival horror* and *psychological thrillers* (dark themes) into the required *Warm, Playful, Childlike Babeside* aesthetic, focusing on the *Uncertainty about product choices* (narrative quality concern).\n\n**Character:** Mid-30s, Average build, Brunette (long, wavy hair), wearing a soft, cream-colored cardigan. Relatable, caring motherly figure.\n\n**Unique Setting Differentiation:** A highly organized, yet cozy **\"Accessory Matching Station\"** area built within a sunlit corner of a nursery. Instead of toys, the shelving is stocked with *identical* small, perfectly smooth wooden boxes (representing SKUs/Test items) lined up like specimens. Soft, ambient, warm yellow lighting.\n\n**Visual Metaphor Differentiation:** The \"Spiderweb\" and \"Star\" patterns from the product attributes are subtly translated into **delicate, hand-stitched constellation patterns** on a soft, beige security blanket, and a **fine, nearly invisible lace overlay** on a small toy shuttle (representing space exploration/sci-fi).\n\n**Emotional Journey:** Evaluation (of narrative quality) → Uncertainty (of compatibility) → Tender Acceptance (of the chosen 'story').\n\n---\n\n### VISUAL SEQUENCE (Total Max 8.0 Seconds - 100% MUTE)\n\n| Shot | Time (Sec) | Action/Visual Detail (The Story) | Camera & Effects | Cluster Translation Focus |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.5s | **OPENING ACTION/SETUP:** The caregiver sits at the organized station. She picks up two identical small, wooden SKUs (boxes). She gently places one on a soft, beige security blanket adorned with **delicate, hand-stitched star patterns**. She holds the second box directly next to it, tilting her head slightly, her brow furrowing in gentle concentration (Evaluating Quality/Narrative). | **Medium Close-Up (MCU)** on the hands and the two boxes. Soft, warm lens flare enters from the side window. Static hold. | *Initial evaluation gesture.* Focus on organized SKUs and star/space motif. |\n| **SHOT 2** | 2.5s | **RISING TENSION:** She picks up the security blanket. She deliberately drapes a piece of **fine, sheer white lace** (representing the 'spiderweb' texture/suspense) over the second box, then quickly pulls it away. Her eyes widen slightly, a micro-expression of **hesitation/uncertainty**—the narrative/feel isn't quite connecting. She quickly glances between the blanket/box setup and the other box, seeking the \"right\" fit. | **Close-Up (CU)** on her eyes and mouth, capturing the subtle tension. A very slight, slow push-in to emphasize the focus on the choice. | *Pain Point:* Uncertainty about product choice/narrative compatibility. Visual metaphor of lace/webbing over the item. |\n| **SHOT 3** | 2.5s | **EMOTIONAL CLIMAX/RESOLUTION:** Her tension dissolves. A small, warm smile spreads across her face. She gently presses the second box (the one that initially caused hesitation) against her cheek, then carefully places it next to the first box on the blanket, aligning them perfectly. She nods once, a look of **tender confirmation**—the narrative (though complex/dark in theme) feels correct and comforting now. | **Rack Focus:** Starts focused on the boxes, then racks focus smoothly to her peaceful facial expression in the background (shallow depth of field). Camera slowly drifts laterally (left to right). | *Tender Realization.* Acceptance that the chosen piece (even if it carries 'dark' themes) fits her nurturing standard. Warmth returns to her eyes. |\n| **SHOT 4** | 0.5s | **FINAL IMAGE:** A final lingering shot of the two aligned wooden boxes nestled safely on the starry blanket. | **Extreme Close-Up (ECU)** on the alignment of the boxes. Fade to soft white. | Final moment of cozy resolution. |\n\n---\n**TOTAL DURATION: 8.0 Seconds**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "shop_id": "47",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Test SKU hoodie\",\"pre-order restock\",\"hoodie\"],\"product_focus\":{\"key_attributes\":[\"hoodie\",\"spiderweb pattern\",\"star pattern\",\"crown\"],\"price_range\":\"budget\",\"main_appeal\":\"Unique design\"},\"purchase_signals\":{\"stage\":\"deciding\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"High engagement with product page and purchase actions.\",\"browsing_path\":\"The user repeatedly viewed the 'Test SKU' product page, hovered over the image and add to cart button, and clicked 'Add to cart' and 'Buy now'. This indicates a strong, focused interest in this specific product.\",\"evolution\":\"The user has repeatedly interacted with the 'Test SKU' product, indicating a sustained interest and progression towards a purchase decision.\"},\"match_analysis\":{\"user_fit\":\"The user's actions indicate a strong fit with the 'Test SKU' product, particularly its unique design elements.\",\"use_case\":\"Fashionable apparel purchase.\",\"customer_portrait\":\"A fashion-conscious individual interested in unique, edgy apparel with distinctive graphic elements.\"}}",
+      "ai_opening": "## TikTok Script Prototype 8: The Fashionably Anxious Restock Watcher (Max 8 Seconds - Mute Essential)\n\n**Cluster Focus Translation:** This user is highly focused on one specific, unique, edgy item (the Test SKU hoodie, featuring spiderweb/star/crown graphics) and exhibits high purchase intent but is stalled by uncertainty (implied fear of missing out/quality doubt, reflected in repeated page visits). The scene must visualize this specific apparel interest within a warm, playful, Babeside setting.\n\n**Character:** Caucasian Female, mid-20s, average body type, long wavy brunette hair, wearing a soft, cream-colored knit cardigan (Warm aesthetic).\n\n**Setting Differentiation:** **The Cozy Digital Command Center.** Not a typical nursery, but a warm corner of a home office/living space set up specifically for focused \"waiting.\" Features soft sunlight pouring through sheer curtains, a plush pink fuzzy rug, and a small, antique wooden desk layered with soft blankets.\n\n**Visual Metaphor:** The \"restock timer\" is visualized by a delicate, slow-moving mobile hanging above the desk, featuring tiny, stylized black **spiderwebs and stars** instead of traditional animals, symbolizing the desired unique design waiting to materialize.\n\n---\n\n| Time (Max 8s) | Shot Type & Composition | Visual Action & Character Focus | Emotional Beat & Visual Metaphor |\n| :--- | :--- | :--- | :--- |\n| **SHOT 1 (2.5s)** | **CLOSE UP (Rack Focus):** Focus starts shallow on the small, intricate **spiderweb/star/crown** charm hanging from the mobile. Soft, warm light flares slightly. | Character's hands (wearing a delicate ring) enter the frame, gently steadying the desk. They look up, eyes tracking the mobile slowly. | **Setup/Anticipation (High Engagement):** Establishes the unique, edgy design interest (spiderweb/star/crown) within a gentle setting. Hands are still, indicating focus. |\n| **SHOT 2 (2.5s)** | **MEDIUM CLOSE UP (Slow Push-In):** Character is sitting at the desk, looking intensely, but patiently, at an angled tablet screen (screen content is **not visible**, only the intense focus on it). | The character subtly leans forward, fingers twitching slightly over the edge of the desk (mimicking hovering over 'Add to Cart'). A tiny, almost imperceptible furrow in the brow shows deep concentration/uncertainty. | **Rising Tension (Uncertainty/Pain Point):** Visualizing the repeated viewing and hesitation over the purchase. The quiet intensity contrasts with the cozy setting. |\n| **SHOT 3 (2.5s)** | **EXTREME CLOSE UP (Static):** Focus shifts solely to the character's eyes and the slight reflection of warm light in them. | A tiny, gentle, involuntary exhale/sigh escapes the lips (visually indicated by the slight parting of the lips and a soft upward movement of the shoulders). The eyes soften slightly, moving from intense focus to gentle acceptance. | **Tender Realization (Resolution):** The moment they decide—whether they commit to the pre-order or accept the waiting—is expressed with tender, quiet relief, fitting the Babeside maternal acceptance tone. |\n| **SHOT 4 (0.5s)** | **WIDE/DETAIL SHOT (Quick Cut):** Focus on the character's hands again. | The hands settle, one hand gently resting over the other, palm facing up, still. | **Aftermath:** A final visual confirmation of stillness and decision, grounded in the cozy environment. |\n\n**(Total Time: 8.0 seconds. Completely silent execution.)**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "9",
+      "shop_id": "47",
+      "status": "NOMINATING",
+      "cluster_hit": "5",
+      "summary": "{\"core_interests\":[\"Test SKU\",\"Product pricing\",\"Add to cart\",\"Checkout\"],\"product_focus\":{\"key_attributes\":[\"Price\",\"Discount\"],\"price_range\":\"budget\",\"main_appeal\":\"Discounted price\"},\"purchase_signals\":{\"stage\":\"deciding\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"Single product focus\",\"evolution\":\"Consistent interest in the product\"},\"match_analysis\":{\"user_fit\":\"The user has shown a clear interest in purchasing the 'Test SKU'.\",\"use_case\":\"Direct purchase of a single item.\",\"customer_portrait\":\"A price-sensitive shopper looking for a specific item.\"}}",
+      "ai_opening": "## TikTok Script: The Budget Tracker's Tender Calculation (Prototype ID: 9)\n\n**Cluster Summary Focus:** Price-sensitive shopper (budget), focus on Price/Discount, direct single-item purchase intent (Test SKU, Pricing, Add to Cart, Checkout). Emotional arc: Uncertainty about meeting expectations $\\rightarrow$ Tender confirmation of value.\n\n**Aesthetic:** Warm, Playful, Childlike, Maternal Narrative. Caucasian character, late 20s, average body type, brunette wavy hair, wearing a soft yellow knit cardigan.\n\n**Unique Differentiation Elements:**\n*   **Setting:** A brightly lit, cozy \"Accessory Matching Station\" corner—a small, vintage wooden table covered in a soft, cream-colored blanket, next to a window with soft, diffused sunlight. The focus is on the *transaction* visualized playfully.\n*   **Action:** Instead of looking at a real screen, the action involves playfully comparing physical representations of price and discount.\n*   **Visual Metaphor:** Using colorful, oversized wooden building blocks (like children's alphabet blocks) to represent 'Price Tag' and 'Discount.'\n*   **Emotional Arc:** Anxiety over the perceived high cost $\\rightarrow$ Relief and tender affirmation upon finding the perfect, affordable match.\n\n---\n\n| Shot | Time (s) | Visual Description (9:16 Aspect Ratio) | Camera Movement & Composition | Emotional Cue |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.5s | **Setup & Initial Inquiry (Test SKU/Pricing)**: Close-up on the character's hands (Character, late 20s, soft cardigan). She is holding two large, brightly colored wooden blocks labeled with hand-drawn numbers: one labeled \"FINAL PRICE\" (high number) and another labeled \"DISCOUNT\" (small number). Her brow is slightly furrowed in concentration. She gently nudges the \"FINAL PRICE\" block away, indicating dissatisfaction. | Slow, smooth push-in (dolly in) on the hands and the blocks. Shallow depth of field keeps the background softly blurred (cozy room elements visible). | Concentration, Mild Uncertainty. |\n| **SHOT 2** | 2.5s | **Rising Tension (Budget Concern/Checkout Hesitation)**: Medium close-up on the character's face. She looks directly at the two blocks, then glances quickly off-camera to the side (implying checking a mental budget or expectation). Her mouth forms a small, worried 'O'. She brings her hands up near her chin in a classic gesture of contemplation/slight panic. The lighting feels warm but momentarily shadowed by her doubt. | Static shot, holding the moment of tension. Tight framing to emphasize facial micro-expression of budget worry. | Heightened Anxiety, Seeking Value confirmation. |\n| **SHOT 3** | 2.5s | **Tender Realization (Value Confirmed/Add to Cart)**: The character’s expression softens dramatically into a warm, gentle smile—a look of tender relief. She picks up a *third*, very small, perfectly sized, brightly colored block labeled \"PERFECT FIT\" and places it neatly beside the \"DISCOUNT\" block, aligning them perfectly. She then lightly taps the \"FINAL PRICE\" block once with a decisive, gentle nod, signaling acceptance and readiness to purchase. | Rack Focus: Starts focused on her relieved smile, then smoothly shifts focus entirely to the perfectly aligned \"DISCOUNT\" and \"PERFECT FIT\" blocks, symbolizing the successful match. | Tender Relief, Affirmation of Value, Direct Purchase Intent Visualized. |\n| **SHOT 4** | 0.5s | **Resolution (Checkout Complete - Playful)**: Extreme close-up, quick final shot. Her hand gently slides the \"PERFECT FIT\" block across the wooden surface into the lower corner of the frame, mimicking a satisfying \"swipe\" or checkout action. The sunlight catches a faint sheen on the wood. | Very quick, crisp static shot. | Satisfied Closure. |\n\n**(Total Runtime: 8.0 seconds)**",
+      "cluster_analysis": {
+        "cluster_id": "5",
+        "size": 2,
+        "top_interests": [
+          [
+            "Test SKU",
+            1
+          ],
+          [
+            "Product pricing",
+            1
+          ],
+          [
+            "Add to cart",
+            1
+          ],
+          [
+            "Checkout",
+            1
+          ],
+          [
+            "Sneakers",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Price",
+            1
+          ],
+          [
+            "Discount",
+            1
+          ],
+          [
+            "Thick Sole",
+            1
+          ],
+          [
+            "Chunky Design",
+            1
+          ],
+          [
+            "Retro design",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "47",
+            1
+          ],
+          [
+            "49",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "high"
+        ],
+        "purchase_stages": [
+          "deciding"
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "shop_id": "49",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Retro Training Sneaker\",\"Streetwear Fashion\",\"Urban Style\",\"Y2K Aesthetic\",\"Sneakers\"],\"product_focus\":{\"key_attributes\":[\"Retro design\",\"Black colorway\",\"Unique design\",\"Streetwear style\",\"Mixed-material construction\"],\"price_range\":\"budget\",\"main_appeal\":\"Retro Style\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"Single product focus\",\"evolution\":\"Consistent focus on the viewed product across multiple sessions.\"},\"match_analysis\":{\"user_fit\":\"The user's engagement with streetwear and retro-style sneakers aligns with the product's aesthetic.\",\"use_case\":\"Casual wear, fashion statement, streetwear.\",\"customer_portrait\":\"A fashion-conscious individual interested in unique, retro-inspired streetwear.\"}}",
+      "ai_opening": "## TikTok Script: The Retro Fit Check (Prototype ID: 3)\n\n**Cluster Focus Translation:** This prototype visually translates the user's strong interest in **Retro Training Sneakers, Y2K Aesthetic, and Streetwear**, coupled with the pain point of **seeking the perfect, unique, budget-friendly product** that makes a fashion statement. The Babeside warmth is applied by framing this fashion choice within a cozy, playful, preparation setting, treating the sneaker choice with tender care, like selecting a beloved toy.\n\n**Character Specification:** Female, late 20s, average build, warm brown hair styled in a loose, playful braid. Wearing a soft, oversized cream-colored cardigan.\n\n**Unique Differentiation Checklist:**\n1.  **Visual Setting:** A brightly lit, organized **\"Accessory Matching Station\"** built on a low, rounded wooden table covered in a pale yellow knitted throw, featuring a curated wall display of colorful Y2K accessories (small geometric sunglasses, bright plastic jewelry).\n2.  **Character Action:** Precise, delicate fitting/matching gesture focused entirely on the footwear's aesthetic alignment, not wearability.\n3.  **Visual Metaphor:** Using a \"Street Style Mood Board\" made of oversized, colorful 2000s-style photo cutouts (neon colors, graffiti textures) as the backdrop for the comparison.\n4.  **Emotional Arc:** Initial excitement/focus → Concern over aesthetic compatibility/uniqueness → Tender realization that the *vibe* is finally matched.\n5.  **Shot Composition:** Starts with an extreme close-up (ECU) on the sneaker detail, followed by a wide shot emphasizing the curated setting, ending on a rack focus to the character’s satisfied micro-expression.\n\n---\n\n| Shot # | Time (s) | Visual Description & Action (Silent) | Camera Movement / Composition | Story Beat / Emotional Goal |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **ECU (Extreme Close-Up)** on the **Retro Training Sneaker** (must be distinctly black with mixed, slightly chunky Y2K-style materials). A hand (soft manicure, wearing a single, simple silver ring) gently brushes off an imaginary piece of dust from the mixed-material texture of the shoe's side panel. | Static, extremely tight focus on the shoe's material and retro silhouette. | **Setup:** Establishing the focal point: the unique, retro black sneaker. High attention to detail/quality check. |\n| **2** | 2.5s | **Medium Wide Shot** revealing the character kneeling slightly beside her \"Matching Station.\" She holds the black sneaker in one hand and, in the other, is carefully laying it next to a brightly colored, oversized cutout graphic (representing Y2K graffiti or bold geometry) from her mood board. Her expression shows slight **uncertainty/comparison**—is this *the* right vibe? | Slow, smooth lateral drift to the right, revealing the cozy, warm environment and the contrast between the dark shoe and the bright 2000s backdrop. | **Rising Tension:** Testing compatibility. Does the budget find meet the high-fashion/unique expectation? |\n| **3** | 2.5s | **Medium Close-Up (MCU)** on the character's face and hands. She slowly tilts her head, considering the pairing one last time. A tiny, almost invisible smile starts at the corner of her mouth. She gently touches the sneaker and then decisively taps the graphic cutout with her free hand, signaling **\"Yes, this works.\"** | Rack Focus: Starts slightly soft on the face, sharpens crisply onto the focused, approving micro-expression. | **Climax/Realization:** The uncertainty resolves into gentle satisfaction. The unique aesthetic goal is achieved. |\n| **4** | 0.5s | **Final Detail Shot.** The character picks up the sneaker and places it tenderly on a small, soft, pale pink cloud-shaped cushion on the table, as if presenting a prized possession. | Static, slightly elevated angle looking down at the shoe presentation. | **Resolution:** The perfect, street-style statement piece is secured with warmth and care. |\n\n**Total Time:** 8.0 seconds maximum. (Silent narrative complete.)",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "shop_id": "49",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Streetwear Fashion\",\"Edgy Style\",\"Avant-Garde Fashion\",\"Leather-look Pants\",\"Boots\"],\"product_focus\":{\"key_attributes\":[\"Multi-Pocket\",\"Leather Cargos\",\"Structured\",\"Polyurethane blend\",\"Edgy\"],\"price_range\":\"premium\",\"main_appeal\":\"Edgy Style\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.\",\"browsing_path\":\"The user explored multiple boot styles within the collection page. The interactions with different boot images do not show a clear price-based progression, suggesting a broad exploration of styles. There is no evidence of revisiting specific products, indicating a wide search rather than narrowing down.\",\"evolution\":\"The user's current actions continue to align with their previous interest in edgy, avant-garde streetwear and statement fashion. The focus has now shifted to footwear, specifically boots, which complements the previously viewed apparel items like leather-look trousers and outerwear.\"},\"match_analysis\":{\"user_fit\":\"The user's engagement with the 'boots' collection, their demonstrated interest in edgy and avant-garde streetwear, and the shop's offering of unique, statement fashion items create a strong alignment.\",\"use_case\":\"Streetwear, alternative fashion, concert outfits, clubwear.\",\"customer_portrait\":\"A fashion-conscious individual who embraces edgy, avant-garde, and statement styles, likely seeking unique pieces to complement a bold streetwear aesthetic.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 5 - The Edgy Streetwear Connoisseur (Max 8 Seconds)\n\n**Target Cluster Alignment:** This scene visually translates the user's interest in **Edgy/Avant-Garde Streetwear (Boots/Leather-look)**, their **Premium quality focus**, and the pain point of **Uncertainty about choice/meeting expectations**, all framed within the warm, playful Babeside aesthetic.\n\n**Visual Differentiation Strategy:**\n*   **Setting:** A meticulously organized, brightly lit *Accessory Matching Station* built from warm, light wood, featuring playful, childlike cubbies filled with tiny, high-contrast objects, contrasting the edgy theme with a soft environment.\n*   **Opening Action:** Precise, almost surgical **texture comparison** gesture, focusing intensely on the material feel of a miniature 'boot' element against a plush texture.\n*   **Visual Metaphor:** Using a giant, soft, pastel-colored \"scale\" to weigh two tiny, perfect black \"boots\" against each other, symbolizing the premium quality assessment.\n*   **Emotional Arc:** Intense focus/Doubt (comparing quality) $\\rightarrow$ Gentle realization of 'fit' (aesthetic harmony) $\\rightarrow$ Tender reassurance.\n*   **Shot Composition:** Opening on extreme close-up of hands/texture, then a slow push-in on the 'scale' metaphor, concluding with a soft, warm medium close-up on the face.\n\n**Character Profile (For Diversity):** Mid-30s, curvy build, vibrant auburn hair styled in soft waves, wearing a cream-colored, oversized knit cardigan (cozy fit for the aesthetic).\n\n---\n\n### Video Specifications (9:16 Aspect Ratio, Silent, Max 8 Seconds)\n\n| Shot | Duration (Approx.) | Visual Description & Action (Visual Storytelling) | Camera Movement / Composition | Cluster Alignment Translation |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.2 sec | **SETUP/CONTEXT: Texture Evaluation.** Extreme Close-Up (ECU) on the character’s hands (Mid-30s, clean nails). One hand gently cradles two miniature, perfectly sculpted black polyurethane \"boot\" charms (representing the premium leather-look boots). The index finger of the other hand is delicately *pressing* and *releasing* the surface of one boot, then immediately pressing the surface of the other, eyes intently focused on the resulting texture resilience. | Static ECU. Shallow depth of field focusing only on the texture interaction. | **Action Differentiation:** Immediate, precise material/texture evaluation (quality focus). **Interest:** Direct reference to 'boots' and 'leather-look' material. |\n| **SHOT 2** | 2.5 sec | **RISING TENSION: Quality/Style Comparison.** The hands move to a central feature: a whimsical, oversized, pastel pink, fabric 'balance scale' sitting on the warm wooden station. The character gently places one tiny black boot on each side of the scale. She leans in close, furrowing her brow slightly—a visual representation of uncertainty about which *style* or *quality* is superior, as they look nearly identical. | Slow, deliberate push-in towards the scale metaphor. Warm sunlight streams from the side. | **Visual Metaphor:** The pastel scale symbolizes the premium comparison process, reflecting the **Uncertainty about product choices** and the search for the **perfect fit** (style/quality). |\n| **SHOT 3** | 2.5 sec | **EMOTIONAL CLIMAX: Gentle Realization.** The character gently shifts one boot charm slightly further onto the scale plate. As she does, the tiny charm subtly catches the light, revealing an unexpected, almost invisible, structured detail (a micro-multi-pocket detail). Her expression instantly softens from concentration to a warm, satisfied, **tender smile**—the 'Aha!' moment of finding the piece that meets her high, avant-garde expectations. | Rack focus: Begins focused on the scale, racks smoothly to a Medium Close-Up (MCU) on her relieved, gentle face. | **Emotional Arc:** Doubt resolved into gentle affirmation of quality/fit. **Pain Point Resolution:** The quality/detail she was seeking is found. |\n| **SHOT 4** | 0.8 sec | **AFTERMATH/REACTION.** Quick, lingering shot. The character's hand gently traces the outline of the perfect boot charm, holding it close to her chest (not hugging tightly, but appreciating the object's presence). | Static MCU. Hold for warmth. | **Motivation Seal:** A moment of quiet ownership, ready for her 'streetwear outfit' application. |\n\n**Total Estimated Run Time: 8.0 Seconds**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "6",
+      "shop_id": "49",
+      "status": "NOMINATING",
+      "cluster_hit": "5",
+      "summary": "{\"core_interests\":[\"Sneakers\",\"Streetwear\",\"Retro Training Sneaker\",\"Fashion Footwear\"],\"product_focus\":{\"key_attributes\":[\"Thick Sole\",\"Chunky Design\",\"Retro design\",\"Unique Design\",\"Streetwear style\",\"Platform Sole\",\"Mixed-material construction\"],\"price_range\":\"mid-range\",\"main_appeal\":\"Style and Comfort\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"The user viewed a variety of sneakers, with a notable focus on 'Chunky Dad Sneakers' and 'Platform Sneakers'. The sequence of interactions shows exploration across different brands and styles within this category. There is no clear price progression, suggesting the user is exploring various options rather than focusing on a specific price point.\",\"evolution\":\"The user continues to show interest in chunky and fashion sneakers, consistent with previous browsing patterns. No significant changes or new interests are apparent.\"},\"match_analysis\":{\"user_fit\":\"The user is actively exploring fashion-forward sneakers with a focus on unique designs, retro aesthetics, and streetwear appeal. Products with chunky soles, platform features, and distinctive design elements align well with these demonstrated interests.\",\"use_case\":\"Casual wear, athleisure, streetwear fashion, statement footwear.\",\"customer_portrait\":\"A fashion-conscious individual interested in trendy streetwear and unique footwear, likely appreciating retro and avant-garde styles. They are exploring various options within the sneaker category, with a preference for statement-making designs.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 6 - The Statement Sole Search\n\n**Cluster Focus:** Fashion-conscious consumer exploring chunky, retro, thick-soled streetwear sneakers, seeking the perfect \"statement\" piece (Style & Comfort). Pain point: Uncertainty about making the right trendy choice.\n\n**Aesthetic:** Warm, Playful, Childlike, Cozy Nursery/Playroom setting.\n\n**Character Profile:** Mid-30s, Curvy body type, Brunette, wearing a soft, oversized cream cardigan.\n\n**Visual Metaphor:** Comparing an ordinary, flat block (a basic choice) to a towering, brightly colored, retro-inspired building block (the desired statement shoe).\n\n**Emotional Arc:** Eager exploration → Brief doubt about boldness → Tender commitment to the unique, chunky style.\n\n**Duration:** Target 7.5 seconds\n\n---\n\n| Shot | Time (s) | Visual Description & Camera Action | Color/Lighting/Effects | Narrative Beat |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 0.0 - 2.2s | **Setting:** A very cozy, brightly lit corner of a playroom/nursery, perhaps a custom-built, low wooden shelf decorated with playful, colorful, geometric wooden toys. **Action:** CU on the character's hands (mid-30s, soft manicure) gently placing two large, contrasting objects side-by-side on a soft, textured cream rug. **Object 1 (Left):** A small, plain, flat gray wooden block (representing standard footwear). **Object 2 (Right):** A highly stylized, chunky, brightly colored (e.g., primary color mix) wooden block that clearly mimics a **Chunky/Platform Sneaker** silhouette—it’s notably taller and thicker. | **Lighting:** Soft, diffused sunlight streaming in from an off-camera window. **Color Grade:** Warm, high key, emphasizing cream and soft pastels in the background. **Camera:** Tight Close-Up (CU) on the blocks, perfectly level. | **Setup:** The consumer assesses the two contrasting \"styles.\" Immediate visual signal of interest in 'Chunky Design' vs. 'Standard.' |\n| **2** | 2.2s - 4.5s | **Action:** The character slowly reaches out and lightly taps the top of the small, flat gray block (Object 1) with one finger, then quickly pulls the hand back, shaking her head slightly with a subtle, worried micro-expression (brief uncertainty about being too 'basic'). She then shifts her gaze entirely to the towering, brightly colored block (Object 2). **Camera Movement:** Slow, gentle Push-In (10% zoom) focused solely on her facial reaction and the two blocks. | **Lighting:** Remains warm. **Effect:** A subtle, almost imperceptible \"hesitation flicker\" in the light across the gray block only. | **Rising Tension (Pain Point):** Demonstrating uncertainty (\"Uncertainty about product choices\")—will the 'statement' be too much? |\n| **3** | 4.5s - 6.8s | **Action:** With newfound confidence, the character wraps both hands around the chunky, colorful block (Object 2), lifting it carefully, showcasing its height. She brings the block up toward her chest and smiles—a genuine, warm, slightly playful expression of finding the perfect fit. Her eyes linger on the 'thick sole' base of the block. This is the embrace of the **Streetwear Statement.** | **Camera Movement:** Rack Focus. Starts focused on the hands holding the block, then smoothly shifts focus to her warm, validating facial expression. **Effect:** A brief, soft visual 'shimmer' or bloom effect around the chunky block as she holds it close. | **Climax/Realization:** The style and uniqueness are confirmed. Tender acceptance of the bold, statement piece (\"Statement footwear\"). |\n| **4** | 6.8s - 7.5s | **Action:** The character gently lowers the chunky block back onto the rug, positioning it squarely in the center, slightly angled toward the camera, asserting its dominance. She pulls her hands back, giving a gentle, satisfied nod. | **Camera Movement:** Static Medium Close-Up (MCU) held on the now centrally placed, vibrant block. | **Aftermath:** The perfect choice is settled. |",
+      "cluster_analysis": {
+        "cluster_id": "5",
+        "size": 2,
+        "top_interests": [
+          [
+            "Test SKU",
+            1
+          ],
+          [
+            "Product pricing",
+            1
+          ],
+          [
+            "Add to cart",
+            1
+          ],
+          [
+            "Checkout",
+            1
+          ],
+          [
+            "Sneakers",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Price",
+            1
+          ],
+          [
+            "Discount",
+            1
+          ],
+          [
+            "Thick Sole",
+            1
+          ],
+          [
+            "Chunky Design",
+            1
+          ],
+          [
+            "Retro design",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "47",
+            1
+          ],
+          [
+            "49",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "high"
+        ],
+        "purchase_stages": [
+          "deciding"
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "shop_id": "49",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Sneakers\",\"Streetwear\",\"Unique design\",\"Hamburger theme\",\"Customizable sneakers\",\"Edgy Style\",\"Chunky Sole Boots\",\"Avant-Garde Fashion\"],\"product_focus\":{\"key_attributes\":[\"Hamburger theme\",\"Unique design\",\"Streetwear style\",\"Comfortable footwear\",\"Customizable sneakers\",\"Chunky Sole\",\"Platform\",\"Leather\"],\"price_range\":\"mid-range\",\"main_appeal\":\"Novelty and Style\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"Low - User is browsing collection pages and shows minimal interaction with product details.\",\"browsing_path\":\"N/A - User has only interacted with collection pages, not specific products.\",\"evolution\":\"No prior history to compare with.\"},\"match_analysis\":{\"user_fit\":\"Moderate - The user is browsing streetwear and trendy items, which aligns with the shop's offerings.\",\"use_case\":\"Casual wear and fashion statement.\",\"customer_portrait\":\"A fashion-conscious individual interested in unique, novelty streetwear.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 4 - The Streetwear Seeker's Tender Doubt (Max 8 Seconds)\n\n**Target Cluster Focus:** Fashion-conscious individual seeking unique, edgy streetwear (sneakers/chunky boots) with a specific novelty theme (Hamburger), low engagement on product details, high uncertainty about finding the *perfect* piece that blends style and comfort.\n\n**Aesthetic:** Babeside Warmth & Playfulness. Bright, cozy, highly tactile environment.\n\n**Character (For Diversity):** Mid-30s, average build, long dark brunette hair tied back loosely, wearing a soft, oversized cream cardigan.\n\n**Setting Differentiation:** A dedicated, brightly lit \"Accessory Matching Station\"—a clean, mid-century modern wooden side table topped with a soft, lemon-yellow waffle-knit blanket, acting as a display surface.\n\n**Visual Metaphor:** Using oversized, high-contrast, playful novelty items (the Hamburger theme) to represent the specific style interest, contrasted against the soft setting to highlight the \"fashion statement vs. comfort\" tension.\n\n---\n\n| Shot | Time (Approx.) | Description (Visuals & Action Only) | Camera Movement/Composition | Emotional Beat |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **SETUP:** Close-up on the character's hands, perfectly manicured (soft pink polish). The hands delicately place two items onto the yellow blanket: **1.** A pristine, chunky white platform sneaker (representing **Chunky Sole/Comfort**). **2.** Next to it, a highly stylized, brightly colored, *oversized plush toy shaped exactly like a gourmet hamburger* (representing **Hamburger Theme/Novelty**). The character gently smooths the blanket around them. | Static, slightly high angle overhead shot emphasizing the table display. | **Interest/Setup:** Establishing the dual focus: style novelty meeting tactile comfort. |\n| **2** | 2.5s | **RISING TENSION:** The character slowly picks up the sneaker again. They hesitate, tilting their head slightly, examining the sole's platform height against their palm. Their eyes briefly dart to the plush Hamburger, then back to the shoe. They subtly press the leather near the tongue, a slight furrow in their brow—testing the **Comfortable Footwear** claim versus the **Edgy Style** aesthetic. | Slow, deliberate **push-in** on the character's face/hands as they examine the shoe. Soft focus background. | **Uncertainty/Doubt:** Visually communicating the pain point: *Does this trendy style actually feel good?* |\n| **3** | 2.0s | **EMOTIONAL CLIMAX/RESOLUTION:** The character gently sets the shoe down, shaking their head slightly, but the expression softens instantly into a warm, slightly amused smile. They lean in and gently pat the plush Hamburger twice, acknowledging the fun novelty. They then sweep both hands outward, gesturing 'close enough' or 'I'll manage.' | **Rack Focus:** Starts focused on the shoe, smoothly racks focus to the Hamburger plush, ending the shot firmly focused on the character’s warm, accepting smile. | **Tender Acceptance:** Accepting that the *perfect* alignment between extreme style and ultimate comfort might not exist, but the novelty/streetwear spirit is present enough. |\n| **4** | 1.0s | **FINAL FRAME:** Quick cut to a tight shot of the chunky sole of the sneaker resting right next to the plush Hamburger on the soft yellow blanket. | Static, low-angle shot emphasizing the texture contrast (smooth leather vs. fuzzy plush). | **Lingering Vibe:** Solidifying the casual, playful streetwear statement made within a cozy context. |\n\n**(Total Estimated Time: 8.0 Seconds)**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "13",
+      "shop_id": "56",
+      "status": "NOMINATING",
+      "cluster_hit": "3",
+      "summary": "{\"core_interests\":[\"Pet Grooming\",\"Pet Water Fountains\",\"Automatic Pet Feeders\",\"Pet Clippers\"],\"product_focus\":{\"key_attributes\":[\"grooming\",\"vacuum\",\"clipper\",\"water fountain\",\"feeder\",\"pet care\",\"cordless operation\"],\"price_range\":\"budget\",\"main_appeal\":\"pet care\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"The user has browsed a wide variety of pet care products, including grooming tools (clippers, vacuums), automatic feeders, and water fountains. There is no clear sequence indicating a narrowing down or upgrading/downgrading, but rather broad exploration within the pet care category.\",\"evolution\":\"The user's activity shows a consistent interest in various pet care products.\"},\"match_analysis\":{\"user_fit\":\"The user is highly interested in pet care products, aligning with the 'oneisall' shop's offerings in pet grooming and accessories.\",\"use_case\":\"Maintaining pet hygiene and convenience in pet feeding and hydration.\",\"customer_portrait\":\"A pet owner actively seeking solutions for pet grooming, feeding, and hydration.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 13 - The Multi-Tasking Pet Parent's Dilemma\n\n**Target Cluster Focus:** Broad exploration across pet hygiene (grooming/clippers) and convenience (feeder/water fountain) at a budget level. Pain point: Uncertainty about which essential product serves the current, immediate need best.\n\n**Aesthetic:** Warm, Playful, Childlike, Maternal Narrative.\n\n**Character:** Caucasian Woman, mid-20s, average body type, long dark wavy hair tied loosely, wearing a soft peach-colored cardigan.\n\n**Setting Differentiation:** **The \"Preparation Corner\"** – A brightly lit corner of a kitchen/laundry room where multiple pet gadgets are laid out on a warm, cream-colored checkered rug instead of a traditional countertop. There are soft toys scattered nearby, reinforcing the playful setting.\n\n**Visual Metaphor:** Displaying three distinct, small, but essential-looking pet devices together, representing the overwhelming variety of necessary purchases.\n\n**Emotional Arc:** Assessment of multiple needs → A moment of choice paralysis/gentle confusion → Tender focus on the most immediate need (Hygiene).\n\n---\n\n| Shot | Time (s) | Description/Action | Camera Movement/Composition | Emotional Beat |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **Setup/Context:** Close-up on the character's hands resting near three distinct pet items arranged side-by-side on the rug: 1. A small, budget-friendly **cordless pet clipper/groomer**, 2. A compact **automatic pet feeder** (plastic), and 3. A simple **pet water fountain**. Her fingers briefly tap the clipper, then the feeder, then the fountain, showing broad interest (grooming, feeding, hydration). | Slow, deliberate **Dolly Zoom in** on the three items, then settling on a medium close-up of her hands hovering over them. Bright, warm sunlight filters in. | Inquiry / Broad Exploration |\n| **2** | 2.5s | **Rising Tension:** The character picks up the clipper (grooming tool). She examines the blade attachment with a slight, quizzical head tilt, then looks down at a fluffy, pale-yellow stuffed animal positioned just out of frame (representing the pet needing attention). Her brow furrows gently—not in anger, but in decision fatigue about maintenance tasks. She gently sets the clipper down, then immediately picks up the small water fountain, shaking it slightly to check the flow indicator. | **Lateral Drift** focusing on her face/expression over the product. The focus shifts rapidly (Rack Focus) between the three items she's considering. | Uncertainty / Decision Paralysis (Pain Point) |\n| **3** | 2.5s | **Emotional Peak/Climax:** Her gaze softens. She pushes the feeder and the fountain slightly to the side. She picks up the **cordless pet clipper** again, holding it tenderly. She brings the cool, smooth plastic body of the clipper close to her cheek for a brief moment, acknowledging the need for hygiene maintenance. She gives a small, resolved nod, accepting the task. | **Push-in** on her face, capturing the slight, gentle smile and the resolving nod. The warm peach cardigan color dominates the foreground. | Tender Acceptance / Focus on Hygiene Need |\n| **4** | 0.5s | **Aftermath/Reaction:** Quick, final shot. Her hand firmly grasps the handle of the cordless clipper, ready to move toward the unseen pet area. | **Static Close-up** on the hand gripping the clipper handle. | Readiness / Gentle Commitment |\n\n**Total Run Time: 8.0 Seconds**",
+      "cluster_analysis": {
+        "cluster_id": "3",
+        "size": 1,
+        "top_interests": [
+          [
+            "Pet Grooming",
+            1
+          ],
+          [
+            "Pet Water Fountains",
+            1
+          ],
+          [
+            "Automatic Pet Feeders",
+            1
+          ],
+          [
+            "Pet Clippers",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "grooming",
+            1
+          ],
+          [
+            "vacuum",
+            1
+          ],
+          [
+            "clipper",
+            1
+          ],
+          [
+            "water fountain",
+            1
+          ],
+          [
+            "feeder",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "56",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "high"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "10",
+      "shop_id": "56",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Pet Grooming Supplies\",\"Pet Water Fountains\",\"Automatic Pet Feeders\",\"Pet Clippers\",\"Pet Grooming Vacuum\"],\"product_focus\":{\"key_attributes\":[\"cordless\",\"quiet operation\",\"stainless steel\",\"automatic\",\"replacement parts\"],\"price_range\":\"budget/mid-range\",\"main_appeal\":\"pet care\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"The user has browsed a wide variety of pet care products, including clippers, feeders, and water fountains. There is no clear sequential pattern or preference for price points, indicating broad exploration.\",\"evolution\":\"The user is exploring a range of pet care products, particularly focusing on grooming tools like clippers and grooming vacuums, as well as automatic feeders and water fountains. There's a broad interest across different price points within these categories.\"},\"match_analysis\":{\"user_fit\":\"The user is actively exploring a range of pet care products, indicating a potential pet owner looking for solutions for grooming, feeding, and hydration.\",\"use_case\":\"General pet care, grooming, and automated feeding/watering.\",\"customer_portrait\":\"A pet owner (likely of dogs and cats) interested in maintaining their pets' well-being through grooming and convenient feeding/watering solutions.\"}}",
+      "ai_opening": "## TikTok Script Prototype 10: The Gentle Automation Dilemma (Max 8 Seconds, Silent)\n\n**Cluster Alignment Focus:** High engagement across diverse pet care categories (clippers, feeders, fountains), budget/mid-range preference, seeking cordless/quiet/automatic attributes. Pain point is uncertainty in choosing the \"perfect\" multi-faceted solution.\n\n**Visual Setting Differentiation:** **A bright, organized \"Pet Tech Prep Station\"** – a dedicated, warm wooden countertop in a sunlit corner, featuring organized, high-quality, colorful pet toys alongside the appliances being tested. This is the consumer’s quality assessment area.\n\n**Character Action Differentiation (Opening):** The first action is **testing the *quietness* of a pet clipper/vacuum by holding it close to a soft, fluffy stuffed animal** (representing the pet) instead of a live animal, immediately signaling concern over noise levels across grooming tools.\n\n**Visual Metaphor Differentiation:** The metaphor is the **\"Sound Bubble\"**: A visual representation of the desired quiet operation, contrasted with a sudden jarring visual element suggesting noise.\n\n**Emotional Journey Differentiation:** Exploration/Comparison (Testing multiple items) → Uncertainty about noise/convenience balance → Tender realization that one item offers the best *compromise* for peace.\n\n**Shot Composition Differentiation:** Starts with an extreme close-up on texture/sound testing, then racks focus to reveal the array of products being compared.\n\n---\n\n### SCENE SPECIFICATIONS\n\n**Aspect Ratio:** 9:16\n**Total Duration:** ~7.8 seconds\n**Aesthetic:** Warm, Playful, Cozy (Soft lighting, cream/pale blue accents)\n**Character:** Female, mid-30s, average build, long wavy brown hair, wearing a soft, oversized cream-colored cardigan.\n\n| Shot | Time (s) | Description & Action (Silent Visual Narrative) | Camera Movement/Composition | Visual Metaphor/Cluster Alignment |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.2s | **ESTABLISHING FOCUS: QUIET CLIPPER TEST.** The Character gently presses a *cordless* pet grooming vacuum/clipper head against a large, fluffy, cream-colored plush dog. Her brow furrows slightly, eyes wide, listening intently to the muffled sound. | **EXTREME CLOSE UP (ECU):** Focus tightly on the clipper/vacuum meeting the fur and her ear leaning in near the device. Slow, gentle push-in. | *Alignment:* Testing **cordless**, **quiet operation** attribute for **pet grooming supplies**. |\n| **SHOT 2** | 2.5s | **RISING TENSION: DIVERSE OPTIONS ANXIETY.** The camera pulls back slightly (Medium Close Up). Her hands quickly slide a sleek, stainless steel automatic water fountain (near the clipper) aside, then tentatively pushes a brightly colored automatic feeder closer. She taps the fountain body, checking for solidity (stainless steel attribute). Her expression shows indecision—too many choices, which is best? | **RACK FOCUS:** Starts focused on the clipper, then racks focus smoothly to the array of feeders/fountains, emphasizing the **broad exploration** path mentioned in the summary. | *Alignment:* Shows browsing **water fountains** and **feeders**. Uncertainty about balancing needs (grooming vs. feeding). |\n| **SHOT 3** | 2.3s | **EMOTIONAL REALIZATION: THE QUIET WIN.** She picks up a *different* cordless clipper (slightly bulkier, but clearly marked 'Quiet'). She holds it near the plush toy again, but this time, her face softens instantly into a warm, relieved smile. She gently pats the plush toy with the now-operating (but silent to the viewer) clipper. | **MEDIUM SHOT (MS):** Slightly lower angle. Smooth, lateral drift to the right, keeping the character and the plush toy center frame. Soft, warm light flares across her cheek. | *Metaphor:* The 'Sound Bubble' is confirmed—this one *works* quietly. *Alignment:* Confirmation of the desired **quiet** and **automatic** convenience for her **caring consumer** role. |\n| **SHOT 4** | 0.8s | **TENDER AFTERMATH.** A final, quick shot of the character gently setting the chosen quiet clipper down on a soft, knitted blanket next to the plush toy, giving a small, satisfied nod. | **OVERHEAD SHOT (OS):** Brief static shot focused on the successful pairing of the quiet tool and the toy. | *Emotional Beat:* Gentle resolution/validation of the careful choice. |",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "11",
+      "shop_id": "56",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Karaoke Machine\",\"Pet Grooming Vacuum\",\"Pet Water Fountain\",\"Pet Supplies\",\"Pet Clippers\"],\"product_focus\":{\"key_attributes\":[\"10.1-inch HD Touchscreen\",\"High-Fidelity Sound\",\"Wireless Microphone\",\"Long-Lasting Battery\",\"Versatile Connectivity\"],\"price_range\":\"premium\",\"main_appeal\":\"Entertainment\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.\",\"browsing_path\":\"The user's browsing history is highly fragmented, with a significant focus on various pet supplies (grooming vacuums, water fountains, feeders, clippers, and accessories) across multiple sessions. There is a single, distinct view of a karaoke machine (Ikarao Break X2). The pet-related products show exploration across different types and brands within that category.\",\"evolution\":\"The user continues to show interest in pet supplies. The single view of the karaoke machine from the previous session remains an outlier and has not been further explored.\"},\"match_analysis\":{\"user_fit\":\"The user's primary engagement is with pet supplies, with a diverse range of products viewed. The karaoke machine (Ikarao Break X2) is an outlier in this browsing history.\",\"use_case\":\"Pet care and maintenance, potentially for multiple pets, and a separate interest in home entertainment.\",\"customer_portrait\":\"A pet owner with multiple pets, potentially looking for grooming and hydration solutions, who also has an interest in home entertainment systems.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 11 - The Entertainment Integration Dilemma (Max 8 Seconds)\n\n**Cluster Focus:** Premium consumer seeking the perfect blend of high-quality pet maintenance tools (grooming, hydration) AND a premium home entertainment experience (Karaoke Machine). Pain Point: Uncertainty about whether new purchases truly integrate or measure up to expectations.\n\n**Setting Differentiation:** A bright, warm \"Activity Corner\" in a cozy playroom/lounge area, featuring a plush, light-colored rug, soft natural sunlight streaming in, and one corner dedicated to pet comfort (a high-end, modern pet water fountain visible), juxtaposed with a sleek, premium karaoke machine setup on a low, wooden stand.\n\n**Character Differentiation:** Caucasian female, mid-30s, warm smile, wearing a soft, oversized cream-colored knit sweater. Average body type. Long, slightly wavy light brown hair.\n\n**Visual Metaphor:** Juxtaposing the pet fountain's steady, clear flow (representing reliable pet care quality) against the sleek, unactivated screen of the premium karaoke machine (representing the unfulfilled entertainment promise).\n\n**Emotional Journey:** Quality Assessment → Feature Comparison → Tender Acceptance of Divergent Needs.\n\n---\n\n| Time (s) | Shot # | Visual Description (9:16 Aspect Ratio) | Camera/Movement/Effect | Narrative Focus (Visual Translation of Cluster) |\n|---|---|---|---|---|\n| **0.0 – 2.3** | **SHOT 1** | **SETUP:** Medium Close-Up on the character's hands. One hand gently strokes the sleek, metallic casing of the premium **Karaoke Machine** (clearly showing the **10.1-inch HD Touchscreen**). Her expression is hopeful, slightly analytical. She taps the screen lightly. | Static shot, perfect shallow depth of field (DoF) focusing only on the screen/hand interaction. Warm, slightly diffused lighting. | **Interest in Premium Entertainment:** Establishing the high-end entertainment purchase and initial quality assessment. |\n| **2.3 – 4.8** | **SHOT 2** | **RISING TENSION/COMPARISON:** Quick lateral drift left. The character’s gaze shifts from the karaoke screen to the corner where a high-tech, modern **Pet Water Fountain** is softly bubbling (representing the reliable pet supplies). Her brow furrows momentarily—a subtle visual representation of the fragmented browsing path and the dual needs conflict. She looks from the screen back to the fountain. | Slow, steady lateral drift (tracking left). Rack Focus pulls sharply from the shiny screen to the clear, flowing water of the fountain. | **Pain Point/Fragmentation:** Visualizing the conflict between the two primary interests (Entertainment vs. Pet Care Quality). The perfect quality sought in both isn't immediately merging. |\n| **4.8 – 7.5** | **SHOT 3** | **EMOTIONAL REALIZATION:** She turns fully toward the camera/viewer. She offers a very slight, knowing, gentle smile—not disappointment, but acceptance. She gently pats the side of the karaoke machine, then gestures with an open hand toward the pet area, implying, \"This is for them, that is for me.\" | Slow, smooth push-in on her face. Soft focus bloom on the edges of the frame. The lighting remains warm and bright. | **Tender Acceptance:** A gentle acknowledgment that the quality focus applies to two separate realms—pet care *and* entertainment. The goal isn't one perfect thing, but two excellent separate experiences. |\n| **7.5 – 8.0** | **SHOT 4 (Optional/Buffer)** | Extreme Close-Up on her hand resting near the karaoke microphone (representing **Wireless Microphone**) and the **Long-Lasting Battery** via a small indicator light subtly glowing green on the machine base. | Static shot, holding the gentle smile briefly. | **Reinforcement of Premium Attributes:** A final, silent confirmation that *both* specific high-quality attributes (mic/battery and fountain flow) are present, resolving the uncertainty. |\n\n**Total Estimated Run Time: 7.8 Seconds.**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "12",
+      "shop_id": "56",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Pet Grooming\",\"Pet Water Fountains\",\"Automatic Pet Feeders\",\"Pet Clippers\",\"Pet Accessories\",\"Pet grooming vacuum\",\"Dog clippers\"],\"product_focus\":{\"key_attributes\":[\"grooming\",\"vacuum\",\"clippers\",\"water fountain\",\"feeder\",\"pet care\",\"accessories\"],\"price_range\":\"budget\",\"main_appeal\":\"pet care\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.\",\"browsing_path\":\"The user browsed a wide range of pet care products, including grooming vacuums, clippers, water fountains, and feeders. There was no clear sequence indicating a preference for price points or a specific product type, suggesting broad research across the pet care category.\",\"evolution\":\"The user is consistently exploring pet grooming and care products, with a recent focus on water fountains and grooming tools. There is no significant shift in interest, but rather a continued exploration of the shop's pet-related offerings.\"},\"match_analysis\":{\"user_fit\":\"The user is highly interested in pet care products, aligning with the shop's offerings.\",\"use_case\":\"Pet grooming and feeding.\",\"customer_portrait\":\"A pet owner looking for various solutions to care for their pets, including grooming, hydration, and feeding.\"}}",
+      "ai_opening": "## TikTok Script: Prototype 12 - The Multi-Care Conundrum (Pet Care Assortment Anxiety)\n\n**Cluster Alignment Focus:** This prototype directly addresses the user's high engagement across multiple pet care product categories (grooming, hydration, feeding) and the resulting pain point: uncertainty about choosing the *right* combination of products.\n\n**Character & Setting Differentiation:**\n*   **Setting:** A brightly lit, playful 'Pet Prep Station' nook. Instead of a generic room, this area features custom, pastel-colored wooden shelving specifically designed to organize pet gadgets (water fountain components, clipper boxes, feeder trays) like a neat toy collection. Warm afternoon sunlight streams through a nearby window, illuminating dust motes.\n*   **Character:** Female, late 20s, average body type, long wavy brunette hair tied loosely back, wearing a soft, pale lavender knit cardigan. Her appearance is warm and approachable.\n*   **Action Differentiation:** The initial action is a specific comparison/layout of diverse, specialized pet tech, signaling the broad research path.\n*   **Visual Metaphor:** Using a set of mismatched but high-quality pet gadgets laid out like puzzle pieces that don't quite fit together (the uncertainty of compatibility).\n*   **Emotional Arc:** Research → Overwhelm/Incompatibility Anxiety → Tender Acceptance of simplifying the choice.\n\n**Aspect Ratio:** 9:16 (Vertical)\n**Duration:** 7.8 Seconds Total (4 Shots)\n**Style:** Warm, Playful, Childlike, Purely Visual Narrative (Muted)\n\n---\n\n| Shot | Time (s) | Visual Description & Camera Movement | Character Action & Expression | Babeside Aesthetic/Metaphor |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.3s | **Setting establishing/Inventory Check.** Extreme Close-Up (ECU) on a wooden tabletop. The camera is static for the first second, then executes a very slow, gentle lateral drift across several distinct, colorful pet products: a sleek silver pet clipper next to a pastel blue automatic water fountain base, beside a beige automatic feeder tray. | A pair of soft, caring hands enter the frame from the right. They delicately tap the clipper housing, then gently brush the edge of the water fountain component, indicating assessment across categories (Grooming/Hydration). | **Warmth/Playful:** The products look like colorful, expensive toys. **Differentiation:** Focus on the *array* of different gadget types simultaneously. |\n| **SHOT 2** | 2.5s | **Rising Tension/Pain Point Visualization.** Medium Close-Up (MCU) on the character's face. The background shows the disorganized layout of gadgets. Camera pushes in slightly (slow push-in) to emphasize her brow furrow. | The character picks up a small, colorful *accessory* (a decorative, matching water bowl insert), holds it up near the large automatic feeder, and shakes her head slightly—a very subtle, worried movement. Her eyes show slight frustration/overwhelm (uncertainty about product choices). | **Emotional Trigger:** The visual conflict of trying to match the \"accessory\" to the \"feeder\" highlights the pain point of finding the perfect *combination* that works together. |\n| **SHOT 3** | 2.5s | **Climax/Tender Realization.** Rack Focus shot. Sharp focus starts on the clippers/grooming vacuum box in the background (out of focus), then racks smoothly to a close-up of the character's hands holding one single, very soft, fluffy pet brush (representing the core 'pet care' need). | Her hands gently cradle the fluffy brush. She lowers the other gadgets slightly out of frame. Her expression softens into a gentle, warm smile—a moment of clarity and relief in simplifying the focus. | **Visual Metaphor/Emotional Arc:** Letting go of the overwhelming tech overload and centering on the simple, caring act of brushing. This symbolizes accepting the right choice, even if it's not the most complicated one. |\n| **SHOT 4** | 0.5s | **Resolution/Aftermath.** Wide shot, slightly elevated angle looking down at the scene, quick pull-back. | The character gently places the single soft brush down on a warm, cream-colored knitted blanket spread across the floor, kneeling beside it contentedly. | **Final Feeling:** Cozy, simplified care. The entire array of complicated tech is pushed slightly out of the main visual field, leaving only the warm texture and the simple tool of care. |\n\n**Total Estimated Time: 7.8 Seconds**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "shop_id": "60",
+      "status": "NOMINATING",
+      "cluster_hit": "6",
+      "summary": "{\"core_interests\":[\"Shell S1 product page\",\"Reel-to-Reel Tape Players & Recorders\"],\"product_focus\":{\"key_attributes\":[\"Reel-to-Reel Tape Players & Recorders\"],\"price_range\":\"premium\",\"main_appeal\":\"Audio Equipment\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"The user has repeatedly viewed the product page for 'Shell S1'. The 'visible' and 'hidden' events indicate significant interaction with the page content, suggesting exploration and evaluation.\",\"browsing_path\":\"The user has only viewed a single product, 'Shell S1'. Therefore, no comparative browsing path can be determined.\",\"evolution\":\"No prior history available to compare against.\"},\"match_analysis\":{\"user_fit\":\"The user's repeated engagement with the 'Shell S1' product page suggests a potential fit for this item.\",\"use_case\":\"Potential purchase of high-end audio equipment.\",\"customer_portrait\":\"An audiophile or collector interested in vintage or specialized audio playback devices.\"}}",
+      "ai_opening": "## TikTok Script: The Collector's Gentle Doubt (Prototype 2 - Reel-to-Reel Audiophile)\n\n**Duration:** 7.5 seconds\n**Aspect Ratio:** 9:16\n**Aesthetic:** Warm, Cozy, Playful Babeside style, translated through the lens of a collector's gentle evaluation.\n**Character:** Caucasian woman, mid-30s, average build, long wavy brunette hair, wearing a soft, cream-colored knit cardigan.\n\n---\n\n### Visual Narrative Translation:\n\nThis script translates the audiophile's focus on **premium quality, authenticity verification, and the uncertainty of choosing the 'perfect' vintage/specialized item (Shell S1)** into a warm, playful, Babeside-style narrative focusing on texture, scale, and gentle confirmation. The **Reel-to-Reel** interest is visualized through an oversized, plush, fabric representation of the tape itself.\n\n| Shot | Duration (s) | Visual Description & Action (Silent) | Camera Movement & Composition | Emotional Beat (Visual Translation of Cluster Pain Point) |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **SETTING:** Extremely close, warm-toned corner of a sunlit playroom/nursery, featuring oversized, plush, textured textiles (resembling vintage audio tape spools). The lighting is soft, golden hour quality. **ACTION:** The woman's hands (wearing soft, slightly fuzzy mittens—playing on the 'texture/material' evaluation instinct) gently place two highly detailed, oversized, felt \"tape spools\" side-by-side on a soft, pale pink blanket. She leans in, inspecting the seams. | Extreme Close-Up (ECU) on the hands and the two 'spools.' Slow, smooth **Push-In** toward the seam line. | **Setup/Evaluation:** Establishing the collector’s focused evaluation of two seemingly identical items (representing the Shell S1 evaluation). |\n| **2** | 2.5s | **ACTION:** She uses a large, wooden, child-safe **ruler** to measure the exact diameter of the left 'spool' against the right one. Her brow furrows slightly—a moment of high tension/doubt. She taps the ruler down sharply on the right spool, seeking a specific, expected measurement confirmation (The \"hidden event\" interaction/expectation gap). | Medium Close-Up (MCU) framed slightly high, focusing on the ruler and her contemplative expression. Quick, slight **Lateral Drift** to emphasize the measurement comparison. | **Rising Tension/Pain Point:** Uncertainty about quality/specification. Is this the *perfect* premium match? The visual metaphor of oversized, soft measurement signifies the high stakes of the connoisseur’s choice. |\n| **3** | 2.5s | **ACTION:** Her hands gently push the 'ruler' aside. She scoops up the right 'spool' (the chosen one) and presses it softly against her cheek, closing her eyes in a brief moment of pure relief and tactile confirmation. A small, genuine, soft smile breaks through the tension. | Rack Focus: Starts sharp on the texture of the felt spool against her cheek, then slowly racks focus to her soft, serene facial expression. | **Emotional Climax/Tender Realization:** Confirmation of quality and authenticity, leading to quiet satisfaction (Fulfilling the need for the 'perfect' product). |\n\n---\n**Total Estimated Time:** 7.5 seconds\n**Audio Requirement:** Completely Silent. The entire narrative relies on the gentle focus, the tactile evaluation gestures, and the shift from focused measurement anxiety to soft tactile comfort.",
+      "cluster_analysis": {
+        "cluster_id": "6",
+        "size": 1,
+        "top_interests": [
+          [
+            "Shell S1 product page",
+            1
+          ],
+          [
+            "Reel-to-Reel Tape Players & Recorders",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Reel-to-Reel Tape Players & Recorders",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "60",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "The user has repeatedly viewed the product page for 'Shell S1'. The 'visible' and 'hidden' events indicate significant interaction with the page content, suggesting exploration and evaluation."
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "shop_id": "60",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Shell S1\",\"Reel-to-Reel Tape Players & Recorders\"],\"product_focus\":{\"key_attributes\":[\"Reel-to-Reel Tape Players & Recorders\"],\"price_range\":\"premium\",\"main_appeal\":\"audio equipment\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"high\",\"browsing_path\":\"single product focus\",\"evolution\":\"consistent interest in Shell S1\"},\"match_analysis\":{\"user_fit\":\"strong\",\"use_case\":\"high-fidelity audio playback\",\"customer_portrait\":\"audiophile or vintage audio enthusiast\"}}",
+      "ai_opening": "## Prototype ID 1: The Vintage Fidelity Quest\n\n**Cluster Summary Focus:** Audiophile/Vintage Enthusiast seeking premium Reel-to-Reel for high-fidelity playback. Pain point: Uncertainty about achieving the *perfect* quality/authenticity.\n\n**Visual Differentiation Strategy:**\n1.  **Setting:** A dedicated, warm, slightly elevated \"Accessory Matching Station\" within a cozy, sunlit room—specifically a small, antique wooden console table covered with soft, cream-colored velvet cloth, used for meticulous inspection (not a nursery).\n2.  **Action:** Precise physical comparison/authentication gestures, specifically comparing a modern, slightly *off* reel/tape spool to a pristine vintage one.\n3.  **Metaphor:** The subtle but significant difference between a \"perfectly weighted\" vintage silver reel and a slightly lighter, modern aluminum one represents the gap in expected fidelity.\n4.  **Emotional Arc:** Hopeful anticipation → Gentle realization of subtle inadequacy → Tender acceptance of the pursuit of perfection.\n\n**Character Appearance:** Female, mid-30s, average build, wavy reddish-brown hair tied back loosely. Wearing a thick, cream-colored knit cardigan (Babeside Aesthetic).\n\n---\n\n### 9:16 Vertical Script (Maximum 8 Seconds – Silent Visual Narrative)\n\n| Shot | Time (Approx.) | Description | Camera/Effects | Narrative Point |\n| :--- | :--- | :--- | :--- | :--- |\n| **SHOT 1** | 2.5 seconds | **Establishing the Focus & Quality Check.** CLOSE UP on two tape reels resting on the cream velvet surface. One is a heavy, matte-silver vintage reel (representing the ideal). The other is a slightly shinier, lighter-weight modern reel. The character’s hands (fingernails neatly filed) gently cup the vintage reel, lifting it slightly, then setting it down. | Slow, lateral drift focusing exclusively on the texture and weight differential of the reels against the soft velvet. Warm, golden sunlight floods the scene. | *Setup:* Introducing the premium items and the focus on physical quality/authenticity (High-fidelity expectation). |\n| **SHOT 2** | 2.5 seconds | **Rising Tension/Comparison.** MEDIUM CLOSE UP of the character’s face, eyes intensely focused downwards on the reels. Her eyebrows knit slightly—a micro-expression of deep concentration, not frustration. She uses two fingers to carefully tap the side of the modern reel, then instantly taps the vintage one, listening/feeling the subtle acoustic difference in the materials. | Very slight, slow push-in on her face. Shallow depth of field keeps the reels softly in focus underneath her gaze. | *Pain Point:* The uncertainty—is the new piece truly matching the expected premium experience? The subtle material difference registers. |\n| **SHOT 3** | 2.0 seconds | **Tender Realization.** Her focus softens. She gently pushes the modern reel slightly aside with her pinky finger. Her lips curve into a small, knowing, almost wistful smile—a tender realization that the *perfect* match is elusive, but the pursuit is worthwhile. She carefully picks up the vintage reel and holds it steady between both hands, cradling it warmly. | Rack focus shifts entirely to the vintage reel being held, emphasizing its tangible quality. The light catches the metal warmly. | *Climax/Resolution:* Acceptance of the gap in perfection, coupled with a gentle, caring appreciation for the authentic piece she has found so far. (Maternal narrative applied to object care). |\n| **SHOT 4** | 1.0 second | **Lingering Warmth.** EXTREME CLOSE UP on the vintage reel being held steady. A soft, diffused light highlights the texture of the tape and the metal. | Static, deep focus. | *Aftermath:* The cherished focus remains on the high-fidelity object. |\n| **TOTAL** | **8.0 Seconds** | | | |",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "16",
+      "shop_id": "64",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Ultra-Compact Wagon\",\"Stroller Wagons\"],\"product_focus\":{\"key_attributes\":[\"Compactness\",\"Portability\",\"All-terrain wheels\",\"Push and pull handles\"],\"price_range\":\"unknown\",\"main_appeal\":\"Convenience\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"moderate\",\"browsing_path\":\"The user has explored multiple stroller wagons, including the 'All Terrain Stroller Wagon' and the 'Ultra-Compact Wagon'. There was an initial exploration of various wagons followed by a return to viewing the 'Ultra-Compact Wagon'. This suggests a comparison process, possibly narrowing down preferences.\",\"evolution\":\"The user initially browsed a collection page and interacted with several stroller wagon products, indicating a clear interest in this category. The sequence of viewing different wagon types suggests a comparison of features and possibly styles.\"},\"match_analysis\":{\"user_fit\":\"The user is interacting with products categorized under 'Baby & Toddler' and specifically stroller wagons, aligning with the 'Ultra-Compact Wagon's' description.\",\"use_case\":\"Family outings, travel, and general convenience for transporting children or gear.\",\"customer_portrait\":\"A parent or guardian looking for a convenient and portable stroller wagon for family activities, potentially for travel or everyday use.\"}}",
+      "ai_opening": "## Prototype 16 Script: The Compactness Compromise (Ultra-Compact Wagon Focus)\n\n**Cluster Summary Alignment Check:**\n*   **Interest:** Ultra-Compact Wagon, Stroller Wagons.\n*   **Focus:** Convenience, Compactness, Portability.\n*   **Behavior:** Comparison process (explored 'All Terrain' then returned to 'Ultra-Compact').\n*   **Pain Point:** Uncertainty about product choices meeting specific needs (portability vs. capability).\n*   **Setting:** Must reflect family convenience/outings, distinct setting needed.\n*   **Action:** Focus on judging size/portability/all-terrain features.\n*   **Emotional Arc:** Comparison → Doubt about true compactness → Tender relief/confirmation.\n\n**Setting Differentiation:** A brightly lit, warm mudroom/entryway corner filled with organized, colorful, child-sized travel gear (a distinct preparation space, not a living room).\n\n**Character Appearance:** Female, early 30s, average build, long wavy brunette hair tied loosely, wearing a soft cream-colored knit cardigan.\n\n**Visual Metaphor:** The \"Test Fold\" – symbolizing the portability claim versus the reality of bulk.\n\n---\n\n| Shot | Time (Approx.) | Visual Description (9:16 Aspect Ratio) | Camera Movement / Composition | Emotional Beat |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.5s | **ESTABLISHING THE COMPARISON:** The character stands in the warm mudroom. In the foreground, partially visible, is a large, fully set-up 'All-Terrain Stroller Wagon' (representing the initial exploration). Her gaze is directed off-camera, slightly frustrated. Her hands are holding the sleek, highly folded **Ultra-Compact Wagon**, which she is comparing visually against the space remaining in the corner. | Slow, gentle lateral drift to the right, keeping the large wagon slightly blurred in the foreground. Soft, bright key light highlights the ultra-compact fold. | Setup/Context: Acknowledging the need for space and portability after considering bulkier options. |\n| **2** | 2.5s | **THE COMPACTNESS TEST (RISING TENSION):** Extreme close-up on the character's hands. She attempts to slide the folded Ultra-Compact Wagon vertically into a narrow storage slot between a coat rack and a small shelf (a tight space representing the 'compactness' requirement). The wagon catches slightly on the edge, not sliding in smoothly. Her brow furrows slightly—a moment of quiet doubt about the \"ultra-compact\" claim. | Static shot, focused tightly on the hands and the wagon's edge scraping the wood frame. Rack focus slightly emphasizes the visible gap. | Rising Tension: The real-world test of portability fails the initial expectation gap. |\n| **3** | 2.5s | **TENDER REALIZATION:** The character pauses, sighs softly (visually, a slight downward turn of the mouth). She gently pulls the wagon out, repositions it *sideways* instead of vertically (adjusting the strategy), and then effortlessly slides it into the narrow space completely flush. She gently pats the wagon where it rests, a small, relieved, warm smile spreads across her face. | Slow, deliberate push-in towards the character's face as she smiles, followed by a quick focus shift back to the perfectly stowed wagon. | Climax: Finding the convenient solution that meets the portability and compactness criteria perfectly. |\n| **4** | 0.5s | **FINAL CONFIRMATION:** Quick close-up of the character's hand resting on top of the tucked-away, ultra-compact wagon, offering a final, reassuring pat before she turns to leave the frame (implying the trip/outing is ready to start). | Static, tight shot. | Aftermath: Secure in the choice, ready for family convenience. |\n\n**Total Run Time: 8.0 Seconds**",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    {
+      "id": "15",
+      "shop_id": "64",
+      "status": "NOMINATING",
+      "cluster_hit": "1",
+      "summary": "{\"core_interests\":[\"Camping Chairs\",\"Stroller Wagons\",\"Outdoor Equipment\"],\"product_focus\":{\"key_attributes\":[\"Compact\",\"Foldable\",\"Convenience\",\"Portability\",\"Comfort\"],\"price_range\":\"mid-range\",\"main_appeal\":\"Convenience\"},\"purchase_signals\":{\"stage\":\"browsing\",\"concerns\":null},\"behavior_summary\":{\"engagement\":\"High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.\",\"browsing_path\":\"The user initially browsed various camping chairs, showing interest in different types such as rocking chairs, director's chairs, and oversized camping chairs. The sequence involved multiple interactions with several chair products before a distinct shift to interest in the 'Ultra-Compact Wagon'. The user's initial path through the 'folding-chairs' collection suggests an exploration of seating options for outdoor activities. The later view of the 'Ultra-Compact Wagon' indicates a potential expansion of interest to family-oriented outdoor gear.\",\"evolution\":\"The user's browsing history shows a clear shift from a primary focus on camping chairs to an emerging interest in a stroller wagon, suggesting a broadening of needs or exploration of complementary products for family outings.\"},\"match_analysis\":{\"user_fit\":\"The user's engagement with camping chairs and stroller wagons aligns with EVER ADVANCED's product offerings for outdoor adventures and family use.\",\"use_case\":\"Family outings, camping, travel, and general outdoor leisure.\",\"customer_portrait\":\"A parent or guardian seeking versatile and portable equipment for family activities, potentially looking for both personal comfort (camping chairs) and child transport solutions (stroller wagon).\"}}",
+      "ai_opening": "## TikTok Script Prototype 15: The Comfort Comparison (8 Seconds Max)\n\n**Target Cluster Focus:** Seeking the perfect balance between personal outdoor comfort (camping chairs) and family portability (stroller wagon). Pain point: Uncertainty in choice.\n\n**Character Appearance (Example for Diversity):** Female, mid-30s, average build, medium-length wavy brunette hair, wearing a soft cream-colored knit cardigan.\n\n**Setting Differentiation:** A bright, warm sunroom or enclosed porch area, serving as a specific \"Equipment Staging Area.\" The background features soft, fuzzy rugs and one corner has a gently swaying mobile featuring miniature outdoor shapes (pine trees, tiny tents).\n\n**Visual Metaphor:** Comparing two items of vastly different scales—a miniature, plush camping chair and a small, folded wagon frame—to symbolize the conflict between personal luxury and family convenience.\n\n---\n\n| Shot | Time (Approx.) | Visual Description & Action (Mute Ready) | Emotional Beat | Camera/Effects |\n| :--- | :--- | :--- | :--- | :--- |\n| **1** | 2.3s | **ESTABLISHING ACTION:** Close-up on the character's hands (wearing soft, natural manicure). She is gently placing a single, oversized, plush, miniature **rocking camping chair** (about 6 inches tall, made of soft flannel) onto a clean, light wooden table. Her expression is focused contemplation. | Setup/Exploration (Initial Interest: Personal Comfort/Camping Chair) | **Static Close-Up.** Warm, bright, slightly overexposed lighting emphasizing softness. |\n| **2** | 2.7s | **RISING TENSION/COMPARISON:** The character slowly slides a miniature, meticulously folded **stroller wagon frame** (representing 'Ultra-Compact Wagon') right next to the plush chair. She uses one finger to gently prod the tiny, rigid folded wagon, then immediately looks back at the softness of the chair, her brow furrowing slightly in gentle frustration/uncertainty. | Uncertainty/Compatibility Concern (The Conflict: Luxury vs. Portability) | **Slow Push-In** towards the two items. Shallow depth of field focusing sharply on the texture difference between the flannel chair and the metal frame. |\n| **3** | 2.5s | **TENDER REALIZATION/RESOLUTION:** Her focus shifts from the items to something just off-camera (implied child/family). A soft, warm smile replaces the furrowed brow. She gently picks up the **miniature wagon frame** and cradles it briefly, then tucks the **miniature chair** neatly *inside* the folded frame, signifying that both needs *can* coexist through the right, compact choice. | Gentle Acceptance/Resolution (The 'Convenient' Solution Found) | **Rack Focus:** Starts on the character's warm, understanding eyes, then racks focus smoothly to the items nested together. Soft ambient light seems to glow slightly brighter. |\n| **4** | 0.5s | **CLOSING MOMENT:** Quick cut to a tight shot of the now nested items (chair inside the wagon frame) resting on a soft, textured, pale yellow blanket. | Lingering Warmth | **Static Extreme Close-Up.** Quick, decisive end to emphasize the final decision. |\n| **TOTAL** | **8.0s** | | | |",
+      "cluster_analysis": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    }
+  ],
+  "cluster_analysis": {
+    "summary": {
+      "1": {
+        "cluster_id": "1",
+        "size": 12,
+        "top_interests": [
+          [
+            "Pet Clippers",
+            3
+          ],
+          [
+            "Pet Water Fountain",
+            2
+          ],
+          [
+            "Pet Supplies",
+            2
+          ],
+          [
+            "Pet Grooming",
+            2
+          ],
+          [
+            "Streetwear Fashion",
+            2
+          ]
+        ],
+        "top_attributes": [
+          [
+            "hoodie",
+            2
+          ],
+          [
+            "spiderweb pattern",
+            2
+          ],
+          [
+            "star pattern",
+            2
+          ],
+          [
+            "Unique design",
+            2
+          ],
+          [
+            "Streetwear style",
+            2
+          ]
+        ],
+        "top_shops": [
+          [
+            "49",
+            3
+          ],
+          [
+            "56",
+            3
+          ],
+          [
+            "47",
+            2
+          ]
+        ],
+        "engagement_levels": [
+          "The user has a very broad engagement, primarily with pet supplies, but also explored a karaoke machine. The user viewed multiple pages within the pet supply category, indicating a strong interest in that area, while the karaoke machine was a single product view.",
+          "High engagement with pet care products, particularly grooming and feeding solutions. Extensive browsing across multiple product categories within pet supplies.",
+          "The user has extensively browsed the 'boots' collection, showing a strong interest in footwear. Multiple 'touch-start' and 'touch-end' events on various boot images indicate active exploration and comparison within this category.",
+          "Low - User is browsing collection pages and shows minimal interaction with product details.",
+          "high",
+          "The user interacted with the product page, indicating initial interest. They also interacted with other product categories on the homepage, suggesting broader exploration.",
+          "High engagement with multiple camping chairs, indicated by numerous touch events. Moderate engagement with the stroller wagon.",
+          "High engagement with product page and purchase actions.",
+          "medium",
+          "moderate"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      },
+      "2": {
+        "cluster_id": "2",
+        "size": 1,
+        "top_interests": [
+          [
+            "Oversized Hoodie",
+            1
+          ],
+          [
+            "Loungewear",
+            1
+          ],
+          [
+            "Comfortable Apparel",
+            1
+          ],
+          [
+            "Burgundy Color",
+            1
+          ],
+          [
+            "Fall Fashion",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Oversized Fit",
+            1
+          ],
+          [
+            "Burgundy Color",
+            1
+          ],
+          [
+            "Comfortable Fabric",
+            1
+          ],
+          [
+            "Hooded",
+            1
+          ],
+          [
+            "Kangaroo Pocket",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "28",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "low"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      },
+      "3": {
+        "cluster_id": "3",
+        "size": 1,
+        "top_interests": [
+          [
+            "Pet Grooming",
+            1
+          ],
+          [
+            "Pet Water Fountains",
+            1
+          ],
+          [
+            "Automatic Pet Feeders",
+            1
+          ],
+          [
+            "Pet Clippers",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "grooming",
+            1
+          ],
+          [
+            "vacuum",
+            1
+          ],
+          [
+            "clipper",
+            1
+          ],
+          [
+            "water fountain",
+            1
+          ],
+          [
+            "feeder",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "56",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "high"
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      },
+      "5": {
+        "cluster_id": "5",
+        "size": 2,
+        "top_interests": [
+          [
+            "Test SKU",
+            1
+          ],
+          [
+            "Product pricing",
+            1
+          ],
+          [
+            "Add to cart",
+            1
+          ],
+          [
+            "Checkout",
+            1
+          ],
+          [
+            "Sneakers",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Price",
+            1
+          ],
+          [
+            "Discount",
+            1
+          ],
+          [
+            "Thick Sole",
+            1
+          ],
+          [
+            "Chunky Design",
+            1
+          ],
+          [
+            "Retro design",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "47",
+            1
+          ],
+          [
+            "49",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "high"
+        ],
+        "purchase_stages": [
+          "deciding"
+        ]
+      },
+      "6": {
+        "cluster_id": "6",
+        "size": 1,
+        "top_interests": [
+          [
+            "Shell S1 product page",
+            1
+          ],
+          [
+            "Reel-to-Reel Tape Players & Recorders",
+            1
+          ]
+        ],
+        "top_attributes": [
+          [
+            "Reel-to-Reel Tape Players & Recorders",
+            1
+          ]
+        ],
+        "top_shops": [
+          [
+            "60",
+            1
+          ]
+        ],
+        "engagement_levels": [
+          "The user has repeatedly viewed the product page for 'Shell S1'. The 'visible' and 'hidden' events indicate significant interaction with the page content, suggesting exploration and evaluation."
+        ],
+        "purchase_stages": [
+          "browsing"
+        ]
+      }
+    },
+    "reports": {
+      "1": "## 2. 用户画像分析\n\n### 基于核心兴趣和产品属性的用户特征\n\n该群体的核心用户是**注重宠物健康和生活品质的“精致宠物主”**。\n\n*   **宠物护理关注者：** 对 `Pet Clippers` (3次)、`Pet Water Fountain` (2次) 和 `Automatic Pet Feeders` (2次) 的高频次关注，表明用户愿意投入时间和金钱来确保宠物的卫生和日常便利。\n*   **风格探索者：** 对 `Streetwear Fashion` 和 `Edgy Style` 的提及，结合产品属性中 `hoodie`、`spiderweb pattern` 和 `Unique design` 的出现，显示他们追求个性化的、具有视觉冲击力的时尚单品。\n*   **高要求特质：** 产品属性中提到 `Stainless Steel`、`3.5L Capacity`、`5-layer filtration` 等，表明用户在选择宠物用品时，对**材质、容量和技术细节**有较高的要求。\n\n### 用户行为模式和参与度分析\n\n*   **参与度差异性：** 参与度水平描述显示出多样性，从“High engagement with pet care products”到“Low - User is browsing collection pages”。这可能意味着在宠物用品上是深度购买者，而在时尚品类上可能处于更早期的探索阶段。\n*   **行为深度：** 宠物用品（如饮水机、喂食器）的浏览深度较高（“viewed multiple pages”），而时尚品（如样本 3 的 Hoodie）可能是一次性的冲动性或特定需求的浏览。\n*   **店铺偏好：** 用户主要集中在 **Shop 49 和 Shop 56**，这两个店铺可能是该群体核心关注的宠物用品或特定风格时尚品的集中地。\n\n### 购买意图和阶段分析\n\n*   **购买阶段：** 明确处于 **\"browsing\"（浏览）** 阶段。用户正在进行信息收集和产品比较，尚未展现出高强度的购买信号（如加入购物车或结账）。\n*   **购买驱动力：** 样本分析显示，购买吸引力（Key Attraction）包括 **“Convenience & Health”**（针对宠物产品）和 **“Unique design”**（针对时尚产品）。\n\n---\n\n## 3. 产品偏好分析\n\n### 最受欢迎的产品属性和特征\n\n该群体的偏好呈现出功能性与美学兼备的特点：\n\n1.  **功能性与耐用性（宠物用品）：** 对 **Cordless design**（便利性）、**Stainless Steel**（耐用性/卫生）和大容量 **3.5L Capacity** 有明确偏好。\n2.  **设计与独特性（时尚/用品）：** **Unique design** 是一个共同的吸引点，体现在时尚的 `spiderweb pattern` 和 `star pattern` 上，也可能映射到宠物用品的现代感设计上。\n3.  **品类集中性：** **Hoodie** 是最常出现的服装属性，显示出对休闲、街头风格上装的兴趣。\n\n### 价格敏感度分析\n\n根据样本数据，价格范围分布在 **budget (预算型) 到 mid-range (中等)**。\n\n*   这表明用户在购买基础必需品（如宠物用品）时可能追求性价比（budget to mid-range），但在购买具有高度“Unique design”的时尚单品或特定高端宠物设备时，他们愿意支付中等价格。\n\n### 产品吸引力因素\n\n*   **宠物用品吸引力：** **便利性（Convenience）和健康（Health）**是主要驱动力。用户希望通过自动化和高质量的产品来简化宠物照料。\n*   **时尚品吸引力：** **独特性（Unique design）**是核心吸引力，他们购买是为了表达个性，而非仅仅满足基本需求。\n\n---\n\n## 4. 商业洞察\n\n### 目标用户群体的商业价值\n\n聚类 1 的用户具有较高的**生命周期价值 (LTV)** 潜力，因为他们是：\n1.  **必需品高频复购者：** 宠物用品是持续性消费（食品、耗材、清洁用品等）。\n2.  **易于交叉销售：** 对两种不相关但高价值品类（宠物和时尚）都感兴趣，为交叉营销提供了绝佳机会。\n\n### 营销机会和建议\n\n1.  **跨品类捆绑营销（Cross-Selling）：**\n    *   针对购买高端修剪器或饮水机的用户，推荐带有“Edgy Style”或“Unique Design”的宠物服装或配件（如印有蜘蛛网图案的宠物领巾）。\n    *   在结账流程中，向浏览宠物用品的用户展示当前热门的 Streetwear SKU。\n2.  **强调品质和设计：**\n    *   在描述宠物产品时，突出其**“设计感”**（例如：”为您的智能家居增添一抹设计感的饮水机”）。\n    *   针对时尚单品，强调其**限量感或独特性**以刺激“browsing”阶段的用户尽快转化为购买者。\n3.  **内容营销侧重：**\n    *   创建内容展示“时尚宠主的一天”，将宠物护理流程与个人街头穿搭相结合，迎合用户的双重身份。\n\n### 产品推荐策略\n\n*   **宠物用品（高转化优先级）：** 重点推荐 **“Cordless”** 和 **“Stainless Steel”** 的升级款或更高容量产品。\n*   **时尚/生活方式：** 推荐与“spiderweb pattern”或“star pattern”相关的 **Hoodie** 或 **Sneakers**，确保款式足够“Edgy”。\n\n---\n\n## 5. 关键发现\n\n1.  **双重身份的宠物主：** 该群体是典型的**“有宠物但拒绝无聊”**的消费者。他们对宠物护理的投入是基于**功能性和健康**，但对个人消费则追求**个性和风格表达**。\n2.  **设计导向的消费心理：** 无论是在为宠物选购用品（如智能/美观的饮水机）还是为自己选购服装时，**“Unique Design”** 都是驱动兴趣的关键因子，而非单纯的价格或基础功能。\n3.  **店铺集中度高：** Shop 49 和 Shop 56 对该群体有显著吸引力，需要深入分析这两个店铺的具体 SKU 组合，以理解它们如何同时满足宠物需求和时尚品味。\n4.  **处于探索阶段：** 购买阶段为“browsing”，表明营销活动应着重于**提供清晰的价值主张和限时激励**，以推动用户完成从浏览到购买的转化。",
+      "2": "## 1. 聚类概述\n\n本报告针对用户行为聚类分析结果中的“聚类 ID: 2”进行详细解读。\n\n### 1.1 基本信息与规模\n\n| 指标 | 数值 |\n| :--- | :--- |\n| **聚类ID** | 2 |\n| **聚类大小** | 1 条数据 (极小众/孤立样本) |\n| **参与度水平** | Low (低) |\n| **当前购买阶段** | Browsing (浏览中) |\n\n### 1.2 聚类核心特征总结\n\n聚类 2 是一个**高度特异化**的单点样本聚类，其特征指向一个**对特定颜色和版型有着强烈偏好的、追求极致舒适感的个体**。该用户的兴趣高度集中于**超大号（Oversized）的连帽衫（Hoodie）**，且对**酒红色（Burgundy）**这一特定色彩表现出明确的偏好。\n\n---\n\n## 2. 用户画像分析\n\n尽管样本量极小，但基于其唯一记录的数据点，我们可以勾勒出该用户的初步画像和行为模式。\n\n### 2.1 基于核心兴趣和产品属性的用户特征\n\n该用户被定义为**“舒适至上、色彩敏感的潮流追随者”**：\n\n*   **核心偏好：** 极度偏爱**Oversized Hoodie**和**家居服（Loungewear）**，表明其穿着需求围绕**放松、休闲和高舒适度**。\n*   **色彩偏好：** 对**勃艮第红（Burgundy Color）**有明确的、排他性的偏好。\n*   **风格融合：** 兴趣中同时包含 **Athleisure（运动休闲）**和 **Fall Fashion（秋季时尚）**，暗示用户希望在休闲装中融入适度的季节性潮流元素。\n*   **品质要求：** 产品属性显示对**柔软面料（Soft Fabric）**和**舒适面料（Comfortable Fabric）**的重视。\n\n### 2.2 用户行为模式和参与度分析\n\n*   **参与度（Low）：** 参与度较低，表明该用户可能是一个**“潜水型”用户**或**首次探索用户**。其行为停留在信息收集和探索阶段，尚未形成高频互动或明确的购买决策。\n*   **店铺聚焦：** 唯一记录的访问店铺是 **Shop 28**，这可能意味着该用户是**Shop 28**的特定忠诚用户，或者该店铺恰好是展示其所需特定商品的入口。\n\n### 2.3 购买意图和阶段分析\n\n*   **购买阶段（Browsing）：** 用户处于**浏览阶段**，处于购买漏斗的顶部或中部。他们可能正在进行“梦想清单”的建立，或在比较特定款式/颜色的市场供应情况。\n*   **吸引力因素：** 示例样本显示其主要吸引力是 **“Comfort and Style”**，价格敏感度处于 **“Budget”（预算型）**。这暗示用户在追求舒适和版型（Oversized）的同时，对价格有一定的控制要求，倾向于在预算范围内寻找最佳组合。\n\n---\n\n## 3. 产品偏好分析\n\n本聚类的产品偏好是**高度聚焦且具体的**。\n\n### 3.1 最受欢迎的产品属性和特征\n\n用户对产品的关注点非常具体，侧重于**版型、功能和触感**：\n\n1.  **版型（Fit）：** 100% 偏好 **Oversized Fit**。\n2.  **功能性细节：** 关注 **Hooded（带帽）**和 **Kangaroo Pocket（袋鼠口袋）**，这是标准舒适连帽衫的关键特征。\n3.  **触感体验：** 强调 **Comfortable Fabric** 和 **Soft Fabric**。\n4.  **色彩锁定：** **Burgundy Color** 是一个明确的筛选条件。\n\n### 3.2 价格敏感度分析\n\n示例样本将其价格定位为 **Budget**。在对“舒适度”和“特定版型”有高要求的情况下，用户可能在寻找：\n*   预算友好的基础款舒适卫衣。\n*   在特定促销期购买高价舒适品牌。\n\n### 3.3 产品吸引力因素\n\n“Comfort and Style”是核心驱动力。用户需要的不是功能性的运动装备，而是**具有功能性舒适度的、符合当前休闲风尚的单品**。\n\n---\n\n## 4. 商业洞察\n\n鉴于这是一个孤立样本，其商业价值在于**识别小众但高粘性的潜在需求点**，而不是大规模的用户群体。\n\n### 4.1 目标用户群体的商业价值\n\n虽然群体规模极小，但如果此用户代表了一批具有相似“**特定色+特定版型**”偏好的用户，其商业价值在于**高转化率**（一旦找到完全匹配的产品，购买意愿极高）。\n\n### 4.2 营销机会和建议\n\n1.  **精准定位营销：** 针对 Shop 28 的库存，如果出现 **Oversized Burgundy Hoodie**，应立即通过个性化邮件或站内通知触达该用户。\n2.  **内容营销侧重：** 创建关于“如何搭配勃艮第色秋季休闲装”的内容，强调面料的柔软度和版型的时尚感。\n3.  **库存优化警报：** 将 **“Oversized + Burgundy”** 组合视为低频高价值的 SKU 组合，确保此类产品的库存水平和可见性。\n\n### 4.3 产品推荐策略\n\n*   **立即推荐：** 优先推送 Shop 28 中所有 **Oversized Fit** 的 **Hoodies/Loungewear**，并按照 **Burgundy** 颜色进行排序。\n*   **关联推荐：** 推荐**“舒适面料”**的配套下装（如慢跑裤、阔腿裤），以满足其 Loungewear 的整体需求。\n\n---\n\n## 5. 关键发现\n\n本聚类分析揭示了用户行为中的独特指向性。\n\n### 5.1 最重要的 3-5 个发现\n\n1.  **极端特异性需求：** 该用户对 **Oversized Hoodie** 和 **Burgundy Color** 的组合需求是极度具体的，这表明**颜色和版型**是其决策的**非协商性因素（Non-Negotiables）**。\n2.  **舒适度是核心价值锚点：** 无论价格定位如何（Budget），舒适的**面料触感**（Soft/Comfortable Fabric）是其所有兴趣点的基础。\n3.  **低参与度下的高准确性：** 用户虽然参与度低且处于浏览阶段，但其兴趣标签的覆盖率（Top 10 兴趣点均出现1次）显示了高度的兴趣聚焦，一旦被激活，转化潜力较大。\n4.  **店铺关联性强：** 唯一的店铺访问记录（Shop 28）可能暗示了寻找特定商品（如小众设计或特定批次）的路径依赖。\n\n### 5.2 值得关注的趋势或模式\n\n**“舒适感驱动的色彩偏好”**：这是一个值得关注的细分市场趋势。消费者不再满足于基础黑白灰的休闲服饰，而是开始将更具情感色彩（如酒红色的成熟感和温暖感）的产品纳入其核心的舒适装扮中。这提示品牌在主流休闲款中，应积极测试特定季节性色彩的反应。",
+      "3": "## 2. 用户画像分析\n\n### 2.1 基于核心兴趣和产品属性的用户特征\n该用户是一位**注重效率和高标准宠物护理的宠物主**。\n\n* **核心需求（What）**: 集中在宠物日常的**“三件大事”**：清洁（Pet Grooming, Pet Clippers）、饮水（Pet Water Fountains）和喂养（Automatic Pet Feeders）。\n* **技术偏好（How）**: 倾向于具备**现代化技术特征**的产品，如“cordless operation”（无绳操作），表明对使用便利性和设备移动性有要求。\n* **关注点（Why）**: “grooming”和“clipper”的出现，暗示用户可能正在寻找替代传统手工护理的方式，以提高效率或减少对宠物的压力。\n\n### 2.2 用户行为模式和参与度分析\n* **参与度**: High（高）。尽管样本量仅为1，但其高参与度表明用户在短时间内对多个高价值宠物用品类别进行了深度探索。\n* **行为模式**: **多任务搜索行为 (Multi-task Exploration)**。用户不是只关注一个品类，而是同时对比不同自动化设备的解决方案。\n\n### 2.3 购买意图和阶段分析\n* **购买阶段**: Browsing（浏览）。用户目前处于信息收集和方案对比阶段，尚未锁定具体SKU或店铺，决策尚未固化。\n* **价格敏感度**: **Budget**（预算导向）。这与高参与度形成有趣的对比，可能意味着用户希望以**可接受的成本**获得高质量的自动化解决方案。\n\n---\n\n## 3. 产品偏好分析\n\n### 3.1 最受欢迎的产品属性和特征\n用户对**功能集成度高**和**操作便捷性强**的产品属性表现出明确偏好：\n\n* **功能集中**: Grooming, Feeder, Water Fountain 均被提及。\n* **关键属性**: “vacuum”（可能指吸尘式梳毛工具或清理工具）、“cordless operation”是技术上的重要筛选标准。\n\n### 3.2 价格敏感度分析\n* **价格定位**: Budget（预算导向）。这要求营销策略在突出产品便利性的同时，必须强调**性价比（Value Proposition）**，避免被高价位产品劝退。\n\n### 3.3 产品吸引力因素\n* **主要吸引力**: “pet care”（宠物护理）。这是用户进行所有探索行为的**根本驱动力**。用户寻找的是能**系统性提升**宠物护理体验的工具，而非单一的临时用品。\n\n### 3.4 店铺偏好\n* **主要店铺分布**: Shop 56 (1次)。鉴于样本量过小，Shop 56 需要被视为一个**初始接触点**，而非固定的偏好店铺。该用户可能是在Shop 56发现了多个所需品类的组合或首次接触了某一核心产品（如Pet Grooming套装）。\n\n---\n\n## 4. 商业洞察\n\n### 4.1 目标用户群体的商业价值\n**高潜力早期采纳者 (High-Potential Early Adopter)**：\n尽管样本量小，但该用户代表了一类正在寻求**系统性升级**宠物护理工具的用户。一旦其需求被某一品牌或产品组合成功满足，极有可能成为忠诚用户，并可能带动（或推荐）相似需求的用户群。\n\n### 4.2 营销机会和建议\n\n1. **打包和解决方案营销**: 鉴于用户同时搜索喂食器、饮水机和美容工具，应推出**“全能宠物护理套装”**或**“智能宠物生活入门包”**，强调功能协同和整体成本优势，以迎合其预算导向和系统性需求。\n2. **强调便利性/技术优势**: 营销信息应突出“cordless”（无线操作）带来的无缝体验，并将“grooming”相关产品的**效率提升**作为核心卖点。\n3. **内容营销**: 在浏览阶段，提供深度评测或对比文章，专门讨论如何利用自动化工具实现**预算内的全面宠物护理**。\n\n### 4.3 产品推荐策略\n\n* **首推（Conversion Focus）**: 推荐**集成度高**的宠物护理套装，特别是包含无线修剪器和智能饮水/喂食器的组合。\n* **辅助推荐（Upsell/Cross-sell）**: 根据其Budget倾向，推荐高性价比的耗材（如修剪刀头、滤芯），并将其与核心设备绑定销售。\n\n---\n\n## 5. 关键发现\n\n### 5.1 最重要的3-5个发现\n\n1. **高度集成化需求 (Integrated Need)**: 用户兴趣点高度分散但逻辑统一——寻找**自动化、便利化**的基础护理设备（喂养、饮水、美容）。他们并非单品购买者，而是系统解决方案的探索者。\n2. **“预算”与“高参与”的矛盾**: 用户在积极探索高端或技术型产品（如自动设备）的同时，仍保持在“Budget”价格区间内搜索，这是**转化过程中的关键摩擦点**。\n3. **关键技术锚点**: “Cordless operation”是明确的技术偏好，表明用户对现有传统有线设备的便利性不足感到不满。\n4. **探索阶段明确**: 用户处于Browsing阶段，此时的营销干预将具有极高的前瞻性价值，可能抢占其**首次购买决策**。\n\n### 5.2 值得关注的趋势或模式\n\n**趋势**: 该用户群体预示着宠物市场从基础耗材向**技术驱动的“智能护理硬件”**转移的趋势正在形成，尤其是在中低端预算市场中，用户期望用更少的投入获得更高的便利性。\n\n**模式**: **“痛点驱动下的集中式搜索”**。用户可能在最近某个时间点集中感受到了传统宠物护理带来的不便（例如，旅行、长时间工作），从而触发了对所有自动化解决方案的集中探索。",
+      "5": "## 2. 用户画像分析\n\n### 基于核心兴趣和产品属性的用户特征\n\n该聚类由两个具有显著差异化行为模式的样本构成，这使得单一画像的提炼具有挑战性，但可以识别出共同的“探索”特质：\n\n1. **价格敏感与测试者（样本 1 特征）：** 表现出对特定“Test SKU”和“Product pricing”的关注，并完成了“Add to cart”和“Checkout”的初步步骤。这表明用户可能正在进行**价格敏感度的测试或正在验证特定交易流程**。\n2. **风格驱动的时尚追逐者（样本 2 特征）：** 核心兴趣集中在“Sneakers”、“Streetwear”、“Retro Training Sneaker”，显示出对特定美学风格（复古、街头）的强烈偏好。\n\n### 用户行为模式和参与度分析\n\n* **参与度高 (High)：** 尽管样本量极小，但样本涉及了从兴趣探索到交易流程（加入购物车/结账）的关键步骤，显示出用户对平台或产品的深度投入。\n* **店铺分散性：** 购买行为均匀分布在 Shop 47 和 Shop 49，表明用户尚未锁定单一偏好渠道，正在进行跨店铺比较。\n\n### 购买意图和阶段分析\n\n* **购买阶段：Deciding (决策中)：** 用户不是初次浏览，而是处于评估和选择的最后阶段。样本 1 接近完成交易，样本 2 可能正在比较不同款式或价格点以做出最终选择。\n\n---\n\n## 3. 产品偏好分析\n\n### 最受欢迎的产品属性和特征\n\n用户对产品的关注点高度集中于**设计美学和结构细节**：\n\n* **设计元素：** 对“Retro design”、“Chunky Design”、“Unique Design”的需求突出，表明用户追求**具有视觉冲击力和潮流感**的产品。\n* **结构特征：** “Thick Sole”和“Platform Sole”的出现，进一步佐证了对当前流行**厚底、复古/街头运动鞋风格**的偏好。\n* **材质与风格：** “Mixed-material construction”和“Streetwear style”是定义其风格的核心要素。\n\n### 价格敏感度分析\n\n价格维度存在矛盾但值得关注：\n\n* 样本 1 被明确标记为“budget”价格范围，主要吸引力是“Discounted price”，显示出强烈的**价格敏感性**。\n* 样本 2 属于“mid-range”，主要吸引力是“Style and Comfort”。\n\n**结论：** 尽管该聚类整体对风格有高要求，但其内部对价格的敏感度存在显著分化。\n\n### 产品吸引力因素\n\n吸引力因素反映了用户的决策驱动力：\n\n1. **折扣/性价比 (Discounted price)：** 针对价格敏感用户。\n2. **风格和舒适度 (Style and Comfort)：** 针对时尚导向用户。\n\n---\n\n## 4. 商业洞察\n\n### 目标用户群体的商业价值\n\n尽管聚类规模极小，但其“High 参与度”和“Deciding 阶段”意味着这批用户具有**极高的短期转化潜力**。他们是已经锁定了品类意图，正在等待最后的催化剂（价格或最终确认的款式）。\n\n### 营销机会和建议\n\n1. **针对“测试者”的转化策略（样本 1）：** 确保 Test SKU 的价格策略具有竞争力。对于购物车内产品，应立即触发**限时折扣提醒或小额优惠券**，以加速其进入“购买”阶段。\n2. **针对“时尚探索者”的确认策略（样本 2）：** 利用其对设计和风格的偏好，提供**造型搭配推荐（Outfit suggestions）**或展示“Retro”/“Streetwear”系列中的**高评价明星产品**，以增强其对特定款式（如Retro Training Sneaker）的信心。\n3. **跨店体验优化：** 由于用户分散在不同店铺，应确保跨店铺的产品描述、库存信息和用户评价保持一致和高质量，消除其决策顾虑。\n\n### 产品推荐策略\n\n* **风格协同推荐：** 基于样本 2 的偏好，推荐具有“Chunky Design”和“Platform Sole”的**当前最热门的街头时尚鞋款**，并突出其独特的材质结构（Mixed-material）。\n* **价格敏感度分层推荐：** 对于表现出价格敏感的用户，应重点推送**相似风格但位于历史低价区间的替代品或折扣款**。\n\n---\n\n## 5. 关键发现\n\n基于对聚类 ID 5 的分析，提炼出以下 3-5 个关键发现：\n\n1. **高度矛盾的决策驱动力：** 聚类内部存在显著的驱动力分化，一部分用户被**价格/交易效率**驱动（样本 1），而另一部分被**特定美学风格**驱动（样本 2）。营销和转化策略必须针对这两种驱动力进行定制。\n2. **强烈的“厚底/复古街头”风格偏好：** 用户对“Sneakers”的兴趣高度聚焦于“Retro”、“Chunky Design”、“Platform Sole”等当前流行的亚文化潮流元素。\n3. **高转化时机（Deciding Stage）：** 尽管样本量小，但用户正处于临门一脚的状态，任何及时的、有针对性的刺激（如确认性信息或限时优惠）都可能立即触发转化。\n4. **价格/SKU测试行为的共存：** 观察到用户同时进行对**特定SKU的流程测试**（Add to cart/Checkout）和**明确的时尚探索**，这可能暗示用户在进行多路径的购买准备工作，值得密切监控其最终路径。",
+      "6": "## 1. 聚类概述\n\n### 1.1 聚类基本信息\n本报告分析的是聚类ID为 **6** 的用户群体。该聚类规模极小，仅包含 **1 条数据**，因此分析结果代表了该单一用户的特定行为模式。\n\n### 1.2 核心特征总结\n该聚类代表了一个对**专业级或特定历史音频设备**具有强烈兴趣的个体用户。其核心关注点集中在“Shell S1”产品页面和“开盘式磁带录音机/播放器 (Reel-to-Reel Tape Players & Recorders)”这一高度专业化的领域。用户互动强度高，处于**浏览和评估**阶段。\n\n---\n\n## 2. 用户画像分析\n\n### 2.1 基于核心兴趣和产品属性的用户特征\n该用户是一位高度垂直领域的潜在买家，可能是一位**发烧友（Audiophile）或专业音频收藏家**。\n\n*   **兴趣焦点:** 明确指向高端或小众的音频技术，特别是“Reel-to-Reel”设备，这类设备通常面向追求极致音质或历史价值的用户。\n*   **产品关联:** 对“Shell S1”这一具体产品表现出持续的关注，表明这可能是一个他正在认真考虑或正在深入研究的关键目标产品。\n\n### 2.2 用户行为模式和参与度分析\n**参与度水平:** **高互动（High Engagement）**。\n\n用户对“Shell S1”产品页面的访问伴随了“可见 (visible)”和“隐藏 (hidden)”事件的重复发生。这强烈表明用户不仅仅是简单地浏览，而是进行了**深入的内容探索和仔细的内容评估**，例如：\n\n*   详细阅读产品规格。\n*   比对不同视图或图片。\n*   可能尝试了页面上的交互元素。\n\n### 2.3 购买意图和阶段分析\n**购买阶段:** **浏览 (Browsing)**。\n\n用户正处于探索和评估的早期到中期阶段。尽管兴趣明确且参与度高，但尚未表现出明确的添加购物车或结账信号。购买意图是**积极且具体的**，目标直指高端音频设备。\n\n---\n\n## 3. 产品偏好分析\n\n### 3.1 最受欢迎的产品属性和特征\n核心产品属性高度集中于：**Reel-to-Reel Tape Players & Recorders**。这揭示了用户对传统、模拟且可能高保真的音频播放技术有着明确偏好。\n\n### 3.2 价格敏感度分析\n基于“示例样本摘要”中的信息，该用户的价格敏感度定位为 **Premium (高端)**。这与他对专业级、小众音频设备的兴趣是高度一致的。\n\n### 3.3 产品吸引力因素\n主要吸引力集中在：**Audio Equipment（音频设备）**。结合其他信息，可以推断吸引力的核心在于：\n\n1.  **音质/保真度：** 追求模拟音频的独特魅力。\n2.  **收藏价值/专业性：** 对特定型号（如Shell S1）的专业认可。\n\n---\n\n## 4. 商业洞察\n\n### 4.1 目标用户群体的商业价值\n尽管当前聚类规模为1，但由于其**高度垂直的兴趣、高参与度以及高端定位**，该单一用户具有**极高的潜在LTV（生命周期价值）**。他们通常愿意为稀有性、质量和专业性支付高溢价。\n\n### 4.2 营销机会和建议\n\n**针对本样本的营销策略应侧重于权威性和专业性：**\n\n1.  **权威性内容推送:** 立即向该用户发送关于“Shell S1”的深度技术评测、专家见解或历史背景信息，强化其购买决策的合理性。\n2.  **稀缺性提示:** 如果“Shell S1”库存有限或为限量版，应立即通过邮件或站内信提醒其稀缺性，促进其尽快转化。\n3.  **店铺信任背书:** 鉴于其主要活动集中在“Shop 60”，应确保“Shop 60”在该产品上的服务、保修和售后政策清晰透明，以建立信任。\n\n### 4.3 产品推荐策略\n\n*   **立即推荐:** 与“Shell S1”配套的高端配件（如专业磁带、高品质线材、匹配的前置放大器）。\n*   **交叉推荐:** 其他高端或收藏级的“Reel-to-Reel”品牌或型号，以满足其在特定品类内的“发烧”需求。\n\n---\n\n## 5. 关键发现\n\n基于对聚类ID 6的分析，得出以下关键发现：\n\n1.  **高度专业化的小众市场:** 该用户关注点极其细分，专注于高保真、专业级的模拟音频设备（开盘机），代表了典型的**利基市场（Niche Market）**买家。\n2.  **高价值评估行为:** 尽管处于浏览阶段，但重复的深度页面互动（visible/hidden事件）表明用户正在进行**积极且认真的评估**，而非随机闲逛。\n3.  **价格不敏感的高端定位:** 用户愿意涉足“Premium”价格区间，表明其驱动力更多来源于对**产品性能、质量和收藏价值**的追求，而非成本效益。\n4.  **店铺依赖性:** 访问活动高度集中于 **Shop 60**，表明该特定店铺可能在该类专业产品领域具有一定的品牌或信誉优势。\n\n**值得关注的趋势:** 在对特定小众高端产品的分析中，重复的页面可见事件是衡量**真实购买意向**的关键指标，应被视为比访问量更重要的转化前信号。"
+    },
+    "total_clusters": 5
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "metadata": {
+    "generation_date": "2026-01-04T16:02:02.286069",
+    "original_cluster_count": 15,
+    "pre_filtered_count": 4,
+    "clusters_after_prefilter": 11,
+    "final_prototype_count": 7,
+    "merged_count": 2,
+    "total_samples": 1908,
+    "optimal_k": 15,
+    "similarity_threshold": 0.98
+  },
+  "intent_prototypes": [
+    {
+      "intent_cluster_id": 0,
+      "cluster_size": 95,
+      "intent_description": {
+        "summary": "此聚类高度聚焦于全身硅胶（Full Body Silicone）的逼真新生儿娃娃，核心需求围绕其收藏价值和高仿真细节展开，区别于单纯的玩耍或母性模拟类需求。用户关注点集中在娃娃的材质、尺寸、以及将其作为可收藏的艺术品或投资的属性。",
+        "full_summary": "此聚类高度聚焦于全身硅胶（Full Body Silicone）的逼真新生儿娃娃，核心需求围绕其收藏价值和高仿真细节展开，区别于单纯的玩耍或母性模拟类需求。用户关注点集中在娃娃的材质、尺寸、以及将其作为可收藏的艺术品或投资的属性。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "仿真",
+          "全身硅胶",
+          "材质",
+          "尺寸",
+          "收藏"
+        ],
+        "user_behavior_patterns": [
+          "收藏价值导向",
+          "细分意图群体"
+        ],
+        "intent_strength": "medium"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "硅胶婴儿娃娃",
+          "收藏级娃娃"
+        ],
+        "key_product_attributes": [
+          "尺寸",
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家"
+        ],
+        "content_strategy": [
+          "突出产品细节和特征的高质量内容",
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": []
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 2,
+      "cluster_size": 64,
+      "intent_description": {
+        "summary": "该聚类用户的核心需求是娃娃本体的逼真度（Reborn/Realistic），但关键的区分点在于他们明确且强烈地搜寻配套的“配件”（Accessories），而非仅仅关注娃娃的尺寸、互动性或特定品牌/名字。这表明他们的购买意图是完成一个完整的“婴儿”体验场景搭建，配件是其购买路径中的明确下一阶段。",
+        "full_summary": "该聚类用户的核心需求是娃娃本体的逼真度（Reborn/Realistic），但关键的区分点在于他们明确且强烈地搜寻配套的“配件”（Accessories），而非仅仅关注娃娃的尺寸、互动性或特定品牌/名字。这表明他们的购买意图是完成一个完整的“婴儿”体验场景搭建，配件是其购买路径中的明确下一阶段。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "配件",
+          "娃娃",
+          "逼真",
+          "尺寸",
+          "婴儿",
+          "互动"
+        ],
+        "user_behavior_patterns": [
+          "互动功能探索行为",
+          "细分意图群体"
+        ],
+        "intent_strength": "medium"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "娃娃配件",
+          "重生婴儿娃娃"
+        ],
+        "key_product_attributes": [
+          "尺寸",
+          "功能"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "对逼真婴儿娃娃感兴趣的消费者"
+        ],
+        "content_strategy": [
+          "展示产品互动功能的视频和图片"
+        ],
+        "conversion_opportunities": [
+          "购买意向明确，可提供快速购买路径"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 3,
+      "cluster_size": 901,
+      "intent_description": {
+        "summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）的“重生娃娃”（Reborn Dolls），且兴趣集中于硅胶材质（Silicone）和婴儿尺寸（Infant/Infant-sized）的特定细分产品。他们的核心需求是极致的真实感和材料的高端化，而不是简单的娃娃收藏或配件采购。",
+        "full_summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）的“重生娃娃”（Reborn Dolls），且兴趣集中于硅胶材质（Silicone）和婴儿尺寸（Infant/Infant-sized）的特定细分产品。他们的核心需求是极致的真实感和材料的高端化，而不是简单的娃娃收藏或配件采购。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "配件",
+          "重生",
+          "材质",
+          "尺寸",
+          "收藏"
+        ],
+        "user_behavior_patterns": [
+          "收藏价值导向",
+          "高流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "娃娃配件",
+          "重生婴儿娃娃",
+          "硅胶婴儿娃娃",
+          "收藏级娃娃"
+        ],
+        "key_product_attributes": [
+          "尺寸",
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家"
+        ],
+        "content_strategy": [
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "merged_from_clusters": [
+        3,
+        6,
+        13,
+        14
+      ],
+      "is_merged": true
+    },
+    {
+      "intent_cluster_id": 4,
+      "cluster_size": 218,
+      "intent_description": {
+        "summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）且采用硅胶（Silicone）材质的婴儿娃娃，其搜索行为高度集中于娃娃的特定物理特性、细节特征（Features）及配件的探究。与其他可能仅关注“娃娃购买”的用户不同，此群体的核心需求在于材料的真实感和功能的细节验证。",
+        "full_summary": "该聚类用户明确聚焦于追求高度逼真（Realistic）且采用硅胶（Silicone）材质的婴儿娃娃，其搜索行为高度集中于娃娃的特定物理特性、细节特征（Features）及配件的探究。与其他可能仅关注“娃娃购买”的用户不同，此群体的核心需求在于材料的真实感和功能的细节验证。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "配件",
+          "硅胶",
+          "娃娃",
+          "材质",
+          "逼真",
+          "婴儿"
+        ],
+        "user_behavior_patterns": [
+          "配件需求明确",
+          "高流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "娃娃配件",
+          "硅胶婴儿娃娃"
+        ],
+        "key_product_attributes": [
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "对逼真婴儿娃娃感兴趣的消费者"
+        ],
+        "content_strategy": [
+          "优化SEO关键词，匹配用户搜索意图",
+          "突出产品细节和特征的高质量内容",
+          "展示产品互动功能的视频和图片"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动",
+          "购买意向明确，可提供快速购买路径"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 5,
+      "cluster_size": 167,
+      "intent_description": {
+        "summary": "该聚类用户专注于高逼真度的硅胶材质婴儿娃娃（Realistic Silicone Baby Dolls），显示出对材料精细度和感官体验的强烈偏好。区分点在于他们对特定尺寸（如12英寸或特定婴儿尺寸）的明确需求，表明目标是寻求精确模拟真实婴儿外观和手感的收藏或陪伴产品，而非泛指的玩偶。",
+        "full_summary": "该聚类用户专注于高逼真度的硅胶材质婴儿娃娃（Realistic Silicone Baby Dolls），显示出对材料精细度和感官体验的强烈偏好。区分点在于他们对特定尺寸（如12英寸或特定婴儿尺寸）的明确需求，表明目标是寻求精确模拟真实婴儿外观和手感的收藏或陪伴产品，而非泛指的玩偶。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "硅胶",
+          "娃娃",
+          "材质",
+          "逼真",
+          "尺寸",
+          "婴儿",
+          "收藏"
+        ],
+        "user_behavior_patterns": [
+          "收藏价值导向",
+          "中等流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "硅胶婴儿娃娃",
+          "收藏级娃娃"
+        ],
+        "key_product_attributes": [
+          "尺寸",
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家"
+        ],
+        "content_strategy": [
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "merged_from_clusters": [
+        5,
+        7
+      ],
+      "is_merged": true
+    },
+    {
+      "intent_cluster_id": 10,
+      "cluster_size": 87,
+      "intent_description": {
+        "summary": "该聚类用户核心关注点在于高阶的仿真互动功能（如心跳机制）以及特定配件的采购，远超对基础逼真度的需求。他们积极搜索带有明确电子或机械特性的娃娃模型，并集中探索这些附加功能带来的沉浸式体验。",
+        "full_summary": "该聚类用户核心关注点在于高阶的仿真互动功能（如心跳机制）以及特定配件的采购，远超对基础逼真度的需求。他们积极搜索带有明确电子或机械特性的娃娃模型，并集中探索这些附加功能带来的沉浸式体验。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "配件",
+          "仿真",
+          "娃娃",
+          "逼真",
+          "心跳",
+          "互动"
+        ],
+        "user_behavior_patterns": [
+          "互动功能探索行为",
+          "细分意图群体"
+        ],
+        "intent_strength": "medium"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "娃娃配件"
+        ],
+        "key_product_attributes": [
+          "功能"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "对逼真婴儿娃娃感兴趣的消费者"
+        ],
+        "content_strategy": [
+          "优化SEO关键词，匹配用户搜索意图",
+          "展示产品互动功能的视频和图片"
+        ],
+        "conversion_opportunities": []
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    },
+    {
+      "intent_cluster_id": 12,
+      "cluster_size": 159,
+      "intent_description": {
+        "summary": "该聚类用户明确聚焦于追求最高拟真度的硅胶（Silicone）材质婴儿娃娃，强调“再造生命（Reborn）”的沉浸式体验。其核心差异点在于对材料（Silicone）和极度逼真度（Realistic/Lifelike）的并重，区别于仅关注基础婴儿娃娃或非硅胶材质的收藏者。",
+        "full_summary": "该聚类用户明确聚焦于追求最高拟真度的硅胶（Silicone）材质婴儿娃娃，强调“再造生命（Reborn）”的沉浸式体验。其核心差异点在于对材料（Silicone）和极度逼真度（Realistic/Lifelike）的并重，区别于仅关注基础婴儿娃娃或非硅胶材质的收藏者。"
+      },
+      "user_intent_characteristics": {
+        "primary_interests": [
+          "硅胶",
+          "娃娃",
+          "材质",
+          "逼真",
+          "婴儿",
+          "收藏"
+        ],
+        "user_behavior_patterns": [
+          "收藏价值导向",
+          "中等流量意图群体"
+        ],
+        "intent_strength": "high"
+      },
+      "product_alignment": {
+        "relevant_tags": [],
+        "product_categories": [
+          "重生婴儿娃娃",
+          "硅胶婴儿娃娃",
+          "收藏级娃娃"
+        ],
+        "key_product_attributes": [
+          "材质"
+        ]
+      },
+      "shop_context": {
+        "shop_ids": [],
+        "shop_types": [],
+        "shop_count": 0
+      },
+      "marketing_insights": {
+        "target_audience": [
+          "收藏家"
+        ],
+        "content_strategy": [
+          "强调收藏价值和限量版特性"
+        ],
+        "conversion_opportunities": [
+          "高流量意图，适合投放广告和促销活动"
+        ]
+      },
+      "long_term_value": {
+        "asset_type": "user_intent_prototype",
+        "update_frequency": "monthly",
+        "applicable_channels": [
+          "search",
+          "recommendation",
+          "personalization",
+          "content_marketing"
+        ],
+        "data_sources": [
+          "user_behavior",
+          "search_queries",
+          "product_interactions"
+        ]
+      },
+      "is_merged": false
+    }
+  ]
+}

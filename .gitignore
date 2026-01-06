@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 数据文件（如果不想提交到git）
+# data/output_embeddings.json
+# data/*.csv
+
+# 结果文件（如果不想提交到git）
+# results/*.json
+# results/*.png
+
+# 临时文件
+*.log
+*.tmp
+

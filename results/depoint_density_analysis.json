@@ -1,0 +1,56 @@
+{
+  "analysis_date": "2025-12-30T18:29:03.315788",
+  "question": "是否因为订单页面埋点更多导致上报行为更多？",
+  "conclusion": "否，不存在埋点密度差异",
+  "key_findings": {
+    "daily_report_frequency": {
+      "order_tracking": 1.05,
+      "product_related": 1.07,
+      "difference": "几乎相同（差异<2%）"
+    },
+    "session_report_frequency": {
+      "order_tracking": 1.0,
+      "other_behaviors": 1.01,
+      "difference": "几乎相同"
+    },
+    "duplicate_reports": {
+      "order_tracking": "0%",
+      "product_related": "0%",
+      "conclusion": "无重复上报"
+    },
+    "time_interval_analysis": {
+      "order_tracking_avg_interval": "2127分钟（约35小时）",
+      "other_behaviors_avg_interval": "995分钟（约16.5小时）",
+      "conclusion": "订单追踪的上报间隔更长，说明不是高频上报"
+    },
+    "short_term_density": {
+      "order_tracking_1min": 1.02,
+      "order_tracking_5min": 1.02,
+      "order_tracking_10min": 1.02,
+      "other_behaviors_1min": 1.03,
+      "other_behaviors_5min": 1.07,
+      "other_behaviors_10min": 1.08,
+      "conclusion": "短时间内上报密度几乎相同"
+    }
+  },
+  "user_behavior_patterns": {
+    "users_with_order_tracking": 226,
+    "users_only_order_tracking": 175,
+    "percentage_only_order_tracking": "77.4%",
+    "users_with_mixed_behaviors": 51,
+    "percentage_mixed": "22.6%",
+    "insight": "77.4%的用户仅查询订单追踪，说明这是他们的主要需求"
+  },
+  "final_conclusion": {
+    "answer": "否，不存在埋点密度差异",
+    "evidence": [
+      "订单追踪每天平均上报1.05次，产品相关1.07次，几乎相同",
+      "Session内上报次数相同（1.00 vs 1.01）",
+      "短时间内上报密度相同（1分钟内都是约1次）",
+      "无重复上报（0%）",
+      "订单追踪的上报间隔更长（35小时 vs 16.5小时），说明不是高频上报",
+      "77.4%的用户仅查询订单追踪，说明这是真实需求"
+    ],
+    "implication": "85.8%的订单追踪相关查询反映了用户的真实需求，而非埋点密度导致的统计偏差。用户确实更关注订单状态查询，而非物流配送细节。"
+  }
+}

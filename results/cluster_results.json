@@ -1,0 +1,797 @@
+{
+  "optimal_k": 15,
+  "k_selection_results": {
+    "k_values": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "inertias": [
+      105.14920943330365,
+      100.15667818009169,
+      95.98942081152977,
+      89.01279823940048,
+      85.06595000046195,
+      81.53392368382443,
+      79.77680932560816,
+      79.6374479390603,
+      78.37686956891353,
+      75.13675340116274,
+      73.88100362705065,
+      72.55498235348088,
+      71.2949025363846,
+      69.90171394730883,
+      69.79486268337236,
+      69.74927627213685,
+      68.5577961608922,
+      68.20469280307195,
+      69.2089263044048
+    ],
+    "silhouette_scores": [
+      0.3341275769230852,
+      0.09240308601004894,
+      0.08830123965489373,
+      0.14779797377112802,
+      0.14151234952027492,
+      0.14410824532756017,
+      0.13223482913486723,
+      0.15928198927629697,
+      0.12130098198906855,
+      0.16758093744673092,
+      0.165912776527264,
+      0.1676858624302339,
+      0.14850811853063267,
+      0.17141668378523597,
+      0.14318010215193183,
+      0.13352516210734464,
+      0.15120958840791057,
+      0.13575043772634635,
+      0.10457757039273925
+    ],
+    "best_k": 15,
+    "inertia_rates": [
+      0.047480444980223434,
+      0.041607383993594274,
+      0.07268116124825383,
+      0.04434023328110027,
+      0.041521035345145105,
+      0.021550715074501754,
+      0.0017468909539745993,
+      0.015828964925035927,
+      0.041340208987319896,
+      0.016712856455315745,
+      0.017948067953482135,
+      0.017367240349633,
+      0.019541208971633892,
+      0.0015285929042744254,
+      0.0006531485195738449,
+      0.017082329379245843,
+      0.0051504479080917145,
+      -0.014723818260312103
+    ]
+  },
+  "cluster_summaries": [
+    {
+      "cluster_id": 0,
+      "size": 95,
+      "top_samples": [
+        {
+          "id": "57e67a4b785ab98707afb6b8de1a54cf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Full body silicone baby dolls\",\n      \"Realistic rebo..."
+        },
+        {
+          "id": "0437021679aff405453d28ae1bc7af75",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic full-body silicone baby dolls\",\n      \"Coll..."
+        },
+        {
+          "id": "5a37aa15c9d011d801ace020522d0517",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Baby doll size..."
+        },
+        {
+          "id": "47d1300d39f5ff2c3bc3ee52084b7ead",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"full silicone ba..."
+        },
+        {
+          "id": "069babd037f6fbcdcf04c4cfa7425794",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "012f1366f0a273fbfa12b55542618b04",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Collectible Do..."
+        },
+        {
+          "id": "0506f7ea2be05b71d98cfd3ff2cf7555",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"full silicone baby doll..."
+        },
+        {
+          "id": "485d20cc6e9bb82483029cda5e147e3f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Vari..."
+        },
+        {
+          "id": "00fa1715196ce4fde5540144dc493677",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "62f1cb44d2f807e5ec0db2521dbf61f5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n此聚类高度聚焦于**全身硅胶**（Full Body Silicone）的**逼真新生儿娃娃**，核心需求围绕其**收藏价值**和**高仿真细节**展开，区别于单纯的玩耍或母性模拟类需求。用户关注点集中在娃娃的材质、尺寸、以及将其作为**可收藏的艺术品或投资**的属性。"
+    },
+    {
+      "cluster_id": 1,
+      "size": 36,
+      "top_samples": [
+        {
+          "id": "57ae65ee71e40993f989f2c4a8478faf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Login/Account Management\",\n      \"Reborn Dolls\",\n    ..."
+        },
+        {
+          "id": "647487190006006ffb238c68dd3cc13a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Re..."
+        },
+        {
+          "id": "58f38535726d9034334aba1753c61d53",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"In..."
+        },
+        {
+          "id": "679e164a07ba49fd4a7f4cf79bb3689e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "04165d1f66a71bb2e09712b974370786",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "58e3e1d2f472029e88aca581bf6d8ca9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"In..."
+        },
+        {
+          "id": "59df55511a9b3c7be632beea3645c9c8",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Account Login/Password Reset\",\n      \"Realistic Silic..."
+        },
+        {
+          "id": "6521f3acec5c336440bc5fa198fa6ea5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant-sized D..."
+        },
+        {
+          "id": "03070f59e9e60a51233aa9c3bed8e11a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Collector Dolls\",\n     ..."
+        },
+        {
+          "id": "637acfa11f2dee6658f3903401e6e8f2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类核心关注点在于**账户管理和登录/密码重置**的特定操作需求，而非单纯的产品浏览或购买意图。其独特性在于用户直接将账户安全与技术支持需求与对逼真硅胶/收藏级重生娃娃的兴趣混合，表明这批用户已处于**高参与度（或已注册）** 阶段，正在处理账户层面的障碍。"
+    },
+    {
+      "cluster_id": 2,
+      "size": 64,
+      "top_samples": [
+        {
+          "id": "643450bc12fd49e0edf78b5620cd9c9d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Interactive Doll..."
+        },
+        {
+          "id": "48164927e5a1d4c0da6046e3e5dfc6d3",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Reborn Dolls\",\n      \"B..."
+        },
+        {
+          "id": "590266971b3e9434f03ef9e32b70dc98",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Doll\",\n      \"Baby Noah Doll\",\n..."
+        },
+        {
+          "id": "5958631f16c7d3ae4437adb9407ff6d4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Reborn Dolls\",\n      \"D..."
+        },
+        {
+          "id": "56e608023626997f50a88bca38229d56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic reborn baby dolls\",\n      \"Infant dolls\",\n ..."
+        },
+        {
+          "id": "5846e9bb75d519a2ced331b53b934407",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Baby Doll..."
+        },
+        {
+          "id": "5860392b1427d3efcb923aa6e1d89b35",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Realistic baby doll featur..."
+        },
+        {
+          "id": "64f934b8f9a70443414f3e111b61d5a9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Infant Dolls\",\n      \"Real..."
+        },
+        {
+          "id": "5b47f98cc10b90b140dbad1a3844f3f7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Baby Doll Accessories\",\n  ..."
+        },
+        {
+          "id": "4894e0b1a7a523e9f1298dd6f3dce397",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"reborn baby dolls with ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户的核心需求是**娃娃本体的逼真度**（Reborn/Realistic），但关键的区分点在于他们明确且强烈地搜寻**配套的“配件”（Accessories）**，而非仅仅关注娃娃的尺寸、互动性或特定品牌/名字。这表明他们的购买意图是完成一个完整的“婴儿”体验场景搭建，配件是其购买路径中的明确下一阶段。"
+    },
+    {
+      "cluster_id": 3,
+      "size": 263,
+      "top_samples": [
+        {
+          "id": "04b3020e6479bf655fdf9cbf2a6f802b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "04f8370f4e4d2c3174da17ff232a27d8",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "04e954e123e053f39765c6f581900729",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "046ff33580a9377409324f8349253a36",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Collectible Dolls\",\n   ..."
+        },
+        {
+          "id": "0058c7de904a40feaa04b5a2a6195fa7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "0546ec7f4f233d07b6a79279c07cd214",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "047df1eec0db45bad72faef801fa61b5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"High-Quality Silicone D..."
+        },
+        {
+          "id": "001eb5e41fc3f56b8fe342c14e93cb6b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Collectible Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "0343d33e8f07bb8891ea4cbfa172b79f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "0159d7b32f1a2730cddec74771fe0a80",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Lifelike Baby Dolls\",\n      \"Silicone Dolls\",\n      \"..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n此聚类专注于追求**高仿真度硅胶娃娃**，其核心驱动力明显偏向于**收藏价值**而非单纯的玩耍需求。用户明确搜索“Collectible Dolls”，表明其关注点在于娃娃的稀有性、工艺水平和长期增值潜力。"
+    },
+    {
+      "cluster_id": 4,
+      "size": 218,
+      "top_samples": [
+        {
+          "id": "583c880cbf83ed63d721bd7d40d45c2d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Silicone Baby Do..."
+        },
+        {
+          "id": "62e8be3b09938cf2af6e5ffe146000a2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "63240dae52264d1ac0c1620ebdf27d2c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "00b9e041e5207e6df8608859c8939b47",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "642ff30beefda249d077e49705c0d378",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "5b113ce0abf5394c60df075eefa4809b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "5ab8c4f7d4cd794ec9bb54adb8212192",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Acce..."
+        },
+        {
+          "id": "56fa022b58153fdd9203bc977ec96f5e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "5b537fbcf5f1a0d7b6582d19f4d230e1",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        },
+        {
+          "id": "64d51ff2bd169c180bd81c5258cbd17a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Features ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户明确聚焦于追求**高度逼真（Realistic）**且采用**硅胶（Silicone）**材质的婴儿娃娃，其搜索行为高度集中于**娃娃的特定物理特性、细节特征（Features）及配件**的探究。与其他可能仅关注“娃娃购买”的用户不同，此群体的核心需求在于材料的真实感和功能的细节验证。"
+    },
+    {
+      "cluster_id": 5,
+      "size": 119,
+      "top_samples": [
+        {
+          "id": "46b2fab9fc3ea82ac30f8ecc1f751b65",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Silicone Baby Dolls\",\n      \"Realistic Baby Dolls\",\n ..."
+        },
+        {
+          "id": "0171eea645ea01fd7c5b64ca4a7151dd",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Newborn Doll\",\n..."
+        },
+        {
+          "id": "4751d4b3ae8667548cbf55c35a772d91",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Reborn dolls\",\n      \"D..."
+        },
+        {
+          "id": "670fe24c8adc4fe740e634ec30836b1f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Reborn dolls\",..."
+        },
+        {
+          "id": "63c303510685ca1bec69a487f13fe43a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Dolls\",..."
+        },
+        {
+          "id": "4847a6b0d4a96f5aa3eff13668f2ceda",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Size..."
+        },
+        {
+          "id": "67a00c1c94049e2f4d0e292836b5a7ef",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "636554ec896c914f7332e3de82d91d22",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Infant Girl Dol..."
+        },
+        {
+          "id": "62fa6460140eeb7dde66e4711c18119c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Product Detail..."
+        },
+        {
+          "id": "49a261a8024631e450c91e7e2f68766a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Doll Ac..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户群体集中于寻找**高度逼真的硅胶（Silicone）重生娃娃（Reborn Dolls）**，并且对娃娃的**尺寸（Size）和配件（Accessories）**等具体产品细节表现出明确的偏好。其核心驱动力在于追求极致的真实触感和外观，区别于只关注一般逼真度或特定年龄段的客户。"
+    },
+    {
+      "cluster_id": 6,
+      "size": 219,
+      "top_samples": [
+        {
+          "id": "669e8ab4fc31451bd6a3293d3076f3e7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "46d066565456ed9766100e165f7b4696",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "488ac59eb312f7c9d32e1dad310ccd1a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "474ed4c96fcb70e7107cf00840847f09",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Silicone Dolls\",..."
+        },
+        {
+          "id": "57ef5078560557070d023094289d41a5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "58637b9b4b6dbcf63c1d090663f10e9a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant dolls\",..."
+        },
+        {
+          "id": "470624320c20ef3b166698ef7172315c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"reborn baby dolls\",\n      \"silicone dolls\",\n      \"re..."
+        },
+        {
+          "id": "66f8524ee0f9311232029995af35afb6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"reborn dolls\",..."
+        },
+        {
+          "id": "47088d7bb6e5dab9d0547b56c652e4e5",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "46c77c8bcbe5ad6144f651f9b2dfbc8c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"silicone baby do..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户明确聚焦于**“硅胶材质”（Silicone）**和**“超写实重生娃娃”（Reborn）**这两种高度专业化的娃娃类型，显示出对极致真实感和特定工艺材料的偏好。其核心区别在于对“Reborn”和“Silicone”属性的**双重、强烈的、且高度一致的**绑定需求，而非仅仅是寻找一般的“逼真娃娃”。"
+    },
+    {
+      "cluster_id": 7,
+      "size": 48,
+      "top_samples": [
+        {
+          "id": "63971043575cd908abc9061af7ebeab7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Reborn baby do..."
+        },
+        {
+          "id": "0413ba95fb6175c9f43e844a2f55296f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "58f405548767158570a8bec9c7f77265",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "4843084bb0678eef38613b69f0212311",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "479f9f58cad1a99be08c145b09167f1e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Infant-sized d..."
+        },
+        {
+          "id": "03339dc86650a144f1f5599159ea5814",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "5b4deb43f1d7cac8ee6cf8751d73938d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "0547917698684f25e88b5e05299c2db4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "66b60aef984d93f745acde4fe3568489",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Reborn Dolls\",..."
+        },
+        {
+          "id": "63666f5d6926523ccc20d0bbb785992d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Sizes (12..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户专注于**高逼真度的硅胶材质婴儿娃娃（Realistic Silicone Baby Dolls）**，显示出对材料精细度和感官体验的强烈偏好。区分点在于他们对**特定尺寸（如12英寸或特定婴儿尺寸）**的明确需求，表明目标是寻求精确模拟真实婴儿外观和手感的收藏或陪伴产品，而非泛指的玩偶。"
+    },
+    {
+      "cluster_id": 8,
+      "size": 25,
+      "top_samples": [
+        {
+          "id": "5a010b2f2ec2b455c803929ce878ba00",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Package Status\",\n      \"Order..."
+        },
+        {
+          "id": "5771f48366893e1ce45c59ee36cd61cd",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Management\",\n      \"Account Access\"\n    ],\n    ..."
+        },
+        {
+          "id": "66171127c5e5b3ff71ec10d20ef2de19",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order status\",\n      \"payment pending\",\n      \"shippi..."
+        },
+        {
+          "id": "483f622cb80a1679cce5d97f1851fe22",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"tracking info\",\n      \"order details\"\n    ],\n    \"pro..."
+        },
+        {
+          "id": "6771bdf4117f2e1a1bcc88cf748ab313",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order tracking and delivery status\",\n      \"Order det..."
+        },
+        {
+          "id": "648240cfa61c1ec1ce2a70a30dd52d2d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order history\",\n      \"Shipping status\",\n      \"Payme..."
+        },
+        {
+          "id": "5b3eabf58fa1b89d233966efe8e2a364",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\",\n      \"Produ..."
+        },
+        {
+          "id": "64233e76946a775f6529e91503dd45a1",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order details\",\n      \"Delivery confirmation\"\n    ],\n..."
+        },
+        {
+          "id": "029c37d29796ad87d9b172e20e598b7f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Management\",\n      \"Past Purchases\"\n    ],\n    ..."
+        },
+        {
+          "id": "66a67bf3b0d1ab1c6ecb8256a1312a7e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Account Management\",\n      \"Login\",\n      \"Registrati..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户专注于**既有订单的生命周期管理**，核心关注点集中在追踪（Tracking）、配送状态（Delivery status）和已完成的或待处理的支付状态（Payment pending）。他们的意图高度聚焦于**“我的订单现在在哪里”**以及**“我的账户访问/历史记录”**，而非产品探索或退换货等售后纠纷。"
+    },
+    {
+      "cluster_id": 9,
+      "size": 40,
+      "top_samples": [
+        {
+          "id": "62aa697f5431ee9873682bf6174ec684",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order tracking\",\n      \"realistic baby dolls\",\n      ..."
+        },
+        {
+          "id": "63cc19e5e5e32df580511ed1d4a05cad",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Re..."
+        },
+        {
+          "id": "669fa8ce1270886e0c9bfeb96f847900",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Dolls\",\n      \"Baby Dolls\",\n      ..."
+        },
+        {
+          "id": "02edc69ea69c83f4f72039166a074d44",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Dolls\",\n      \"Realistic Baby Dolls\",\n      \"C..."
+        },
+        {
+          "id": "0399a54ce2a8ec7b9d3ad42c8c92774b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Realistic Baby Doll\",\n     ..."
+        },
+        {
+          "id": "474992787ead9fa5a19b514180c77008",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"order details\",\n      \"shipping status\",\n      \"reali..."
+        },
+        {
+          "id": "657ded1117c950392860de436eb5ec91",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Silicone dolls\",\n      \"Re..."
+        },
+        {
+          "id": "5a203cf1d5fcace1745fd7fdca660c56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Status\",\n      \"Shipping Information\",\n      \"P..."
+        },
+        {
+          "id": "597409dc973342e86d90e6218b56a180",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Product Details\",\n      \"Rebo..."
+        },
+        {
+          "id": "0635130696f66dd56cfd1a3e18801010",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\",\n      \"Reali..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户核心关注点在于**订单状态的即时追踪和物流细节查询**，特别是对“Order Tracking”和“Shipping Status”的明确需求占据主导。虽然部分用户间接提及了“Reborn Dolls”等产品，但其**操作意图明确指向售后和已购产品的管理**，而非初始的产品比较或购买决策，从而将此聚类与纯粹的产品探索型聚类区分开。"
+    },
+    {
+      "cluster_id": 10,
+      "size": 87,
+      "top_samples": [
+        {
+          "id": "010af845f43f538ffa4b605c244bbd1b",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "043e4c619457d7a7c715657b779e8030",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Doll Accessories\",\n      \"D..."
+        },
+        {
+          "id": "671ca4e2fa9c5acd886a26186e57118d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll\",\n      \"Doll features (heartbeat, c..."
+        },
+        {
+          "id": "655f1300d93429e2ff36e72ab8e79f61",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Realistic baby dolls\",\n   ..."
+        },
+        {
+          "id": "47b4c51f0d9a15ee4cdd5768eab53bb7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll 'Sunny'\",\n      \"Doll features (hear..."
+        },
+        {
+          "id": "56e981bc99b5a3c465be1622513dbb5c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Interactive doll features ..."
+        },
+        {
+          "id": "5afa1938e234feb480bd023aa4a66168",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Doll Features (Heartbeat, ..."
+        },
+        {
+          "id": "65f934fd4ee573c8a69af19c9a352488",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Doll Features (Heartbeat, ..."
+        },
+        {
+          "id": "63f44edad429cea4a34e944059eed254",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby dolls\",\n      \"Doll features (heartbeat, ..."
+        },
+        {
+          "id": "66223d7ed0297e3e2d9f4210f2a69891",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn baby doll 'Sunny'\",\n      \"Doll features (hear..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户核心关注点在于**高阶的仿真互动功能**（如心跳机制）以及**特定配件的采购**，远超对基础逼真度的需求。他们积极搜索带有明确电子或机械特性的娃娃模型，并集中探索这些附加功能带来的沉浸式体验。"
+    },
+    {
+      "cluster_id": 11,
+      "size": 116,
+      "top_samples": [
+        {
+          "id": "5b1ac31218af4907c7c907f331c948fe",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Past Purchases\"\n    ],\n    \"p..."
+        },
+        {
+          "id": "654530e9da8a37d762dd01fc8402692c",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Status\",\n      \"Product Details\"\n    ],\n    \"pr..."
+        },
+        {
+          "id": "64e95092b25f827d6221dcb21217fc56",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Product Detail..."
+        },
+        {
+          "id": "5715f5ef6f33c5e76bc70c49e743fdb4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Doll\",\n      \"Product Details..."
+        },
+        {
+          "id": "58d603efd4f8641b5c0f4c46e8e0005a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Product Details\"\n    ],\n    \"..."
+        },
+        {
+          "id": "64b3c9d01f49ab598b92f321df2c344f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking Information\",\n      \"Realistic Silicon..."
+        },
+        {
+          "id": "5a41cecbec96353c0c097f4de497cf34",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order Tracking\",\n      \"Realistic Silicone Baby Dolls..."
+        },
+        {
+          "id": "5a477b6c769877d83d46e475804a88c7",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Baby Doll Feat..."
+        },
+        {
+          "id": "57895ee80cafa8e4fed381f687e942e3",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Order details\",\n      \"Tracking information\"\n    ],\n ..."
+        },
+        {
+          "id": "47d64fc8630c5e8eaf19ea245355e4b2",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Dolls\",\n      \"Silicone Baby Dolls\",\n      \"Re..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类核心关注点是**交易生命周期管理**，用户集中查询**订单的实时状态和历史购买记录**，而非产品本身的特性或功能。其独特性在于对“Order Tracking”和“Past Purchases”的持续、高频关注，表明用户处于**购买后跟进阶段**，而非浏览或决策阶段。"
+    },
+    {
+      "cluster_id": 12,
+      "size": 159,
+      "top_samples": [
+        {
+          "id": "4971b17f8ead63f8d65ef21c6d8e229a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic reborn baby dolls\",\n      \"Silicone baby do..."
+        },
+        {
+          "id": "46d835e044982cb262a7f46cf1c9e6e4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "485c6918be5acb9980882f26eab99907",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "49316ce050b6ff52c5add2dd4f9738e0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Infant dolls\",..."
+        },
+        {
+          "id": "56dc74d1708075b76cbc34f19115bb0f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"reborn dolls\",..."
+        },
+        {
+          "id": "58eb3ff04dcadd15470f96cb307ffed0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "5983f4a5b2fd8d0bd77594268e6366c4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant girl do..."
+        },
+        {
+          "id": "5a2977e889d56d2bf7be58fa3a378380",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic silicone baby dolls\",\n      \"Baby doll vari..."
+        },
+        {
+          "id": "662e84b09aa75385033836305fe9c70f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Silicone baby dolls\",\n      \"Reborn dolls\",\n      \"Ba..."
+        },
+        {
+          "id": "04e71b07a5a267e9a15f8ea364b7f598",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Lifelike Baby Dolls\",\n      \"Silicone Dolls\",\n      \"..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户明确聚焦于追求最高拟真度的**硅胶（Silicone）材质**婴儿娃娃，强调“再造生命（Reborn）”的沉浸式体验。其核心差异点在于对**材料（Silicone）**和**极度逼真度（Realistic/Lifelike）**的并重，区别于仅关注基础婴儿娃娃或非硅胶材质的收藏者。"
+    },
+    {
+      "cluster_id": 13,
+      "size": 130,
+      "top_samples": [
+        {
+          "id": "0518f114794961f50c863d0bfe05e88d",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Li..."
+        },
+        {
+          "id": "5779cb2a56cc2b89911acb0603d44221",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Dolls\",\n ..."
+        },
+        {
+          "id": "491e9cfe84732bc3cd1914576365bca6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic reborn baby dolls\",\n      \"infant dolls\",\n ..."
+        },
+        {
+          "id": "6585b4b23640e0a33d1b6223fde997f6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        },
+        {
+          "id": "47f3429e5a457b31255c64d8b9c73578",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant-sized Dol..."
+        },
+        {
+          "id": "024ac52785f0760e900a1feb5fff018a",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Doll Accessori..."
+        },
+        {
+          "id": "00ad3875dd69a0e7b8b9cd0600e70945",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Doll\",\n      \"Realistic Baby Doll\",\n     ..."
+        },
+        {
+          "id": "4898e871fb3229652c5cd05e8e8eb4ad",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Reborn Baby Dolls\",\n      \"Infant Dolls\",\n ..."
+        },
+        {
+          "id": "05a5a471990b19a17d3995c77382002f",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Silicone Dolls\",\n      \"Li..."
+        },
+        {
+          "id": "0272d2f7d54343e5d72877ce2ad5df34",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Reborn Baby Dolls\",\n      \"Realistic Baby Dolls\",\n   ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n该聚类用户明确聚焦于追求**高度逼真（Realistic）的“重生娃娃”（Reborn Dolls）**，且兴趣集中于**硅胶材质（Silicone）**和**婴儿尺寸（Infant/Infant-sized）**的特定细分产品。他们的核心需求是**极致的真实感和材料的高端化**，而不是简单的娃娃收藏或配件采购。"
+    },
+    {
+      "cluster_id": 14,
+      "size": 289,
+      "top_samples": [
+        {
+          "id": "48b63b5a2993f0deb26fa42c15e95ee0",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "62f169984bc2f59bd0d2c682cdced681",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone dolls\",\n      ..."
+        },
+        {
+          "id": "46dfc7081fedfd972bed4e59fa15b3c6",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "486eda254cf7aaf20347fbe258715bf9",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic baby dolls\",\n      \"silicone baby dolls\",\n ..."
+        },
+        {
+          "id": "46cb3a72d79fd5cf3b2f6e611488ffe4",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"infant dolls\",..."
+        },
+        {
+          "id": "661b5e3bb37f9167d61a468fc7ae57ae",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"realistic silicone baby dolls\",\n      \"baby doll acce..."
+        },
+        {
+          "id": "66d910040eca5b1dc288d5b7e2dc46cf",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Silicone Baby Dolls\",\n      \"Infant Dolls\",..."
+        },
+        {
+          "id": "578cce64e6405e7332cc17ddfd1c3231",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Silicone dolls\",\n      ..."
+        },
+        {
+          "id": "58764eec05fb1e0a7ef9db1236f22c86",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic Baby Dolls\",\n      \"Silicone Dolls\",\n      ..."
+        },
+        {
+          "id": "630dd6455e795d5ad63ea7d9196b099e",
+          "output_preview": "{\n  \"intent\": {\n    \"core_interests\": [\n      \"Realistic baby dolls\",\n      \"Full silicone dolls\",\n ..."
+        }
+      ],
+      "summary": "**聚类摘要：**\n\n该聚类用户高度专注于**全硅胶材质**的**超写实婴儿娃娃**，追求极致的触感和外观模拟。他们的核心需求紧密围绕“硅胶”（Silicone）这一特定材料属性，与其他可能关注布料、乙烯基或其他材质的买家形成鲜明区分。"
+    }
+  ],
+  "total_samples": 1908
+}
