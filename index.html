@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可视化Dashboard导航 - 聚类分析结果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .header {
+            margin-bottom: 100px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #1a1a1a;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .search-box {
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 0;
+            border: none;
+            border-bottom: 2px solid #e5e5e5;
+            font-size: 1.1rem;
+            background: transparent;
+            color: #1a1a1a;
+            transition: border-color 0.3s;
+            font-weight: 300;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .search-box input::placeholder {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .stat-item {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .stat-item .number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .category-section {
+            margin-bottom: 100px;
+        }
+
+        .category-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin-bottom: 48px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background: #1a1a1a;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 24px;
+        }
+
+        .dashboard-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 48px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #1a1a1a;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dashboard-card:hover {
+            border-color: #1a1a1a;
+            transform: translateX(4px);
+        }
+
+        .dashboard-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .dashboard-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .dashboard-card .icon {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .dashboard-card .description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .dashboard-card .meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .dashboard-card .actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #1a1a1a;
+            background: transparent;
+            font-size: 0.875rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: #1a1a1a;
+            display: inline-block;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: #ffffff;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .btn-primary::before {
+            background: #333;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 120px 20px;
+            color: #999;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* 移除所有装饰性元素 */
+        .dashboard-card::before {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+                padding-bottom: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 24px;
+                margin-bottom: 40px;
+            }
+
+            .category-section {
+                margin-bottom: 60px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <p>Visualization and analysis results</p>
+        </div>
+        <link rel="stylesheet" href="results/visualizations/minimal_style.css">
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search">
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="number" id="totalDashboards">0</span>
+                <span>Dashboards</span>
+            </div>
+            <div class="stat-item">
+                <span class="number" id="totalCategories">0</span>
+                <span>Categories</span>
+            </div>
+        </div>
+
+        <div id="dashboardContainer"></div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            未找到匹配的Dashboard
+        </div>
+    </div>
+
+    <script>
+        // Dashboard数据配置
+        const dashboards = [
+            {
+                name: "聚类分析可视化",
+                file: "cluster_analysis_visualization.html",
+                category: "聚类分析",
+                icon: "🎯",
+                description: "展示所有时间范围的聚类分析结果，包括聚类统计、用户特征分布、购买阶段分析等",
+                tags: ["聚类", "统计分析", "时间范围"],
+                type: "clustering"
+            },
+            {
+                name: "Cluster-Specific Dashboard (增强版)",
+                file: "cluster_specific_dashboard_enhanced.html",
+                category: "聚类分析",
+                icon: "🔍",
+                description: "10-60s核心用户深度分析，突出每个聚类的独特特征和针对性洞察，降低重合度",
+                tags: ["聚类", "核心用户", "差异化", "增强版"],
+                type: "clustering"
+            },
+            {
+                name: "Cluster-Specific Dashboard",
+                file: "cluster_specific_dashboard.html",
+                category: "聚类分析",
+                icon: "📈",
+                description: "聚类特定分析Dashboard，展示每个聚类的独特特征",
+                tags: ["聚类", "特定分析"],
+                type: "clustering"
+            },
+            {
+                name: "5秒跳出用户分析Dashboard",
+                file: "bounce_user_dashboard.html",
+                category: "用户行为分析",
+                icon: "⚡",
+                description: "分析5秒内跳出用户的行为特征，包括用户画像、跳出原因、购买意图、产品匹配度等",
+                tags: ["跳出用户", "行为分析", "5秒"],
+                type: "behavior"
+            },
+            {
+                name: "10-60s核心用户对比Dashboard",
+                file: "core_users_comparison_dashboard.html",
+                category: "用户行为分析",
+                icon: "👥",
+                description: "对比10-60s核心用户与其他用户的特征差异，识别高价值用户群体",
+                tags: ["核心用户", "对比分析", "10-60s"],
+                type: "behavior"
+            },
+            {
+                name: "核心用户深度分析Dashboard",
+                file: "core_users_deep_analysis_dashboard.html",
+                category: "用户行为分析",
+                icon: "💎",
+                description: "核心用户的深度分析，包括转化潜力、ROI估算、竞争优势等",
+                tags: ["核心用户", "深度分析", "ROI"],
+                type: "behavior"
+            },
+            {
+                name: "时间范围对比可视化",
+                file: "time_range_comparison_visualization.html",
+                category: "对比分析",
+                icon: "📊",
+                description: "对比不同时间范围用户的聚类特征，分析用户行为演变趋势",
+                tags: ["时间范围", "对比", "趋势"],
+                type: "comparison"
+            },
+            {
+                name: "个性化推荐挂件演示",
+                file: "personalized_widget_demo.html",
+                category: "产品功能",
+                icon: "🎨",
+                description: "基于聚类分析的个性化推荐挂件演示，展示意图识别驱动的智能推送",
+                tags: ["个性化", "推荐", "挂件", "意图识别"],
+                type: "product"
+            }
+        ];
+
+        // 渲染Dashboard卡片
+        function renderDashboards(filteredDashboards = dashboards) {
+            const container = document.getElementById('dashboardContainer');
+            const noResults = document.getElementById('noResults');
+            
+            if (filteredDashboards.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            
+            // 按分类分组
+            const categories = {};
+            filteredDashboards.forEach(dashboard => {
+                if (!categories[dashboard.category]) {
+                    categories[dashboard.category] = [];
+                }
+                categories[dashboard.category].push(dashboard);
+            });
+
+            let html = '';
+            Object.keys(categories).sort().forEach(category => {
+            html += `<div class="category-section">`;
+            html += `<div class="category-title">${category}</div>`;
+            html += `<div class="dashboard-grid">`;
+                
+                categories[category].forEach(dashboard => {
+                    html += `
+                        <div class="dashboard-card" onclick="openDashboard('${dashboard.file}')">
+                            <h3>
+                                <span class="icon">${dashboard.icon}</span>
+                                ${dashboard.name}
+                            </h3>
+                            <div class="description">${dashboard.description}</div>
+                            <div class="meta">
+                                <span>${dashboard.category}</span>
+                                <span>${dashboard.tags.join(' · ')}</span>
+                            </div>
+                            <div class="actions">
+                                <a href="${dashboard.file}" target="_blank" class="btn btn-primary" onclick="event.stopPropagation()">
+                                    Open
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `</div></div>`;
+            });
+
+            container.innerHTML = html;
+            
+            // 更新统计
+            document.getElementById('totalDashboards').textContent = filteredDashboards.length;
+            document.getElementById('totalCategories').textContent = Object.keys(categories).length;
+        }
+
+        // 打开Dashboard
+        function openDashboard(file) {
+            window.open(file, '_blank');
+        }
+
+        // 在新标签页打开
+        function openInNewTab(file) {
+            window.open(file, '_blank');
+        }
+
+        // 搜索功能
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                renderDashboards();
+                return;
+            }
+
+            const filtered = dashboards.filter(dashboard => {
+                const searchableText = [
+                    dashboard.name,
+                    dashboard.description,
+                    dashboard.category,
+                    ...dashboard.tags
+                ].join(' ').toLowerCase();
+                
+                return searchableText.includes(searchTerm);
+            });
+
+            renderDashboards(filtered);
+        });
+
+        // 初始化
+        renderDashboards();
+    </script>
+</body>
+</html>
+
