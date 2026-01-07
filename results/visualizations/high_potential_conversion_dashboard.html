@@ -401,11 +401,23 @@
         let high = [];
         if (users.length) {
           const sortedAll = [...users].sort((a,b) => b._score - a._score);
-          const topN = Math.max(20, Math.ceil(users.length * 0.2)); // 至少20或前20%
-          const cutoff = sortedAll[Math.min(sortedAll.length - 1, topN - 1)]._score;
-          const hardMin = 55; // 不要太低
+          // 调试：输出前几个用户的分数
+          console.log('[HighPotential] Top 5 scores:', sortedAll.slice(0, 5).map(u => ({ 
+            id: u.id, 
+            score: u._score, 
+            stage: u.stageRaw, 
+            eng: u.engagement, 
+            intent: u.intentStrength,
+            interests: u.interests?.length || 0,
+            attrs: u.attrs?.length || 0
+          })));
+          // 使用前30%或至少前5个，降低硬性最小值
+          const topN = Math.max(5, Math.ceil(users.length * 0.3));
+          const cutoff = sortedAll[Math.min(sortedAll.length - 1, topN - 1)]?._score || 0;
+          const hardMin = 40; // 降低阈值，让更多用户能被识别
           const threshold = Math.max(hardMin, cutoff);
           high = users.filter(u => u._score >= threshold).sort((a,b) => b._score - a._score);
+          console.log('[HighPotential] Threshold:', threshold, 'High potential count:', high.length, 'out of', users.length);
         } else {
           showNotice('已加载数据源，但未解析到用户记录，请稍后刷新或提供数据样例以适配解析规则。');
         }
