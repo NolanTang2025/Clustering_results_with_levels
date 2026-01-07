@@ -114,11 +114,19 @@
     // 尝试加载多份可能存在的数据文件，择优合并
     const dataSources = [
       // 深度分析（browser_session）
+      // GitHub Pages 常见结构（results/visualizations -> ../results/deep_analysis）
       '../results/deep_analysis/browser_session_deep_analysis.json',
+      // 本仓库当前结构（results/visualizations -> ../results/results/deep_analysis）
+      '../results/results/deep_analysis/browser_session_deep_analysis.json',
       // 通用核心用户深度分析
+      // GitHub Pages 常见结构
       '../analysis/core_users_deep_analysis.json',
       '../analysis/core_users_deep_analysis_full.json',
-      '../analysis/core_users_10_60s_analysis.json'
+      '../analysis/core_users_10_60s_analysis.json',
+      // 本仓库当前结构（results/visualizations -> ../results/analysis）
+      '../results/analysis/core_users_deep_analysis.json',
+      '../results/analysis/core_users_deep_analysis_full.json',
+      '../results/analysis/core_users_10_60s_analysis.json'
     ];
 
     function safeGet(obj, paths, fallback = undefined) {
@@ -139,16 +147,28 @@
       return fallback;
     }
 
+    function showNotice(message) {
+      const wrap = document.createElement('div');
+      wrap.style.margin = '16px 0';
+      wrap.style.padding = '12px 14px';
+      wrap.style.border = '1px solid #e5e5e5';
+      wrap.style.background = '#fffef4';
+      wrap.style.color = '#6b5f00';
+      wrap.style.fontSize = '14px';
+      wrap.textContent = message;
+      document.querySelector('.container')?.prepend(wrap);
+    }
+
     async function loadAllData() {
       const results = [];
       for (const url of dataSources) {
         try {
-          const res = await fetch(url);
+          const res = await fetch(url, { cache: 'no-store' });
           if (!res.ok) continue;
           const json = await res.json();
           results.push({ url, json });
         } catch (e) {
-          // ignore
+          console.warn('[HighPotential] fetch error:', url, e);
         }
       }
       return results;
@@ -288,6 +308,10 @@
         else if (s.includes('brows') || s.includes('explor')) counter.browsing++;
         else counter.other++;
       });
+      if (!window.Chart) {
+        console.warn('[HighPotential] Chart.js not loaded, skip charts.');
+        return null;
+      }
       return new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -309,6 +333,9 @@
         freq.set(k, (freq.get(k) || 0) + 1);
       }));
       const sorted = Array.from(freq.entries()).sort((a,b) => b[1]-a[1]).slice(0, 10);
+      if (!window.Chart) {
+        return null;
+      }
       return new Chart(ctx, {
         type: 'bar',
         data: {
@@ -348,41 +375,51 @@
     }
 
     (async () => {
-      const sources = await loadAllData();
-      let users = [];
-      sources.forEach(src => {
-        users = users.concat(normalizeUsersFromSource(src));
-      });
-      // 去重（按 session/id）
-      const seen = new Set();
-      users = users.filter(u => {
-        const key = u.session || u.id;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-      // 打分
-      users.forEach(u => u._score = computePotentialScore(u));
-      // 自适应阈值：保证有数据可视化
-      let high = [];
-      if (users.length) {
-        const sortedAll = [...users].sort((a,b) => b._score - a._score);
-        const topN = Math.max(20, Math.ceil(users.length * 0.2)); // 至少20或前20%
-        const cutoff = sortedAll[Math.min(sortedAll.length - 1, topN - 1)]._score;
-        const hardMin = 55; // 不要太低
-        const threshold = Math.max(hardMin, cutoff);
-        high = users.filter(u => u._score >= threshold).sort((a,b) => b._score - a._score);
-      }
+      try {
+        const sources = await loadAllData();
+        if (!sources.length) {
+          showNotice('未能加载到任何数据源，请通过本地服务器打开页面或稍后再试。');
+        }
+        let users = [];
+        sources.forEach(src => {
+          users = users.concat(normalizeUsersFromSource(src));
+        });
+        // 去重（按 session/id）
+        const seen = new Set();
+        users = users.filter(u => {
+          const key = u.session || u.id;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        // 打分
+        users.forEach(u => u._score = computePotentialScore(u));
+        // 自适应阈值：保证有数据可视化
+        let high = [];
+        if (users.length) {
+          const sortedAll = [...users].sort((a,b) => b._score - a._score);
+          const topN = Math.max(20, Math.ceil(users.length * 0.2)); // 至少20或前20%
+          const cutoff = sortedAll[Math.min(sortedAll.length - 1, topN - 1)]._score;
+          const hardMin = 55; // 不要太低
+          const threshold = Math.max(hardMin, cutoff);
+          high = users.filter(u => u._score >= threshold).sort((a,b) => b._score - a._score);
+        } else {
+          showNotice('已加载数据源，但未解析到用户记录，请稍后刷新或提供数据样例以适配解析规则。');
+        }
 
-      renderKPIs(users, high);
-      const stageCtx = document.getElementById('stageChart');
-      const attrCtx = document.getElementById('attrChart');
-      renderStageChart(stageCtx, high);
-      renderAttrChart(attrCtx, high);
-      renderTable(document.querySelector('#usersTable tbody'), high);
-      // 调试日志
-      console.log('[HighPotential] sources=', sources.map(s => s.url));
-      console.log('[HighPotential] users.total=', users.length, ' high.total=', high.length);
+        renderKPIs(users, high);
+        const stageCtx = document.getElementById('stageChart');
+        const attrCtx = document.getElementById('attrChart');
+        renderStageChart(stageCtx, high);
+        renderAttrChart(attrCtx, high);
+        renderTable(document.querySelector('#usersTable tbody'), high);
+        // 调试日志
+        console.log('[HighPotential] sources=', sources.map(s => s.url));
+        console.log('[HighPotential] users.total=', users.length, ' high.total=', high.length);
+      } catch (err) {
+        console.error('[HighPotential] fatal error:', err);
+        showNotice('页面脚本执行出错，请打开控制台查看错误信息。');
+      }
     })();
   </script>
 </body>
