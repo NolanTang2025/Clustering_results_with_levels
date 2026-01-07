@@ -310,17 +310,29 @@
     }
 
     function renderStageChart(ctx, high) {
+      if (!high || high.length === 0) {
+        console.warn('[HighPotential] No high-potential users for stage chart');
+        return null;
+      }
       const counter = { browsing: 0, comparing: 0, deciding: 0, other: 0 };
       high.forEach(u => {
-        const s = u.stageRaw;
+        const s = (u.stageRaw || '').toString().toLowerCase();
         if (s.includes('decid')) counter.deciding++;
         else if (s.includes('compar') || s.includes('evalu')) counter.comparing++;
         else if (s.includes('brows') || s.includes('explor')) counter.browsing++;
         else counter.other++;
       });
+      console.log('[HighPotential] Stage distribution:', counter);
       if (!window.Chart) {
         console.warn('[HighPotential] Chart.js not loaded, skip charts.');
         return null;
+      }
+      // 如果所有数据都是0，显示提示
+      const total = counter.deciding + counter.comparing + counter.browsing + counter.other;
+      if (total === 0) {
+        console.warn('[HighPotential] All stage counts are 0, check stageRaw field');
+        // 显示示例数据以便调试
+        console.log('[HighPotential] Sample user stages:', high.slice(0, 3).map(u => ({ id: u.id, stageRaw: u.stageRaw, raw: u.raw })));
       }
       return new Chart(ctx, {
         type: 'doughnut',
@@ -336,15 +348,42 @@
     }
 
     function renderAttrChart(ctx, high) {
+      if (!high || high.length === 0) {
+        console.warn('[HighPotential] No high-potential users for attr chart');
+        return null;
+      }
       const freq = new Map();
-      high.forEach(u => (u.attrs || []).forEach(a => {
-        const k = String(a).trim().toLowerCase();
-        if (!k) return;
-        freq.set(k, (freq.get(k) || 0) + 1);
-      }));
+      high.forEach(u => {
+        const attrs = u.attrs || [];
+        if (!Array.isArray(attrs)) {
+          // 如果不是数组，尝试转换
+          const str = String(attrs || '');
+          if (str) {
+            str.split(/[,，;；]/).forEach(a => {
+              const k = a.trim().toLowerCase();
+              if (k) freq.set(k, (freq.get(k) || 0) + 1);
+            });
+          }
+        } else {
+          attrs.forEach(a => {
+            const k = String(a).trim().toLowerCase();
+            if (!k) return;
+            freq.set(k, (freq.get(k) || 0) + 1);
+          });
+        }
+      });
       const sorted = Array.from(freq.entries()).sort((a,b) => b[1]-a[1]).slice(0, 10);
+      console.log('[HighPotential] Top attributes:', sorted);
+      if (sorted.length === 0) {
+        console.warn('[HighPotential] No attributes found, check attrs field');
+        console.log('[HighPotential] Sample user attrs:', high.slice(0, 3).map(u => ({ id: u.id, attrs: u.attrs, raw: u.raw })));
+      }
       if (!window.Chart) {
         return null;
+      }
+      // 如果没有数据，至少显示一个空图表
+      if (sorted.length === 0) {
+        sorted.push(['No data', 0]);
       }
       return new Chart(ctx, {
         type: 'bar',
