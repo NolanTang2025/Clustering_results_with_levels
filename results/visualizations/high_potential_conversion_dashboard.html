@@ -417,6 +417,12 @@
           const hardMin = 40; // 降低阈值，让更多用户能被识别
           const threshold = Math.max(hardMin, cutoff);
           high = users.filter(u => u._score >= threshold).sort((a,b) => b._score - a._score);
+          // 若仍为空，兜底：取前N个
+          if (!high.length) {
+            const fallbackN = Math.min(20, sortedAll.length);
+            high = sortedAll.slice(0, fallbackN);
+            console.warn('[HighPotential] No users above threshold, fallback to top', fallbackN);
+          }
           console.log('[HighPotential] Threshold:', threshold, 'High potential count:', high.length, 'out of', users.length);
         } else {
           showNotice('已加载数据源，但未解析到用户记录，请稍后刷新或提供数据样例以适配解析规则。');
