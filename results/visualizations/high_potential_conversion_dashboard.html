@@ -154,6 +154,26 @@
       return results;
     }
 
+    // 递归从对象中提取“看起来像用户数组”的候选数组
+    function deepExtractArrays(node, depth = 0, prefix = '') {
+      const out = [];
+      if (!node || typeof node !== 'object' || depth > 4) return out;
+      if (Array.isArray(node)) {
+        if (node.length && typeof node[0] === 'object') {
+          out.push(node);
+        }
+        // 若是数组，继续查看前几个元素
+        node.slice(0, 3).forEach((n) => {
+          out.push(...deepExtractArrays(n, depth + 1, prefix));
+        });
+        return out;
+      }
+      for (const k of Object.keys(node)) {
+        out.push(...deepExtractArrays(node[k], depth + 1, prefix ? `${prefix}.${k}` : k));
+      }
+      return out;
+    }
+
     function normalizeUsersFromSource(source) {
       // 兼容不同结构，尽可能提取用户列表
       const { url, json } = source;
@@ -176,17 +196,42 @@
         const possible = safeGet(json, ['records', 'entries', 'results']);
         if (Array.isArray(possible)) items = possible;
       }
+      // 再次兜底：递归扫描找到最像“用户数组”的集合
+      if (!items.length) {
+        const candidatesArrays = deepExtractArrays(json);
+        // 选择包含 user/session 关键字最多的集合
+        let best = null;
+        let bestScore = -1;
+        candidatesArrays.forEach(arr => {
+          const keys = new Set();
+          arr.slice(0, 5).forEach(o => {
+            if (o && typeof o === 'object') {
+              Object.keys(o).forEach(k => keys.add(k.toLowerCase()));
+            }
+          });
+          const score =
+            (keys.has('user_id') || keys.has('userid') ? 1 : 0) +
+            (keys.has('browser_session_id') || keys.has('session_id') || keys.has('sessionid') ? 1 : 0) +
+            (keys.has('purchase_stage') || keys.has('stage') ? 1 : 0) +
+            (keys.has('interests') || keys.has('attributes') || keys.has('concerns') ? 1 : 0);
+        if (score > bestScore) {
+            bestScore = score;
+            best = arr;
+          }
+        });
+        if (best && best.length) items = best;
+      }
       // 映射成统一结构
       const unified = items.map((it, idx) => {
         // 标识
         const id = safeGet(it, ['user_id', 'userId', 'id', 'browser_session_id', 'session_id', 'sessionId'], `U${idx}`);
         const session = safeGet(it, ['browser_session_id', 'session_id', 'sessionId'], id);
         // 阶段
-        const stageRaw = (safeGet(it, ['purchase_stage', 'stage', 'intent.stage', 'journey.stage'], '') || '').toString().toLowerCase();
+        const stageRaw = (safeGet(it, ['purchase_stage', 'stage', 'intent.stage', 'journey.stage', 'purchase.stage', 'funnel_stage'], '') || '').toString().toLowerCase();
         // 兴趣/产品
         const interests = safeGet(it, ['interests', 'intent.interests', 'product_interests', 'products'], []) || [];
         // 关键要素/属性
-        const attrs = safeGet(it, ['attributes', 'intent.attributes', 'key_attributes', 'concerns'], []) || [];
+        const attrs = safeGet(it, ['attributes', 'intent.attributes', 'key_attributes', 'concerns', 'key_features'], []) || [];
         // 参与度/时长/点击等
         const engagement = Number(safeGet(it, ['engagement', 'engagement_score', 'stats.engagement', 'duration', 'view_time', 'dwell_time'], 0)) || 0;
         const intentStrength = Number(safeGet(it, ['intent_score', 'intent_strength', 'score', 'potential_score'], 0)) || 0;
@@ -318,8 +363,16 @@
       });
       // 打分
       users.forEach(u => u._score = computePotentialScore(u));
-      // 高潜阈值：分数 >= 70
-      const high = users.filter(u => u._score >= 70).sort((a,b) => b._score - a._score);
+      // 自适应阈值：保证有数据可视化
+      let high = [];
+      if (users.length) {
+        const sortedAll = [...users].sort((a,b) => b._score - a._score);
+        const topN = Math.max(20, Math.ceil(users.length * 0.2)); // 至少20或前20%
+        const cutoff = sortedAll[Math.min(sortedAll.length - 1, topN - 1)]._score;
+        const hardMin = 55; // 不要太低
+        const threshold = Math.max(hardMin, cutoff);
+        high = users.filter(u => u._score >= threshold).sort((a,b) => b._score - a._score);
+      }
 
       renderKPIs(users, high);
       const stageCtx = document.getElementById('stageChart');
@@ -327,6 +380,9 @@
       renderStageChart(stageCtx, high);
       renderAttrChart(attrCtx, high);
       renderTable(document.querySelector('#usersTable tbody'), high);
+      // 调试日志
+      console.log('[HighPotential] sources=', sources.map(s => s.url));
+      console.log('[HighPotential] users.total=', users.length, ' high.total=', high.length);
     })();
   </script>
 </body>
