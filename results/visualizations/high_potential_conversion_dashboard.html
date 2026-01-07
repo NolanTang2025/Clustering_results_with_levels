@@ -160,12 +160,20 @@
 
     async function loadAllData() {
       const results = [];
+      // 获取当前页面的base路径
+      const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
       for (const url of dataSources) {
         try {
-          const res = await fetch(url, { cache: 'no-store' });
-          if (!res.ok) continue;
+          // 确保使用正确的相对路径
+          const fullUrl = new URL(url, window.location.origin + basePath).href;
+          console.log('[HighPotential] Fetching:', fullUrl);
+          const res = await fetch(fullUrl, { cache: 'no-store' });
+          if (!res.ok) {
+            console.warn('[HighPotential] Failed to load:', fullUrl, res.status);
+            continue;
+          }
           const json = await res.json();
-          results.push({ url, json });
+          results.push({ url: fullUrl, json });
         } catch (e) {
           console.warn('[HighPotential] fetch error:', url, e);
         }
