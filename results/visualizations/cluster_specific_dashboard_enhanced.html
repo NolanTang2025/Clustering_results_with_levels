@@ -353,20 +353,140 @@
                 html += '<div class="cluster-card">';
                 html += '<h3>' + cluster.cluster_id + ' - ' + cluster.size + '位用户 (' + cluster.time_range + ')</h3>';
                 
-                    // 聚类身份
-                    html += '<div class="unique-feature-box"><h4>🎯 聚类身份</h4><p>' + specific.cluster_identity + '</p></div>';
+                    // 聚类身份（含证据）
+                    html += '<div class="unique-feature-box"><h4>🎯 聚类身份</h4><p>' + specific.cluster_identity + '</p>';
+                    if (specific.cluster_identity_evidence) {
+                        html += '<div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e5;"><strong>📊 数据依据:</strong>';
+                        const ev = specific.cluster_identity_evidence;
+                        if (ev.statistics) {
+                            html += '<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.875rem;">';
+                            html += '<li>总Journey数: ' + ev.statistics.total_journeys + '</li>';
+                            if (ev.statistics.stage_distribution) {
+                                html += '<li>购买阶段分布: ' + JSON.stringify(ev.statistics.stage_distribution) + '</li>';
+                            }
+                            if (ev.statistics.price_distribution) {
+                                html += '<li>价格敏感度分布: ' + JSON.stringify(ev.statistics.price_distribution) + '</li>';
+                            }
+                            html += '<li>平均旅程长度: ' + ev.statistics.avg_journey_length.toFixed(2) + ' 步</li>';
+                            html += '</ul>';
+                        }
+                        if (ev.examples && ev.examples.length > 0) {
+                            html += '<div style="margin-top: 12px;"><strong>📝 证据示例:</strong>';
+                            ev.examples.forEach(function(ex, idx) {
+                                html += '<div style="margin-top: 8px; padding: 12px; background: #fafafa; font-size: 0.875rem;">';
+                                html += '<div style="color: #666;">示例 ' + (idx + 1) + ': ' + ex.browser_session_id + '</div>';
+                                html += '<div style="margin-top: 4px; color: #333;">' + ex.journey_text_preview + '</div>';
+                                html += '</div>';
+                            });
+                            html += '</div>';
+                        }
+                        html += '</div>';
+                    }
+                    html += '</div>';
                     
-                    // 独特价值主张
-                    html += '<div class="unique-feature-box"><h4>💎 独特价值主张</h4><p>' + specific.unique_value_proposition + '</p></div>';
+                    // 独特价值主张（含证据）
+                    html += '<div class="unique-feature-box"><h4>💎 独特价值主张</h4><p>' + specific.unique_value_proposition + '</p>';
+                    if (specific.unique_value_proposition_evidence) {
+                        html += '<div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e5;"><strong>📊 数据依据:</strong>';
+                        const ev = specific.unique_value_proposition_evidence;
+                        if (ev.claims && ev.claims.length > 0) {
+                            ev.claims.forEach(function(claim) {
+                                html += '<div style="margin-top: 12px; padding: 12px; background: #fafafa;">';
+                                html += '<strong>' + claim.claim + '</strong>';
+                                if (claim.statistics) {
+                                    html += '<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.875rem;">';
+                                    Object.keys(claim.statistics).forEach(function(key) {
+                                        html += '<li>' + key + ': ' + claim.statistics[key] + '</li>';
+                                    });
+                                    html += '</ul>';
+                                }
+                                if (claim.examples && claim.examples.length > 0) {
+                                    html += '<div style="margin-top: 8px;"><strong>证据示例:</strong>';
+                                    claim.examples.forEach(function(ex) {
+                                        html += '<div style="margin-top: 4px; padding: 8px; background: #ffffff; font-size: 0.8rem; color: #666;">';
+                                        html += ex.browser_session_id + ': ' + (ex.snippet || ex.journey_text_preview || '');
+                                        html += '</div>';
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                            });
+                        }
+                        html += '</div>';
+                    }
+                    html += '</div>';
                     
-                    // 差异化用户画像
-                    html += '<div class="unique-feature-box"><h4>👤 差异化用户画像</h4><p>' + specific.distinctive_user_profile + '</p></div>';
+                    // 差异化用户画像（含证据）
+                    html += '<div class="unique-feature-box"><h4>👤 差异化用户画像</h4><p>' + specific.distinctive_user_profile + '</p>';
+                    if (specific.distinctive_user_profile_evidence) {
+                        html += '<div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e5;"><strong>📊 数据依据:</strong>';
+                        const ev = specific.distinctive_user_profile_evidence;
+                        if (ev.interests_evidence && ev.interests_evidence.length > 0) {
+                            html += '<div style="margin-top: 12px;"><strong>核心兴趣证据:</strong>';
+                            ev.interests_evidence.forEach(function(ie) {
+                                html += '<div style="margin-top: 8px; padding: 12px; background: #fafafa;">';
+                                html += '<strong>' + ie.interest + '</strong>: ' + ie.count + '个旅程 (' + ie.percentage + '%)';
+                                if (ie.examples && ie.examples.length > 0) {
+                                    html += '<div style="margin-top: 8px; font-size: 0.875rem;">';
+                                    ie.examples.forEach(function(ex) {
+                                        html += '<div style="margin-top: 4px; padding: 8px; background: #ffffff; color: #666;">';
+                                        html += ex.browser_session_id + ': ' + ex.snippet;
+                                        html += '</div>';
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                            });
+                            html += '</div>';
+                        }
+                        if (ev.stage_evidence) {
+                            html += '<div style="margin-top: 12px;"><strong>购买阶段证据:</strong>';
+                            html += '<div style="padding: 12px; background: #fafafa;">';
+                            html += '主导阶段: ' + ev.stage_evidence.dominant_stage + ' (' + ev.stage_evidence.dominant_count + '个旅程, ' + ev.stage_evidence.dominant_percentage + '%)';
+                            if (ev.stage_evidence.examples && ev.stage_evidence.examples.length > 0) {
+                                html += '<div style="margin-top: 8px; font-size: 0.875rem;">';
+                                ev.stage_evidence.examples.forEach(function(ex) {
+                                    html += '<div style="margin-top: 4px; padding: 8px; background: #ffffff; color: #666;">';
+                                    html += ex.browser_session_id + ': ' + ex.journey_text_preview;
+                                    html += '</div>';
+                                });
+                                html += '</div>';
+                            }
+                            html += '</div></div>';
+                        }
+                        html += '</div>';
+                    }
+                    html += '</div>';
                     
-                    // 什么使这个聚类不同
+                    // 什么使这个聚类不同（含证据）
                     if (specific.what_makes_different && specific.what_makes_different.length > 0) {
                         html += '<h4 style="margin-top: 20px;">✨ 什么使这个聚类不同</h4><ul style="list-style: none; padding: 0;">';
-                        specific.what_makes_different.forEach(function(diff) {
-                            html += '<li style="padding: 8px 0; border-bottom: 1px solid #e5e5e5;">' + diff + '</li>';
+                        specific.what_makes_different.forEach(function(diff, idx) {
+                            html += '<li style="padding: 12px 0; border-bottom: 1px solid #e5e5e5;">';
+                            html += '<strong>' + diff + '</strong>';
+                            if (specific.what_makes_different_evidence && specific.what_makes_different_evidence[idx]) {
+                                const ev = specific.what_makes_different_evidence[idx];
+                                html += '<div style="margin-top: 8px; padding: 12px; background: #fafafa; font-size: 0.875rem;">';
+                                html += '<strong>📊 数据依据:</strong>';
+                                if (ev.statistics) {
+                                    html += '<ul style="margin-top: 4px; padding-left: 20px;">';
+                                    Object.keys(ev.statistics).forEach(function(key) {
+                                        html += '<li>' + key + ': ' + ev.statistics[key] + '</li>';
+                                    });
+                                    html += '</ul>';
+                                }
+                                if (ev.examples && ev.examples.length > 0) {
+                                    html += '<div style="margin-top: 8px;"><strong>📝 证据示例:</strong>';
+                                    ev.examples.forEach(function(ex) {
+                                        html += '<div style="margin-top: 4px; padding: 8px; background: #ffffff; color: #666;">';
+                                        html += ex.browser_session_id + ': ' + (ex.snippet || ex.journey_text_preview || '');
+                                        html += '</div>';
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                            }
+                            html += '</li>';
                         });
                 html += '</ul>';
                     }
@@ -405,7 +525,7 @@
                     html += '</tbody></table>';
                     }
                     
-                    // 聚类特定机会
+                    // 聚类特定机会（含证据）
                     if (specific.cluster_specific_opportunities && specific.cluster_specific_opportunities.length > 0) {
                         html += '<h4 style="margin-top: 20px;">🎯 聚类特定机会</h4>';
                         specific.cluster_specific_opportunities.forEach(function(opp) {
@@ -414,11 +534,34 @@
                         html += '<p><strong>行动:</strong> ' + opp.action + '</p>';
                         html += '<p><strong>预期影响:</strong> ' + opp.expected_impact + '</p>';
                             html += '<p style="margin-top: 12px; color: #666; font-size: 0.875rem;"><strong>数据支撑:</strong> ' + opp.data_support + '</p>';
+                            if (opp.evidence) {
+                                html += '<div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e5;"><strong>📊 详细数据依据:</strong>';
+                                if (opp.evidence.statistics) {
+                                    html += '<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.875rem;">';
+                                    Object.keys(opp.evidence.statistics).forEach(function(key) {
+                                        html += '<li>' + key + ': ' + opp.evidence.statistics[key] + '</li>';
+                                    });
+                                    html += '</ul>';
+                                }
+                                if (opp.evidence.examples && opp.evidence.examples.length > 0) {
+                                    html += '<div style="margin-top: 12px;"><strong>📝 证据示例:</strong>';
+                                    opp.evidence.examples.forEach(function(ex, idx) {
+                                        html += '<div style="margin-top: 8px; padding: 12px; background: #fafafa; font-size: 0.875rem;">';
+                                        html += '<div style="color: #666;">示例 ' + (idx + 1) + ': ' + (ex.browser_session_id || '') + '</div>';
+                                        html += '<div style="margin-top: 4px; color: #333;">' + (ex.snippet || ex.journey_text_preview || '') + '</div>';
+                                        if (ex.stage) html += '<div style="margin-top: 4px; color: #999;">购买阶段: ' + ex.stage + '</div>';
+                                        if (ex.price_range) html += '<div style="margin-top: 4px; color: #999;">价格敏感度: ' + ex.price_range + '</div>';
+                                        html += '</div>';
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                            }
                         html += '</div>';
                         });
                     }
                     
-                    // 针对性推荐
+                    // 针对性推荐（含证据）
                     if (specific.targeted_recommendations && specific.targeted_recommendations.length > 0) {
                         html += '<h4 style="margin-top: 20px;">💡 针对性推荐</h4>';
                         specific.targeted_recommendations.forEach(function(rec) {
@@ -428,6 +571,28 @@
                         html += '<p><strong>实施方案:</strong> ' + rec.implementation + '</p>';
                         html += '<p><strong>预期影响:</strong> ' + rec.expected_impact + '</p>';
                             html += '<p style="margin-top: 12px; color: #666; font-size: 0.875rem;"><strong>数据支撑:</strong> ' + rec.data_support + '</p>';
+                            if (rec.evidence) {
+                                html += '<div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e5e5;"><strong>📊 详细数据依据:</strong>';
+                                if (rec.evidence.statistics) {
+                                    html += '<ul style="margin-top: 8px; padding-left: 20px; font-size: 0.875rem;">';
+                                    Object.keys(rec.evidence.statistics).forEach(function(key) {
+                                        html += '<li>' + key + ': ' + rec.evidence.statistics[key] + '</li>';
+                                    });
+                                    html += '</ul>';
+                                }
+                                if (rec.evidence.examples && rec.evidence.examples.length > 0) {
+                                    html += '<div style="margin-top: 12px;"><strong>📝 证据示例:</strong>';
+                                    rec.evidence.examples.forEach(function(ex, idx) {
+                                        html += '<div style="margin-top: 8px; padding: 12px; background: #fafafa; font-size: 0.875rem;">';
+                                        html += '<div style="color: #666;">示例 ' + (idx + 1) + ': ' + (ex.browser_session_id || '') + '</div>';
+                                        html += '<div style="margin-top: 4px; color: #333;">' + (ex.snippet || ex.journey_text_preview || '') + '</div>';
+                                        if (ex.stage) html += '<div style="margin-top: 4px; color: #999;">购买阶段: ' + ex.stage + '</div>';
+                                        html += '</div>';
+                                    });
+                                    html += '</div>';
+                                }
+                                html += '</div>';
+                            }
                         html += '</div>';
                         });
                     }
