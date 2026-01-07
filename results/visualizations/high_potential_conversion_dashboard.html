@@ -116,8 +116,8 @@
       // 深度分析（browser_session）
       // GitHub Pages 常见结构（results/visualizations -> ../results/deep_analysis）
       '../results/deep_analysis/browser_session_deep_analysis.json',
-      // 本仓库当前结构（results/visualizations -> ../results/results/deep_analysis）
-      '../results/results/deep_analysis/browser_session_deep_analysis.json',
+      // 本仓库当前结构（results/visualizations -> ../results/deep_analysis）
+      '../results/deep_analysis/browser_session_deep_analysis.json',
       // 通用核心用户深度分析
       // GitHub Pages 常见结构
       '../analysis/core_users_deep_analysis.json',
@@ -274,18 +274,21 @@
 
     function computePotentialScore(u) {
       // 阶段打分：deciding > comparing > browsing
-      let stageScore = 0;
+      let stageScore = 0.5; // 默认给0.5而不是0
       const s = u.stageRaw;
       if (s.includes('decid')) stageScore = 1.0;
       else if (s.includes('compar') || s.includes('evalu')) stageScore = 0.75;
       else if (s.includes('brows') || s.includes('explor')) stageScore = 0.4;
-      // 参与度归一
-      const eng = Math.min(u.engagement / 100.0, 1.0); // 假设100为较高阈值
-      const intent = Math.min(u.intentStrength / 100.0, 1.0);
+      // 参与度归一 - 如果没有数据，给默认值
+      const eng = u.engagement > 0 ? Math.min(u.engagement / 100.0, 1.0) : 0.5;
+      const intent = u.intentStrength > 0 ? Math.min(u.intentStrength / 100.0, 1.0) : 0.5;
       // 价格敏感度反向（越敏感潜力可能越低），未知按中性处理
       const price = (u.priceSensitivity > 0 ? (1 - Math.min(u.priceSensitivity / 100.0, 1.0)) : 0.5);
-      // 组合
-      const score = (stageScore * 0.45) + (eng * 0.25) + (intent * 0.25) + (price * 0.05);
+      // 如果有兴趣或属性，额外加分
+      const hasInterests = u.interests && u.interests.length > 0 ? 0.1 : 0;
+      const hasAttrs = u.attrs && u.attrs.length > 0 ? 0.1 : 0;
+      // 组合 - 降低阈值，让更多用户能被识别为高潜
+      const score = (stageScore * 0.35) + (eng * 0.20) + (intent * 0.20) + (price * 0.05) + hasInterests + hasAttrs;
       return Math.round(score * 100);
     }
 
