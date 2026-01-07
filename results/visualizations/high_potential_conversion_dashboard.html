@@ -112,21 +112,14 @@
 
   <script>
     // 尝试加载多份可能存在的数据文件，择优合并
+    // 注意：从 results/visualizations/ 目录出发的相对路径
     const dataSources = [
-      // 深度分析（browser_session）
-      // GitHub Pages 常见结构（results/visualizations -> ../results/deep_analysis）
-      '../results/deep_analysis/browser_session_deep_analysis.json',
-      // 本仓库当前结构（results/visualizations -> ../results/deep_analysis）
-      '../results/deep_analysis/browser_session_deep_analysis.json',
-      // 通用核心用户深度分析
-      // GitHub Pages 常见结构
+      // 核心用户深度分析（实际存在的文件）
       '../analysis/core_users_deep_analysis.json',
       '../analysis/core_users_deep_analysis_full.json',
       '../analysis/core_users_10_60s_analysis.json',
-      // 本仓库当前结构（results/visualizations -> ../results/analysis）
-      '../results/analysis/core_users_deep_analysis.json',
-      '../results/analysis/core_users_deep_analysis_full.json',
-      '../results/analysis/core_users_10_60s_analysis.json'
+      // 如果存在 results/results/deep_analysis（之前推送的）
+      '../results/deep_analysis/browser_session_deep_analysis.json'
     ];
 
     function safeGet(obj, paths, fallback = undefined) {
