@@ -468,13 +468,17 @@
             html += `<div class="dashboard-grid">`;
                 
                 categories[category].forEach(dashboard => {
+                    // 转义HTML特殊字符
+                    const safeName = dashboard.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    const safeDesc = dashboard.description.replace(/'/g, "\\'").replace(/"/g, '&quot;').replace(/\n/g, ' ');
+                    const safeFile = dashboard.file.replace(/'/g, "\\'");
                     html += `
-                        <div class="dashboard-card" onclick="openDashboard('${dashboard.file}')">
+                        <div class="dashboard-card" onclick="openDashboard('${safeFile}')">
                             <h3>
                                 <span class="icon">${dashboard.icon}</span>
-                                ${dashboard.name}
+                                ${safeName}
                             </h3>
-                            <div class="description">${dashboard.description}</div>
+                            <div class="description">${safeDesc}</div>
                             <div class="meta">
                                 <span>${dashboard.category}</span>
                                 <span>${dashboard.tags.join(' · ')}</span>
