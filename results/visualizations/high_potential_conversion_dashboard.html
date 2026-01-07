@@ -113,15 +113,18 @@
   <script>
     // 尝试加载多份可能存在的数据文件，择优合并
     // 注意：从 results/visualizations/ 目录出发的相对路径
-    // 实际文件位置：
+    // 实际文件位置（在仓库根目录下）：
     // - results/analysis/core_users_deep_analysis.json
     // - results/results/deep_analysis/browser_session_deep_analysis.json
+    // 从 results/visualizations/ 出发：
+    // - 到 results/analysis/ 需要 ../analysis/
+    // - 到 results/results/deep_analysis/ 需要 ../results/deep_analysis/
     const dataSources = [
-      // 核心用户深度分析（从 visualizations 到 results/analysis）
+      // 核心用户深度分析
       '../analysis/core_users_deep_analysis.json',
       '../analysis/core_users_deep_analysis_full.json',
       '../analysis/core_users_10_60s_analysis.json',
-      // browser_session 深度分析（从 visualizations 到 results/results/deep_analysis）
+      // browser_session 深度分析
       '../results/deep_analysis/browser_session_deep_analysis.json'
     ];
 
