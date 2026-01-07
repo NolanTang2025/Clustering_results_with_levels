@@ -494,6 +494,8 @@
             container.innerHTML = html;
             
             // 更新统计
+            console.log('Total dashboards to render:', filteredDashboards.length);
+            console.log('Dashboard names:', filteredDashboards.map(d => d.name));
             document.getElementById('totalDashboards').textContent = filteredDashboards.length;
             document.getElementById('totalCategories').textContent = Object.keys(categories).length;
         }
