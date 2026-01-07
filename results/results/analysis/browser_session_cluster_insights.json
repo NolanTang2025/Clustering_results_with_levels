@@ -1,0 +1,551 @@
+[
+  {
+    "cluster_id": 0,
+    "user_segment_name": "高端价值·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 94 个用户旅程",
+      "平均旅程长度: 2.9 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 高端价值型",
+      "核心兴趣: Karaoke Machine, Wireless Microphone, High-Fidelity Sound"
+    ],
+    "statistics": {
+      "journey_count": 94,
+      "avg_journey_length": 2.86,
+      "top_interests": [
+        "Karaoke Machine",
+        "Wireless Microphone",
+        "High-Fidelity Sound",
+        "Touchscreen Display",
+        "Karaoke Machine Features"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "10.1\" HD Touchscreen",
+        "Professional Wireless Microphone",
+        "Versatile Connectivity",
+        "High-Fidelity Sound",
+        "Long-Lasting Battery"
+      ],
+      "price_range": "premium"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式",
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验",
+      "提供高端产品线、定制化服务"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 1,
+    "user_segment_name": "平衡型·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 85 个用户旅程",
+      "平均旅程长度: 3.6 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Karaoke Machine, Wireless Microphones, Ikarao Shell S2 Karaoke Machine"
+    ],
+    "statistics": {
+      "journey_count": 85,
+      "avg_journey_length": 3.59,
+      "top_interests": [
+        "Karaoke Machine",
+        "Wireless Microphones",
+        "Ikarao Shell S2 Karaoke Machine",
+        "Karaoke Machines",
+        "Karaoke Systems"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "10.1\" HD Touchscreen",
+        "High-Fidelity Sound",
+        "Wireless Microphones",
+        "Extended Battery Life",
+        "Versatile Connectivity"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式"
+    ],
+    "product_recommendations": [
+      "【主推产品】Ikarao Shell系列",
+      "重点展示Shell系列的便携性和性价比",
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 2,
+    "user_segment_name": "平衡型·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 119 个用户旅程",
+      "平均旅程长度: 3.1 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Karaoke Machine, Wireless Microphones, High-Fidelity Sound"
+    ],
+    "statistics": {
+      "journey_count": 119,
+      "avg_journey_length": 3.05,
+      "top_interests": [
+        "Karaoke Machine",
+        "Wireless Microphones",
+        "High-Fidelity Sound",
+        "Touchscreen Display",
+        "Portable Speaker"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "10.1\" HD Touchscreen",
+        "High-Fidelity Sound",
+        "Versatile Connectivity",
+        "Professional Wireless Microphone",
+        "Long-Lasting Battery"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 3,
+    "user_segment_name": "平衡型·对比型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 108 个用户旅程",
+      "平均旅程长度: 4.6 步",
+      "购买阶段: 对比阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Wireless Microphones, Karaoke Machine, Karaoke Machines"
+    ],
+    "statistics": {
+      "journey_count": 108,
+      "avg_journey_length": 4.6,
+      "top_interests": [
+        "Wireless Microphones",
+        "Karaoke Machine",
+        "Karaoke Machines",
+        "High-Fidelity Sound",
+        "Touchscreen Displays"
+      ],
+      "purchase_stage": "comparing",
+      "top_attributes": [
+        "High-Fidelity Sound",
+        "10.1\" HD Touchscreen",
+        "Versatile Connectivity",
+        "Wireless Microphones",
+        "Long Battery Life"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【对比优化】用户正在比较产品，需要差异化优势展示",
+      "提供详细的产品对比表、功能对比图",
+      "突出产品独特卖点（USP）"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "提供专业咨询、在线客服支持",
+      "展示技术优势、认证证书、产品对比"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【对比内容】针对对比阶段制作内容",
+      "提供功能详解、技术参数、创新点说明",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 4,
+    "user_segment_name": "高端价值·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 119 个用户旅程",
+      "平均旅程长度: 3.1 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 高端价值型",
+      "核心兴趣: High-Fidelity Sound, Karaoke Machine, Wireless Microphones"
+    ],
+    "statistics": {
+      "journey_count": 119,
+      "avg_journey_length": 3.13,
+      "top_interests": [
+        "High-Fidelity Sound",
+        "Karaoke Machine",
+        "Wireless Microphones",
+        "Wireless Microphone",
+        "Karaoke Machines"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "High-Fidelity Sound",
+        "Extended Battery Life",
+        "Versatile Connectivity",
+        "Professional-Grade Wireless Microphone",
+        "13.3-inch HD Touchscreen"
+      ],
+      "price_range": "premium"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式",
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验",
+      "提供高端产品线、定制化服务"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 5,
+    "user_segment_name": "平衡型·对比型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 30 个用户旅程",
+      "平均旅程长度: 3.0 步",
+      "购买阶段: 对比阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Wireless Microphones, Karaoke Machines, Touchscreen Displays"
+    ],
+    "statistics": {
+      "journey_count": 30,
+      "avg_journey_length": 3.0,
+      "top_interests": [
+        "Wireless Microphones",
+        "Karaoke Machines",
+        "Touchscreen Displays",
+        "Portable Speakers",
+        "Karaoke Machine"
+      ],
+      "purchase_stage": "comparing",
+      "top_attributes": [
+        "Wireless Microphones",
+        "Sound Quality",
+        "Portability",
+        "Portable Design",
+        "Battery Life"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【对比优化】用户正在比较产品，需要差异化优势展示",
+      "提供详细的产品对比表、功能对比图",
+      "突出产品独特卖点（USP）"
+    ],
+    "product_recommendations": [
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "提供专业咨询、在线客服支持",
+      "展示技术优势、认证证书、产品对比"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【对比内容】针对对比阶段制作内容",
+      "提供功能详解、技术参数、创新点说明",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 6,
+    "user_segment_name": "高端价值·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 85 个用户旅程",
+      "平均旅程长度: 2.8 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 高端价值型",
+      "核心兴趣: Ikarao Break X2 Karaoke Machine, Karaoke Machine, Karaoke Machines"
+    ],
+    "statistics": {
+      "journey_count": 85,
+      "avg_journey_length": 2.85,
+      "top_interests": [
+        "Ikarao Break X2 Karaoke Machine",
+        "Karaoke Machine",
+        "Karaoke Machines",
+        "Wireless Microphones",
+        "Wireless Microphone"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "10.1\" HD Touchscreen",
+        "Professional Wireless Microphone",
+        "Versatile Connectivity",
+        "High-Fidelity Sound",
+        "Long-Lasting Battery"
+      ],
+      "price_range": "premium"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式",
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验"
+    ],
+    "product_recommendations": [
+      "【主推产品】Ikarao Break X2",
+      "重点展示Break X2的核心功能和优势",
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验",
+      "提供高端产品线、定制化服务"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 7,
+    "user_segment_name": "平衡型·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 51 个用户旅程",
+      "平均旅程长度: 2.8 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Karaoke Machine, Wireless Microphones, Portable Karaoke"
+    ],
+    "statistics": {
+      "journey_count": 51,
+      "avg_journey_length": 2.8,
+      "top_interests": [
+        "Karaoke Machine",
+        "Wireless Microphones",
+        "Portable Karaoke",
+        "KaraFun Subscription",
+        "Karaoke Systems"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "Wireless Microphones",
+        "140W Peak Power",
+        "Portable",
+        "Built-in Screen",
+        "Portable Design"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供屏幕展示、触控体验、界面演示"
+    ]
+  },
+  {
+    "cluster_id": 8,
+    "user_segment_name": "高端价值·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 92 个用户旅程",
+      "平均旅程长度: 3.6 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 高端价值型",
+      "核心兴趣: Ikarao Break X1 Karaoke Machine, Karaoke Machine, High-Fidelity Sound"
+    ],
+    "statistics": {
+      "journey_count": 92,
+      "avg_journey_length": 3.58,
+      "top_interests": [
+        "Ikarao Break X1 Karaoke Machine",
+        "Karaoke Machine",
+        "High-Fidelity Sound",
+        "Wireless Microphone",
+        "Karaoke Machines"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "Extended Battery Life",
+        "13.3\" HD Touchscreen",
+        "High-Fidelity Sound",
+        "Versatile Connectivity",
+        "Wireless Microphone"
+      ],
+      "price_range": "premium"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式",
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验"
+    ],
+    "product_recommendations": [
+      "【主推产品】Ikarao Break X1",
+      "重点展示Break X1的大屏幕和高端配置",
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【价值驱动】用户更关注产品价值和功能，价格敏感度低",
+      "强调产品品质、技术创新、用户体验",
+      "提供高端产品线、定制化服务"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  },
+  {
+    "cluster_id": 9,
+    "user_segment_name": "平衡型·浏览型·Karaoke爱好者",
+    "key_characteristics": [
+      "用户规模: 50 个用户旅程",
+      "平均旅程长度: 16.8 步",
+      "购买阶段: 浏览阶段",
+      "价格敏感度: 中等价格型",
+      "核心兴趣: Karaoke Machine, High-Fidelity Sound, Wireless Microphones"
+    ],
+    "statistics": {
+      "journey_count": 50,
+      "avg_journey_length": 16.82,
+      "top_interests": [
+        "Karaoke Machine",
+        "High-Fidelity Sound",
+        "Wireless Microphones",
+        "Wireless Microphone",
+        "Touchscreen Display"
+      ],
+      "purchase_stage": "browsing",
+      "top_attributes": [
+        "10.1\" HD Touchscreen",
+        "Versatile Connectivity",
+        "High-Fidelity Sound",
+        "Long-Lasting Battery",
+        "Professional Wireless Microphone"
+      ],
+      "price_range": "mid-range"
+    },
+    "marketing_strategy": [
+      "【教育引导】用户处于早期浏览阶段，需要教育性内容",
+      "提供产品功能说明、使用场景、解决痛点的方式",
+      "【深度参与】用户深度研究，需要详细的产品信息"
+    ],
+    "product_recommendations": [
+      "强调大屏幕显示和触控体验",
+      "突出无线麦克风的功能和音质",
+      "强调长续航能力和便携性"
+    ],
+    "conversion_optimization": [
+      "优化首屏内容，快速抓住注意力",
+      "提供视频教程、使用指南、FAQ"
+    ],
+    "pricing_strategy": [
+      "【平衡策略】用户关注价格但更重视价值",
+      "提供中等价位产品推荐、套餐优惠"
+    ],
+    "content_strategy": [
+      "【教育内容】针对浏览阶段制作内容",
+      "提供产品功能说明、使用场景、解决痛点",
+      "提供音质测试、音频对比、音效演示"
+    ]
+  }
+]
