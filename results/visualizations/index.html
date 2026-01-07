@@ -497,10 +497,14 @@
 
             container.innerHTML = html;
             
-            // 更新统计
-            console.log('Total dashboards to render:', filteredDashboards.length);
-            console.log('Dashboard names:', filteredDashboards.map(d => d.name));
-            document.getElementById('totalDashboards').textContent = filteredDashboards.length;
+            // 更新统计 - 强制显示实际数量
+            const actualCount = filteredDashboards.length;
+            console.log('=== DASHBOARD RENDER DEBUG ===');
+            console.log('Total dashboards to render:', actualCount);
+            console.log('Dashboard names:', filteredDashboards.map((d, i) => `${i+1}. ${d.name}`));
+            console.log('Categories:', Object.keys(categories));
+            console.log('==============================');
+            document.getElementById('totalDashboards').textContent = actualCount;
             document.getElementById('totalCategories').textContent = Object.keys(categories).length;
         }
 
